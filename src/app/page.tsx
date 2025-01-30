@@ -1,9 +1,5 @@
-import { MainPage } from "@/pages/main-page";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-    return (
-        <>
-            <MainPage/>   
-        </>
-    );
+    redirect('/home')
 }

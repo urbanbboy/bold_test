@@ -1,0 +1,81 @@
+"use client";
+
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue
+} from "@/components/ui/select";
+import RussianIcon from "@/assets/dropdown/rus.svg";
+import UzbIcon from "@/assets/dropdown/usb.svg";
+import UsaIcon from "@/assets/dropdown/usa.svg";
+import { useState } from "react";
+
+interface LanguageProps {
+    id: string;
+    title: string;
+    shortTitle: string;
+    icon: React.ReactNode;
+}
+
+const languageList: LanguageProps[] = [
+    {
+        id: "1",
+        title: "English",
+        shortTitle: "ENG",
+        icon: <UsaIcon />
+    },
+    {
+        id: "2",
+        title: "Русский",
+        shortTitle: "РУ",
+        icon: <RussianIcon />
+    },
+    {
+        id: "3",
+        title: "О'zbek",
+        shortTitle: "UZB",
+        icon: <UzbIcon />
+    }
+];
+
+export const LanguageSelect = () => {
+    const [selectedLanguage, setSelectedLanguage] = useState<string | undefined>('2');
+
+    const onChangeLanguage = (value: string) => {
+        console.log(value);
+        setSelectedLanguage(value);
+    };
+
+    const selectedLang = languageList.find(
+        (language) => language.id === selectedLanguage
+    );
+
+    return (
+        <div>
+            <Select value={selectedLanguage} onValueChange={onChangeLanguage}>
+                <SelectTrigger>
+                    <SelectValue>
+                        {selectedLang && (
+                            <div className="flex items-center space-x-2">
+                                <span>{selectedLang.icon}</span>
+                                <span className="pr-1">{selectedLang.shortTitle}</span>
+                            </div>
+                        )}
+                    </SelectValue>
+                </SelectTrigger>
+                <SelectContent className="min-w-[180px]">
+                    {languageList.map((language) => (
+                        <SelectItem key={language.id} value={language.id}>
+                            <div className="flex items-center space-x-2">
+                                <span>{language.icon}</span>
+                                <span>{language.title}</span>
+                            </div>
+                        </SelectItem>
+                    ))}
+                </SelectContent>
+            </Select>
+        </div>
+    );
+};
