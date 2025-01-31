@@ -10,8 +10,8 @@ export default {
     theme: {
     	extend: {
     		screens: {
-    			sm: '375px',
-    			md: '640px',
+    			sm: '480px',
+    			md: '690px',
     			lg: '1120px',
     			xl: '1280px',
     			'2xl': '1536px'
@@ -47,6 +47,7 @@ export default {
     				DEFAULT: 'hsl(var(--destructive))',
     				foreground: 'hsl(var(--destructive-foreground))'
     			},
+                gray: "hsl(var(--gray))",
     			border: 'hsl(var(--border))',
     			input: 'hsl(var(--input))',
     			ring: 'hsl(var(--ring))',

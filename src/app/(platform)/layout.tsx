@@ -1,3 +1,4 @@
+import { Footer } from "@/components/organisms/footer";
 import { Header } from "@/components/organisms/header";
 
 
@@ -8,6 +9,7 @@ const PlatformLayout = ({ children }: { children: React.ReactNode }) => {
             <div className="mt-24">
                 {children}
             </div>
+            <Footer />
         </div>
     );
 }
