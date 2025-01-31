@@ -9,19 +9,15 @@ import WebDevIcon from '@/assets/dropdown/dropdown_4.svg';
 import MarketingPromotionIcon from '@/assets/dropdown/dropdown_5.svg';
 import CRMIcon from '@/assets/dropdown/dropdown_6.svg';
 
-
-
-
 import { cn } from "@/lib/utils";
 import {
     NavigationMenu,
-    NavigationMenuContent,
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
-    NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 interface ComponentsProps {
     title: string;
@@ -30,42 +26,18 @@ interface ComponentsProps {
 }
 
 const components: ComponentsProps[] = [
-    {
-        title: "Брендинг",
-        href: "/services/branding",
-        icon: <BrandingIcon />
-    },
-    {
-        title: "Digital продвижение",
-        href: "/services/digital",
-        icon: <DigitalPromotionIcon />
-    },
-    {
-        title: "Видеопродакшн",
-        href: "/docs/primitives/progress",
-        icon: <VideoProductionIcon />
-    },
-    {
-        title: "Веб-разработка и дизайн",
-        href: "/docs/primitives/scroll-area",
-        icon: <WebDevIcon />
-    },
-    {
-        title: "Комплексное маркетинговое продвижение",
-        href: "/docs/primitives/tabs",
-        icon: <MarketingPromotionIcon />
-    },
-    {
-        title: "Внедрение CRM системы",
-        href: "/docs/primitives/tooltip",
-        icon: <CRMIcon />
-    },
-]
+    { title: "Брендинг", href: "/services/branding", icon: <BrandingIcon /> },
+    { title: "Digital продвижение", href: "/services/digital", icon: <DigitalPromotionIcon /> },
+    { title: "Видеопродакшн", href: "/docs/primitives/progress", icon: <VideoProductionIcon /> },
+    { title: "Веб-разработка и дизайн", href: "/docs/primitives/scroll-area", icon: <WebDevIcon /> },
+    { title: "Комплексное маркетинговое продвижение", href: "/docs/primitives/tabs", icon: <MarketingPromotionIcon /> },
+    { title: "Внедрение CRM системы", href: "/docs/primitives/tooltip", icon: <CRMIcon /> },
+];
 
-export const NavigationBar = () => {
+export const MobileNavigationBar = () => {
     return (
         <NavigationMenu>
-            <NavigationMenuList className='hidden lg:flex'>
+            <NavigationMenuList className='flex flex-col items-center w-screen mb-40 space-y-2'>
                 <NavigationMenuItem>
                     <Link href="/home" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -88,19 +60,23 @@ export const NavigationBar = () => {
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger>Услуги</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="flex flex-col w-[350px] gap-2 p-3">
-                            {components.map((component) => (
-                                <ListItem
-                                    key={component.title}
-                                    title={component.title}
-                                    href={component.href}
-                                    icon={component.icon}
-                                />
-                            ))}
-                        </ul>
-                    </NavigationMenuContent>
+                    <Accordion type="single" collapsible>
+                        <AccordionItem value="services">
+                            <AccordionTrigger className="flex justify-center gap-1">Услуги</AccordionTrigger>
+                            <AccordionContent>
+                                <ul className="flex flex-col gap-2 p-3">
+                                    {components.map((component) => (
+                                        <ListItem
+                                            key={component.title}
+                                            title={component.title}
+                                            href={component.href}
+                                            icon={component.icon}
+                                        />
+                                    ))}
+                                </ul>
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <Link href="/contacts" legacyBehavior passHref>
@@ -111,8 +87,8 @@ export const NavigationBar = () => {
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>
-    )
-}
+    );
+};
 
 const ListItem = React.forwardRef<
     React.ComponentRef<"a">,
@@ -124,7 +100,7 @@ const ListItem = React.forwardRef<
                 <a
                     ref={ref}
                     className={cn(
-                        "flex items-center gap-2 select-none space-y- 1 rounded-md p-3 leading-normal no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                        "flex items-center gap-2 rounded-md p-3 leading-normal no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
                         className
                     )}
                     {...props}
@@ -134,7 +110,6 @@ const ListItem = React.forwardRef<
                 </a>
             </NavigationMenuLink>
         </li>
-    )
-})
-ListItem.displayName = "ListItem"
-
+    );
+});
+ListItem.displayName = "ListItem";
