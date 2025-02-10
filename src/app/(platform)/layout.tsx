@@ -4,9 +4,9 @@ import { Header } from "@/components/organisms/header";
 
 const PlatformLayout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <div className="max-w-[1920px] m-auto">
+        <div className="max-w-[1920px] m-auto relative">
             <Header />
-            <div className="mt-24">
+            <div className="">
                 {children}
             </div>
             <Footer />

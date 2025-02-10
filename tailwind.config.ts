@@ -48,6 +48,7 @@ export default {
     				foreground: 'hsl(var(--destructive-foreground))'
     			},
                 gray: "hsl(var(--gray))",
+                // red: "hsl(var(--red))",
     			border: 'hsl(var(--border))',
     			input: 'hsl(var(--input))',
     			ring: 'hsl(var(--ring))',

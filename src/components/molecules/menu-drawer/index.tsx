@@ -24,8 +24,8 @@ export const MenuDrawer = () => {
         >
             <DrawerTrigger>
                 {open
-                    ? <Menu size={32} className="rotate-90" />
-                    : <Menu size={32} />
+                    ? <Menu size={32} className="rotate-90 text-white" />
+                    : <Menu size={32} className="text-white" />
                 }
             </DrawerTrigger>
             <DrawerContent className="w-full p-5">
