@@ -1,5 +1,7 @@
 import { redirect } from "next/navigation";
 
-export default function Home() {
+function Home() {
     redirect('/home')
 }
+
+export default Home

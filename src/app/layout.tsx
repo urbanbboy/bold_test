@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Bold Brands International ваш внешний отдел маркетинга",
 };
 
-export default function RootLayout({
+function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
@@ -40,3 +40,5 @@ export default function RootLayout({
         </html>
     );
 }
+
+export default RootLayout
