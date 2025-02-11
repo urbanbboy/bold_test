@@ -22,8 +22,8 @@ const marketingData = {
 
 export const MarketingDepartment = () => {
     return (
-        <div className="relative flex justify-center mx-5 md:mx-40">
-            <MarketingDepartmentBg className="absolute top-32 left-0 -z-50 max-w-[1920px]" />
+        <div className="relative flex justify-center p-4 md:px-16 lg:px-40">
+            <MarketingDepartmentBg className="absolute top-3/4 md:top-32 left-0 -z-50 max-w-[1920px]" />
             <div className="flex flex-col gap-y-16 w-full max-w-[1280px] py-14 md:py-36">
                 <div className="flex flex-col md:flex-row gap-y-5 gap-x-10">
                     <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold">

@@ -19,12 +19,14 @@ const buttonVariants = cva(
                 ghost: "hover:bg-accent hover:text-accent-foreground",
                 link: "text-primary underline-offset-4 hover:underline",
                 carousel: "bg-black p-4 rounded-lg hover:bg-white/40 border border-white/30",
+                clean: ""
             },
             size: {
                 default: "h-10 px-4 py-2",
                 sm: "h-9 rounded-md px-3",
                 lg: "h-11 rounded-md px-8",
                 icon: "h-10 w-10",
+                clean: ''
             },
         },
         defaultVariants: {

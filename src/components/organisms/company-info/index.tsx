@@ -1,0 +1,87 @@
+"use client";
+
+import AboutUsSVG from '@/assets/company-info/about_us.svg'
+import MobileAboutUsSVG from '@/assets/company-info/mobile_about_us.svg'
+import Stat1SVG from '@/assets/company-info/stat_1.svg'
+import Stat2SVG from '@/assets/company-info/stat_2.svg'
+import Stat3SVG from '@/assets/company-info/stat_3.svg'
+import Stat4SVG from '@/assets/company-info/stat_4.svg'
+import CompanyInfoSVG from '@/assets/backgrounds/company_info.svg'
+import { StatItem } from '@/components/molecules/stat-';
+import { Button } from '@/components/ui/button';
+import { motion } from "framer-motion"
+import { Play } from 'lucide-react'
+
+
+const stats: { title: string, sub_title: string, icon: React.ReactNode }[] = [
+    {
+        title: '30+',
+        sub_title: 'опытных экспертов, которые работают на ваш результат',
+        icon: <Stat1SVG />
+    },
+    {
+        title: 'Топ-1',
+        sub_title: 'маркетинговая компания по версии The Great Award of the Year 2023 за выдающиеся достижения в продвижении бизнеса.',
+        icon: <Stat2SVG />
+    },
+    {
+        title: '60+',
+        sub_title: 'успешных проектов, которые помогли нашим клиентам увеличить продажи на 189%.',
+        icon: <Stat3SVG />
+    },
+    {
+        title: '35+',
+        sub_title: 'опыт в отраслях бизнеса — от салонов красоты до строительных компаний.',
+        icon: <Stat4SVG />
+    },
+]
+
+export const CompanyInfo = () => {
+
+    const onClickVideo = () => {
+        console.log('clicked')
+    }
+
+    return (
+        <div className='w-full max-w-[1920px]'>
+            <div
+                className="relative h-[400px] md:h-screen bg-[url('/images/main_page/video_bg.png')] bg-cover bg-center flex justify-center items-center"
+            >
+                <motion.div
+                    onClick={onClickVideo}
+                    className='z-40 cursor-pointer'
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                >
+                    <AboutUsSVG className='hidden md:block' />
+                    <MobileAboutUsSVG className='md:hidden' />
+                </motion.div>
+                <Button
+                    variant={'clean'}
+                    size={'clean'}
+                    className='absolute p-12 md:p-28 rounded-full bg-black/30 backdrop-blur-md shadow-md cursor-pointer'
+                >
+                    <Play size={20} color="#ffffff" style={{ width: '64px', height: '64px' }} />
+                </Button>
+            </div>
+            <div className='relative bg-foreground py-14 lg:py-36 px-4 md:px-40 text-white overflow-hidden z-10'>
+                <h1 className='text-3xl md:text-6xl font-bold mb-5'>Bold Brands International </h1>
+                <p className='text-rose-500'>совместно создаём прочную основу и уверенное будущее для вашей компании</p>
+                <div className='flex justify-center flex-wrap gap-7 mt-8'>
+                    {stats.map((stat, index) => (
+                        <StatItem
+                            key={index}
+                            title={stat.title}
+                            sub_title={stat.sub_title}
+                            icon={stat.icon}
+                            idx={index}
+                        />
+                    ))}
+                </div>
+                <div>
+                    <CompanyInfoSVG className="absolute left-0 lg:left-auto -z-10 bottom-0 max-w-[1920px] object-cover" />
+                </div>
+            </div>
+        </div>
+    )
+}
