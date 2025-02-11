@@ -7,7 +7,7 @@ import Stat2SVG from '@/assets/company-info/stat_2.svg'
 import Stat3SVG from '@/assets/company-info/stat_3.svg'
 import Stat4SVG from '@/assets/company-info/stat_4.svg'
 import CompanyInfoSVG from '@/assets/backgrounds/company_info.svg'
-import { StatItem } from '@/components/molecules/stat-';
+import { StatItem } from '@/components/molecules/stat-item';
 import { Button } from '@/components/ui/button';
 import { motion } from "framer-motion"
 import { Play } from 'lucide-react'
@@ -59,7 +59,7 @@ export const CompanyInfo = () => {
                 <Button
                     variant={'clean'}
                     size={'clean'}
-                    className='absolute p-12 md:p-28 rounded-full bg-black/30 backdrop-blur-md shadow-md cursor-pointer'
+                    className='absolute p-12 md:p-28 rounded-full bg-black/30 backdrop-blur-sm shadow-md cursor-pointer'
                 >
                     <Play size={20} color="#ffffff" style={{ width: '64px', height: '64px' }} />
                 </Button>
