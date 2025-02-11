@@ -28,7 +28,7 @@ export const SingleSliderItem = ({
                 style={{ backgroundImage: `url(${image})` }}
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-black to-black/20"></div>
-                <div className="flex flex-col text-left gap-y-5 md:gap-y-10 z-50 pl-14 md:pl-0 md:mx-40 max-w-[1200px]">
+                <div className="flex flex-col text-left gap-y-5 md:gap-y-10 z-50 pl-14 md:pl-0 md:mx-40 max-w-[1280px]">
                     <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white">{title}</h1>
                     <p className="text-lg md:text-2xl text-[#BEC2CE] mt-2">{sub_title}</p>
                     <LinkButtonWithIcon
