@@ -1,3 +1,4 @@
+import { Checkup } from "@/components/organisms/checkup";
 import { CompanyChallengeList } from "@/components/organisms/company-challenge-list";
 import { CompanyFeatures } from "@/components/organisms/company-features";
 import { CompanyInfo } from "@/components/organisms/company-info";
@@ -13,6 +14,7 @@ const HomePage = () => {
             <CompanyInfo />
             <CompanyChallengeList />
             <CompanyFeatures />
+            <Checkup />
         </div>
     );
 }
