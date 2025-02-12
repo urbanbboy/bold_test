@@ -3,6 +3,7 @@ import { Checkup } from "@/components/organisms/checkup";
 import { CompanyChallengeList } from "@/components/organisms/company-challenge-list";
 import { CompanyFeatures } from "@/components/organisms/company-features";
 import { CompanyInfo } from "@/components/organisms/company-info";
+import { CompanyPartners } from "@/components/organisms/company-partners";
 import { CompanyPostList } from "@/components/organisms/company-post-list";
 import { MarketingDepartment } from "@/components/organisms/marketing-department";
 import { SingleSliderList } from "@/components/organisms/single-slider-list";
@@ -19,6 +20,7 @@ const HomePage = () => {
             <Checkup />
             <CompanyPostList />
             <Award />
+            <CompanyPartners />
         </div>
     );
 }
