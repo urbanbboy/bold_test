@@ -71,7 +71,7 @@ html::-webkit-scrollbar {
 
 @layer utilities {
   .paused {
-    animation-play-state: paused
+    animation-play-state: paused;
   }
 }
 

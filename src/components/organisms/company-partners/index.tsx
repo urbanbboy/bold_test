@@ -39,9 +39,9 @@ export const CompanyPartners = () => {
     return (
         <>
             <h1 className="text-center uppercase text-gray text-2xl">{data.title}</h1>
-            <div className="relative flex gap-x-10 overflow-hidden group mb-14 lg:mb-40">
+            <div className="relative flex overflow-hidden group mb-14 lg:mb-28">
                 <div className="relative w-full overflow-hidden">
-                    <div className="flex whitespace-nowrap gap-x-10 animate-loop-scroll">
+                    <div className="flex whitespace-nowrap animate-loop-scroll">
                         {[...data.items, ...data.items].map((partner, idx) => (
                             <CompanyPartnerItem
                                 key={idx}

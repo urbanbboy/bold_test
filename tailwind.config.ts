@@ -84,9 +84,15 @@ export default {
     			'accordion-down': 'accordion-down 0.2s ease-out',
     			'accordion-up': 'accordion-up 0.2s ease-out',
                 'loop-scroll': 'loop-scroll 20s linear infinite',
-    		}
+    		},
+            lineClamp: {
+                7: '7',
+                8: '8',
+                9: '9',
+                10: '10',
+			  }
     	}
     },
     // eslint-disable-next-line @typescript-eslint/no-require-imports
-    plugins: [require("tailwindcss-animate")],
+    plugins: [require("tailwindcss-animate"), require('@tailwindcss/line-clamp'),],
 } satisfies Config;

@@ -19,7 +19,8 @@ const buttonVariants = cva(
                 ghost: "hover:bg-accent hover:text-accent-foreground",
                 link: "text-primary underline-offset-4 hover:underline",
                 carousel: "bg-black p-4 rounded-lg hover:bg-white/40 border border-white/30",
-                clean: ""
+                review: "bg-slate-200 hover:bg-slate-300 rounded-xl",
+                clean: "",
             },
             size: {
                 default: "h-10 px-4 py-2",
