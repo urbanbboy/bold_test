@@ -1,3 +1,4 @@
+import { Award } from "@/components/organisms/award";
 import { Checkup } from "@/components/organisms/checkup";
 import { CompanyChallengeList } from "@/components/organisms/company-challenge-list";
 import { CompanyFeatures } from "@/components/organisms/company-features";
@@ -17,6 +18,7 @@ const HomePage = () => {
             <CompanyFeatures />
             <Checkup />
             <CompanyPostList />
+            <Award />
         </div>
     );
 }
