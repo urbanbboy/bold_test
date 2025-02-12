@@ -55,11 +55,11 @@ export const PartnerReviewList = () => {
                     <p className="text-sm text-gray">{data.description}</p>
                 </div>
                 <div className="flex items-center justify-center">
-                    <Carousel className="w-full max-w-lg">
-                        <CarouselContent className="pl-4">
+                    <Carousel className="w-[350px] md:w-[480px] max-w-md">
+                        <CarouselContent className="">
                             {data.items.map((review, idx) => (
                                 <CarouselItem
-                                    className="p-10"
+                                    className="p-5 md:p-10 flex flex-col justify-center items-center "
                                     key={idx}
                                 >
                                     <ReviewItem
@@ -70,8 +70,8 @@ export const PartnerReviewList = () => {
                             ))}
                         </CarouselContent>
                         <div className="relative mt-3">
-                            <CarouselPrevious variant={'review'} className="left-44 md:-left-12 xl:-left-16 md:-top-60 lg:-top-72" />
-                            <CarouselNext variant={'review'} className="right-48 md:-right-10 xl:-right-16 md:-top-60 lg:-top-72" />
+                            <CarouselPrevious variant={'review'} className="left-28 md:-left-12 xl:-left-16 top-5 md:-top-60 lg:-top-72" />
+                            <CarouselNext variant={'review'} className="right-28 md:-right-10 xl:-right-16 top-5 md:-top-60 lg:-top-72" />
                         </div>
                     </Carousel>
                 </div>
