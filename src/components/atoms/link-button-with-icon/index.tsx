@@ -19,7 +19,7 @@ export const LinkButtonWithIcon = ({
         <Button
             asChild
             className={cn(
-                'bg-rose-600 hover:bg-rose-700 text-lg px-3 py-6 rounded-2xl w-fit z-50 hover:cursor-pointer disabled:bg-white/20',
+                'bg-rose-600 hover:bg-rose-700 text-lg px-3 py-6 rounded-2xl w-fit z-40 hover:cursor-pointer disabled:bg-white/20',
                 className
             )}
             {...props}

@@ -10,19 +10,21 @@ import { LanguageSelect } from "../language-select"
 
 export const MenuSheet = () => {
     const [open, setOpen] = useState<boolean>(false)
-    
+
 
     return (
         <Sheet open={open} onOpenChange={setOpen} >
             <SheetTrigger asChild>
-                <Button variant={'ghost'} className="hover:bg-white/30">
+                <Button variant={'ghost'} className="hover:bg-white/30 p-0">
                     <Menu size={32} style={{ width: '32px', height: "32px", color: '#FFF' }} />
                 </Button>
             </SheetTrigger>
             <SheetContent className="w-screen">
-                <SheetTitle className="flex justify-between">
+                <SheetTitle className="flex justify-between items-center">
                     <MobileLogo />
-                    <LanguageSelect isMobile />
+                    <span className="mr-14">
+                        <LanguageSelect isMobile />
+                    </span>
                 </SheetTitle>
                 <MobileNavigationBar closeSheet={() => setOpen(false)} />
             </SheetContent>

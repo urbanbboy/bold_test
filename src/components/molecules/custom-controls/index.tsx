@@ -7,7 +7,7 @@ export const  CustomCarouselControls = () => {
     const { scrollPrev, scrollNext, canScrollPrev, canScrollNext } = useCarousel();
 
     return (
-        <div className="absolute bottom-28 left-14 flex justify-between items-center md:hidden gap-x-3">
+        <div className="absolute bottom-28 left-5 flex justify-between items-center md:hidden gap-x-3">
             <Button
                 variant={'carousel'}
                 className={cn(
