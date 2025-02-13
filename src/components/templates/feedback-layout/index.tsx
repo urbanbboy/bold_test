@@ -1,6 +1,7 @@
 import { FeedbackContactItem } from "@/components/atoms/feedback-contact-item";
 import { Mail, Phone } from "lucide-react"
 import { FeedbackForm as FeedbackFormOwn } from "@/components/forms/feedback-form";
+import { forwardRef } from "react";
 
 interface ContactItem {
     icon?: React.ReactNode;
@@ -29,9 +30,12 @@ const data: ContactItem[] = [
     },
 ]
 
-export const FeedbackForm = () => {
+export const FeedbackForm = forwardRef<HTMLDivElement>((_, ref) => {
     return (
-        <div className="w-full max-w-[1920px] min-h-screen bg-black flex justify-center items-center">
+        <div 
+            ref={ref}
+            className="w-full max-w-[1920px] min-h-screen bg-black flex justify-center items-center"
+        >
             <div className="m-auto max-w-[1280px] flex flex-col lg:flex-row items-center gap-4 py-10 lg:py-0 justify-center px-4 text-white">
                 <div className="flex flex-col gap-y-3 md:gap-y-8 lg:w-1/2">
                     <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-7xl">Получите бесплатную консультацию</h1>
@@ -52,5 +56,7 @@ export const FeedbackForm = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+});
+
+FeedbackForm.displayName = "FeedbackForm";

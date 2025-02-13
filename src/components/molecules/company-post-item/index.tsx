@@ -27,7 +27,7 @@ export const CompanyPostItem = (props: CompanyPostItemProps) => {
     } = props
 
     return (
-        <div className="w-full max-w-[450px] md:max-w-[500px] lg:max-w-[535px]">
+        <div className="p-4">
             <div className="relative overflow-hidden rounded-3xl">
                 <Image
                     src={image}

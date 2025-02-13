@@ -2,6 +2,8 @@ import Instagram from '@/assets/posts/instagram.svg'
 import TikTok from '@/assets/posts/tiktok.svg'
 import { CompanyPostItem } from '@/components/molecules/company-post-item'
 import { Button } from '@/components/ui/button'
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
+import Autoplay from 'embla-carousel-autoplay'
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 
@@ -158,6 +160,7 @@ const data = {
 }
 
 export const CompanyPostList = () => {
+
     return (
         <div className='w-full max-w-[1920px] px-4 mt-14 lg:px-40 mb-20 md:mb-40'>
             <div className='flex flex-col lg:flex-row lg:justify-between gap-5 mb-8'>
@@ -169,16 +172,41 @@ export const CompanyPostList = () => {
                     </Link>
                 </Button>
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 place-items-center gap-12'>
-                {data.items.map((post, idx) => (
-                    <CompanyPostItem
-                        key={idx}
-                        {...post}
-                    />
-                ))}
+            <div className=''>
+                <Carousel
+                    opts={{
+                        align: "center",
+                    }}
+                    plugins={[
+                        Autoplay({
+                            delay: 8000,
+                        })
+                    ]}
+                    className="hidden md:flex w-full max-w-[1920px]"
+                >
+                    <CarouselContent>
+                        {data.items.map((post, idx) => (
+                            <CarouselItem key={idx} className="md:basis-1/2 xl:basis-1/3">
+                                <CompanyPostItem
+                                    key={idx}
+                                    {...post}
+                                />
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                </Carousel>
+                <div className='flex flex-col md:hidden'>
+                    {data.items.map((post, idx) => (
+                        <CompanyPostItem
+                            key={idx}
+                            {...post}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     )
 }
+
 
 

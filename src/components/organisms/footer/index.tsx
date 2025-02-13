@@ -19,10 +19,10 @@ export const Footer = () => {
             </div>
             <div>
                 <Separator />
-                <div className="grid grid-cols-1 lg:grid-cols-2 mt-3 text-gray">
-                    <Designer className="lg:hidden" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 mt-3 text-gray">
+                    <Designer className="md:hidden" />
                     <span className="text-left">&copy; 2024 Bold Brands International. Все права защищены</span>
-                    <span className="text-right">Политика конфиденциальности</span>
+                    <span className="md:text-right">Политика конфиденциальности</span>
                 </div>
             </div>
         </footer>

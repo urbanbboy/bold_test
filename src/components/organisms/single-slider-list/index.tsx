@@ -88,8 +88,8 @@ export const SingleSliderList = () => {
                     />
                 ))}
             </CarouselContent>
-            <CarouselPrevious iconColor='text-white' variant={'carousel'} className='left-32 md:left-14 top-3/4 md:top-1/2 mt-5 md:mt-0' />
-            <CarouselNext iconColor='text-white' variant={'carousel'} className='right-32 md:right-14 top-3/4 md:top-1/2 mt-5 md:mt-0' />
+            <CarouselPrevious isChevron iconColor='text-white' variant={'carousel'} className='left-32 md:left-14 top-3/4 md:top-1/2 mt-5 md:mt-0' />
+            <CarouselNext isChevron iconColor='text-white' variant={'carousel'} className='right-32 md:right-14 top-3/4 md:top-1/2 mt-5 md:mt-0' />
             <Progress className='absolute bottom-0 h-2' value={progress} />
         </Carousel>
     )

@@ -73,8 +73,6 @@ export const CompanyChallengeList = () => {
                             />
                         ))}
                     </div>
-                    
-                    <div className="hidden lg:block absolute top-1/2 left-1/2 w-2 h-2 bg-black rounded-full transform -translate-x-1/2 -translate-y-1/2 z-20"></div>
                 </div>
                 <ChallengesBgSVG className="hidden lg:block absolute top-52 2xl:left-64 -z-10 max-w-[1920px] m-auto" />
             </div>

@@ -1,3 +1,5 @@
+'use client';
+
 import { Award } from "@/components/organisms/award";
 import { Checkup } from "@/components/organisms/checkup";
 import { CompanyChallengeList } from "@/components/organisms/company-challenge-list";
@@ -9,9 +11,17 @@ import { MarketingDepartment } from "@/components/organisms/marketing-department
 import { PartnerReviewList } from "@/components/organisms/partner-review-list";
 import { SingleSliderList } from "@/components/organisms/single-slider-list";
 import { FeedbackForm } from "@/components/templates/feedback-layout";
+import { useRef } from "react";
 
 
 const HomePage = () => {
+    const feedbackRef = useRef<HTMLDivElement>(null);
+
+    const scrollToFeedback = () => {
+        feedbackRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
+
+
     return (
         <div className="">
             <SingleSliderList />
@@ -19,12 +29,12 @@ const HomePage = () => {
             <CompanyInfo />
             <CompanyChallengeList />
             <CompanyFeatures />
-            <Checkup />
+            <Checkup onScrollToFeedback={scrollToFeedback} />
             <CompanyPostList />
             <Award />
             <CompanyPartners />
             <PartnerReviewList />
-            <FeedbackForm />
+            <FeedbackForm ref={feedbackRef} />
         </div>
     );
 }
