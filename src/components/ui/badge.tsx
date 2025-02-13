@@ -16,7 +16,7 @@ const badgeVariants = cva(
           "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
                 outline: "text-foreground",
                 tag: "bg-white border rounded-md font-thin text-gray py-1 text-base",
-                post: " border-none flex items-center gap-2 max-w-[260px] rounded-lg bg-[#41414166] shadow-sm px-3 py-2 text-white text-sm whitespace-nowrap overflow-hidden text-ellipsis text-lg truncate"
+                post: " border-none flex items-center gap-2 max-w-[260px] rounded-lg bg-[#41414166] shadow-sm px-3 py-2 text-white whitespace-nowrap overflow-hidden text-ellipsis text-lg truncate"
             },
         },
         defaultVariants: {

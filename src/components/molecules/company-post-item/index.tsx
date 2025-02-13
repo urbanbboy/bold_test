@@ -38,7 +38,7 @@ export const CompanyPostItem = (props: CompanyPostItemProps) => {
                 />
                 <div className="absolute top-7 left-6 flex gap-2 flex-wrap">
                     {tags.map((tag) => (
-                        <Badge variant={'post'} key={tag.tags}>
+                        <Badge variant={'post'} className="text-sm" key={tag.tags}>
                             {tag.tags}
                         </Badge>
                     ))}

@@ -10,6 +10,7 @@ import { CompanyPostList } from "@/components/organisms/company-post-list";
 import { MarketingDepartment } from "@/components/organisms/marketing-department";
 import { PartnerReviewList } from "@/components/organisms/partner-review-list";
 import { SingleSliderList } from "@/components/organisms/single-slider-list";
+import { VideoAboutCompany } from "@/components/organisms/video-about-company";
 import { FeedbackForm } from "@/components/templates/feedback-layout";
 import { useRef } from "react";
 
@@ -26,6 +27,7 @@ const HomePage = () => {
         <div className="">
             <SingleSliderList />
             <MarketingDepartment />
+            <VideoAboutCompany />
             <CompanyInfo />
             <CompanyChallengeList />
             <CompanyFeatures />

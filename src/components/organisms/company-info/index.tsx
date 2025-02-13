@@ -1,16 +1,11 @@
 "use client";
 
-import AboutUsSVG from '@/assets/company-info/about_us.svg'
-import MobileAboutUsSVG from '@/assets/company-info/mobile_about_us.svg'
 import Stat1SVG from '@/assets/company-info/stat_1.svg'
 import Stat2SVG from '@/assets/company-info/stat_2.svg'
 import Stat3SVG from '@/assets/company-info/stat_3.svg'
 import Stat4SVG from '@/assets/company-info/stat_4.svg'
 import CompanyInfoSVG from '@/assets/backgrounds/company_info.svg'
 import { StatItem } from '@/components/molecules/stat-item';
-import { Button } from '@/components/ui/button';
-import { motion } from "framer-motion"
-import { Play } from 'lucide-react'
 
 
 const stats: { title: string, sub_title: string, icon: React.ReactNode }[] = [
@@ -37,34 +32,8 @@ const stats: { title: string, sub_title: string, icon: React.ReactNode }[] = [
 ]
 
 export const CompanyInfo = () => {
-
-    const onClickVideo = () => {
-        console.log('clicked')
-    }
-
     return (
         <div className='w-full max-w-[1920px]'>
-            <div
-                className="relative h-[400px] md:h-screen bg-[url('/images/main_page/video_bg.png')] bg-cover bg-center flex justify-center items-center"
-            >
-                <Button
-                    onClick={onClickVideo}
-                    variant={'clean'}
-                    size={'clean'}
-                    className='z-20 p-[22px] md:p-[70px] rounded-full bg-black/30 backdrop-blur-sm shadow-md cursor-pointer hover:shadow-2xl transition-all duration-200'
-                >
-                    <Play size={20} color="#ffffff" style={{ width: '64px', height: '64px' }} />
-                </Button>
-                <motion.div
-                    className='absolute'
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                >
-                    <AboutUsSVG className='hidden md:block' />
-                    <MobileAboutUsSVG className='md:hidden' />
-                </motion.div>
-                
-            </div>
             <div className='relative bg-foreground py-14 lg:py-36 px-4 md:px-40 text-white overflow-hidden z-10'>
                 <h1 className='text-3xl md:text-6xl font-bold mb-5'>Bold Brands International </h1>
                 <p className='text-rose-500'>совместно создаём прочную основу и уверенное будущее для вашей компании</p>

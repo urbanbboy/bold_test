@@ -35,12 +35,12 @@ const innerLinks: LinkProps[] = [
 ];
 
 const links: LinkProps[] = [
-    { title: "Главная", href: "/" },
+    { title: "Главная", href: "/home" },
     { title: "О нас", href: "/about" },
     { title: "Кейсы", href: "/cases" },
 ]
 
-export const MobileNavigationBar = () => {
+export const MobileNavigationBar = ({ closeSheet }: { closeSheet: () => void }) => {
     return (
         <nav className="mt-8 space-y-2 font-bold">
             {links.map((link) => (
@@ -49,6 +49,7 @@ export const MobileNavigationBar = () => {
                     key={link.title}
                     linkTitle={link.title}
                     linkHref={link.href}
+                    closeSheet={closeSheet}
                 />
             ))}
             <Accordion type="single" collapsible className="w-full">
@@ -61,14 +62,16 @@ export const MobileNavigationBar = () => {
                                 linkTitle={link.title}
                                 linkHref={link.href}
                                 linkIcon={link.icon}
+                                closeSheet={closeSheet}
                             />
                         ))}
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
-            <LinkItem 
-                linkTitle={"Контакты"} 
+            <LinkItem
+                linkTitle={"Контакты"}
                 linkHref={"/contacts"}
+                closeSheet={closeSheet}
             />
         </nav>
     );
@@ -78,10 +81,18 @@ const LinkItem = ({
     linkTitle,
     linkHref,
     linkIcon,
-    className
-}: innerLinksProps) => {
+    className,
+    closeSheet
+}: innerLinksProps & { closeSheet: () => void }) => {
     return (
-        <Button key={linkTitle} variant={'ghost'} className={cn('flex justify-start text-base w-full rounded-none border-b-2 hover:rounded-md', className)}>
+        <Button
+            onClick={() => closeSheet()}
+            key={linkTitle}
+            variant={'ghost'}
+            className={
+                cn('flex justify-start text-base w-full rounded-none border-b-2 hover:rounded-md', className)
+            }
+        >
             <Link href={linkHref} className="flex items-center gap-x-2">
                 {linkIcon && linkIcon}
                 <span>{linkTitle}</span>

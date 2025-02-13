@@ -10,6 +10,7 @@ import { LanguageSelect } from "../language-select"
 
 export const MenuSheet = () => {
     const [open, setOpen] = useState<boolean>(false)
+    
 
     return (
         <Sheet open={open} onOpenChange={setOpen} >
@@ -23,7 +24,7 @@ export const MenuSheet = () => {
                     <MobileLogo />
                     <LanguageSelect isMobile />
                 </SheetTitle>
-                <MobileNavigationBar />
+                <MobileNavigationBar closeSheet={() => setOpen(false)} />
             </SheetContent>
         </Sheet>
     )
