@@ -89,8 +89,8 @@ export const SingleSliderList = () => {
                 ))}
             </CarouselContent>
             <CustomCarouselControls />
-            <CarouselPrevious isChevron iconColor='text-white' variant={'carousel'} className='hidden md:flex md:left-14 top-[600px] md:top-1/2 mt-5 md:mt-0' />
-            <CarouselNext isChevron iconColor='text-white' variant={'carousel'} className='hidden md:flex md:right-14 top-[600px] md:top-1/2 mt-5 md:mt-0' />
+            <CarouselPrevious iconColor='text-white' variant={'carousel'} className='hidden md:flex md:left-14 top-[600px] md:top-1/2 mt-5 md:mt-0' />
+            <CarouselNext iconColor='text-white' variant={'carousel'} className='hidden md:flex md:right-14 top-[600px] md:top-1/2 mt-5 md:mt-0' />
             <Progress className='absolute bottom-0 h-2' value={progress} />
         </Carousel>
     )
