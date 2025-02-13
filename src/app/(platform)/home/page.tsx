@@ -8,6 +8,7 @@ import { CompanyPostList } from "@/components/organisms/company-post-list";
 import { MarketingDepartment } from "@/components/organisms/marketing-department";
 import { PartnerReviewList } from "@/components/organisms/partner-review-list";
 import { SingleSliderList } from "@/components/organisms/single-slider-list";
+import { FeedbackForm } from "@/components/templates/feedback-layout";
 
 
 const HomePage = () => {
@@ -23,6 +24,7 @@ const HomePage = () => {
             <Award />
             <CompanyPartners />
             <PartnerReviewList />
+            <FeedbackForm />
         </div>
     );
 }
