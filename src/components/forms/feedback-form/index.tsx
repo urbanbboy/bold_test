@@ -11,9 +11,18 @@ import { FeedbackSchema } from "./schema";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { LinkButtonWithIcon } from "@/components/atoms/link-button-with-icon";
+import { toast } from "sonner";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 
 export const FeedbackForm = () => {
+    const [openTerms, setOpenTerms] = useState(false)
+
+    const showTerms = () => {
+        setOpenTerms(prev => !prev)
+    }
+
     const form = useForm<z.infer<typeof FeedbackSchema>>({
         resolver: zodResolver(FeedbackSchema),
         defaultValues: {
@@ -24,14 +33,19 @@ export const FeedbackForm = () => {
         }
     })
 
+    const onSubmit = (data: z.infer<typeof FeedbackSchema>) => {
+        console.log(data)
+        toast.success('Успешно отправлено')
+    }
+
     return (
-        <Card className="bg-[#18181A] border-none md:p-8 rounded-3xl ">
+        <Card className="bg-[#18181A] border-none md:p-8 rounded-3xl">
             <CardHeader className="font-bold text-white text-xl md:text-3xl">
                 Заполните форму и получите предложение
             </CardHeader>
             <CardContent>
                 <Form {...form}>
-                    <form>
+                    <form onSubmit={form.handleSubmit(onSubmit)}>
                         <div className="space-y-5">
                             <FormField
                                 control={form.control}
@@ -89,7 +103,7 @@ export const FeedbackForm = () => {
                                     </FormItem>
                                 )}
                             />
-                            <div className="flex flex-col md:flex-row pt-5 gap-5">
+                            <div className="flex flex-col xl:flex-row pt-5 gap-5">
                                 <FormField
                                     control={form.control}
                                     name="acceptTerms"
@@ -103,8 +117,21 @@ export const FeedbackForm = () => {
                                             </FormControl>
                                             <div className="space-y-1 leading-none">
                                                 <FormLabel className="text-sm md:text-md leading-6">
-                                                    Я согласен на обработку моих данных в соответствии с политикой конфиденциальности
+                                                    Я согласен на обработку моих данных в соответствии с{' '}
+                                                    <span
+                                                        onClick={showTerms}
+                                                        className="text-rose-500 underline hover:cursor-pointer"
+                                                    >
+                                                        политикой конфиденциальности
+                                                    </span>
                                                 </FormLabel>
+                                                <Dialog open={openTerms} onOpenChange={setOpenTerms}>
+                                                    <DialogContent>
+                                                        <DialogTitle>
+                                                            Скибиди Доп Доп Доп
+                                                        </DialogTitle>
+                                                    </DialogContent>
+                                                </Dialog>
                                             </div>
                                         </FormItem>
                                     )}

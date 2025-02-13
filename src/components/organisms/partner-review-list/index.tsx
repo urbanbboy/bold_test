@@ -70,8 +70,8 @@ export const PartnerReviewList = () => {
                             ))}
                         </CarouselContent>
                         <div className="relative mt-3">
-                            <CarouselPrevious variant={'review'} className="left-28 md:-left-12 xl:-left-16 top-5 md:-top-60 lg:-top-72" />
-                            <CarouselNext variant={'review'} className="right-28 md:-right-10 xl:-right-16 top-5 md:-top-60 lg:-top-72" />
+                            <CarouselPrevious iconColor="text-black" variant={'review'} className="left-28 md:-left-12 xl:-left-16 top-5 md:-top-60 lg:-top-72" />
+                            <CarouselNext iconColor="text-black" variant={'review'} className="right-28 md:-right-10 xl:-right-16 top-5 md:-top-60 lg:-top-72" />
                         </div>
                     </Carousel>
                 </div>

@@ -2,7 +2,7 @@
 
 import { Logo } from "@/components/atoms/logo"
 import { LanguageSelect } from "@/components/molecules/language-select"
-import { MenuDrawer } from "@/components/molecules/menu-drawer"
+import { MenuSheet } from "@/components/molecules/menu-sheet"
 import { NavigationBar } from "@/components/molecules/navigation-bar"
 import { useEffect, useState } from "react"
 
@@ -29,7 +29,7 @@ export const Header = () => {
                     <LanguageSelect />
                 </div>
                 <div className="flex lg:hidden">
-                    <MenuDrawer />
+                    <MenuSheet />
                 </div>
             </div>
 

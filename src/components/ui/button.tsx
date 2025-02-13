@@ -18,7 +18,7 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
                 ghost: "hover:bg-accent hover:text-accent-foreground",
                 link: "text-primary underline-offset-4 hover:underline",
-                carousel: "bg-black p-4 rounded-lg hover:bg-white/40 border border-white/30",
+                carousel: "bg-white/20 p-4 rounded-lg hover:bg-white/40 border-none",
                 review: "bg-slate-200 hover:bg-slate-300 rounded-xl",
                 clean: "",
             },
@@ -41,6 +41,7 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
+  iconColor?: string;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(

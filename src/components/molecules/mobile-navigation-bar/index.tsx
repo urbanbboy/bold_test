@@ -9,23 +9,23 @@ import WebDevIcon from '@/assets/dropdown/dropdown_4.svg';
 import MarketingPromotionIcon from '@/assets/dropdown/dropdown_5.svg';
 import CRMIcon from '@/assets/dropdown/dropdown_6.svg';
 
-import { cn } from "@/lib/utils";
-import {
-    NavigationMenu,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-interface ComponentsProps {
+interface LinkProps {
     title: string;
     href: string;
     icon?: React.ReactNode;
 }
 
-const components: ComponentsProps[] = [
+interface innerLinksProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+    linkTitle: string,
+    linkHref: string,
+    linkIcon?: React.ReactNode
+}
+
+const innerLinks: LinkProps[] = [
     { title: "Брендинг", href: "/services/branding", icon: <BrandingIcon /> },
     { title: "Digital продвижение", href: "/services/digital", icon: <DigitalPromotionIcon /> },
     { title: "Видеопродакшн", href: "/docs/primitives/progress", icon: <VideoProductionIcon /> },
@@ -34,82 +34,58 @@ const components: ComponentsProps[] = [
     { title: "Внедрение CRM системы", href: "/docs/primitives/tooltip", icon: <CRMIcon /> },
 ];
 
+const links: LinkProps[] = [
+    { title: "Главная", href: "/" },
+    { title: "О нас", href: "/about" },
+    { title: "Кейсы", href: "/cases" },
+]
+
 export const MobileNavigationBar = () => {
     return (
-        <NavigationMenu>
-            <NavigationMenuList className='flex flex-col items-center w-screen mb-40 space-y-2'>
-                <NavigationMenuItem>
-                    <Link href="/home" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            Главная
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/about" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            О нас
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/cases" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            Кейсы
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Accordion type="single" collapsible>
-                        <AccordionItem value="services">
-                            <AccordionTrigger className="flex justify-center gap-1">Услуги</AccordionTrigger>
-                            <AccordionContent>
-                                <ul className="flex flex-col gap-2 p-3">
-                                    {components.map((component) => (
-                                        <ListItem
-                                            key={component.title}
-                                            title={component.title}
-                                            href={component.href}
-                                            icon={component.icon}
-                                        />
-                                    ))}
-                                </ul>
-                            </AccordionContent>
-                        </AccordionItem>
-                    </Accordion>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/contacts" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            Контакты
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
-            </NavigationMenuList>
-        </NavigationMenu>
+        <nav className="mt-8 space-y-2 font-bold">
+            {links.map((link) => (
+                <LinkItem
+                    className="text-lg"
+                    key={link.title}
+                    linkTitle={link.title}
+                    linkHref={link.href}
+                />
+            ))}
+            <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="services">
+                    <AccordionTrigger className="text-lg font-medium">Услуги</AccordionTrigger>
+                    <AccordionContent className="flex flex-col space-y-1 pl-4">
+                        {innerLinks.map((link) => (
+                            <LinkItem
+                                key={link.title}
+                                linkTitle={link.title}
+                                linkHref={link.href}
+                                linkIcon={link.icon}
+                            />
+                        ))}
+                    </AccordionContent>
+                </AccordionItem>
+            </Accordion>
+            <LinkItem 
+                linkTitle={"Контакты"} 
+                linkHref={"/contacts"}
+            />
+        </nav>
     );
 };
 
-const ListItem = React.forwardRef<
-    React.ComponentRef<"a">,
-    React.ComponentPropsWithoutRef<"a"> & { icon?: React.ReactNode }
->(({ className, title, icon, ...props }, ref) => {
+const LinkItem = ({
+    linkTitle,
+    linkHref,
+    linkIcon,
+    className
+}: innerLinksProps) => {
     return (
-        <li>
-            <NavigationMenuLink asChild>
-                <a
-                    ref={ref}
-                    className={cn(
-                        "flex items-center gap-2 rounded-md p-3 leading-normal no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-                        className
-                    )}
-                    {...props}
-                >
-                    {icon && <span className="w-5 h-5">{icon}</span>}
-                    <div className="text-lg font-normal leading-none">{title}</div>
-                </a>
-            </NavigationMenuLink>
-        </li>
-    );
-});
-ListItem.displayName = "ListItem";
+        <Button key={linkTitle} variant={'ghost'} className={cn('flex justify-start text-base w-full rounded-none border-b-2 hover:rounded-md', className)}>
+            <Link href={linkHref} className="flex items-center gap-x-2">
+                {linkIcon && linkIcon}
+                <span>{linkTitle}</span>
+            </Link>
+        </Button>
+    )
+}

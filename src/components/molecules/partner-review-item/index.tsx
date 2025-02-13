@@ -43,8 +43,8 @@ export const ReviewItem = ({ rating, user_image, user_name, user_position, text 
                 <div className="flex justify-center lg:justify-start mt-3">
                     <Dialog open={open} onOpenChange={setOpen}>
                         <DialogTrigger asChild>
-                            <Button 
-                                variant="clean" 
+                            <Button
+                                variant="clean"
                                 className="mt-auto w-fit text-[#FF2B44] py-2 px-4 gap-1 text-center hover:bg-slate-100"
                             >
                                 <span className="text-base">Читать все</span>
@@ -55,11 +55,13 @@ export const ReviewItem = ({ rating, user_image, user_name, user_position, text 
                             {/* Контент модалки с полным текстом */}
                             <div className="lg:px-5 ">
                                 <div className="pt-5">
-                                    <div className="flex mb-4 gap-x-2">
-                                        {Array.from({ length: rating }).map((_, idx) => (
-                                            <Star key={idx} className="text-yellow-500" fill="currentColor" />
-                                        ))}
-                                    </div>
+                                    <DialogTitle>
+                                        <div className="flex mb-4 gap-x-2">
+                                            {Array.from({ length: rating }).map((_, idx) => (
+                                                <Star key={idx} className="text-yellow-500" fill="currentColor" />
+                                            ))}
+                                        </div>
+                                    </DialogTitle>
                                     <div className="flex gap-x-3">
                                         <Avatar className="bg-yellow-600">
                                             <AvatarImage src={user_image} />

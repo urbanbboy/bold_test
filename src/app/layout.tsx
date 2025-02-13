@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local'
 import "./globals.css";
+import { Providers } from "@/providers";
 
 const cannonade = localFont({
     src: [
@@ -35,7 +36,9 @@ function RootLayout({
             <body
                 className={`${cannonade.className} antialiased`}
             >
-                {children}
+                <Providers>
+                    {children}
+                </Providers>
             </body>
         </html>
     );
