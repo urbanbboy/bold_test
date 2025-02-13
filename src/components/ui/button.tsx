@@ -42,7 +42,6 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
   iconColor?: string;
-  isChevron?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(

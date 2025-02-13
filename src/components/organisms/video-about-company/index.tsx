@@ -7,7 +7,7 @@ import AboutUsSVG from '@/assets/company-info/about_us.svg'
 import MobileAboutUsSVG from '@/assets/company-info/mobile_about_us.svg'
 
 export const VideoAboutCompany = () => {
-    
+
     const onClickVideo = () => {
         console.log('clicked')
     }
@@ -22,7 +22,9 @@ export const VideoAboutCompany = () => {
                 size={'clean'}
                 className='z-20 p-[22px] md:p-[70px] rounded-full bg-black/30 backdrop-blur-sm shadow-md cursor-pointer hover:shadow-2xl transition-all duration-200'
             >
-                <Play size={20} color="#ffffff" style={{ width: '64px', height: '64px' }} />
+                <motion.div whileHover={{ scale: 1.2 }} transition={{ duration: 0.2 }}>
+                    <Play size={20} color="#ffffff" style={{ width: '64px', height: '64px' }} />
+                </motion.div>
             </Button>
             <motion.div
                 className='absolute'

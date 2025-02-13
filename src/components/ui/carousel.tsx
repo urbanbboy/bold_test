@@ -4,7 +4,7 @@ import * as React from "react"
 import useEmblaCarousel, {
     type UseEmblaCarouselType,
 } from "embla-carousel-react"
-import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -32,7 +32,7 @@ type CarouselContextProps = {
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
 
-function useCarousel() {
+export function useCarousel() {
     const context = React.useContext(CarouselContext)
 
     if (!context) {
@@ -195,7 +195,7 @@ CarouselItem.displayName = "CarouselItem"
 const CarouselPrevious = React.forwardRef<
     HTMLButtonElement,
     React.ComponentProps<typeof Button>
->(({ className, variant = "carousel", isChevron, iconColor, size = "icon", ...props }, ref) => {
+>(({ className, variant = "carousel", iconColor, size = "icon", ...props }, ref) => {
     const { orientation, scrollPrev, canScrollPrev } = useCarousel()
 
     return (
@@ -214,10 +214,7 @@ const CarouselPrevious = React.forwardRef<
             onClick={scrollPrev}
             {...props}
         >
-            {isChevron
-                ? <ChevronLeft className={cn('h-4 w-4', iconColor)} />
-                : <ArrowLeft className={cn('h-4 w-4', iconColor)} />
-            }
+            <ChevronLeft className={cn('h-4 w-4', iconColor)} />
             <span className="sr-only">Previous slide</span>
         </Button>
     )
@@ -227,7 +224,7 @@ CarouselPrevious.displayName = "CarouselPrevious"
 const CarouselNext = React.forwardRef<
     HTMLButtonElement,
     React.ComponentProps<typeof Button>
->(({ className, variant = "carousel", isChevron, iconColor, size = "icon", ...props }, ref) => {
+>(({ className, variant = "carousel", iconColor, size = "icon", ...props }, ref) => {
     const { orientation, scrollNext, canScrollNext } = useCarousel()
 
     return (
@@ -246,10 +243,7 @@ const CarouselNext = React.forwardRef<
             onClick={scrollNext}
             {...props}
         >
-            {isChevron
-                ? <ChevronRight className={cn('h-4 w-4', iconColor)} />
-                : <ArrowRight className={cn("h-8 w-8", iconColor)} />
-            }
+            <ChevronRight className={cn('h-4 w-4', iconColor)} />
             <span className="sr-only">Next slide</span>
         </Button>
     )
