@@ -24,7 +24,7 @@ export const SingleSliderItem = ({
     return (
         <CarouselItem key={index}>
             <div
-                className="relative h-[100dvh] flex items-center justify-center bg-cover bg-center bg-no-repeat"
+                className="relative h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: `url(${image})` }}
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-black to-black/20"></div>
