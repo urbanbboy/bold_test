@@ -6,6 +6,7 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/s
 import { Button } from "@/components/ui/button"
 import { MobileLogo } from "@/components/atoms/logo"
 import { MobileNavigationBar } from "../mobile-navigation-bar"
+import { LanguageSelect } from "../language-select"
 
 export const MenuSheet = () => {
     const [open, setOpen] = useState<boolean>(false)
@@ -18,8 +19,9 @@ export const MenuSheet = () => {
                 </Button>
             </SheetTrigger>
             <SheetContent className="w-screen">
-                <SheetTitle>
+                <SheetTitle className="flex items-center">
                     <MobileLogo />
+                    <LanguageSelect isMobile />
                 </SheetTitle>
                 <MobileNavigationBar />
             </SheetContent>

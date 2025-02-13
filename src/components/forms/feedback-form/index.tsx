@@ -56,6 +56,7 @@ export const FeedbackForm = () => {
                                         <FormControl className="w-full">
                                             <Input
                                                 {...field}
+                                                type="name"
                                                 placeholder="Иван Иванов Иванович"
                                                 className="border-b-2 bg-transparent"
                                             />
@@ -95,6 +96,7 @@ export const FeedbackForm = () => {
                                         <FormControl className="w-full">
                                             <Input
                                                 {...field}
+                                                type="email"
                                                 placeholder="Введите электронную почту"
                                                 className="border-b-2 bg-transparent"
                                             />

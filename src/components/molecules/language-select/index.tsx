@@ -40,7 +40,7 @@ const languageList: LanguageProps[] = [
     }
 ];
 
-export const LanguageSelect = () => {
+export const LanguageSelect = ({isMobile}: { isMobile?: boolean}) => {
     const [selectedLanguage, setSelectedLanguage] = useState<string | undefined>('2');
 
     const onChangeLanguage = (value: string) => {
@@ -55,7 +55,7 @@ export const LanguageSelect = () => {
     return (
         <div>
             <Select value={selectedLanguage} onValueChange={onChangeLanguage}>
-                <SelectTrigger>
+                <SelectTrigger className={isMobile ? 'text-black' : ''}>
                     <SelectValue>
                         {selectedLang && (
                             <div className="flex items-center space-x-2">
