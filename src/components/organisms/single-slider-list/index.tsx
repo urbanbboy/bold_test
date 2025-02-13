@@ -73,7 +73,7 @@ export const SingleSliderList = () => {
                     delay: 8000,
                 })
             ]}
-            className="w-full max-w-[1920px] h-screen"
+            className="w-full max-w-[1920px]"
         >
             <CarouselContent>
                 {slides.map((slide, index) => (

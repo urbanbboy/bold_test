@@ -19,7 +19,7 @@ export const MenuSheet = () => {
                 </Button>
             </SheetTrigger>
             <SheetContent className="w-screen">
-                <SheetTitle className="flex items-center">
+                <SheetTitle className="flex justify-between">
                     <MobileLogo />
                     <LanguageSelect isMobile />
                 </SheetTitle>

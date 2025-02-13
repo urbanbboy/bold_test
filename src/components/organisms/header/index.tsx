@@ -19,18 +19,17 @@ export const Header = () => {
     }, []);
 
     return (
-        <div className={`fixed top-0 left-0 right-0 w-full max-w-[1920px] m-auto z-50 transition-all duration-300 ${
-            isScrolled ? "bg-black/30 backdrop-blur-md shadow-md" : "bg-transparent"
-        }`}>
+        <div className={`fixed top-0 left-0 right-0 w-full max-w-[1920px] m-auto z-50 transition-all duration-300 ${isScrolled ? "bg-black/30 backdrop-blur-md shadow-md" : "bg-transparent"}`}>
             <div className="flex justify-between items-center p-5 md:px-14 md:py-7">
                 <Logo />
                 <NavigationBar />
-                <div className="hidden lg:flex gap-1">
+                <div className="flex">
                     <LanguageSelect />
+                    <div className="flex lg:hidden">
+                        <MenuSheet />
+                    </div>
                 </div>
-                <div className="flex lg:hidden">
-                    <MenuSheet />
-                </div>
+
             </div>
 
         </div>
