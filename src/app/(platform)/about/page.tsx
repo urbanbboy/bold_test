@@ -7,7 +7,7 @@ import { CompanyPostList } from "@/components/organisms/company-post-list";
 import { CompanyTeam } from "@/components/organisms/company-team";
 import { OurPhilosophy } from "@/components/organisms/our-philosophy";
 import { PartnerReviewList } from "@/components/organisms/partner-review-list";
-import { FeedbackForm } from "@/components/templates/feedback-layout";
+import { CostCalculationLayout } from "@/components/templates/cost-calculation-layout";
 
 
 const AboutPage = () => {
@@ -20,7 +20,7 @@ const AboutPage = () => {
             <CompanyPostList />
             <CompanyPartners />
             <PartnerReviewList />
-            <FeedbackForm />
+            <CostCalculationLayout />
         </>
     );
 }

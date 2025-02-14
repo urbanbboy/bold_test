@@ -2,12 +2,6 @@
 
 import * as React from "react";
 import Link from "next/link";
-import BrandingIcon from '@/assets/dropdown/dropdown_1.svg';
-import DigitalPromotionIcon from '@/assets/dropdown/dropdown_2.svg';
-import VideoProductionIcon from '@/assets/dropdown/dropdown_3.svg';
-import WebDevIcon from '@/assets/dropdown/dropdown_4.svg';
-import MarketingPromotionIcon from '@/assets/dropdown/dropdown_5.svg';
-import CRMIcon from '@/assets/dropdown/dropdown_6.svg';
 
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
@@ -26,12 +20,12 @@ interface innerLinksProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> 
 }
 
 const innerLinks: LinkProps[] = [
-    { title: "Брендинг", href: "/services/branding", icon: <BrandingIcon /> },
-    { title: "Digital продвижение", href: "/services/digital", icon: <DigitalPromotionIcon /> },
-    { title: "Видеопродакшн", href: "/docs/primitives/progress", icon: <VideoProductionIcon /> },
-    { title: "Веб-разработка и дизайн", href: "/docs/primitives/scroll-area", icon: <WebDevIcon /> },
-    { title: "Комплексное маркетинговое продвижение", href: "/docs/primitives/tabs", icon: <MarketingPromotionIcon /> },
-    { title: "Внедрение CRM системы", href: "/docs/primitives/tooltip", icon: <CRMIcon /> },
+    { title: "Брендинг", href: "/services/branding" },
+    { title: "Digital продвижение", href: "/services/digital"},
+    { title: "Видеопродакшн", href: "/docs/primitives/progress"},
+    { title: "Веб-разработка и дизайн", href: "/docs/primitives/scroll-area"},
+    { title: "Комплексное маркетинговое продвижение", href: "/docs/primitives/tabs"},
+    { title: "Внедрение CRM системы", href: "/docs/primitives/tooltip"},
 ];
 
 const links: LinkProps[] = [
@@ -80,7 +74,6 @@ export const MobileNavigationBar = ({ closeSheet }: { closeSheet: () => void }) 
 const LinkItem = ({
     linkTitle,
     linkHref,
-    linkIcon,
     className,
     closeSheet
 }: innerLinksProps & { closeSheet: () => void }) => {
@@ -94,7 +87,6 @@ const LinkItem = ({
             }
         >
             <Link href={linkHref} className="flex items-center gap-x-2">
-                {linkIcon && linkIcon}
                 <span>{linkTitle}</span>
             </Link>
         </Button>

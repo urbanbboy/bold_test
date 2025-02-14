@@ -1,0 +1,84 @@
+"use client";
+
+import { useState } from "react";
+import { Command, CommandInput, CommandList, CommandItem } from "@/components/ui/command";
+import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
+import { Badge } from "@/components/ui/badge";
+import { Check, ChevronsUpDown, X } from "lucide-react";
+import { Label } from "@/components/ui/label";
+
+interface Option {
+    id: string;
+    label: string;
+}
+
+interface MultiSelectProps {
+    label: string;
+    options: Option[];
+    selected: string[];
+    setSelected: (selected: string[]) => void;
+    placeholder?: string;
+    description?: string;
+}
+
+export const MultiSelect = ({
+    label,
+    options,
+    selected,
+    setSelected,
+    placeholder = "Выберите...",
+    description,
+}: MultiSelectProps) => {
+    const [open, setOpen] = useState(false);
+
+    const toggleOption = (id: string) => {
+        setSelected(selected.includes(id) ? selected.filter((s) => s !== id) : [...selected, id]);
+    };
+
+    return (
+        <div className="w-full">
+            <Label className="mb-2">{label}</Label>
+            <div className="flex flex-wrap gap-2 border-b-2 p-2 bg-tranparent cursor-pointer" onClick={() => setOpen(true)}>
+                {selected.length > 0 ? (
+                    selected.map((id) => {
+                        const option = options.find((o) => o.id === id);
+                        return (
+                            <Badge key={id} variant="service" className="flex items-center gap-1">
+                                {option?.label}
+                                <X className="h-4 w-4 cursor-pointer" onClick={(e) => {
+                                    e.stopPropagation();
+                                    toggleOption(id);
+                                }} />
+                            </Badge>
+                        );
+                    })
+                ) : (
+                    <span className="text-muted-foreground">{placeholder}</span>
+                )}
+
+                <ChevronsUpDown className="ml-auto h-4 w-4 text-muted-foreground" />
+            </div>
+
+            <Popover open={open} onOpenChange={setOpen}>
+                <PopoverTrigger asChild>
+                    <span></span>
+                </PopoverTrigger>
+                <PopoverContent className="w-full p-0">
+                    <Command>
+                        <CommandInput placeholder="Поиск..." />
+                        <CommandList>
+                            {options.map(({ id, label }) => (
+                                <CommandItem key={id} onSelect={() => toggleOption(id)} className="cursor-pointer">
+                                    <Check className={`mr-2 h-4 w-4 ${selected.includes(id) ? "opacity-100" : "opacity-0"}`} />
+                                    {label}
+                                </CommandItem>
+                            ))}
+                        </CommandList>
+                    </Command>
+                </PopoverContent>
+            </Popover>
+
+            {description && <p className="text-xs text-muted-foreground mt-2">{description}</p>}
+        </div>
+    );
+}
