@@ -6,16 +6,10 @@ export const Providers: FC<PropsWithChildren> = ({ children }) => {
         <>
             <Toaster
                 className="toaster group"
-                closeButton
                 richColors
+                position="top-center"
                 duration={3000}
-                visibleToasts={20}
-                toastOptions={{
-                    classNames: {
-                        closeButton: "border-2 w-5 h-5",
-                        content: "p-1 text-sm",
-                    },
-                }}
+                visibleToasts={3}
             />
             {children}
         </>

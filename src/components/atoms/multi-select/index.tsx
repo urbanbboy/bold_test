@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Command, CommandInput, CommandList, CommandItem } from "@/components/ui/command";
+import { Command, CommandList, CommandItem } from "@/components/ui/command";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { Badge } from "@/components/ui/badge";
 import { Check, ChevronsUpDown, X } from "lucide-react";
@@ -65,10 +65,9 @@ export const MultiSelect = ({
                 </PopoverTrigger>
                 <PopoverContent className="w-full p-0">
                     <Command>
-                        <CommandInput placeholder="Поиск..." />
-                        <CommandList>
+                        <CommandList className="max-h-[200px] overflow-y-auto p-2">
                             {options.map(({ id, label }) => (
-                                <CommandItem key={id} onSelect={() => toggleOption(id)} className="cursor-pointer">
+                                <CommandItem key={id} onSelect={() => toggleOption(id)} className="cursor-pointer min-w-28">
                                     <Check className={`mr-2 h-4 w-4 ${selected.includes(id) ? "opacity-100" : "opacity-0"}`} />
                                     {label}
                                 </CommandItem>
