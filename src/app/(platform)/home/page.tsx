@@ -11,7 +11,8 @@ import { MarketingDepartment } from "@/components/organisms/marketing-department
 import { PartnerReviewList } from "@/components/organisms/partner-review-list";
 import { SingleSliderList } from "@/components/organisms/single-slider-list";
 import { VideoAboutCompany } from "@/components/organisms/video-about-company";
-import { FeedbackForm } from "@/components/templates/feedback-layout";
+import { FeedbackForm } from "@/components/forms/feedback-form";
+import { FormLayout } from "@/components/templates/form-layout";
 import { useRef } from "react";
 
 
@@ -36,7 +37,12 @@ const HomePage = () => {
             <Award />
             <CompanyPartners />
             <PartnerReviewList />
-            <FeedbackForm ref={feedbackRef} />
+            <FormLayout
+                ref={feedbackRef}
+                title={'Получите бесплатную консультацию'}
+                sub_title={"Оставьте контакты для связи,  и мы перезвоним вам"}
+                nestedForm={<FeedbackForm />}
+            />
         </div>
     );
 }
