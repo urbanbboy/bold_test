@@ -25,11 +25,11 @@ export const PageTitleLayout = ({
 }: PageTitleLayoutProps) => {
     return (
         <div className="h-screen max-w-[1920px] flex justify-center items-center bg-black/30">
-            <div className="max-w-[1280px] h-screen flex flex-col justify-center md:items-center gap-y-10 px-5">
+            <div className="max-w-[1280px] h-screen flex flex-col justify-center md:items-center gap-y-6 px-5">
                 <Breadcrumb>
                     <BreadcrumbList>
                         {breadcrumb?.map((item, idx) => (
-                            <div key={idx} className="flex">
+                            <div key={idx} className="flex items-center gap-3">
                                 <BreadcrumbItem>
                                     {idx !== breadcrumb.length - 1
                                         ? <BreadcrumbLink href={item.href}>{item.text}</BreadcrumbLink>
@@ -42,9 +42,9 @@ export const PageTitleLayout = ({
                         ))}
                     </BreadcrumbList>
                 </Breadcrumb>
-                <h1 className="text-secondary text-4xl md:text-5xl lg:text-7xl font-bold md:text-center">{title}</h1>
+                <h1 className="text-secondary text-4xl md:text-5xl lg:text-6xl font-bold md:text-center">{title}</h1>
                 {sub_title && <h3 className="text-muted-foreground text-sm md:text-md lg:text-lg md:text-center">{sub_title}</h3>}
-                <LinkButtonWithIcon>
+                <LinkButtonWithIcon className="mt-3">
                     {button_text}
                 </LinkButtonWithIcon>
             </div>

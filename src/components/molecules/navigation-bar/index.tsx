@@ -22,6 +22,7 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { PackageOpen } from "lucide-react";
 
 interface ComponentsProps {
     title: string;
@@ -37,28 +38,33 @@ const components: ComponentsProps[] = [
     },
     {
         title: "Digital продвижение",
-        href: "/services/digital",
+        href: "/services/smm",
         icon: <DigitalPromotionIcon />
     },
     {
         title: "Видеопродакшн",
-        href: "/docs/primitives/progress",
+        href: "/services/video-production",
         icon: <VideoProductionIcon />
     },
     {
         title: "Веб-разработка и дизайн",
-        href: "/docs/primitives/scroll-area",
+        href: "/services/site-creating",
         icon: <WebDevIcon />
     },
     {
         title: "Комплексное маркетинговое продвижение",
-        href: "/docs/primitives/tabs",
+        href: "/services/marketing-support",
         icon: <MarketingPromotionIcon />
     },
     {
         title: "Внедрение CRM системы",
-        href: "/docs/primitives/tooltip",
+        href: "/services/crm",
         icon: <CRMIcon />
+    },
+    {
+        title: "SEO-оптимизация",
+        href: "/services/seo",
+        icon: <PackageOpen />
     },
 ]
 

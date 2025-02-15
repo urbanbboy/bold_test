@@ -1,10 +1,9 @@
 
-
-const ServicesPage = () => {
+const ServicesPage = ({ children }: { children: React.ReactNode }) => {
     return (
-        <div>
-            Services Page
-        </div>
+        <>
+            {children}
+        </>
     );
 }
 
