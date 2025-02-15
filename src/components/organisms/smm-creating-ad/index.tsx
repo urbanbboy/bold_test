@@ -11,7 +11,7 @@ export const SMMCreatingAd = ({
     items,
 }: ISmmCreatingAdData) => {
     return (
-        <div className="w-full max-w-[1920px] flex justify-center px-4 md:px-16 lg:px-40 py-5 md:py-20">
+        <div className="w-full max-w-[1920px] flex justify-center px-4 md:px-16 lg:px-40 py-5 md:py-20 bg-[#FAFAFC]">
             <div className="max-w-[1280px] flex flex-col justify-center items-center gap-y-5 lg:gap-y-10">
                 <div className="flex flex-col xl:flex-row gap-4">
                     <div>

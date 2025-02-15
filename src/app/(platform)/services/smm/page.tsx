@@ -1,8 +1,9 @@
+import { CompanySmmTeam } from "@/components/organisms/company-smm-team-list";
 import { ServicePostList } from "@/components/organisms/service-post-list";
 import { SMMCreatingAd } from "@/components/organisms/smm-creating-ad";
 import { SMMPartnersCarousel } from "@/components/organisms/smm-partner-carousel";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
-import { smmCreatingAdData } from "@/consts/data";
+import { smmCreatingAdData, smmTeamMembers } from "@/consts/data";
 
 
 const serviceData = {
@@ -94,6 +95,10 @@ const Smm = () => {
                 eyebrow={smmCreatingAdData.eyebrow}
                 sub_title={smmCreatingAdData.sub_title}
                 items={smmCreatingAdData.items}
+            />
+            <CompanySmmTeam 
+                title={smmTeamMembers.title} 
+                items={smmTeamMembers.items}
             />
         </div>
     );

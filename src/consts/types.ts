@@ -12,3 +12,13 @@ export interface ISmmCreatingAdData {
         description: string;
     }[],
 }
+
+export interface ISmmTeamMembers {
+    title: string;
+    items: {
+        image: React.ReactNode;
+        number: string;
+        title: string;
+        description: string;
+    }[];
+}

@@ -1,7 +1,16 @@
 import CreatingAd1SVG from '@/assets/services/smm/creating-ad_1.svg';
 import CreatingAd2SVG from '@/assets/services/smm/creating-ad_2.svg';
 import CreatingAd3SVG from '@/assets/services/smm/creating-ad_3.svg';
-import { ISmmCreatingAdData } from './types';
+
+import TeamMember1SVG from '@/assets/services/smm/team-member_1.svg';
+import TeamMember2SVG from '@/assets/services/smm/team-member_2.svg';
+import TeamMember3SVG from '@/assets/services/smm/team-member_3.svg';
+import TeamMember4SVG from '@/assets/services/smm/team-member_4.svg';
+import TeamMember5SVG from '@/assets/services/smm/team-member_5.svg';
+import TeamMember6SVG from '@/assets/services/smm/team-member_6.svg';
+
+
+import { ISmmCreatingAdData, ISmmTeamMembers } from './types';
 
 
 
@@ -29,6 +38,48 @@ export const smmCreatingAdData: ISmmCreatingAdData = {
             icon: <CreatingAd3SVG/>,
             title: 'Оценка эффективности',
             description: 'измеряем охваты, вовлеченность и конверсии, чтобы вы видели, как инфлюенсеры влияют на рост вашего бизнеса.'
+        }
+    ]
+}
+
+export const smmTeamMembers: ISmmTeamMembers = {
+    title: 'Ваш личный SMM-отдел из 6 экспертов',
+    items: [
+        {
+            image: <TeamMember1SVG />,
+            number: '01',
+            title: 'Project Manager',
+            description: "Координирует работу команды, управляет сроками и постоянно взаимодействует с вами для достижения поставленных целей.",
+        },
+        {
+            image: <TeamMember2SVG />,
+            number: '02',
+            title: 'SMM-менеджер',
+            description: "Разрабатывает стратегию продвижения, анализирует аудиторию и конкурентов, планирует контент и рекламные кампании.",
+        },
+        {
+            image: <TeamMember3SVG />,
+            number: '03',
+            title: 'Мобилограф',
+            description: "Создает динамичный визуальный контент: фото, видео, Reels — все, что привлекает и удерживает внимание аудитории.",
+        },
+        {
+            image: <TeamMember4SVG />,
+            number: '04',
+            title: 'Графический дизайнер',
+            description: "Разрабатывает уникальные визуальные решения, создавая графику, которая выделит ваш бренд среди конкурентов.",
+        },
+        {
+            image: <TeamMember5SVG />,
+            number: '05',
+            title: 'Копирайтер',
+            description: "Пишет тексты, которые цепляют и побуждают к действию: посты, заголовки, описания продуктов и услуг.",
+        },
+        {
+            image: <TeamMember6SVG />,
+            number: '06',
+            title: 'Таргетолог',
+            description: "Привлечет вашу целевую аудиторию и настроит рекламу для максимального количества заявок и новых клиентов.",
         }
     ]
 }

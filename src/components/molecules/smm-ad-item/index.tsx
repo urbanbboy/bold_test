@@ -17,7 +17,7 @@ export const SmmAdItem = ({
     description
 }: SmmAdItemProps) => {
     return (
-        <Card className="rounded-2xl max-w-[421px]">
+        <Card className="rounded-2xl max-w-[421px] bg-transparent">
             <CardHeader className="relative p-0">
                 <Image
                     src={image}
