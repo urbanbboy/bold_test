@@ -21,11 +21,12 @@ interface innerLinksProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> 
 
 const innerLinks: LinkProps[] = [
     { title: "Брендинг", href: "/services/branding" },
-    { title: "Digital продвижение", href: "/services/digital"},
-    { title: "Видеопродакшн", href: "/docs/primitives/progress"},
-    { title: "Веб-разработка и дизайн", href: "/docs/primitives/scroll-area"},
-    { title: "Комплексное маркетинговое продвижение", href: "/docs/primitives/tabs"},
-    { title: "Внедрение CRM системы", href: "/docs/primitives/tooltip"},
+    { title: "Digital продвижение", href: "/services/smm"},
+    { title: "Видеопродакшн", href: "/services/video-production"},
+    { title: "Веб-разработка и дизайн", href: "/services/site-creating"},
+    { title: "Комплексное маркетинговое продвижение", href: "/services/marketing-support"},
+    { title: "Внедрение CRM системы", href: "/services/crm"},
+    { title: "SEO-оптимизация", href: "/services/seo",},
 ];
 
 const links: LinkProps[] = [
