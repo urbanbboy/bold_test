@@ -8,6 +8,7 @@ import {
     BreadcrumbSeparator
 } from "@/components/ui/breadcrumb"
 import { BreadcrumbProps } from "./type";
+import { Heading } from "@/components/atoms/heading";
 
 interface PageTitleLayoutProps {
     title: string;
@@ -42,7 +43,7 @@ export const PageTitleLayout = ({
                         ))}
                     </BreadcrumbList>
                 </Breadcrumb>
-                <h1 className="text-secondary text-4xl md:text-5xl lg:text-6xl font-bold md:text-center">{title}</h1>
+                <Heading as="h1" className="text-secondary md:text-center">{title}</Heading>
                 {sub_title && <h3 className="text-muted-foreground text-sm md:text-md lg:text-lg md:text-center">{sub_title}</h3>}
                 <LinkButtonWithIcon className="mt-3">
                     {button_text}

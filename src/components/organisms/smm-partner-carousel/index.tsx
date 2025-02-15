@@ -1,3 +1,4 @@
+import { Heading } from "@/components/atoms/heading";
 import { SmmCompanyPartnerItem } from "@/components/molecules/smm-company-partner-item";
 
 interface SMMPartnersCarouselProps {
@@ -14,7 +15,7 @@ export const SMMPartnersCarousel = ({
     return (
         <div className="w-full max-w-[1920px] p-4">
             <div className="relative flex flex-col justify-center items-center gap-y-7 bg-black rounded-xl px-7 py-9 md:py-24 text-center overflow-hidden">
-                <h1 className="text-primary-foreground text-2xl md:text-5xl font-bold">{title}</h1>
+                <Heading as="h2">{title}</Heading>
                 <p className="text-sm md:text-base text-muted-foreground max-w-sm">{sub_title}</p>
                 <div className="flex overflow-hidden group mb-14">
                     <div className="w-screen overflow-hidden mt-5">

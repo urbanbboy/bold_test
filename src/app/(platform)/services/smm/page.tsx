@@ -1,6 +1,9 @@
 import { ServicePostList } from "@/components/organisms/service-post-list";
+import { SMMCreatingAd } from "@/components/organisms/smm-creating-ad";
 import { SMMPartnersCarousel } from "@/components/organisms/smm-partner-carousel";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
+import { smmCreatingAdData } from "@/consts/data";
+
 
 const serviceData = {
     title: 'Подход, который выделит ваш бренд среди конкурентов',
@@ -63,6 +66,8 @@ const partnersData = [
     },
 ]
 
+
+
 const Smm = () => {
     return (
         <div>
@@ -83,6 +88,12 @@ const Smm = () => {
                 title={'Контент, который продает'}
                 sub_title={'Мы создаем визуалы, которые выделяют ваш бренд среди конкурентов'}
                 partnerList={partnersData}
+            />
+            <SMMCreatingAd
+                title={smmCreatingAdData.title}
+                eyebrow={smmCreatingAdData.eyebrow}
+                sub_title={smmCreatingAdData.sub_title}
+                items={smmCreatingAdData.items}
             />
         </div>
     );
