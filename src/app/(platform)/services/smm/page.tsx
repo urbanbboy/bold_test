@@ -1,4 +1,5 @@
 import { ServicePostList } from "@/components/organisms/service-post-list";
+import { SMMPartnersCarousel } from "@/components/organisms/smm-partner-carousel";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 
 const serviceData = {
@@ -31,6 +32,37 @@ const serviceData = {
     ]
 }
 
+const partnersData = [
+    {
+        id: "1",
+        image: '/images/services/smm/smm_partner.webp',
+    },
+    {
+        id: "2",
+        image: '/images/services/smm/smm_partner.webp',
+    },
+    {
+        id: "3",
+        image: '/images/services/smm/smm_partner.webp',
+    },
+    {
+        id: "4",
+        image: '/images/services/smm/smm_partner.webp',
+    },
+    {
+        id: "5",
+        image: '/images/services/smm/smm_partner.webp',
+    },
+    {
+        id: "6",
+        image: '/images/services/smm/smm_partner.webp',
+    },
+    {
+        id: "7",
+        image: '/images/services/smm/smm_partner.webp',
+    },
+]
+
 const Smm = () => {
     return (
         <div>
@@ -46,6 +78,11 @@ const Smm = () => {
             <ServicePostList
                 title={serviceData.title}
                 items={serviceData.items}
+            />
+            <SMMPartnersCarousel
+                title={'Контент, который продает'}
+                sub_title={'Мы создаем визуалы, которые выделяют ваш бренд среди конкурентов'}
+                partnerList={partnersData}
             />
         </div>
     );

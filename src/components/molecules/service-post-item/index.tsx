@@ -25,7 +25,7 @@ export const ServicePostItem = ({
                     alt={title}
                     width={648}
                     height={340}
-                    className="rounded-3xl w-full h-full bg-cover bg-center"
+                    className="rounded-3xl border w-full h-full bg-cover bg-center"
                 />
             </div>
             <div className="md:w-1/2 flex flex-col justify-center items-start gap-y-2 md:gap-y-4 lg:p-14">
