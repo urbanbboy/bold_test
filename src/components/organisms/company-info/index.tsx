@@ -34,9 +34,9 @@ const stats: { title: string, sub_title: string, icon: React.ReactNode }[] = [
 export const CompanyInfo = () => {
     return (
         <div className='w-full max-w-[1920px]'>
-            <div className='relative bg-foreground py-14 lg:py-36 px-4 md:px-40 text-white overflow-hidden z-10'>
-                <h1 className='text-3xl md:text-6xl font-bold mb-5'>Bold Brands International </h1>
-                <p className='text-rose-500'>совместно создаём прочную основу и уверенное будущее для вашей компании</p>
+            <div className='relative bg-background-dark py-14 lg:py-36 px-4 md:px-40 text-white overflow-hidden z-10'>
+                <h1 className='text-3xl md:text-5xl font-bold mb-5'>Bold Brands International </h1>
+                <p className='text-accent text-xl'>совместно создаём прочную основу и уверенное будущее для вашей компании</p>
                 <div className='flex justify-center flex-wrap gap-7 mt-8'>
                     {stats.map((stat, index) => (
                         <StatItem

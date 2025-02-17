@@ -31,7 +31,7 @@ export const SmmAdItem = ({
                 </span>
             </CardHeader>
             <CardContent className="mt-4 space-y-3">
-                <Heading as="h4" className="text-primary">{title}</Heading>
+                <Heading as="h4" className="text-primary text-xl md:text-2xl">{title}</Heading>
                 <SubTitle>{description}</SubTitle>
             </CardContent>
         </Card>

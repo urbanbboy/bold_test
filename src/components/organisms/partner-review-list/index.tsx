@@ -1,5 +1,6 @@
 'use client';
 
+import { Heading } from "@/components/atoms/heading";
 import { ReviewItem } from "@/components/molecules/partner-review-item"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
@@ -51,8 +52,8 @@ export const PartnerReviewList = () => {
         <div className="w-full max-w-[1920px] px-4 md:px-40 mb-24">
             <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-10">
                 <div className="flex flex-col justify-center gap-y-5 text-center lg:w-3/4">
-                    <h1 className="text-3xl lg:text-6xl font-bold">{data.title}</h1>
-                    <p className="text-sm text-gray">{data.description}</p>
+                    <Heading as="h2">{data.title}</Heading>
+                    <p className="text-xl text-gray2">{data.description}</p>
                 </div>
                 <div className="flex items-center justify-center">
                     <Carousel className="w-[350px] md:w-[480px] max-w-md">

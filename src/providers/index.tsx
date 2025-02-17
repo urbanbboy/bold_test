@@ -1,9 +1,12 @@
+"use client";
+
 import { FC, PropsWithChildren } from "react"
 import { Toaster } from 'sonner';
+import { StoreProvider } from "./redux-provider";
 
 export const Providers: FC<PropsWithChildren> = ({ children }) => {
     return (
-        <>
+        <StoreProvider>
             <Toaster
                 className="toaster group"
                 richColors
@@ -12,6 +15,6 @@ export const Providers: FC<PropsWithChildren> = ({ children }) => {
                 visibleToasts={3}
             />
             {children}
-        </>
+        </StoreProvider>
     )
 }

@@ -7,7 +7,7 @@ import { PhoneInput } from "@/components/ui/phone-input";
 import ruLabels from "react-phone-number-input/locale/ru.json";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { z } from "zod";
-import { LinkButtonWithIcon } from "@/components/atoms/link-button-with-icon";
+import { ButtonWithIcon } from "@/components/atoms/button-with-icon";
 import { toast } from "sonner";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CostCalculationSchema } from "./schema";
@@ -16,6 +16,7 @@ import { MultiSelect } from "@/components/atoms/multi-select";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
+import { Check } from "lucide-react";
 
 const servicesTypes = [
     { id: "branding", label: "Брендинг" },
@@ -24,6 +25,7 @@ const servicesTypes = [
     { id: "design", label: "Дизайн" },
     { id: "context_ads", label: "Контекстная реклама" },
     { id: "targeting", label: "Таргетированная реклама" },
+    { id: "site", label: "Создание сайта" },
 ];
 
 const businessTypes = [
@@ -47,6 +49,8 @@ export const CostCalculationForm = () => {
     const [selectedServices, setSelectedServices] = useState<string[]>([]);
     const [selectedExtras, setSelectedExtras] = useState<string[]>([]);
     const [openTerms, setOpenTerms] = useState(false);
+    const [isFirstStepCompleted, setIsFirstStepCompleted] = useState(false);
+
 
     const showTerms = () => {
         setOpenTerms((prev) => !prev);
@@ -54,6 +58,7 @@ export const CostCalculationForm = () => {
 
     const handleNextStep = () => {
         if (selectedExtras.length > 0 && selectedServices.length > 0) {
+            setIsFirstStepCompleted(true);
             setTabValue('contacts');
         } else {
             toast.error("Выберите хотя бы один вариант в каждом поле");
@@ -75,7 +80,7 @@ export const CostCalculationForm = () => {
     };
 
     return (
-        <Card className="bg-[#18181A] border-none md:p-8 rounded-3xl">
+        <Card className="bg-background-dark2 border-none md:p-8 rounded-3xl">
             <CardHeader className="font-bold text-primary-foreground text-xl md:text-3xl">
                 Заполните форму и получите предложение
             </CardHeader>
@@ -93,27 +98,32 @@ export const CostCalculationForm = () => {
                                     toast.error("Выберите хотя бы один вариант в каждом поле");
                                 }
                             }}>
-                                <TabsList className="mb-8 bg-transparent">
-                                    <TabsList className="flex flex-col items-start lg:flex-row mb-8 bg-transparent">
-                                        <TabsTrigger value='business' className="space-x-2 group">
-                                            <div className="border-2 rounded-full py-2 px-4  group-data-[state=active]:border-rose-500">
+                                <TabsList className="flex flex-col items-start lg:flex-row mb-8 mt-5 md:mt-0 bg-transparent">
+                                    <TabsTrigger value='business' className="space-x-2 group">
+                                        {isFirstStepCompleted
+                                            ? <div className="border-2 rounded-full p-2  group-data-[state=active]:border-accent">
+                                                <Check />
+                                            </div>
+                                            : <div className="border-2 rounded-full py-2 px-4  group-data-[state=active]:border-accent">
                                                 1
                                             </div>
-                                            <div className="flex flex-col text-left">
-                                                <span className="text-sm xl:text-base">О вашем бизнесе</span>
-                                                <span className="text-xs xl:text-sm">Тип бизнеса и услуги</span>
-                                            </div>
-                                        </TabsTrigger>
-                                        <TabsTrigger value='contacts' className="space-x-2 group">
-                                            <div className="border-2 rounded-full py-2 px-3.5  group-data-[state=active]:border-rose-500">
-                                                2
-                                            </div>
-                                            <div className="flex flex-col text-left">
-                                                <span className="text-sm xl:text-base">Контактные данные</span>
-                                                <span className="text-xs xl:text-sm">ВАши данные для связи</span>
-                                            </div>
-                                        </TabsTrigger>
-                                    </TabsList>
+                                        }
+
+
+                                        <div className="flex flex-col text-left">
+                                            <span className="text-sm xl:text-base">О вашем бизнесе</span>
+                                            <span className="text-xs xl:text-sm">Тип бизнеса и услуги</span>
+                                        </div>
+                                    </TabsTrigger>
+                                    <TabsTrigger value='contacts' className="space-x-2 group">
+                                        <div className="border-2 rounded-full py-2 px-3.5  group-data-[state=active]:border-accent">
+                                            2
+                                        </div>
+                                        <div className="flex flex-col text-left">
+                                            <span className="text-sm xl:text-base">Контактные данные</span>
+                                            <span className="text-xs xl:text-sm">Ваши данные для связи</span>
+                                        </div>
+                                    </TabsTrigger>
                                 </TabsList>
                                 <TabsContent value="business" className="space-y-8">
                                     <MultiSelect
@@ -132,9 +142,9 @@ export const CostCalculationForm = () => {
                                         placeholder="Выберите услуги"
                                         description="Мы адаптируем стратегию под ваши цели и платформы"
                                     />
-                                    <LinkButtonWithIcon type="button" onClick={handleNextStep}>
+                                    <ButtonWithIcon type="button" onClick={handleNextStep}>
                                         Продолжить
-                                    </LinkButtonWithIcon>
+                                    </ButtonWithIcon>
                                 </TabsContent>
                                 <TabsContent value="contacts" className="space-y-5">
                                     <FormField
@@ -228,7 +238,7 @@ export const CostCalculationForm = () => {
                                                 </FormItem>
                                             )}
                                         />
-                                        <LinkButtonWithIcon type="submit">Отправить</LinkButtonWithIcon>
+                                        <ButtonWithIcon type="submit">Отправить</ButtonWithIcon>
                                     </div>
                                 </TabsContent>
                             </Tabs>

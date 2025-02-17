@@ -1,10 +1,10 @@
-import Instagram from '@/assets/posts/instagram.svg'
+// import InstagramSVG from '@/assets/posts/instagram.svg'
 import TikTok from '@/assets/posts/tiktok.svg'
+import { ButtonWithIcon } from '@/components/atoms/button-with-icon'
+import { Heading } from '@/components/atoms/heading'
 import { CompanyPostItem } from '@/components/molecules/company-post-item'
-import { Button } from '@/components/ui/button'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import Autoplay from 'embla-carousel-autoplay'
-import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 
 
@@ -30,7 +30,7 @@ const data = {
             social_media: [
                 {
                     title: "подписчиков в Instagram",
-                    logo: <Instagram />,
+                    logo: <TikTok />,
                     subscribers: "+10,5K"
                 },
                 {
@@ -59,7 +59,7 @@ const data = {
             social_media: [
                 {
                     title: "подписчиков в Instagram",
-                    logo: <Instagram />,
+                    logo: <TikTok />,
                     subscribers: "+10,5K"
                 },
                 {
@@ -88,7 +88,7 @@ const data = {
             social_media: [
                 {
                     title: "подписчиков в Instagram",
-                    logo: <Instagram />,
+                    logo: <TikTok />,
                     subscribers: "+10,5K"
                 },
                 {
@@ -117,7 +117,7 @@ const data = {
             social_media: [
                 {
                     title: "подписчиков в Instagram",
-                    logo: <Instagram />,
+                    logo: <TikTok />,
                     subscribers: "+10,5K"
                 },
                 {
@@ -146,7 +146,7 @@ const data = {
             social_media: [
                 {
                     title: "подписчиков в Instagram",
-                    logo: <Instagram />,
+                    logo: <TikTok />,
                     subscribers: "+10,5K"
                 },
                 {
@@ -162,15 +162,17 @@ const data = {
 export const CompanyPostList = () => {
 
     return (
-        <div className='w-full max-w-[1920px] px-4 mt-14 lg:px-40 mb-20 md:mb-40'>
+        <div className='w-full max-w-[1920px] px-5 lg:px-14 xl:40 mt-14 mb-20 md:mb-40'>
             <div className='flex flex-col lg:flex-row lg:justify-between gap-5 mb-8'>
-                <h1 className='text-4xl lg:text-7xl font-bold'>{data.title}</h1>
-                <Button asChild variant={'clean'} className="mt-auto w-fit text-[#FF2B44] py-2 px-4 gap-1 text-center hover:bg-slate-100">
-                    <Link href={'/cases'}>
-                        <span className="">Все кейсы</span>
-                        <ChevronRight />
-                    </Link>
-                </Button>
+                <Heading as='h2' className='md:w-3/4'>{data.title}</Heading>
+                <Link href='/cases' className='flex items-end'>
+                    <ButtonWithIcon
+                        variant='feature'
+                        className=''
+                    >
+                        Все кейсы
+                    </ButtonWithIcon>
+                </Link>
             </div>
             <div className=''>
                 <Carousel

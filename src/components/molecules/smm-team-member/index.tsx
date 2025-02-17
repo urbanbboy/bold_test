@@ -22,7 +22,7 @@ export const SmmTeamMember = ({
             </CardHeader>
             <CardContent className="flex flex-col justify-center pt-6 gap-y-1">
                 <span>{number}</span>
-                <Heading as="h4" className="text-primary">{title}</Heading>
+                <Heading as="h4" className="text-primary text-sm md:text-xl">{title}</Heading>
                 <SubTitle>
                     {description}
                 </SubTitle>

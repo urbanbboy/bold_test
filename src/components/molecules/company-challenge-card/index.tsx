@@ -26,7 +26,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
         >
             <div className="mb-2">{logo}</div>
             <h3 className="text-[28px] leading-[1.2] font-semibold">{title}</h3>
-            <p className="text-base leading-tight font-thin text-gray overflow-hidden text-ellipsis max-h-24">{description}</p>
+            <p className="text-sm leading-tight font-thin text-gray2 overflow-hidden text-ellipsis max-h-24">{description}</p>
         </div>
     );
 };

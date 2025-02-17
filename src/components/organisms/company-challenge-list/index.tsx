@@ -5,8 +5,9 @@ import Challenge3SVG from '@/assets/company-challenge/challenge_3.svg'
 import Challenge4SVG from '@/assets/company-challenge/challenge_4.svg'
 import Challenge5SVG from '@/assets/company-challenge/challenge_5.svg'
 import Challenge6SVG from '@/assets/company-challenge/challenge_6.svg'
-import ChallengeCard from '@/components/molecules/company-challenge-card'
 import ChallengesBgSVG from '@/assets/backgrounds/challenges_bg.svg'
+import ChallengeCard from '@/components/molecules/company-challenge-card'
+import { Heading } from '@/components/atoms/heading'
 
 interface ItemProps {
     logo: React.ReactNode;
@@ -60,7 +61,7 @@ export const CompanyChallengeList = () => {
     return (
         <div className="w-full max-w-[1920px] px-4 md:px-40 lg:py-20 bg-[#FAFAFC]">
             <div className="relative py-4 lgc:py-32 z-10 overflow-hidden">
-                <h1 className="text-3xl lg:text-6xl font-bold text-center">{companyChallengeData.title}</h1>
+                <Heading as="h2" className="text-center">{companyChallengeData.title}</Heading>
                 <div className="relative">
                     <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-8 mt-5 lg:mt-14">
                         {companyChallengeData.items.map((challenge, index) => (

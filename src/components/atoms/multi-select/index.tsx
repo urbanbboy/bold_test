@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Command, CommandList, CommandItem } from "@/components/ui/command";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { Badge } from "@/components/ui/badge";
-import { Check, ChevronsUpDown, X } from "lucide-react";
+import { Check, ChevronDown, X } from "lucide-react";
 import { Label } from "@/components/ui/label";
 
 interface Option {
@@ -56,7 +56,7 @@ export const MultiSelect = ({
                     <span className="text-muted-foreground">{placeholder}</span>
                 )}
 
-                <ChevronsUpDown className="ml-auto h-4 w-4 text-muted-foreground" />
+                <ChevronDown className="ml-auto h-4 w-4 text-secondary" />
             </div>
 
             <Popover open={open} onOpenChange={setOpen}>
@@ -65,7 +65,7 @@ export const MultiSelect = ({
                 </PopoverTrigger>
                 <PopoverContent className="w-full p-0">
                     <Command>
-                        <CommandList className="max-h-[200px] overflow-y-auto p-2">
+                        <CommandList className="max-h-[230px] overflow-y-auto p-2">
                             {options.map(({ id, label }) => (
                                 <CommandItem key={id} onSelect={() => toggleOption(id)} className="cursor-pointer min-w-28">
                                     <Check className={`mr-2 h-4 w-4 ${selected.includes(id) ? "opacity-100" : "opacity-0"}`} />
@@ -77,7 +77,7 @@ export const MultiSelect = ({
                 </PopoverContent>
             </Popover>
 
-            {description && <p className="text-xs text-muted-foreground mt-2">{description}</p>}
+            {description && <p className="text-xs text-gray mt-2">{description}</p>}
         </div>
     );
 }

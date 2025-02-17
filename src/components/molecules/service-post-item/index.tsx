@@ -1,3 +1,4 @@
+import { Heading } from "@/components/atoms/heading";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import Image from "next/image"
@@ -29,8 +30,8 @@ export const ServicePostItem = ({
                 />
             </div>
             <div className="md:w-1/2 flex flex-col justify-center items-start gap-y-2 md:gap-y-4 lg:p-14">
-                <h1 className="text-xl md:text-3xl font-bold">{title}</h1>
-                {description && <p className="text-muted-foreground text-sm md:text-base">{description}</p>}
+                <Heading as="h4" className="">{title}</Heading>
+                {description && <p className="text-gray2 text-sm md:text-base">{description}</p>}
                 {tags && tags.map((tag) => (
                     <Badge variant={'tag'} key={tag.tags}>{tag.tags}</Badge>
                 ))}

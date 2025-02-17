@@ -1,9 +1,7 @@
+import { ButtonWithIcon } from "@/components/atoms/button-with-icon"
 import { Heading } from "@/components/atoms/heading"
 import { SmmTeamMember } from "@/components/molecules/smm-team-member"
-import { Button } from "@/components/ui/button"
 import { ISmmTeamMembers } from "@/consts/types"
-import { ChevronRight } from "lucide-react"
-import Link from "next/link"
 
 
 
@@ -17,12 +15,9 @@ export const CompanySmmTeam = ({
                 <div className="flex flex-col md:flex-row justify-between gap-4">
                     <Heading className="text-primary lg:w-2/4" as="h2">{title}</Heading>
                     <div className="flex items-end">
-                        <Button variant={'outline'} className="border-black" asChild>
-                            <Link href={"/services/smm"}>
-                                <span>Получить консультацию</span>
-                                <ChevronRight />
-                            </Link>
-                        </Button>
+                        <ButtonWithIcon variant="secondary" className="">
+                            Получить консультацию
+                        </ButtonWithIcon>
                     </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-5 md:mt-10">

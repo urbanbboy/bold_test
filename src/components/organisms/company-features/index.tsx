@@ -6,6 +6,7 @@ import Feature4SVG from '@/assets/features/feature_4.svg'
 import Feature5SVG from '@/assets/features/feature_5.svg'
 import Feature6SVG from '@/assets/features/feature_6.svg'
 import FeaturesBgSVG from '@/assets/backgrounds/features_bg.svg'
+import { Heading } from "@/components/atoms/heading"
 
 
 
@@ -58,13 +59,13 @@ const features: FeatureProps[] = [
 
 export const CompanyFeatures = () => {
     return (
-        <div className="w-full max-w-[1920px] m-auto px-4 sm:px-20 md:px-40 pb-20">
+        <section className="w-full max-w-[1920px] m-auto px-4 sm:px-20 md:px-40 pb-20">
             <div className="relative flex justify-center items-center py-10 md:py-16 px-4 text-center overflow-hidden">
                 <FeaturesBgSVG className="absolute -z-10 max-w-[1920px] m-auto" />
-                <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
+                <Heading as="h2">
                     Выводим компании в ТОП в <br className="hidden md:block" />
                     Центральной Азии и за ее пределами
-                </h1>
+                </Heading>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
                 {features.map((feature) => (
@@ -74,6 +75,6 @@ export const CompanyFeatures = () => {
                     />
                 ))}
             </div>
-        </div>
+        </section>
     )
 }

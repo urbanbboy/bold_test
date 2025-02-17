@@ -22,7 +22,7 @@ export const FeedbackContactItem: FC<FeedbackContactItemProps> = ({
     return (
         <div className='flex gap-2 items-start max-w-full'>
             {icon && (
-                <div className='bg-rose-500 rounded-full p-2 flex items-center justify-center'>
+                <div className='bg-accent rounded-full p-2 flex items-center justify-center'>
                     {icon}
                 </div>
             )}
@@ -32,12 +32,12 @@ export const FeedbackContactItem: FC<FeedbackContactItemProps> = ({
                     ? <Link 
                         target='_blank' 
                         href={href} 
-                        className={cn('text-white text-lg hover:underline', idx === lastIdx ? 'text-slate-600' : '')}
+                        className={cn('text-white text-lg hover:text-accent ', idx === lastIdx ? 'text-gray2' : '')}
                     >
                         {contact}
                     </Link>
                     : <span 
-                        className={cn('text-white text-lg hover:underline', idx === lastIdx ? 'text-slate-600' : '')}
+                        className={cn('text-white text-lg hover:text-accent', idx === lastIdx ? 'text-slate-600' : '')}
                     >
                         {contact}
                     </span>

@@ -1,4 +1,4 @@
-import { LinkButtonWithIcon } from "@/components/atoms/link-button-with-icon";
+import { ButtonWithIcon } from "@/components/atoms/button-with-icon";
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -44,10 +44,10 @@ export const PageTitleLayout = ({
                     </BreadcrumbList>
                 </Breadcrumb>
                 <Heading as="h1" className="text-secondary md:text-center">{title}</Heading>
-                {sub_title && <h3 className="text-muted-foreground text-sm md:text-md lg:text-lg md:text-center">{sub_title}</h3>}
-                <LinkButtonWithIcon className="mt-3">
+                {sub_title && <h3 className="text-gray text-sm md:text-md lg:text-lg md:text-center">{sub_title}</h3>}
+                <ButtonWithIcon className="mt-3">
                     {button_text}
-                </LinkButtonWithIcon>
+                </ButtonWithIcon>
             </div>
         </div>
     )

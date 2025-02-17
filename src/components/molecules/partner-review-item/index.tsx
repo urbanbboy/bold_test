@@ -35,10 +35,10 @@ export const ReviewItem = ({ rating, user_image, user_name, user_position, text 
                         </Avatar>
                         <div className="flex flex-col">
                             <h2 className="font-bold w-3/4 lg:w-full text-lg leading-6">{user_name}</h2>
-                            <div className="text-gray text-sm">{user_position}</div>
+                            <div className="text-gray2 text-sm">{user_position}</div>
                         </div>
                     </div>
-                    <p className="text-gray line-clamp-6 lg:line-clamp-10 mt-3">{text}</p>
+                    <p className="text-gray2 line-clamp-6 lg:line-clamp-10 mt-3">{text}</p>
                 </div>
                 <div className="flex justify-center lg:justify-start mt-3">
                     <Dialog open={open} onOpenChange={setOpen}>

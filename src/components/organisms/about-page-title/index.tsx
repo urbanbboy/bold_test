@@ -1,4 +1,4 @@
-import { LinkButtonWithIcon } from "@/components/atoms/link-button-with-icon"
+import { LinkButtonWithIcon } from "@/components/atoms/button-with-icon"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 
 export const AboutTitle = () => {

@@ -57,11 +57,11 @@ export const CompanyPostItem = (props: CompanyPostItemProps) => {
                 ))}
             </div>
             <div className="mt-3">
-                <h3 className="text-2xl md:text-3xl font-bold line-clamp-2">{title}</h3>
+                <h3 className="text-xl md:text-2xl font-bold line-clamp-2">{title}</h3>
                 <div className="flex items-center gap-2 mt-2 text-gray text-sm md:text-base">
-                    <span className="">{company_name}</span>
+                    <span className="text-sm">{company_name}</span>
                     <span className="w-2 h-2 bg-slate-300 rounded-full"></span>
-                    <span>{created_at}</span>
+                    <span className="text-sm">{created_at}</span>
                 </div>
             </div>
         </div>

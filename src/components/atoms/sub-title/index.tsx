@@ -11,7 +11,7 @@ export const SubTitle = ({
 }: SubTitleProps) => {
     return (
         <div className={cn(
-            'text-muted-foreground text-sm md:text-base',
+            'text-gray2 text-sm md:text-base',
             className
         )}>
             {children}

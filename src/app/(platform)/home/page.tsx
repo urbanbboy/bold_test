@@ -26,7 +26,7 @@ const HomePage = () => {
 
     return (
         <div className="">
-            <SingleSliderList />
+            <SingleSliderList onScrollToFeedback={scrollToFeedback} />
             <MarketingDepartment />
             <VideoAboutCompany />
             <CompanyInfo />

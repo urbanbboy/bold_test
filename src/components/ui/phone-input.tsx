@@ -22,60 +22,80 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 
 type PhoneInputProps = Omit<
-  React.ComponentProps<"input">,
-  "onChange" | "value" | "ref"
+    React.ComponentProps<"input">,
+    "onChange" | "value" | "ref"
 > &
-  Omit<RPNInput.Props<typeof RPNInput.default>, "onChange"> & {
-    onChange?: (value: RPNInput.Value) => void;
-  };
+    Omit<RPNInput.Props<typeof RPNInput.default>, "onChange"> & {
+        onChange?: (value: RPNInput.Value) => void;
+    };
 
 const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> =
-  React.forwardRef<React.ComponentRef<typeof RPNInput.default>, PhoneInputProps>(
-      ({ className, onChange, ...props }, ref) => {
-          return (
-              <RPNInput.default
-                  ref={ref}
-                  className={cn("flex bg-transparent", className)}
-                  flagComponent={FlagComponent}
-                  countrySelectComponent={CountrySelect}
-                  inputComponent={InputComponent}
-                  smartCaret={false}
-                  /**
-           * Handles the onChange event.
-           *
-           * react-phone-number-input might trigger the onChange event as undefined
-           * when a valid phone number is not entered. To prevent this,
-           * the value is coerced to an empty string.
-           *
-           * @param {E164Number | undefined} value - The entered value
-           */
-                  onChange={(value) => onChange?.(value || ("" as RPNInput.Value))}
-                  {...props}
-              />
-          );
-      },
-  );
+    React.forwardRef<React.ComponentRef<typeof RPNInput.default>, PhoneInputProps>(
+        ({ className, onChange, ...props }, ref) => {
+            // const [value, setValue] = React.useState<RPNInput.Value>();
+            // const inputRef = React.useRef<HTMLInputElement>(null)
+
+            // React.useEffect(() => {
+            //     if (inputRef.current) {
+            //         inputRef.current.focus();
+            //     }
+            // }, []);
+
+            return (
+                <RPNInput.default
+                    ref={ref}
+                    className={cn(
+                        "flex bg-transparent border-b-2 border-b-gray focus-within:border-b-graphic-light transition duration-200",
+                        className
+                    )}
+                    // value={value}
+                    flagComponent={FlagComponent}
+                    countrySelectComponent={CountrySelect}
+                    inputComponent={InputComponent}
+                    // inputComponent={(props) => (
+                    //     <InputComponent 
+                    //         {...props}
+                    //         // ref={inputRef}
+                    //         onFocus={}
+                    //         onClear={() => {
+                                
+                    //             setValue("" as RPNInput.Value)
+                    //             onChange?.("" as RPNInput.Value)
+                    //         }} 
+                    //     />
+                    // )}
+                    smartCaret={false}
+                    onChange={(value) => {
+                        // setValue(value || ("" as RPNInput.Value))
+                        onChange?.(value || ("" as RPNInput.Value))
+                    }}
+                    {...props}
+                />
+            );
+        },
+    );
 PhoneInput.displayName = "PhoneInput";
 
 const InputComponent = React.forwardRef<
-  HTMLInputElement,
-  React.ComponentProps<"input">
->(({ className, ...props }, ref) => (
-    <Input
-        className={cn("bg-transparent text-white placeholder:text-slate-600", className)}
-        {...props}
-        ref={ref}
-    />
-));
+    HTMLInputElement,
+    React.ComponentProps<"input"> & { onClear?: () => void }
+        >(({ className, onClear, ...props }, ref) => (
+            <Input
+                ref={ref}
+                className={cn("bg-transparent text-white border-none", className)}
+                onClear={onClear}
+                {...props}
+            />
+        ));
 InputComponent.displayName = "InputComponent";
 
 type CountryEntry = { label: string; value: RPNInput.Country | undefined };
 
 type CountrySelectProps = {
-  disabled?: boolean;
-  value: RPNInput.Country;
-  options: CountryEntry[];
-  onChange: (country: RPNInput.Country) => void;
+    disabled?: boolean;
+    value: RPNInput.Country;
+    options: CountryEntry[];
+    onChange: (country: RPNInput.Country) => void;
 };
 
 const CountrySelect = ({
@@ -90,7 +110,7 @@ const CountrySelect = ({
                 <Button
                     type="button"
                     variant="outline"
-                    className="flex gap-1 h-10 px-3 focus:z-10 border-none bg-transparent hover:bg-white/10"
+                    className="flex gap-1 h-10 px-3 focus:z-10 border-none bg-transparent rounded-sm hover:bg-white/20"
                     disabled={disabled}
                 >
                     <FlagComponent
@@ -133,8 +153,8 @@ const CountrySelect = ({
 };
 
 interface CountrySelectOptionProps extends RPNInput.FlagProps {
-  selectedCountry: RPNInput.Country;
-  onChange: (country: RPNInput.Country) => void;
+    selectedCountry: RPNInput.Country;
+    onChange: (country: RPNInput.Country) => void;
 }
 
 const CountrySelectOption = ({

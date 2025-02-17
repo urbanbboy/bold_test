@@ -10,7 +10,7 @@ import { z } from "zod";
 import { FeedbackSchema } from "./schema";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
-import { LinkButtonWithIcon } from "@/components/atoms/link-button-with-icon";
+import { ButtonWithIcon } from "@/components/atoms/button-with-icon";
 import { toast } from "sonner";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
@@ -52,13 +52,15 @@ export const FeedbackForm = () => {
                                 name="sender_name"
                                 render={({ field }) => (
                                     <FormItem className="flex flex-col items-start">
-                                        <FormLabel className="text-left text-slate-400">Имя</FormLabel>
+                                        <FormLabel>Имя</FormLabel>
                                         <FormControl className="w-full">
                                             <Input
                                                 {...field}
                                                 type="name"
                                                 placeholder="Иван Иванов Иванович"
                                                 className="border-b-2 bg-transparent"
+                                                error={!!form.formState.errors.sender_name}
+                                                onClear={() => form.setValue("sender_name", "")}
                                             />
                                         </FormControl>
                                         <FormMessage />
@@ -70,17 +72,17 @@ export const FeedbackForm = () => {
                                 name="sender_phone"
                                 render={({ field }) => (
                                     <FormItem className="flex flex-col items-start">
-                                        <FormLabel className="text-left text-slate-400">Номер телефона</FormLabel>
+                                        <FormLabel>Номер телефона</FormLabel>
                                         <FormControl className="w-full">
                                             <PhoneInput
+                                                {...field}
                                                 defaultCountry="KG"
                                                 international
                                                 limitMaxLength
-                                                countryCallingCodeEditable={false}
+                                                countryCallingCodeEditable={true}
                                                 labels={ruLabels}
                                                 placeholder="Введите номер телефона"
                                                 className="border-b-2"
-                                                {...field}
                                             />
                                         </FormControl>
                                         <FormMessage />
@@ -92,13 +94,15 @@ export const FeedbackForm = () => {
                                 name="sender_email"
                                 render={({ field }) => (
                                     <FormItem className="flex flex-col items-start">
-                                        <FormLabel className="text-left text-slate-400">Электронная почта</FormLabel>
+                                        <FormLabel>Электронная почта</FormLabel>
                                         <FormControl className="w-full">
                                             <Input
                                                 {...field}
                                                 type="email"
                                                 placeholder="Введите электронную почту"
                                                 className="border-b-2 bg-transparent"
+                                                error={!!form.formState.errors.sender_email}
+                                                onClear={() => form.setValue("sender_email", "")}
                                             />
                                         </FormControl>
                                         <FormMessage />
@@ -110,19 +114,21 @@ export const FeedbackForm = () => {
                                     control={form.control}
                                     name="acceptTerms"
                                     render={({ field }) => (
-                                        <FormItem className="flex flex-row items-start space-x-3 space-y-0 text-white">
+                                        <FormItem className="relative flex flex-row items-start space-x-3 space-y-0 text-white">
                                             <FormControl>
-                                                <Checkbox
-                                                    checked={field.value}
-                                                    onCheckedChange={field.onChange}
-                                                />
+                                                <div className="relative">
+                                                    <Checkbox
+                                                        checked={field.value}
+                                                        onCheckedChange={field.onChange}
+                                                    />
+                                                </div>
                                             </FormControl>
                                             <div className="space-y-1 leading-none">
                                                 <FormLabel className="text-sm md:text-md leading-6">
                                                     Я согласен на обработку моих данных в соответствии с{' '}
                                                     <span
                                                         onClick={showTerms}
-                                                        className="text-rose-500 underline hover:cursor-pointer"
+                                                        className="text-accent underline hover:cursor-pointer"
                                                     >
                                                         политикой конфиденциальности
                                                     </span>
@@ -135,14 +141,15 @@ export const FeedbackForm = () => {
                                                     </DialogContent>
                                                 </Dialog>
                                             </div>
+                                            {/* <FormMessage className="absolute " /> */}
                                         </FormItem>
                                     )}
                                 />
-                                <LinkButtonWithIcon
+                                <ButtonWithIcon
                                     type="submit"
                                 >
                                     Отправить
-                                </LinkButtonWithIcon>
+                                </ButtonWithIcon>
                             </div>
 
                         </div>

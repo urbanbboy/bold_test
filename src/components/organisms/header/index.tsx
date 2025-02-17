@@ -44,7 +44,7 @@ export const Header = () => {
             <div className="flex justify-between items-center p-5 md:px-14 md:py-7">
                 <Logo />
                 <NavigationBar />
-                <div className="flex">
+                <div className="flex gap-x-0.5">
                     <LanguageSelect />
                     <div className="flex lg:hidden">
                         <MenuSheet />

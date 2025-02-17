@@ -1,7 +1,6 @@
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge";
-import { ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ButtonWithIcon } from "@/components/atoms/button-with-icon";
 
 export interface FeatureProps {
     title: string;
@@ -17,7 +16,7 @@ export const CompanyFeatureItem = ({ bg_image, title, href, badges }: FeaturePro
                 <div className="w-full h-full absolute inset-0">{bg_image}</div>
             </div>
             <div className="p-6 flex flex-col flex-grow">
-                <h2 className="text-3xl font-semibold text-gray-900">{title}</h2>
+                <h2 className="text-2xl font-bold">{title}</h2>
                 <div className="flex items-center my-4 flex-wrap gap-2">
                     {badges.map((badge) => (
                         <Badge
@@ -29,12 +28,15 @@ export const CompanyFeatureItem = ({ bg_image, title, href, badges }: FeaturePro
                         </Badge>
                     ))}
                 </div>
-                <Button asChild variant={'clean'} className="mt-auto w-fit text-[#FF2B44] py-2 px-4 gap-1 text-center hover:bg-slate-100">
-                    <Link href={href}>
-                        <span className="">Подробнее</span>
-                        <ChevronRight />
-                    </Link>
-                </Button>
+                <Link href={href} className="mt-auto">
+                    <ButtonWithIcon
+                        variant="feature"
+                        className="text-accent"
+                    >
+                        Подробнее
+                    </ButtonWithIcon>
+                </Link>
+
             </div>
         </div>
     );

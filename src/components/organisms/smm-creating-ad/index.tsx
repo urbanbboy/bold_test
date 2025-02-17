@@ -15,8 +15,8 @@ export const SMMCreatingAd = ({
             <div className="max-w-[1280px] flex flex-col justify-center items-center gap-y-5 lg:gap-y-10">
                 <div className="flex flex-col xl:flex-row gap-4">
                     <div>
-                        <h5 className="text-muted-foreground uppercase">{eyebrow}</h5>
-                        <Heading className="text-primary" as="h2">{title}</Heading>
+                        <h5 className="text-gray uppercase">{eyebrow}</h5>
+                        <Heading as="h2">{title}</Heading>
                     </div>
                     <SubTitle className="text-md flex items-end max-w-sm">
                         {sub_title}

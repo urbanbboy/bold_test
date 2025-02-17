@@ -15,14 +15,14 @@ export const MenuSheet = () => {
     return (
         <Sheet open={open} onOpenChange={setOpen} >
             <SheetTrigger asChild>
-                <Button variant={'ghost'} className="hover:bg-white/30 p-0">
-                    <Menu size={32} style={{ width: '32px', height: "32px", color: '#FFF' }} />
+                <Button variant={'ghost'} className="bg-white/20 hover:bg-white/30 p-2 rounded-sm">
+                    <Menu size={32} className="dark:text-graphic-gray2 text-primary-foreground" style={{ width: '21px', height: "21px" }} />
                 </Button>
             </SheetTrigger>
-            <SheetContent className="w-screen">
+            <SheetContent className="w-screen p-3">
                 <SheetTitle className="flex justify-between items-center">
                     <MobileLogo />
-                    <span className="mr-14">
+                    <span className="mr-10">
                         <LanguageSelect isMobile />
                     </span>
                 </SheetTitle>

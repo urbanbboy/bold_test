@@ -22,9 +22,9 @@ export const StatItem = ({
             )}
         >
             {icon}
-            <div className='absolute top-1/3 left-1/4 w-64 space-y-3'>
-                <h1 className="text-7xl">{title}</h1>
-                <p>{sub_title}</p>
+            <div className='absolute top-1/4 left-1/4 w-64 space-y-3'>
+                <h1 className="text-4xl">{title}</h1>
+                <p className="text-gray text-base">{sub_title}</p>
             </div>
         </div>
     )

@@ -1,3 +1,4 @@
+import { Heading } from "@/components/atoms/heading"
 import { CompanyPartnerItem } from "@/components/molecules/company-partner-item"
 
 const data = {
@@ -38,7 +39,7 @@ export const CompanyPartners = () => {
 
     return (
         <>
-            <h1 className="text-center uppercase text-gray text-2xl">{data.title}</h1>
+            <Heading as="h4" className="text-center font-normal uppercase md:text-xl">{data.title}</Heading>
             <div className="relative flex overflow-hidden group mb-14 lg:mb-28">
                 <div className="relative w-full overflow-hidden">
                     <div className="flex whitespace-nowrap animate-loop-scroll">

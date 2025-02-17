@@ -81,7 +81,7 @@ export const FooterLinks = () => (
         {links.map(({ title, items }) => (
             <div key={title} className="flex flex-col gap-y-3">
                 <h2 className="text-xl">{title}</h2>
-                <ul className={cn('text-lg text-gray', items[0].icon ? 'flex gap-x-3' : '')}>
+                <ul className={cn('text-lg text-gray2', items[0].icon ? 'flex gap-x-3' : '')}>
                     {items.map((item) =>
                         item.icon ? (
                             <SocialItem key={item.href} {...item} />
@@ -105,19 +105,19 @@ export const FooterLinks = () => (
 
 const ContactItem = ({ label, href, title }: { label: string; href?: string; title: string; }) => (
     <li className="flex flex-col gap-y-2">
-        <span className='text-gray text-base'>{label}</span>
+        <span className='text-gray2 text-sm'>{label}</span>
         {href
             ?
             <Link
                 target='_blank'
                 href={href}
-                className='hover:underline'
+                className='hover:text-accent text-lg text-primary'
             >
                 {title}
             </Link>
             :
             <div
-                className='text-lg'
+                className='text-lg text-primary'
             >
                 {title}
             </div>}
@@ -126,15 +126,15 @@ const ContactItem = ({ label, href, title }: { label: string; href?: string; tit
 
 const SocialItem = ({ href, icon, label }: LinkProps) => (
     <li className="flex items-center gap-x-2">
-        <Link className="hover:underline" href={href} target="_blank" aria-label={label}>
+        <Link className="hover:text-accent rounded-full hover:shadow-md transition-all duration-300" href={href} target="_blank" aria-label={label}>
             {icon}
         </Link>
     </li>
 );
 
 const LinkItem = ({ href, title }: LinkProps) => (
-    <li>
-        <Link className="hover:underline" href={href}>
+    <li className=''>
+        <Link className="hover:text-accent" href={href}>
             {title}
         </Link>
     </li>

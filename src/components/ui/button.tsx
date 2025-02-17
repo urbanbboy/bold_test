@@ -10,17 +10,15 @@ const buttonVariants = cva(
         variants: {
             variant: {
                 default: "bg-primary text-primary-foreground hover:bg-primary/90",
-                destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
                 outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-                secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-                ghost: "hover:bg-accent hover:text-accent-foreground",
+                    "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
                 link: "text-primary underline-offset-4 hover:underline",
-                carousel: "bg-white/20 p-4 rounded-lg hover:bg-white/40 border-none",
+                carousel: "bg-white/20 p-4 rounded-md hover:bg-white/40 border-none",
                 review: "bg-slate-200 hover:bg-slate-300 rounded-xl",
                 clean: "",
+                primary: "bg-accent text-accent-foreground hover:bg-accent-hover disabled:bg-graphic-gray disabled:text-gray",
+                secondary: "border bg-transparent border-black text-primary hover:bg-graphic-dark hover:text-secondary disabled:border-graphic-gray disabled:text-gray",
+                ghost: "bg-tranparent border-graphic-dark text-primary disabled:text-gray ",
             },
             size: {
                 default: "h-10 px-4 py-2",
@@ -38,10 +36,10 @@ const buttonVariants = cva(
 )
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean
-  iconColor?: string;
+    asChild?: boolean;
+    iconColor?: string;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(

@@ -1,5 +1,6 @@
 import { MarketingChapter } from "@/components/molecules/marketing-department-chapter"
 import MarketingDepartmentBg from '@/assets/backgrounds/marketing_department.svg'
+import { Heading } from "@/components/atoms/heading"
 
 const marketingData = {
     title: "Bold Brands International ваш внешний отдел маркетинга",
@@ -26,10 +27,10 @@ export const MarketingDepartment = () => {
             <MarketingDepartmentBg className="absolute top-3/4 md:top-32 left-0 -z-50 max-w-[1920px]" />
             <div className="flex flex-col gap-y-16 w-full max-w-[1280px] py-14 md:py-36">
                 <div className="flex flex-col md:flex-row gap-y-5 gap-x-10">
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold">
+                    <Heading as="h2">
                         {marketingData.title}
-                    </h1>
-                    <p className="flex items-end text-gray text-lg lg:text-2xl">
+                    </Heading>
+                    <p className="flex items-end text-gray2 text-lg lg:text-2xl">
                         {marketingData.sub_title}
                     </p>
                 </div>

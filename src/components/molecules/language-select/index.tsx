@@ -11,6 +11,7 @@ import RussianIcon from "@/assets/dropdown/rus.svg";
 import UzbIcon from "@/assets/dropdown/usb.svg";
 import UsaIcon from "@/assets/dropdown/usa.svg";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface LanguageProps {
     id: string;
@@ -40,7 +41,7 @@ const languageList: LanguageProps[] = [
     }
 ];
 
-export const LanguageSelect = ({isMobile}: { isMobile?: boolean}) => {
+export const LanguageSelect = ({ isMobile }: { isMobile?: boolean }) => {
     const [selectedLanguage, setSelectedLanguage] = useState<string | undefined>('2');
 
     const onChangeLanguage = (value: string) => {
@@ -55,10 +56,14 @@ export const LanguageSelect = ({isMobile}: { isMobile?: boolean}) => {
     return (
         <div>
             <Select value={selectedLanguage} onValueChange={onChangeLanguage}>
-                <SelectTrigger className={isMobile ? 'text-black' : ''}>
+                <SelectTrigger
+                    className={cn(
+                        'hover:bg-white/20 transition-all duration-200',
+                        isMobile ? 'text-black' : ''
+                    )}>
                     <SelectValue>
                         {selectedLang && (
-                            <div className="flex items-center space-x-2">
+                            <div className="flex items-center space-x-1">
                                 <span>{selectedLang.icon}</span>
                                 <span className="pr-1">{selectedLang.shortTitle}</span>
                             </div>

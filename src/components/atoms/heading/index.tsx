@@ -1,13 +1,13 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-const headingVariants = cva("text-primary-foreground font-bold", {
+const headingVariants = cva("text-primary font-bold", {
     variants: {
         variant: {
-            h1: "text-4xl md:text-5xl lg:text-6xl",
-            h2: "text-2xl md:text-4xl lg:text-5xl",
-            h3: "text-xl md:text-3xl",
-            h4: "text-xl md:text-2xl"
+            h1: "text-3xl md:text-4xl lg:text-5xl xl:text-6xl",
+            h2: "text-[32px] md:text-4xl lg:text-5xl leading-9",
+            h3: "text-xl md:text-4xl",
+            h4: "text-lg md:text-3xl",
         },
     },
     defaultVariants: {

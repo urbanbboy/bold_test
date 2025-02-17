@@ -4,40 +4,44 @@ import { SingleSliderItem } from '@/components/molecules/single-slider-item'
 import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import Autoplay from 'embla-carousel-autoplay'
 import { Progress } from "@/components/ui/progress";
-import { useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import { CustomCarouselControls } from '@/components/molecules/custom-controls';
+import { useGetBannersQuery } from '@/api/Banners';
 
 
-const slides = [
-    {
-        title: 'Тратите много времени на маркетинг, но не видите результатов?',
-        sub_title: 'Эффективные решения от стратегии до реализации',
-        button_text: 'Получить консультацию',
-        button_href: '/contacts',
-        image: '/images/main_page/slide_1.png',
-        is_active: false,
-    },
-    {
-        title: 'Хотите увеличить выручку в 2,4 или 10 раз в этом году?',
-        sub_title: 'Комплексный маркетинг под ключ для вашего бизнеса',
-        button_text: 'Узнать как',
-        button_href: '/contacts',
-        image: '/images/main_page/slide_2.png',
-        is_active: false,
-    },
-    {
-        title: 'Хотите увеличить продажи и привлечь больше клиентов?',
-        sub_title: 'Бизнес-решения, нацеленные на результат',
-        button_text: 'Получить консультацию',
-        button_href: '/contacts',
-        image: '/images/main_page/slide_3.png',
-        is_active: false,
-    },
-]
+// const slides = [
+//     {
+//         title: 'Тратите много времени на маркетинг, но не видите результатов?',
+//         sub_title: 'Эффективные решения от стратегии до реализации',
+//         button_text: 'Получить консультацию',
+//         image: '/images/main_page/slide_1.png',
+//         is_active: false,
+//     },
+//     {
+//         title: 'Хотите увеличить выручку в 2,4 или 10 раз в этом году?',
+//         sub_title: 'Комплексный маркетинг под ключ для вашего бизнеса',
+//         button_text: 'Узнать как',
+//         image: '/images/main_page/slide_2.png',
+//         is_active: false,
+//     },
+//     {
+//         title: 'Хотите увеличить продажи и привлечь больше клиентов?',
+//         sub_title: 'Бизнес-решения, нацеленные на результат',
+//         button_text: 'Получить консультацию',
+//         image: '/images/main_page/slide_3.png',
+//         is_active: false,
+//     },
+// ]
 
-export const SingleSliderList = () => {
+interface SingleSliderListProps {
+    onScrollToFeedback: () => void;
+}
+
+export const SingleSliderList: FC<SingleSliderListProps> = ({ onScrollToFeedback }) => {
     const [progress, setProgress] = useState(0);
     const progressInterval = useRef<NodeJS.Timeout | null>(null);
+    const { data, error, isLoading } = useGetBannersQuery()
+
 
     useEffect(() => {
         const startProgress = () => {
@@ -62,11 +66,13 @@ export const SingleSliderList = () => {
         };
     }, []);
 
+    if (isLoading) return <p>Загрузка...</p>;
+    if (error) return <p>Ошибка загрузки данных</p>;
+
     return (
         <Carousel
             opts={{
                 loop: true,
-                // slidesToScroll: 1
             }}
             plugins={[
                 Autoplay({
@@ -76,12 +82,12 @@ export const SingleSliderList = () => {
             className="w-full h-screen max-w-[1920px]"
         >
             <CarouselContent>
-                {slides.map((slide, index) => (
+                {data?.map((slide, index) => (
                     <SingleSliderItem
+                        onScrollToFeedback={onScrollToFeedback}
                         key={index}
                         title={slide.title}
                         sub_title={slide.sub_title}
-                        button_href={slide.button_href}
                         button_text={slide.button_text}
                         index={index}
                         image={slide.image}
