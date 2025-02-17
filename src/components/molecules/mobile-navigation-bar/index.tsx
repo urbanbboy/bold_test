@@ -84,7 +84,7 @@ const LinkItem = ({
             key={linkTitle}
             variant={'ghost'}
             className={
-                cn('flex justify-start text-base w-full rounded-none border-b-2 hover:rounded-md', className)
+                cn('flex justify-start text-base w-full rounded-none border-b-2 border-graphic-gray hover:border-graphic-gray2  hover:bg-background-gray', className)
             }
         >
             <Link href={linkHref} className="flex items-center gap-x-2">

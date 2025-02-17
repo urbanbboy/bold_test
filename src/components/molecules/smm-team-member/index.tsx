@@ -21,8 +21,8 @@ export const SmmTeamMember = ({
                 {image}
             </CardHeader>
             <CardContent className="flex flex-col justify-center pt-6 gap-y-1">
-                <span>{number}</span>
-                <Heading as="h4" className="text-primary text-sm md:text-xl">{title}</Heading>
+                <span className="text-graphic-gray2">{number}</span>
+                <Heading as="h4" className="text-primary text-lg md:text-xl">{title}</Heading>
                 <SubTitle>
                     {description}
                 </SubTitle>

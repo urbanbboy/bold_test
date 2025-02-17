@@ -22,7 +22,7 @@ export const MenuSheet = () => {
             <SheetContent className="w-screen p-3">
                 <SheetTitle className="flex justify-between items-center">
                     <MobileLogo />
-                    <span className="mr-10">
+                    <span className="mr-12">
                         <LanguageSelect isMobile />
                     </span>
                 </SheetTitle>
