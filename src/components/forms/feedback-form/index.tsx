@@ -58,7 +58,6 @@ export const FeedbackForm = () => {
                                                 {...field}
                                                 type="name"
                                                 placeholder="Иван Иванов Иванович"
-                                                className="border-b-2 bg-transparent"
                                                 error={!!form.formState.errors.sender_name}
                                                 onClear={() => form.setValue("sender_name", "")}
                                             />
@@ -100,7 +99,6 @@ export const FeedbackForm = () => {
                                                 {...field}
                                                 type="email"
                                                 placeholder="Введите электронную почту"
-                                                className="border-b-2 bg-transparent"
                                                 error={!!form.formState.errors.sender_email}
                                                 onClear={() => form.setValue("sender_email", "")}
                                             />

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { CheckIcon, ChevronsUpDown } from "lucide-react";
+import { CheckIcon, ChevronDown } from "lucide-react";
 import * as RPNInput from "react-phone-number-input";
 import flags from "react-phone-number-input/flags";
 
@@ -104,8 +104,14 @@ const CountrySelect = ({
     options: countryList,
     onChange,
 }: CountrySelectProps) => {
+    const [isOpen, setIsOpen] = React.useState(false);
+
+    const handleTogglePopover = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
-        <Popover>
+        <Popover onOpenChange={handleTogglePopover}>
             <PopoverTrigger asChild>
                 <Button
                     type="button"
@@ -117,10 +123,12 @@ const CountrySelect = ({
                         country={selectedCountry}
                         countryName={selectedCountry}
                     />
-                    <ChevronsUpDown
+                    <ChevronDown
                         className={cn(
                             "-mr-2 size-4 opacity-50 text-white",
                             disabled ? "hidden" : "opacity-100",
+                            isOpen ? "rotate-180" : "rotate-0",
+                            "transition-transform duration-300"
                         )}
                     />
                 </Button>
@@ -129,7 +137,7 @@ const CountrySelect = ({
                 <Command>
                     <CommandInput placeholder="Поиск..." />
                     <CommandList>
-                        <ScrollArea className="h-72">
+                        <ScrollArea className="h-44">
                             <CommandEmpty>Не найдено.</CommandEmpty>
                             <CommandGroup>
                                 {countryList.map(({ value, label }) =>
