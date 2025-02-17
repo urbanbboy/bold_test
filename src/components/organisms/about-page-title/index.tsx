@@ -1,4 +1,4 @@
-import { LinkButtonWithIcon } from "@/components/atoms/button-with-icon"
+import { ButtonWithIcon } from "@/components/atoms/button-with-icon"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 
 export const AboutTitle = () => {
@@ -17,9 +17,9 @@ export const AboutTitle = () => {
                     </BreadcrumbList>
                 </Breadcrumb>
                 <h1 className="text-secondary text-4xl md:text-5xl lg:text-7xl font-bold md:text-center">Мы меняем представление о маркетинге в Центральной Азии</h1>
-                <LinkButtonWithIcon>
+                <ButtonWithIcon>
                     Получить консультацию
-                </LinkButtonWithIcon>
+                </ButtonWithIcon>
             </div>
         </div>
     )
