@@ -59,7 +59,7 @@ const companyChallengeData: companyChallengeDataProps = {
 
 export const CompanyChallengeList = () => {
     return (
-        <div className="w-full max-w-[1920px] px-4 md:px-40 lg:py-20 bg-[#FAFAFC]">
+        <div className="bg-background-gray">
             <div className="relative py-4 lgc:py-32 z-10 overflow-hidden">
                 <Heading as="h2" className="text-center">{companyChallengeData.title}</Heading>
                 <div className="relative">

@@ -159,56 +159,48 @@ const data = {
     ]
 }
 
+
 export const CompanyPostList = () => {
+    const mobilePosts = data.items.slice(0, 3)
 
     return (
-        <div className='w-full max-w-[1920px] px-5 lg:px-14 xl:40 mt-14 mb-20 md:mb-40'>
-            <div className='flex flex-col lg:flex-row lg:justify-between gap-5 mb-8'>
-                <Heading as='h2' className='md:w-3/4'>{data.title}</Heading>
-                <Link href='/cases' className='flex items-end'>
-                    <ButtonWithIcon
-                        variant='feature'
-                        className=''
-                    >
-                        Все кейсы
-                    </ButtonWithIcon>
+        <div className="w-screen overflow-x-hidden my-20">
+            <div className="max-w-[1280px] m-auto flex flex-col lg:flex-row lg:justify-between gap-5 mb-8 px-5 lg:px-0">
+                <Heading as="h2" className="lg:w-3/4">{data.title}</Heading>
+                <Link href="/cases" className="flex items-end">
+                    <ButtonWithIcon variant="feature">Все кейсы</ButtonWithIcon>
                 </Link>
             </div>
-            <div className=''>
+            <div className="px-0">
                 <Carousel
                     opts={{
-                        align: "center",
+                        align: "start",
                     }}
                     plugins={[
                         Autoplay({
                             delay: 8000,
                         })
                     ]}
-                    className="hidden md:flex w-full max-w-[1920px]"
+                    className="w-full hidden md:flex"
                 >
-                    <CarouselContent>
+                    <CarouselContent className="w-full gap-4">
                         {data.items.map((post, idx) => (
                             <CarouselItem key={idx} className="md:basis-1/2 xl:basis-1/3">
-                                <CompanyPostItem
-                                    key={idx}
-                                    {...post}
-                                />
+                                <CompanyPostItem {...post} />
                             </CarouselItem>
                         ))}
                     </CarouselContent>
                 </Carousel>
-                <div className='flex flex-col md:hidden'>
-                    {data.items.map((post, idx) => (
-                        <CompanyPostItem
-                            key={idx}
-                            {...post}
-                        />
+                <div className="flex flex-col md:hidden">
+                    {mobilePosts.map((post, idx) => (
+                        <CompanyPostItem key={idx} {...post} />
                     ))}
                 </div>
             </div>
         </div>
     )
 }
+
 
 
 

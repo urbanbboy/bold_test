@@ -13,41 +13,41 @@ import MobileStat4SVG from '@/assets/company-info/mobile-stat_4.svg';
 
 import CompanyInfoSVG from '@/assets/backgrounds/company_info.svg'
 import { StatItem } from '@/components/molecules/stat-item';
+import { Heading } from '@/components/atoms/heading';
 
 
 const stats: { title: string, sub_title: string, icon: React.ReactNode, mobile_icon: React.ReactNode }[] = [
     {
-        title: '30+',
-        sub_title: 'опытных экспертов, которые работают на ваш результат',
+        title: '150+',
+        sub_title: 'Успешных SMM-кампаний.',
         icon: <Stat1SVG />,
         mobile_icon: <MobileStat1SVG/>
     },
     {
-        title: 'Топ-1',
-        sub_title: 'маркетинговая компания по версии The Great Award of the Year 2023 за выдающиеся достижения в продвижении бизнеса.',
+        title: '600%',
+        sub_title: 'ROI от рекламы: до',
         icon: <Stat2SVG />,
         mobile_icon: <MobileStat2SVG/>
     },
     {
-        title: '60+',
-        sub_title: 'успешных проектов, которые помогли нашим клиентам увеличить продажи на 189%.',
+        title: '+80%',
+        sub_title: 'Средний рост заявок у клиентов:',
         icon: <Stat3SVG />,
         mobile_icon: <MobileStat3SVG/>
     },
     {
-        title: '35+',
-        sub_title: 'опыт в отраслях бизнеса — от салонов красоты до строительных компаний.',
+        title: '1,5+',
+        sub_title: 'просмотров органического контента (млн)',
         icon: <Stat4SVG />,
         mobile_icon: <MobileStat4SVG/>
     },
 ]
 
-export const CompanyInfo = () => {
+export const SmmStats = () => {
     return (
         <div className='w-full max-w-[1920px]'>
             <div className='relative bg-background-dark py-14 lg:py-36 px-4 md:px-40 text-white overflow-hidden z-10'>
-                <h1 className='text-3xl md:text-5xl font-bold mb-5'>Bold Brands International</h1>
-                <p className='text-accent text-xl'>совместно создаём прочную основу и уверенное будущее для вашей компании</p>
+                <Heading as='h4' className='text-gray font-light uppercase text-lg md:text-xl max-w-sm'>Цифры, которые говорят сами за себя</Heading>
                 <div className='flex justify-center flex-wrap gap-7 mt-8'>
                     {stats.map((stat, index) => (
                         <StatItem
@@ -57,6 +57,7 @@ export const CompanyInfo = () => {
                             icon={stat.icon}
                             mobile_icon={stat.mobile_icon}
                             idx={index}
+                            isService={true}
                         />
                     ))}
                 </div>

@@ -1,7 +1,9 @@
+import { ClientReviewList } from "@/components/organisms/client-review-list";
 import { CompanySmmTeam } from "@/components/organisms/company-smm-team-list";
 import { ServicePostList } from "@/components/organisms/service-post-list";
 import { SMMCreatingAd } from "@/components/organisms/smm-creating-ad";
 import { SMMPartnersCarousel } from "@/components/organisms/smm-partner-carousel";
+import { SmmStats } from "@/components/organisms/smm-stats";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { smmCreatingAdData, smmTeamMembers } from "@/consts/data";
 
@@ -96,10 +98,12 @@ const Smm = () => {
                 sub_title={smmCreatingAdData.sub_title}
                 items={smmCreatingAdData.items}
             />
-            <CompanySmmTeam 
-                title={smmTeamMembers.title} 
+            <CompanySmmTeam
+                title={smmTeamMembers.title}
                 items={smmTeamMembers.items}
             />
+            <SmmStats />
+            <ClientReviewList />
         </div>
     );
 }
