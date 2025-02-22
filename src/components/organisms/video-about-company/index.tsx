@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import { Play } from 'lucide-react'
@@ -11,7 +13,6 @@ export const VideoAboutCompany = () => {
     const onClickVideo = () => {
         console.log('clicked')
     }
-
     return (
         <div
             className="relative h-[400px] md:h-screen bg-[url('/images/main_page/video_bg.png')] bg-cover bg-center flex justify-center items-center"

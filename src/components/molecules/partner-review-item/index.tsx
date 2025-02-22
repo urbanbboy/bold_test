@@ -45,7 +45,7 @@ export const ReviewItem = ({ rating, user_image, user_name, user_position, text 
                         <DialogTrigger asChild>
                             <Button
                                 variant="clean"
-                                className="mt-auto w-fit text-[#FF2B44] py-2 px-4 gap-1 text-center hover:bg-slate-100"
+                                className="mt-auto w-fit text-accent py-2 px-4 gap-1 text-center hover:bg-background-gray2"
                             >
                                 <span className="text-base">Читать все</span>
                                 <ChevronRight />

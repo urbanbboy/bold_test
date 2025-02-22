@@ -8,6 +8,7 @@ export interface IServicePostItem {
     sub_title?: string;
     tags?: { tags: string }[],
     description?: string;
+    has_button?: boolean;
 }
 
 interface ServicePostListProps {
@@ -33,6 +34,7 @@ export const ServicePostList = ({
                             sub_title={post.sub_title}
                             description={post.description}
                             tags={post.tags}
+                            has_button={post.has_button}
                         />
                     ))}
                 </div>

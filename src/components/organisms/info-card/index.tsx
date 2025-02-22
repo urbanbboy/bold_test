@@ -7,7 +7,8 @@ interface InfoCardProps {
     title: string;
     sub_title?: string;
     description: string;
-    image: string;
+    image?: string;
+    video?: string;
     card_title: string;
     card_description: string;
     card_icon: React.ReactNode;
@@ -18,8 +19,8 @@ export const InfoCard = ({
     sub_title,
     description,
     image,
+    video,
     card_title,
-    // card_icon,
     card_description,
 }: InfoCardProps) => {
     return (
@@ -46,13 +47,16 @@ export const InfoCard = ({
                             </p>
                         </CardContent>
                     </Card>
-                    <Image
-                        src={image}
-                        alt={"Our philosophy"}
-                        width={648}
-                        height={404}
-                        className="rounded-2xl w-full"
-                    />
+                    {video && <div>Если есть видео, то видео</div>}
+                    {image &&
+                        <Image
+                            src={image}
+                            alt={"Our philosophy"}
+                            width={648}
+                            height={404}
+                            className="rounded-2xl w-full"
+                        />
+                    }
                 </div>
             </div>
         </div>

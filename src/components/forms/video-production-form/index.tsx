@@ -25,7 +25,7 @@ interface FeedbackFormProps {
     service_types: Type[];   
 }
 
-export const BrandingFeedbackForm = ({
+export const VideoProductionForm = ({
     business_types,
     service_types,
 }: FeedbackFormProps) => {
@@ -129,11 +129,11 @@ export const BrandingFeedbackForm = ({
                                         description="Это поможет нам лучше понять ваш бизнес и предложить оптимальное решение"
                                     />
                                     <MultiSelect
-                                        label="Выберите услуги"
+                                        label="Выберите тип видео"
                                         options={service_types}
                                         selected={selectedServiceTypes}
                                         setSelected={setSelectedServiceTypes}
-                                        placeholder="Выберите услуги из списка"
+                                        placeholder="Выберите из списка тип видео"
                                         description="Мы адаптируем стратегию под ваши цели и платформы"
                                     />
                                     <ButtonWithIcon type="button" onClick={handleNextStep}>

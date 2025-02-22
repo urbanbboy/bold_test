@@ -12,7 +12,7 @@ const buttonVariants = cva(
                 primary: "bg-accent text-accent-foreground hover:bg-accent-hover disabled:bg-graphic-gray disabled:text-gray",
                 secondary: "border bg-transparent text-primary hover:bg-graphic-dark hover:text-secondary disabled:border-graphic-gray disabled:text-gray",
                 ghost: "bg-tranparent border-none text-primary disabled:text-gray",
-                feature: "bg-tranparent border-none text-accent disabled:text-gray",
+                feature: "bg-tranparent hover:bg-background-gray2 border-none text-accent disabled:text-gray",
             },
         },
         defaultVariants: {
@@ -40,13 +40,14 @@ const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
         >
             {children}
             <span className={cn(
-                'bg-graphic-light rounded-sm',
-                variant == 'primary' ? 'p-2.5' : '',
-                variant == 'secondary' ? 'rounded-none group-hover:bg-transparent' : ''
+                'rounded-sm',
+                variant == 'primary' ? 'bg-white p-2.5' : '',
+                variant == 'secondary' ? 'rounded-none group-hover:bg-transparent' : '',
             )}>
                 <ChevronRight
                     className={cn(
-                        variant == 'feature' ? 'text-accent bg-background-gray group-hover:text-primary-foreground' : 'text-primary',
+                        'text-primary',
+                        variant == 'feature' && 'text-accent',
                     )}
                     size={32}
                 />

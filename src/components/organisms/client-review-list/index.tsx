@@ -17,7 +17,7 @@ const reviews = {
     ]
 };
 
-export const ClientReviewList = () => {
+export const ClientReviewList = ({hasSubTitle}: { hasSubTitle?: boolean }) => {
     const [currentPage, setCurrentPage] = useState(0);
     const totalPages = reviews.items.length;
 
@@ -39,7 +39,7 @@ export const ClientReviewList = () => {
             <div className="max-w-[1280px] m-auto">
                 <div className="flex flex-col md:flex-row justify-between gap-y-5">
                     <div className="space-y-4">
-                        <SubTitle className="uppercase lg:text-xl">{reviews.sub_title}</SubTitle>
+                        {hasSubTitle && <SubTitle className="uppercase lg:text-xl">{reviews.sub_title}</SubTitle>}
                         <Heading as="h2" className="max-w-screen-lg">{reviews.title}</Heading>
                     </div>
                     <div className="flex items-end gap-2">

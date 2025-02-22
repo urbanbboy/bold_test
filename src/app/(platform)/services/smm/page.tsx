@@ -119,7 +119,7 @@ const Smm = () => {
                 items={smmTeamMembers.items}
             />
             <SmmStats />
-            <ClientReviewList />
+            <ClientReviewList hasSubTitle />
             <FormLayout
                 title={"Узнайте стоимость SMM-продвижения"}
                 sub_title={"Оставьте контакты для связи, и мы перезвоним вам"}

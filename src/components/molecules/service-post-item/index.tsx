@@ -1,3 +1,4 @@
+import { ButtonWithIcon } from "@/components/atoms/button-with-icon";
 import { Heading } from "@/components/atoms/heading";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -10,6 +11,7 @@ interface ServicePostItemProps {
     sub_title?: string;
     tags?: { tags: string }[],
     description?: string;
+    has_button?: boolean;
 }
 
 export const ServicePostItem = ({
@@ -19,6 +21,7 @@ export const ServicePostItem = ({
     sub_title,
     tags,
     description,
+    has_button,
 }: ServicePostItemProps) => {
     return (
         <div className={cn('flex gap-5 flex-col-reverse', image_right ? 'lg:flex-row-reverse' : 'lg:flex-row')}>
@@ -42,6 +45,7 @@ export const ServicePostItem = ({
                         ))}
                     </div>
                 }
+                {has_button && <ButtonWithIcon variant="feature">Заказать</ButtonWithIcon>}
             </div>
         </div>
     )
