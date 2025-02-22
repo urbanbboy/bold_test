@@ -44,7 +44,7 @@ const stats: { title: string, sub_title: string, icon: React.ReactNode, mobile_i
 
 export const CompanyInfo = () => {
     return (
-        <div className='w-full max-w-[1920px]'>
+        <section className='w-full max-w-[1920px]'>
             <div className='relative bg-background-dark py-14 lg:py-36 px-4 md:px-40 text-white overflow-hidden z-10'>
                 <h1 className='text-3xl md:text-5xl font-bold mb-5'>Bold Brands International</h1>
                 <p className='text-accent text-xl'>совместно создаём прочную основу и уверенное будущее для вашей компании</p>
@@ -64,6 +64,6 @@ export const CompanyInfo = () => {
                     <CompanyInfoSVG className="absolute left-0 lg:left-auto -z-10 bottom-0 max-w-[1920px] object-cover" />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

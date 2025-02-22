@@ -25,7 +25,7 @@ const HomePage = () => {
 
 
     return (
-        <div className="">
+        <>
             <SingleSliderList onScrollToFeedback={scrollToFeedback} />
             <MarketingDepartment />
             <VideoAboutCompany />
@@ -40,10 +40,10 @@ const HomePage = () => {
             <FormLayout
                 ref={feedbackRef}
                 title={'Получите бесплатную консультацию'}
-                sub_title={"Оставьте контакты для связи,  и мы перезвоним вам"}
+                sub_title={"Оставьте контакты для связи, и мы перезвоним вам"}
                 nestedForm={<FeedbackForm />}
             />
-        </div>
+        </>
     );
 }
 
