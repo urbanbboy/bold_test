@@ -1,3 +1,5 @@
+'use client';
+
 // import InstagramSVG from '@/assets/posts/instagram.svg'
 import TikTok from '@/assets/posts/tiktok.svg'
 import { ButtonWithIcon } from '@/components/atoms/button-with-icon'

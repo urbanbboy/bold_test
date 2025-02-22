@@ -56,7 +56,6 @@ const AboutPage = () => {
             <PartnerReviewList />
             <FormLayout
                 title={'Рассчитайте стоимость услуги'}
-                sub_title={"Получите решение для вашего бизнеса!"}
                 nestedForm={
                     <CostCalculationForm
                         business_type={businessTypes}

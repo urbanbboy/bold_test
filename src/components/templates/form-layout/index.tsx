@@ -32,13 +32,11 @@ const data: ContactItem[] = [
 
 interface FormProps {
     title: string;
-    sub_title: string;
     nestedForm: React.ReactNode;
 }
 
 export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
     title,
-    sub_title,
     nestedForm
 }, ref) => {
     return (
@@ -49,7 +47,7 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
             <div className="m-auto max-w-[1280px] flex flex-col lg:flex-row items-center gap-4 py-10 lg:py-0 justify-center px-4 text-white">
                 <div className="flex flex-col gap-y-3 md:gap-y-8 lg:w-1/2">
                     <Heading as="h2" className="text-primary-foreground">{title}</Heading>
-                    <h3 className="text-gray text-xl">{sub_title}</h3>
+                    <h3 className="text-gray text-xl">Оставьте контакты для связи,  и мы перезвоним вам</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
                         {data.map((contact, idx) => (
                             <FeedbackContactItem

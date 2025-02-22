@@ -113,7 +113,6 @@ const Brading = () => {
             />
             <FormLayout
                 title={"Узнайте стоимость разработки бренда"}
-                sub_title={"Оставьте контакты для связи, и мы перезвоним вам"}
                 nestedForm={
                     <BrandingFeedbackForm
                         business_types={businessTypes}

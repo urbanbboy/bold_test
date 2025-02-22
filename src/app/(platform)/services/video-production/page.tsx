@@ -101,7 +101,6 @@ const VideoProduction = () => {
             <ClientReviewList />
             <FormLayout
                 title={"Рассчитайте стоимость вашего Видеопроекта"}
-                sub_title={"Оставьте контакты и мы перезвоним вам"}
                 nestedForm={
                     <VideoProductionForm
                         business_types={[]}

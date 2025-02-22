@@ -122,7 +122,6 @@ const Smm = () => {
             <ClientReviewList hasSubTitle />
             <FormLayout
                 title={"Узнайте стоимость SMM-продвижения"}
-                sub_title={"Оставьте контакты для связи, и мы перезвоним вам"}
                 nestedForm={
                     <SmmFeedbackForm 
                         business_types={businessTypes} 

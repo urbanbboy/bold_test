@@ -40,7 +40,6 @@ const HomePage = () => {
             <FormLayout
                 ref={feedbackRef}
                 title={'Получите бесплатную консультацию'}
-                sub_title={"Оставьте контакты для связи, и мы перезвоним вам"}
                 nestedForm={<FeedbackForm />}
             />
         </>
