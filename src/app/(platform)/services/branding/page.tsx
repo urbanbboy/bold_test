@@ -6,7 +6,7 @@ import { InfoCard } from "@/components/organisms/info-card";
 import { ServicePostList } from "@/components/organisms/service-post-list";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { smmTeamMembers } from "@/consts/data";
-import MobileCardSVG from '@/assets/our-philosophy/mobile_card.svg'
+import MobileCardSVG from '@/assets/info-card/mobile_card.svg'
 import { FormLayout } from "@/components/templates/form-layout";
 import { BrandingFeedbackForm } from "@/components/forms/branding-feedback-form";
 

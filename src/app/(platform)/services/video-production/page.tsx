@@ -1,6 +1,6 @@
 import { InfoCard } from "@/components/organisms/info-card";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
-import MobileCardSVG from '@/assets/our-philosophy/mobile_card.svg'
+import MobileCardSVG from '@/assets/info-card/mobile_card.svg'
 import { VideoAboutCompany } from "@/components/organisms/video-about-company";
 import { ServicePostList } from "@/components/organisms/service-post-list";
 import { ClientReviewList } from "@/components/organisms/client-review-list";

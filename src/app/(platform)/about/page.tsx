@@ -9,7 +9,7 @@ import { InfoCard } from "@/components/organisms/info-card";
 import { PartnerReviewList } from "@/components/organisms/partner-review-list";
 import { FormLayout } from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
-import MobileCardSVG from '@/assets/our-philosophy/mobile_card.svg'
+import MobileCardSVG from '@/assets/info-card/mobile_card.svg'
 
 
 const servicesTypes = [
