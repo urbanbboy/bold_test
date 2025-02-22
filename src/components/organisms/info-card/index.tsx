@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
-import CardSVG from '@/assets/our-philosophy/card.svg'
+import CardSVG from '@/assets/info-card/card.svg'
 import Image from "next/image"
 import { Heading } from "@/components/atoms/heading"
 
@@ -24,16 +24,16 @@ export const InfoCard = ({
     card_description,
 }: InfoCardProps) => {
     return (
-        <div className="max-w-[1920px] flex justify-center items-center">
-            <div className="max-w-[1280px] flex flex-col gap-8 md:gap-16 px-5 py-14 lg:py-36">
+        <section className="max-w-[1920px] flex justify-center items-center bg-background-gray">
+            <div className="max-w-[1280px] flex flex-col gap-8 md:gap-16 px-5 py-8 lg:py-24">
                 <div className="grid grid-cols-1 md:grid-cols-10 gap-4">
                     <div className="md:col-span-7 space-y-5">
                         <Heading as="h2" className=" text-3xl md:text-4xl lg:text-5xl">
                             {title}
                         </Heading>
-                        <div className="text-accent uppercase text-base md:text-xl">{sub_title}</div>
+                        {sub_title && <div className="text-accent uppercase text-base md:text-xl">{sub_title}</div>}
                     </div>
-                    <p className="md:col-span-3 text-gray2 flex items-start text-sm md:text-base">
+                    <p className="md:col-span-3 text-gray2 flex items-end text-sm md:text-base">
                         {description}
                     </p>
                 </div>
@@ -59,6 +59,6 @@ export const InfoCard = ({
                     }
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

@@ -31,12 +31,12 @@ const data: ContactItem[] = [
 ]
 
 interface FormProps {
-    title: string;
+    title?: string;
     nestedForm: React.ReactNode;
 }
 
 export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
-    title,
+    title = 'Рассчитайте стоимость услуги',
     nestedForm
 }, ref) => {
     return (

@@ -13,7 +13,7 @@ export const CompanyServiceCardList = ({
         <section className="w-full max-w-[1920px] flex justify-center px-4 md:px-16 lg:px-32 py-10 md:py-20">
             <div className="max-w-[1280px] space-y-9 md:space-y-14">
                 <div className="flex flex-col md:flex-row justify-between gap-4">
-                    <Heading className="text-primary lg:w-3/4" as="h2">{title}</Heading>
+                    <Heading className="text-primary lg:w-2/3" as="h2">{title}</Heading>
                     <div className="flex items-end">
                         <ButtonWithIcon variant="secondary" className="">
                             Получить консультацию

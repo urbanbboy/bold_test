@@ -48,6 +48,7 @@ const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
                     className={cn(
                         'text-primary',
                         variant == 'feature' && 'text-accent',
+                        variant == 'secondary' && 'group-hover:text-white',
                     )}
                     size={32}
                 />
