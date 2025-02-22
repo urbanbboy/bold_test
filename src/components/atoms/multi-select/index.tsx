@@ -8,15 +8,15 @@ import { Check, ChevronDown, X } from "lucide-react";
 import { Label } from "@/components/ui/label";
 
 interface Option {
-    id: string;
-    label: string;
+    id: number;
+    name: string;
 }
 
 interface MultiSelectProps {
     label: string;
     options: Option[];
-    selected: string[];
-    setSelected: (selected: string[]) => void;
+    selected: number[];
+    setSelected: (selected: number[]) => void;
     placeholder?: string;
     description?: string;
 }
@@ -31,7 +31,7 @@ export const MultiSelect = ({
 }: MultiSelectProps) => {
     const [open, setOpen] = useState(false);
 
-    const toggleOption = (id: string) => {
+    const toggleOption = (id: number) => {
         setSelected(selected.includes(id) ? selected.filter((s) => s !== id) : [...selected, id]);
     };
 
@@ -44,7 +44,7 @@ export const MultiSelect = ({
                         const option = options.find((o) => o.id === id);
                         return (
                             <Badge key={id} variant="service" className="flex items-center gap-1">
-                                {option?.label}
+                                {option?.name}
                                 <X className="h-4 w-4 cursor-pointer" onClick={(e) => {
                                     e.stopPropagation();
                                     toggleOption(id);
@@ -66,10 +66,10 @@ export const MultiSelect = ({
                 <PopoverContent className="w-full p-0">
                     <Command>
                         <CommandList className="max-h-[230px] overflow-y-auto p-2">
-                            {options.map(({ id, label }) => (
+                            {options.map(({ id, name }) => (
                                 <CommandItem key={id} onSelect={() => toggleOption(id)} className="cursor-pointer min-w-28">
                                     <Check className={`mr-2 h-4 w-4 ${selected.includes(id) ? "opacity-100" : "opacity-0"}`} />
-                                    {label}
+                                    {name}
                                 </CommandItem>
                             ))}
                         </CommandList>

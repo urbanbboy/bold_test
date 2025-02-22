@@ -41,7 +41,7 @@ export const Header = () => {
                 isVisible ? "translate-y-0" : "-translate-y-full"
             } bg-black/30 backdrop-blur-md shadow-md`}
         >
-            <div className="flex justify-between items-center p-5 md:px-14 md:py-7">
+            <div className="flex justify-between items-center p-5 md:px-14 md:py-5">
                 <Logo />
                 <NavigationBar />
                 <div className="flex gap-x-0.5">

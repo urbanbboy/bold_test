@@ -1,11 +1,11 @@
 import { ButtonWithIcon } from "@/components/atoms/button-with-icon"
 import { Heading } from "@/components/atoms/heading"
-import { SmmTeamMember } from "@/components/molecules/smm-team-member"
+import { ServiceCardItem } from "@/components/molecules/service-card-item"
 import { ISmmTeamMembers } from "@/consts/types"
 
 
 
-export const CompanySmmTeam = ({
+export const CompanyServiceCardList = ({
     title,
     items
 }: ISmmTeamMembers) => {
@@ -22,7 +22,7 @@ export const CompanySmmTeam = ({
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-5 md:mt-10">
                     {items.map((member) => (
-                        <SmmTeamMember
+                        <ServiceCardItem
                             key={member.title}
                             {...member}
                         />

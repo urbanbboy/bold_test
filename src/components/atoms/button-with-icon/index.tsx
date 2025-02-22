@@ -35,15 +35,18 @@ const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
     return (
         <Button 
             variant="ghost" 
-            className={cn(buttonVariants({ variant, className }))}
+            className={cn(buttonVariants({ variant, className }), 'group')}
             {...props}
         >
             {children}
-            <span className="bg-graphic-light p-2.5 rounded-sm">
+            <span className={cn(
+                'bg-graphic-light rounded-sm',
+                variant == 'primary' ? 'p-2.5' : '',
+                variant == 'secondary' ? 'rounded-none group-hover:bg-transparent' : ''
+            )}>
                 <ChevronRight
                     className={cn(
-                        variant == 'feature' ? 'text-accent' : 'text-primary',
-                        // variant == 'secondary' ? 'bg-graphic-dark' : '',
+                        variant == 'feature' ? 'text-accent bg-background-gray group-hover:text-primary-foreground' : 'text-primary',
                     )}
                     size={32}
                 />

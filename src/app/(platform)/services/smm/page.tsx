@@ -1,6 +1,6 @@
 import { SmmFeedbackForm } from "@/components/forms/smm-feedback-form";
 import { ClientReviewList } from "@/components/organisms/client-review-list";
-import { CompanySmmTeam } from "@/components/organisms/company-smm-team-list";
+import { CompanyServiceCardList } from "@/components/organisms/company-service-card-list";
 import { ServicePostList } from "@/components/organisms/service-post-list";
 import { SMMCreatingAd } from "@/components/organisms/smm-creating-ad";
 import { SMMPartnersCarousel } from "@/components/organisms/smm-partner-carousel";
@@ -71,7 +71,21 @@ const partnersData = [
     },
 ]
 
+const promotionTypes = [
+    { id: 1, name: "Брендинг" },
+    { id: 2, name: "SMM-продвижение" },
+    { id: 3, name: "Продакшн" },
+    { id: 4, name: "Дизайн" },
+    { id: 5, name: "Контекстная реклама" },
+    { id: 6, name: "Таргетированная реклама" },
+    { id: 7, name: "Создание сайта" },
+];
 
+const businessTypes = [
+    { id: 1, name: "B2C" },
+    { id: 2, name: "B2B" },
+    { id: 3, name: "B2G" },
+];
 
 const Smm = () => {
     return (
@@ -100,7 +114,7 @@ const Smm = () => {
                 sub_title={smmCreatingAdData.sub_title}
                 items={smmCreatingAdData.items}
             />
-            <CompanySmmTeam
+            <CompanyServiceCardList
                 title={smmTeamMembers.title}
                 items={smmTeamMembers.items}
             />
@@ -109,7 +123,12 @@ const Smm = () => {
             <FormLayout
                 title={"Узнайте стоимость SMM-продвижения"}
                 sub_title={"Оставьте контакты для связи, и мы перезвоним вам"}
-                nestedForm={<SmmFeedbackForm />}
+                nestedForm={
+                    <SmmFeedbackForm 
+                        business_types={businessTypes} 
+                        promotion_types={promotionTypes}
+                    />
+                }
             />
         </div>
     );

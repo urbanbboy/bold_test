@@ -16,32 +16,31 @@ import { MultiSelect } from "@/components/atoms/multi-select";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
-import { SmmFeedbackFormSchema } from "./schema";
+import { BrandingFeedbackFormSchema } from "./schema";
 import { Type } from "@/api/Types/types";
 
 
 interface SmmFeedbackFormProps {
     business_types: Type[];
-    promotion_types: Type[];   
+    service_types: Type[];   
 }
 
-export const SmmFeedbackForm = ({
+export const BrandingFeedbackForm = ({
     business_types,
-    promotion_types,
+    service_types,
 }: SmmFeedbackFormProps) => {
-    const form = useForm<z.infer<typeof SmmFeedbackFormSchema>>({
-        resolver: zodResolver(SmmFeedbackFormSchema),
+    const form = useForm<z.infer<typeof BrandingFeedbackFormSchema>>({
+        resolver: zodResolver(BrandingFeedbackFormSchema),
         defaultValues: {
             sender_name: "",
             sender_phone: "",
             sender_email: "",
-            quantity_of_publications: '',
             acceptTerms: false,
         },
     });
 
     const [tabValue, setTabValue] = useState("business");
-    const [selectedPromotionTypes, setSelectedPromotionTypes] = useState<number[]>([]);
+    const [selectedServiceTypes, setSelectedServiceTypes] = useState<number[]>([]);
     const [selectedBusinessTypes, setSelectedBusinessTypes] = useState<number[]>([]);
     const [openTerms, setOpenTerms] = useState(false);
     const [isFirstStepCompleted, setIsFirstStepCompleted] = useState(false);
@@ -51,9 +50,7 @@ export const SmmFeedbackForm = ({
     };
 
     const handleNextStep = () => {
-        const publicationQuantity = form.getValues("quantity_of_publications");
-
-        if (selectedBusinessTypes.length > 0 && selectedPromotionTypes.length > 0 && Number(publicationQuantity) > 0) {
+        if (selectedBusinessTypes.length > 0 && selectedServiceTypes.length > 0) {
             setIsFirstStepCompleted(true);
             setTabValue('contacts');
         } else {
@@ -62,14 +59,14 @@ export const SmmFeedbackForm = ({
         }
     };
 
-    const onSubmit = (data: z.infer<typeof SmmFeedbackFormSchema>) => {
-        if (!selectedPromotionTypes.length || !selectedBusinessTypes.length) {
+    const onSubmit = (data: z.infer<typeof BrandingFeedbackFormSchema>) => {
+        if (!selectedServiceTypes.length || !selectedBusinessTypes.length) {
             toast.error("Выберите хотя бы один пункт в каждом поле!");
             return;
         }
         const formData = {
             ...data,
-            promotion_type: selectedPromotionTypes,
+            promotion_type: selectedServiceTypes,
             business_type: selectedBusinessTypes,
         };
         console.log(formData);
@@ -89,7 +86,7 @@ export const SmmFeedbackForm = ({
                                 if (value === "business") {
                                     setTabValue(value);
                                 }
-                                else if (selectedBusinessTypes.length > 0 && selectedPromotionTypes.length > 0) {
+                                else if (selectedBusinessTypes.length > 0 && selectedServiceTypes.length > 0) {
                                     setTabValue(value);
                                 } else {
                                     toast.error("Выберите хотя бы один вариант в каждом поле");
@@ -132,32 +129,12 @@ export const SmmFeedbackForm = ({
                                         description="Это поможет нам лучше понять ваш бизнес и предложить оптимальное решение"
                                     />
                                     <MultiSelect
-                                        label="Текущее состояние сайта"
-                                        options={promotion_types}
-                                        selected={selectedPromotionTypes}
-                                        setSelected={setSelectedPromotionTypes}
-                                        placeholder="Введите текущее состояние вашего сайта"
+                                        label="Выберите услуги"
+                                        options={service_types}
+                                        selected={selectedServiceTypes}
+                                        setSelected={setSelectedServiceTypes}
+                                        placeholder="Выберите услуги из списка"
                                         description="Мы адаптируем стратегию под ваши цели и платформы"
-                                    />
-                                    <FormField
-                                        control={form.control}
-                                        name="quantity_of_publications"
-                                        render={({ field }) => (
-                                            <FormItem className="flex flex-col items-start">
-                                                <FormLabel className="text-left text-slate-400">Количество публикаций в месяц</FormLabel>
-                                                <FormControl className="w-full">
-                                                    <Input
-                                                        {...field}
-                                                        type="number"
-                                                        placeholder="Сколько публикаций вам нужно в месяц"
-                                                        className="border-b-2 bg-transparent"
-                                                        onClear={() => form.setValue("quantity_of_publications", "")}
-                                                    />
-                                                </FormControl>
-                                                <span className="text-gray text-xs">Определим частоту взаимодействия с вашей аудиторией и объем охвата</span>
-                                                <FormMessage />
-                                            </FormItem>
-                                        )}
                                     />
                                     <ButtonWithIcon type="button" onClick={handleNextStep}>
                                         Продолжить

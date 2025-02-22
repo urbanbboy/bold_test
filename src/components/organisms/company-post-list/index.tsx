@@ -164,7 +164,7 @@ export const CompanyPostList = () => {
     const mobilePosts = data.items.slice(0, 3)
 
     return (
-        <div className="w-screen overflow-x-hidden my-20">
+        <div className="w-screen overflow-x-hidden py-20 bg-background-gray">
             <div className="max-w-[1280px] m-auto flex flex-col lg:flex-row lg:justify-between gap-5 mb-8 px-5 lg:px-0">
                 <Heading as="h2" className="lg:w-3/4">{data.title}</Heading>
                 <Link href="/cases" className="flex items-end">

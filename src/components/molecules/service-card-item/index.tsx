@@ -9,7 +9,7 @@ interface SmmTeamMemberProps {
     description: string;
 }
 
-export const SmmTeamMember = ({
+export const ServiceCardItem = ({
     image,
     number,
     title,

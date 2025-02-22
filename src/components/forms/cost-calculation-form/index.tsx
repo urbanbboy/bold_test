@@ -17,24 +17,19 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Check } from "lucide-react";
+import { Type } from "@/api/Types/types";
 
-const servicesTypes = [
-    { id: "branding", label: "Брендинг" },
-    { id: "smm", label: "SMM-продвижение" },
-    { id: "production", label: "Продакшн" },
-    { id: "design", label: "Дизайн" },
-    { id: "context_ads", label: "Контекстная реклама" },
-    { id: "targeting", label: "Таргетированная реклама" },
-    { id: "site", label: "Создание сайта" },
-];
 
-const businessTypes = [
-    { id: "b2c", label: "B2C" },
-    { id: "b2b", label: "B2B" },
-    { id: "b2g", label: "B2G" },
-];
 
-export const CostCalculationForm = () => {
+interface CostCalculationFormProps {
+    business_type: Type[];
+    service_type: Type[];
+}
+
+export const CostCalculationForm = ({
+    business_type,
+    service_type,
+}: CostCalculationFormProps) => {
     const form = useForm<z.infer<typeof CostCalculationSchema>>({
         resolver: zodResolver(CostCalculationSchema),
         defaultValues: {
@@ -46,8 +41,8 @@ export const CostCalculationForm = () => {
     });
 
     const [tabValue, setTabValue] = useState("business");
-    const [selectedServices, setSelectedServices] = useState<string[]>([]);
-    const [selectedExtras, setSelectedExtras] = useState<string[]>([]);
+    const [selectedServices, setSelectedServices] = useState<number[]>([]);
+    const [selectedBusinesses, setSelectedBusinesses] = useState<number[]>([]);
     const [openTerms, setOpenTerms] = useState(false);
     const [isFirstStepCompleted, setIsFirstStepCompleted] = useState(false);
 
@@ -57,7 +52,7 @@ export const CostCalculationForm = () => {
     };
 
     const handleNextStep = () => {
-        if (selectedExtras.length > 0 && selectedServices.length > 0) {
+        if (selectedBusinesses.length > 0 && selectedServices.length > 0) {
             setIsFirstStepCompleted(true);
             setTabValue('contacts');
         } else {
@@ -66,14 +61,14 @@ export const CostCalculationForm = () => {
     };
 
     const onSubmit = (data: z.infer<typeof CostCalculationSchema>) => {
-        if (!selectedServices.length || !selectedExtras.length) {
+        if (!selectedServices.length || !selectedBusinesses.length) {
             toast.error("Выберите хотя бы один пункт в каждом поле!");
             return;
         }
         const formData = {
             ...data,
-            serviceTypes: selectedServices,
-            businessTypes: selectedExtras,
+            service_types: selectedServices,
+            business_types: selectedBusinesses,
         };
         console.log(formData);
         toast.success("Успешно отправлено");
@@ -92,7 +87,7 @@ export const CostCalculationForm = () => {
                                 if (value === "business") {
                                     setTabValue(value);
                                 }
-                                else if (selectedExtras.length > 0 && selectedServices.length > 0) {
+                                else if (selectedBusinesses.length > 0 && selectedServices.length > 0) {
                                     setTabValue(value);
                                 } else {
                                     toast.error("Выберите хотя бы один вариант в каждом поле");
@@ -128,15 +123,15 @@ export const CostCalculationForm = () => {
                                 <TabsContent value="business" className="space-y-8">
                                     <MultiSelect
                                         label="Тип бизнеса"
-                                        options={businessTypes}
-                                        selected={selectedExtras}
-                                        setSelected={setSelectedExtras}
+                                        options={business_type}
+                                        selected={selectedBusinesses}
+                                        setSelected={setSelectedBusinesses}
                                         placeholder="Выберите тип бизнеса"
                                         description="Это поможет нам лучше понять ваш бизнес и предложить оптимальное решение"
                                     />
                                     <MultiSelect
                                         label="Какая услуга вам нужна?"
-                                        options={servicesTypes}
+                                        options={service_type}
                                         selected={selectedServices}
                                         setSelected={setSelectedServices}
                                         placeholder="Выберите услуги"
