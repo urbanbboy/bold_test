@@ -2,14 +2,6 @@ import CreatingAd1SVG from '@/assets/services/smm/creating-ad_1.svg';
 import CreatingAd2SVG from '@/assets/services/smm/creating-ad_2.svg';
 import CreatingAd3SVG from '@/assets/services/smm/creating-ad_3.svg';
 
-import TeamMember1SVG from '@/assets/services/smm/team-member_1.svg';
-import TeamMember2SVG from '@/assets/services/smm/team-member_2.svg';
-import TeamMember3SVG from '@/assets/services/smm/team-member_3.svg';
-import TeamMember4SVG from '@/assets/services/smm/team-member_4.svg';
-import TeamMember5SVG from '@/assets/services/smm/team-member_5.svg';
-import TeamMember6SVG from '@/assets/services/smm/team-member_6.svg';
-
-
 import { ISmmCreatingAdData, ISmmTeamMembers } from './types';
 import {
     ServiceBrandingIcon1,
@@ -17,8 +9,25 @@ import {
     ServiceBrandingIcon3,
     ServiceBrandingIcon4,
     ServiceBrandingIcon5
+} from '@/assets/services/branding';
+import {
+    Card1Icon,
+    Card2Icon,
+    Card3Icon,
+    SeoHowWeWork2,
+    SeoHowWeWork3,
+    SeoHowWeWork4,
+    SeoHowWeWork5
+} from '@/assets/services/seo';
+import {
+    ServiceSmmIcon1,
+    ServiceSmmIcon2,
+    ServiceSmmIcon3,
+    ServiceSmmIcon4,
+    ServiceSmmIcon5,
+    ServiceSmmIcon6
 } from '@/assets/services/smm';
-import { Card1Icon, Card2Icon, Card3Icon } from '@/assets/services/seo';
+import { ServiceCrmIcon1, ServiceCrmIcon2, ServiceCrmIcon3 } from '@/assets/services/crm';
 
 
 
@@ -55,37 +64,37 @@ export const smmTeamMembers: ISmmTeamMembers = {
     title: 'Ваш личный SMM-отдел из 6 экспертов',
     items: [
         {
-            image: <TeamMember1SVG />,
+            image: <ServiceSmmIcon1 />,
             number: '01',
             title: 'Project Manager',
             description: "Координирует работу команды, управляет сроками и постоянно взаимодействует с вами для достижения поставленных целей.",
         },
         {
-            image: <TeamMember2SVG />,
+            image: <ServiceSmmIcon2 />,
             number: '02',
             title: 'SMM-менеджер',
             description: "Разрабатывает стратегию продвижения, анализирует аудиторию и конкурентов, планирует контент и рекламные кампании.",
         },
         {
-            image: <TeamMember3SVG />,
+            image: <ServiceSmmIcon3 />,
             number: '03',
             title: 'Мобилограф',
             description: "Создает динамичный визуальный контент: фото, видео, Reels — все, что привлекает и удерживает внимание аудитории.",
         },
         {
-            image: <TeamMember4SVG />,
+            image: <ServiceSmmIcon4 />,
             number: '04',
             title: 'Графический дизайнер',
             description: "Разрабатывает уникальные визуальные решения, создавая графику, которая выделит ваш бренд среди конкурентов.",
         },
         {
-            image: <TeamMember5SVG />,
+            image: <ServiceSmmIcon5 />,
             number: '05',
             title: 'Копирайтер',
             description: "Пишет тексты, которые цепляют и побуждают к действию: посты, заголовки, описания продуктов и услуг.",
         },
         {
-            image: <TeamMember6SVG />,
+            image: <ServiceSmmIcon6 />,
             number: '06',
             title: 'Таргетолог',
             description: "Привлечет вашу целевую аудиторию и настроит рекламу для максимального количества заявок и новых клиентов.",
@@ -130,38 +139,36 @@ export const serviceBrandingData: ISmmTeamMembers = {
     ]
 }
 
-
 //CRM
 export const serviceCrmData: ISmmTeamMembers = {
     title: 'Почему вашему бизнесу нужна CRM?',
     items: [
         {
-            image: <TeamMember1SVG />,
+            image: <ServiceCrmIcon1 />,
             number: '01',
             title: 'Увеличение продаж',
             description: "Автоматизация рутинных задач и структурирование клиентских данных помогают сосредоточиться на главном — привлечении и удержании клиентов, что значительно повышает конверсию и общий объем продаж.",
         },
         {
-            image: <TeamMember2SVG />,
+            image: <ServiceCrmIcon2 />,
             number: '02',
             title: 'Простота управления клиентами',
             description: "Все данные о клиентах собраны в одном месте, что упрощает доступ к информации и позволяет вашей команде выстраивать персонализированное взаимодействие.",
         },
         {
-            image: <TeamMember3SVG />,
+            image: <ServiceCrmIcon3 />,
             number: '03',
             title: 'Экономия времени и ресурсов',
             description: "Оптимизация рабочих процессов снижает нагрузку на сотрудников, ускоряет выполнение задач и минимизирует ошибки, помогая снизить издержки.",
         },
         {
-            image: <TeamMember4SVG />,
+            image: <SeoHowWeWork5 />,
             number: '04',
             title: 'Аналитика для роста',
             description: "Систематизированная CRM-платформа предоставляет глубокую аналитику и отчеты, которые помогают выявлять слабые места, принимать стратегические решения и улучшать бизнес-процессы.",
         },
     ]
 }
-
 
 //SEO
 export const seoData: ISmmCreatingAdData = {
@@ -264,25 +271,25 @@ export const seoCardsData: ISmmTeamMembers = {
             description: "Погружаемся в специфику вашего рынка, изучаем сильные и слабые стороны конкурентов.",
         },
         {
-            image: <ServiceBrandingIcon2 />,
+            image: <SeoHowWeWork2 />,
             number: '02',
             title: 'Разработка индивидуальной стратегии',
             description: "Создаем план действий, учитывая особенности вашего бизнеса и цели",
         },
         {
-            image: <ServiceBrandingIcon3 />,
+            image: <SeoHowWeWork3 />,
             number: '03',
             title: 'Внедрение оптимизационных мер',
             description: "Проводим техническую и контентную оптимизацию, работаем над внешними факторами ранжирования.",
         },
         {
-            image: <ServiceBrandingIcon4 />,
+            image: <SeoHowWeWork4 />,
             number: '04',
             title: 'Отслеживание результатов и отчеты',
             description: "Регулярно предоставляем отчеты о проделанной работе и достигнутых результатах",
         },
         {
-            image: <ServiceBrandingIcon5 />,
+            image: <SeoHowWeWork5 />,
             number: '05',
             title: 'Постоянное улучшение',
             description: "Адаптируем стратегию в соответствии с изменениями алгоритмов поисковых систем и рыночными тенденциями",

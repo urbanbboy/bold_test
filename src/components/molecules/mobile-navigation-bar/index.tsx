@@ -50,7 +50,7 @@ export const MobileNavigationBar = ({ closeSheet }: { closeSheet: () => void }) 
             <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="services">
                     <AccordionTrigger className="text-lg font-medium">Услуги</AccordionTrigger>
-                    <AccordionContent className="flex flex-col space-y-1 pl-4">
+                    <AccordionContent className="flex flex-col text-primary space-y-1 pl-4">
                         {innerLinks.map((link) => (
                             <LinkItem
                                 key={link.title}
@@ -84,10 +84,10 @@ const LinkItem = ({
             key={linkTitle}
             variant={'ghost'}
             className={
-                cn('flex justify-start text-base w-full rounded-none border-b-2 border-graphic-gray hover:border-graphic-gray2  hover:bg-background-gray', className)
+                cn('flex justify-start text-base w-full text-wrap rounded-none border-b-2 border-graphic-gray hover:border-graphic-gray2  hover:bg-background-gray', className)
             }
         >
-            <Link href={linkHref} className="flex items-center gap-x-2">
+            <Link href={linkHref} className="text-start leading-5 gap-x-2">
                 <span>{linkTitle}</span>
             </Link>
         </Button>
