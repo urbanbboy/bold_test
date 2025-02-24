@@ -19,6 +19,7 @@ export interface ISmmTeamMembers {
         image: React.ReactNode;
         number: string;
         title: string;
-        description: string;
+        isContextAd?: boolean;
+        description?: string;
     }[];
 }

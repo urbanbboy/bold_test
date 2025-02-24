@@ -5,10 +5,11 @@ import { CircleAlert, X } from "lucide-react";
 interface InputProps extends React.ComponentProps<"input"> {
     error?: boolean;
     onClear?: () => void;
+    isPhone?: boolean;
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-    ({ className, type, error, onClear, ...props }, ref) => {
+    ({ className, type, error, onClear, isPhone, ...props }, ref) => {
         return (
             <div className="relative w-full">
                 <input
@@ -23,12 +24,19 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 />
                 {error ? (
                     <CircleAlert className="absolute right-3 top-1/2 -translate-y-1/2 text-accent text-lg" />
-                ) : props.value ? (
-                    <X
-                        style={{ width: '24px', height: '24px' }}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-secondary hover:bg-white/20 rounded cursor-pointer transition-all duration-300"
-                        onClick={onClear}
-                    />
+                ) : props.value && onClear ? (
+                    <div 
+                        className={cn(
+                            "absolute right-3 top-1/2 -translate-y-1/2",
+                            isPhone ? "hidden" : "block"
+                        )}
+                    >
+                        <X
+                            style={{ width: '24px', height: '24px' }}
+                            className="text-secondary hover:bg-white/20 rounded cursor-pointer transition-all duration-300"
+                            onClick={onClear}
+                        />
+                    </div>
                 ) : null}
             </div>
         );

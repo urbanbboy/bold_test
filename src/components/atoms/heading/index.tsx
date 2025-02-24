@@ -7,7 +7,7 @@ const headingVariants = cva("text-primary font-bold", {
             h1: "text-3xl md:text-4xl lg:text-5xl xl:text-6xl",
             h2: "text-[32px] md:text-4xl lg:text-5xl leading-9",
             h3: "text-xl md:text-4xl",
-            h4: "text-lg md:text-3xl",
+            h4: "text-2xl md:text-3xl",
         },
     },
     defaultVariants: {

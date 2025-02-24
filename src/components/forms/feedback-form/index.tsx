@@ -34,8 +34,15 @@ export const FeedbackForm = () => {
     })
 
     const onSubmit = (data: z.infer<typeof FeedbackSchema>) => {
-        console.log(data)
-        toast.success('Успешно отправлено')
+        if(!data.acceptTerms) {
+            toast.error('Примите соглашение с политикой конфиденциальности!')
+        } else {
+            const {acceptTerms, ...formData} = data
+
+            console.log(formData)
+            toast.success('Успешно отправлено')
+        }
+ 
     }
 
     return (
@@ -139,7 +146,6 @@ export const FeedbackForm = () => {
                                                     </DialogContent>
                                                 </Dialog>
                                             </div>
-                                            {/* <FormMessage className="absolute " /> */}
                                         </FormItem>
                                     )}
                                 />

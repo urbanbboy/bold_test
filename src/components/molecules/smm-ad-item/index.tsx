@@ -26,7 +26,7 @@ export const SmmAdItem = ({
                     height={267}
                     className="rounded-2xl h-[200px] md:h-[267px] object-cover w-full"
                 />
-                <span className="absolute top-3 left-3 bg-rose-500 p-2 rounded-2xl">
+                <span className="absolute top-3 left-3 bg-accent p-2 rounded-2xl">
                     {icon}
                 </span>
             </CardHeader>

@@ -27,7 +27,21 @@ import {
     ServiceSmmIcon5,
     ServiceSmmIcon6
 } from '@/assets/services/smm';
-import { ServiceCrmIcon1, ServiceCrmIcon2, ServiceCrmIcon3 } from '@/assets/services/crm';
+import {
+    ServiceCrmIcon1,
+    ServiceCrmIcon2,
+    ServiceCrmIcon3
+} from '@/assets/services/crm';
+import {
+    ContextAd2Icon,
+    ContextAd3Icon,
+    ContextAd4Icon,
+    ContextAd5Icon,
+    ContextAd6Icon,
+    ContextAdCard1Icon,
+    ContextAdCard2Icon,
+    ContextAdCard3Icon
+} from '@/assets/services/context-ad';
 
 
 
@@ -170,6 +184,36 @@ export const serviceCrmData: ISmmTeamMembers = {
     ]
 }
 
+export const serviceData = {
+    title: 'Наши услуги по интеграции CRM',
+    items: [
+        {
+            image: "/images/about_page/our_philosophy.webp",
+            image_right: false,
+            title: 'Рекламные видеоролики',
+            description: 'Анализируем рынок, изучаем конкурентов, выявляем особенности вашей целевой аудитории. Вместе с вами формируем цели продвижения.',
+        },
+        {
+            image: "/images/about_page/our_philosophy.webp",
+            image_right: true,
+            title: 'Разработка стратегии',
+            description: 'Создаем уникальную SMM-стратегию, которая выделяет ваш бренд и приносит реальные результаты.',
+        },
+        {
+            image: "/images/about_page/our_philosophy.webp",
+            image_right: false,
+            title: 'Создание контента',
+            description: 'Креатив-команда: мобилограф, копирайтер и дизайнер — разрабатывает визуалы и тексты, которые привлекают внимание и побуждают к покупкам.',
+        },
+        {
+            image: "/images/about_page/our_philosophy.webp",
+            image_right: true,
+            title: 'Настройка рекламы',
+            description: 'Таргетолог настраивает рекламу так, чтобы привлекать вашу целевую аудиторию и создавать поток заявок.',
+        },
+    ]
+}
+
 //SEO
 export const seoData: ISmmCreatingAdData = {
     title: 'Почему SEO-оптимизация необходима вашему бизнесу?',
@@ -293,6 +337,73 @@ export const seoCardsData: ISmmTeamMembers = {
             number: '05',
             title: 'Постоянное улучшение',
             description: "Адаптируем стратегию в соответствии с изменениями алгоритмов поисковых систем и рыночными тенденциями",
+        },
+    ]
+}
+
+//CONTEXT AD
+export const contextAdData: ISmmCreatingAdData = {
+    title: 'Почему контекстная реклама?',
+    items: [
+        {
+            image: '/images/services/context-ad/card_1.webp',
+            icon: <ContextAdCard1Icon />,
+            title: 'Точный таргетинг',
+            description: 'Ваши объявление видят пользователи уже заинтересованные в ваших товарах или услугах.'
+        },
+        {
+            image: '/images/services/context-ad/card_2.webp',
+            icon: <ContextAdCard2Icon />,
+            title: 'Гибкий бюджет',
+            description: 'Контролируйте расходы, оплачивая только реальные клики по вашим объявлениям.'
+        },
+        {
+            image: '/images/services/context-ad/card_3.webp',
+            icon: <ContextAdCard3Icon />,
+            title: 'Измеримый эффект',
+            description: 'Отслеживайте эффективность рекламы с помощью точной аналитики.'
+        }
+    ]
+}
+
+export const contextAdCardData: ISmmTeamMembers = {
+    title: 'Как мы работаем',
+    items: [
+        {
+            image: <ServiceBrandingIcon1 />,
+            number: '01',
+            title: 'Изучаем вашу нишу, конкурентов и целевую аудиторию',
+            isContextAd: true,
+        },
+        {
+            image: <ContextAd2Icon />,
+            number: '02',
+            title: 'Определяем запросы, по которым вас будут находить клиенты',
+            isContextAd: true,
+        },
+        {
+            image: <ContextAd3Icon />,
+            number: '03',
+            title: 'Пишем привлекательные тексты и создаем эффективные креативы',
+            isContextAd: true,
+        },
+        {
+            image: <ContextAd4Icon />,
+            number: '04',
+            title: 'Запускаем кампании в Google Ads и Яндекс Директ с точным таргетингом',
+            isContextAd: true,
+        },
+        {
+            image: <ContextAd5Icon />,
+            number: '05',
+            title: 'Постоянно следим за результатами и вносим улучшения',
+            isContextAd: true,
+        },
+        {
+            image: <ContextAd6Icon />,
+            number: '06',
+            title: 'Предоставляем регулярные отчеты и предлагаем стратегии для роста',
+            isContextAd: true,
         },
     ]
 }

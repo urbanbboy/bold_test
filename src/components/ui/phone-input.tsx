@@ -81,6 +81,7 @@ const InputComponent = React.forwardRef<
     React.ComponentProps<"input"> & { onClear?: () => void }
         >(({ className, onClear, ...props }, ref) => (
             <Input
+                isPhone
                 ref={ref}
                 className={cn("bg-transparent text-white border-none", className)}
                 onClear={onClear}

@@ -28,7 +28,7 @@ export const InfoCard = ({
             <div className="max-w-[1280px] flex flex-col gap-8 md:gap-16 px-5 py-8 lg:py-24">
                 <div className="grid grid-cols-1 md:grid-cols-10 gap-4">
                     <div className="md:col-span-7 space-y-5 flex flex-col items-start justify-end">
-                        <Heading as="h2" className=" text-3xl md:text-4xl lg:text-5xl">
+                        <Heading as="h2" className="text-3xl md:text-4xl lg:text-5xl">
                             {title}
                         </Heading>
                         {sub_title && <div className="text-accent uppercase text-base md:text-xl">{sub_title}</div>}

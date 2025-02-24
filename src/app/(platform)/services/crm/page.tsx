@@ -7,37 +7,9 @@ import { InfoCard } from "@/components/organisms/info-card";
 import { ServicePostList } from "@/components/organisms/service-post-list";
 import { FormLayout } from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
-import { serviceCrmData } from "@/consts/data";
+import { serviceCrmData, serviceData } from "@/consts/data";
 
-const serviceData = {
-    title: 'Наши услуги по интеграции CRM',
-    items: [
-        {
-            image: "/images/about_page/our_philosophy.webp",
-            image_right: false,
-            title: 'Рекламные видеоролики',
-            description: 'Анализируем рынок, изучаем конкурентов, выявляем особенности вашей целевой аудитории. Вместе с вами формируем цели продвижения.',
-        },
-        {
-            image: "/images/about_page/our_philosophy.webp",
-            image_right: true,
-            title: 'Разработка стратегии',
-            description: 'Создаем уникальную SMM-стратегию, которая выделяет ваш бренд и приносит реальные результаты.',
-        },
-        {
-            image: "/images/about_page/our_philosophy.webp",
-            image_right: false,
-            title: 'Создание контента',
-            description: 'Креатив-команда: мобилограф, копирайтер и дизайнер — разрабатывает визуалы и тексты, которые привлекают внимание и побуждают к покупкам.',
-        },
-        {
-            image: "/images/about_page/our_philosophy.webp",
-            image_right: true,
-            title: 'Настройка рекламы',
-            description: 'Таргетолог настраивает рекламу так, чтобы привлекать вашу целевую аудиторию и создавать поток заявок.',
-        },
-    ]
-}
+
 
 const Crm = () => {
     return (

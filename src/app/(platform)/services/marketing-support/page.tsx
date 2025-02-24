@@ -1,3 +1,4 @@
+import { MarketingSupportIcon } from "@/assets/info-card";
 import { MarketingSupportFeedbackForm } from "@/components/forms/marketing-support-form";
 import { CompanyPostList } from "@/components/organisms/company-post-list";
 import { CompanyServiceCardList } from "@/components/organisms/company-service-card-list";
@@ -79,7 +80,7 @@ const MarketingSupport = () => {
                 description={"это стратегический подход, который помогает бизнесу не просто заявить о себе, а достичь реальных результатов: увеличить продажи, расширить клиентскую базу и укрепить позиции на рынке."}
                 card_title={"В Bold Brands мы:"}
                 card_description={"объединяем все ключевые инструменты цифрового маркетинга в единую экосистему, чтобы вы получили максимум отдачи от каждого вложенных средств."}
-                card_icon={undefined}
+                card_icon={<MarketingSupportIcon />}
                 image={'/images/services/smm/creating-ad_1.webp'}
             />
             <ServicePostList

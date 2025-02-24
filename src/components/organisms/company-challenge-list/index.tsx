@@ -75,7 +75,7 @@ export const CompanyChallengeList = () => {
                         ))}
                     </div>
                 </div>
-                <ChallengesBg className="hidden lg:block absolute top-52 2xl:left-64 -z-10 max-w-[1920px] m-auto" />
+                <ChallengesBg className="hidden lg:block absolute inset-0 mx-auto w-full -z-10" />
             </div>
         </section>
     );

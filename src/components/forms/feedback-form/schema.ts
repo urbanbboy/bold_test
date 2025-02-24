@@ -8,7 +8,9 @@ export const FeedbackSchema = z.object({
         required_error: "Заполните поле!"
     }).refine(isValidPhoneNumber, { message: "Неверный номер телефона!" }),
     sender_email: string().email("Заполните поле!"),
-    acceptTerms: boolean().refine(value => value === true, {
-        message: "Вы должны принять условия!",
-    }),
+    acceptTerms: boolean(),
 })
+
+// .refine(value => value === true, {
+//     message: "Вы должны принять условия!",
+// })

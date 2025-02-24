@@ -1,6 +1,7 @@
 import { FeedbackContactItem } from "@/components/atoms/feedback-contact-item";
 import { Heading } from "@/components/atoms/heading";
 import { Mail, Phone } from "lucide-react"
+import Image from "next/image";
 import { forwardRef } from "react";
 
 interface ContactItem {
@@ -42,9 +43,21 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
     return (
         <div
             ref={ref}
-            className="w-full max-w-[1920px] min-h-screen bg-background-dark flex justify-center items-center"
+            className="relative w-full max-w-[1920px] min-h-screen bg-background-dark flex justify-center items-center"
         >
-            <div className="m-auto max-w-[1280px] flex flex-col lg:flex-row items-center gap-3 py-10 lg:py-0 justify-center px-4 text-white">
+            {/* Фоновое изображение */}
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-[800px]">
+                <Image
+                    src={"/images/form_bg.png"}
+                    alt="form_bg"
+                    layout="responsive"
+                    width={800}
+                    height={600}
+                />
+            </div>
+
+            {/* Контент */}
+            <div className="relative z-10 m-auto max-w-[1280px] flex flex-col lg:flex-row items-center gap-3 py-10 lg:py-0 justify-center px-4 text-white">
                 <div className="flex flex-col gap-y-3 md:gap-y-8 lg:w-1/2">
                     <Heading as="h2" className="text-primary-foreground">{title}</Heading>
                     <h3 className="text-gray text-xl">Оставьте контакты для связи, и мы перезвоним вам</h3>
