@@ -1,6 +1,6 @@
 import { Heading } from "@/components/atoms/heading"
 import { MarketingResultItem } from "@/components/molecules/marketing-result-item"
-import AwardBgSVG from '@/assets/backgrounds/award_bg.svg';
+import { AwardBg } from "@/assets/backgrounds";
 
 
 const data = [
@@ -37,7 +37,7 @@ export const MarketingResults = () => {
                     ))}
                 </div>
             </div>
-            <AwardBgSVG className="absolute top-0 md:top-20 md:left-2/4" />
+            <AwardBg className="absolute top-0 md:top-20 md:left-2/4" />
         </div>
     )
 }
