@@ -22,7 +22,6 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { PackageOpen } from "lucide-react";
 
 interface ComponentsProps {
     title: string;
@@ -64,7 +63,12 @@ const components: ComponentsProps[] = [
     {
         title: "SEO-оптимизация",
         href: "/services/seo",
-        icon: <PackageOpen />
+        icon: <CRMIcon />
+    },
+    {
+        title: "Контекстная реклама",
+        href: "/services/context-ads",
+        icon: <CRMIcon />
     },
 ]
 

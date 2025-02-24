@@ -4,7 +4,6 @@ interface StatItemProps {
     title: string;
     sub_title: string;
     icon: React.ReactNode;
-    mobile_icon: React.ReactNode;
     idx: number;
     isService?: boolean;
 }
@@ -13,7 +12,6 @@ export const StatItem = ({
     title,
     sub_title,
     icon,
-    mobile_icon,
     idx,
     isService
 }: StatItemProps) => {
@@ -25,20 +23,19 @@ export const StatItem = ({
                 idx === 3 ? ' 2xl:mr-80' : ''
             )}
         >
-            <span className="hidden md:block">{icon}</span>
-            <span className="block md:hidden">{mobile_icon}</span>
+            {icon}
             <div className={cn(
-                'absolute left-10 md:left-1/4 w-64 space-y-3 text-center md:text-start',
-                isService ? 'top-32 md:top-1/3' : 'top-20 md:top-1/4'
+                'absolute left-16 md:left-20 mt-8 md:mt-0 w-52 space-y-1 text-center md:text-start',
+                isService ? 'top-32 mt-0 md:top-1/3' : 'top-20 md:top-1/4'
             )}>
                 {isService
                     ? <>
-                        <p className="text-gray text-sm md:text-base">{sub_title}</p>
+                        <p className="text-gray text-xs md:text-sm">{sub_title}</p>
                         <h1 className="text-3xl md:text-4xl">{title}</h1>
                     </>
                     : <>
                         <h1 className="text-3xl md:text-4xl">{title}</h1>
-                        <p className="text-gray text-sm md:text-base">{sub_title}</p>
+                        <p className="text-gray text-xs md:text-sm">{sub_title}</p>
                     </>
                 }
             </div>

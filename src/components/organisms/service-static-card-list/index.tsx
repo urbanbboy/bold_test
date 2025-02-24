@@ -4,7 +4,7 @@ import { SmmAdItem } from "@/components/molecules/smm-ad-item";
 import { ISmmCreatingAdData } from "@/consts/types";
 
 
-export const SMMCreatingAd = ({
+export const ServiceStaticCardList = ({
     eyebrow,
     title,
     sub_title,
@@ -15,12 +15,14 @@ export const SMMCreatingAd = ({
             <div className="max-w-[1280px] flex flex-col justify-center items-center gap-y-5 lg:gap-y-10">
                 <div className="flex flex-col xl:flex-row gap-4">
                     <div>
-                        <h5 className="text-gray uppercase">{eyebrow}</h5>
+                        {eyebrow && <h5 className="text-gray uppercase">{eyebrow}</h5>}
                         <Heading as="h2">{title}</Heading>
                     </div>
-                    <SubTitle className="text-md flex items-end max-w-sm">
-                        {sub_title}
-                    </SubTitle>
+                    {sub_title &&
+                        <SubTitle className="text-md flex items-end max-w-sm">
+                            {sub_title}
+                        </SubTitle>
+                    }
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {items.map((item) => (

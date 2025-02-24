@@ -1,5 +1,5 @@
 import { ButtonWithIcon } from "@/components/atoms/button-with-icon"
-import CheckupBgSVG from '@/assets/backgrounds/checkup_bg.svg'
+import { CheckupBg } from "@/assets/backgrounds";
 import { Heading } from "@/components/atoms/heading";
 
 interface CheckupProps {
@@ -24,7 +24,7 @@ export const Checkup: React.FC<CheckupProps> = ({ onScrollToFeedback }) => {
                 >
                     Пройти диагностику
                 </ButtonWithIcon>
-                <CheckupBgSVG className="absolute max-w-[1920px] m-auto" />
+                <CheckupBg className="absolute max-w-[1920px] m-auto" />
             </div>
         </div>
     )

@@ -44,10 +44,10 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
             ref={ref}
             className="w-full max-w-[1920px] min-h-screen bg-background-dark flex justify-center items-center"
         >
-            <div className="m-auto max-w-[1280px] flex flex-col lg:flex-row items-center gap-4 py-10 lg:py-0 justify-center px-4 text-white">
+            <div className="m-auto max-w-[1280px] flex flex-col lg:flex-row items-center gap-3 py-10 lg:py-0 justify-center px-4 text-white">
                 <div className="flex flex-col gap-y-3 md:gap-y-8 lg:w-1/2">
                     <Heading as="h2" className="text-primary-foreground">{title}</Heading>
-                    <h3 className="text-gray text-xl">Оставьте контакты для связи,  и мы перезвоним вам</h3>
+                    <h3 className="text-gray text-xl">Оставьте контакты для связи, и мы перезвоним вам</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
                         {data.map((contact, idx) => (
                             <FeedbackContactItem

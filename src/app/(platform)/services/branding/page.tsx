@@ -5,10 +5,10 @@ import { CompanyServiceCardList } from "@/components/organisms/company-service-c
 import { InfoCard } from "@/components/organisms/info-card";
 import { ServicePostList } from "@/components/organisms/service-post-list";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
-import { smmTeamMembers } from "@/consts/data";
-import MobileCardSVG from '@/assets/info-card/mobile_card.svg'
+import { serviceBrandingData } from "@/consts/data";
 import { FormLayout } from "@/components/templates/form-layout";
 import { BrandingFeedbackForm } from "@/components/forms/branding-feedback-form";
+import { BrandingIcon } from "@/assets/info-card";
 
 
 const serviceData = {
@@ -98,18 +98,18 @@ const Brading = () => {
                 items={serviceData.items}
             />
             <CompanyServiceCardList
-                title={smmTeamMembers.title}
-                items={smmTeamMembers.items}
+                title={serviceBrandingData.title}
+                items={serviceBrandingData.items}
             />
             <CompanyPostList />
             <InfoCard
-                title={"Результаты, которые работают на ваш бизнес"}
+                title={"Дизайн-поддержка "}
                 sub_title={"Ваш внешний отдел дизайна"}
-                description={"Мы понимаем, что для предпринимателей важны не просто идеи, а измеримые результаты - рост заявок, привлечение клиентов и увеличение прибыли."}
+                description={"Мы регулярно обновляем визуальные материалы вашего бренда, чтобы он оставался современным и привлекательным. Наши эксперты быстро адаптируют дизайн под новые тренды и платформы, поддерживая интерес аудитории."}
                 image={"/images/about_page/our_philosophy.webp"}
-                card_title={"Наша философия"}
-                card_description={"Работать для вашего успеха, предлагая стратегии, которые решают именно ваши бизнес-задачи и обеспечивают конкретные достижения."}
-                card_icon={<MobileCardSVG />}
+                card_title={"Наши эксперты"}
+                card_description={"быстро адаптируют дизайн под новые тренды и платформы, поддерживая интерес аудитории. С нами ваш бренд всегда выделяется и эффективно взаимодействует с клиентами."}
+                card_icon={<BrandingIcon />}
             />
             <FormLayout
                 title={"Узнайте стоимость разработки бренда"}

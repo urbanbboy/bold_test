@@ -2,7 +2,7 @@ import { SmmFeedbackForm } from "@/components/forms/smm-feedback-form";
 import { ClientReviewList } from "@/components/organisms/client-review-list";
 import { CompanyServiceCardList } from "@/components/organisms/company-service-card-list";
 import { ServicePostList } from "@/components/organisms/service-post-list";
-import { SMMCreatingAd } from "@/components/organisms/smm-creating-ad";
+import { ServiceStaticCardList } from "@/components/organisms/service-static-card-list";
 import { SMMPartnersCarousel } from "@/components/organisms/smm-partner-carousel";
 import { SmmStats } from "@/components/organisms/smm-stats";
 import { FormLayout } from "@/components/templates/form-layout";
@@ -108,7 +108,7 @@ const Smm = () => {
                 sub_title={'Мы создаем визуалы, которые выделяют ваш бренд среди конкурентов'}
                 partnerList={partnersData}
             />
-            <SMMCreatingAd
+            <ServiceStaticCardList
                 title={smmCreatingAdData.title}
                 eyebrow={smmCreatingAdData.eyebrow}
                 sub_title={smmCreatingAdData.sub_title}

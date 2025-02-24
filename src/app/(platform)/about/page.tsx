@@ -9,8 +9,7 @@ import { InfoCard } from "@/components/organisms/info-card";
 import { PartnerReviewList } from "@/components/organisms/partner-review-list";
 import { FormLayout } from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
-import MobileCardSVG from '@/assets/info-card/mobile_card.svg'
-
+import { OurPhilosophyIcon } from "@/assets/info-card";
 
 const servicesTypes = [
     { id: 1, name: "Брендинг" },
@@ -47,7 +46,7 @@ const AboutPage = () => {
                 image={"/images/about_page/our_philosophy.webp"}
                 card_title={"Наша философия"}
                 card_description={"Работать для вашего успеха, предлагая стратегии, которые решают именно ваши бизнес-задачи и обеспечивают конкретные достижения."}
-                card_icon={<MobileCardSVG />}
+                card_icon={<OurPhilosophyIcon className="w-[80px] h-[80px] sm:w-[118px] sm:h-[118px]" />}
             />
             <CompanyInfo />
             <CompanyTeam />

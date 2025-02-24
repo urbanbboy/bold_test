@@ -5,9 +5,9 @@ import Challenge3SVG from '@/assets/company-challenge/challenge_3.svg'
 import Challenge4SVG from '@/assets/company-challenge/challenge_4.svg'
 import Challenge5SVG from '@/assets/company-challenge/challenge_5.svg'
 import Challenge6SVG from '@/assets/company-challenge/challenge_6.svg'
-import ChallengesBgSVG from '@/assets/backgrounds/challenges_bg.svg'
 import ChallengeCard from '@/components/molecules/company-challenge-card'
 import { Heading } from '@/components/atoms/heading'
+import { ChallengesBg } from '@/assets/backgrounds'
 
 interface ItemProps {
     logo: React.ReactNode;
@@ -75,7 +75,7 @@ export const CompanyChallengeList = () => {
                         ))}
                     </div>
                 </div>
-                <ChallengesBgSVG className="hidden lg:block absolute top-52 2xl:left-64 -z-10 max-w-[1920px] m-auto" />
+                <ChallengesBg className="hidden lg:block absolute top-52 2xl:left-64 -z-10 max-w-[1920px] m-auto" />
             </div>
         </section>
     );

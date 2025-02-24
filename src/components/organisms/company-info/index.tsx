@@ -1,51 +1,37 @@
 "use client";
 
-import Stat1SVG from '@/assets/company-info/stat_1.svg';
-import Stat2SVG from '@/assets/company-info/stat_2.svg';
-import Stat3SVG from '@/assets/company-info/stat_3.svg';
-import Stat4SVG from '@/assets/company-info/stat_4.svg';
-
-import MobileStat1SVG from '@/assets/company-info/mobile-stat_1.svg';
-import MobileStat2SVG from '@/assets/company-info/mobile-stat_2.svg';
-import MobileStat3SVG from '@/assets/company-info/mobile-stat_3.svg';
-import MobileStat4SVG from '@/assets/company-info/mobile-stat_4.svg';
-
-
 import CompanyInfoSVG from '@/assets/backgrounds/company_info.svg'
 import { StatItem } from '@/components/molecules/stat-item';
+import { Stat1, Stat2, Stat3, Stat4 } from '@/assets/company-info';
 
 
-const stats: { title: string, sub_title: string, icon: React.ReactNode, mobile_icon: React.ReactNode }[] = [
+const stats: { title: string, sub_title: string, icon: React.ReactNode }[] = [
     {
         title: '30+',
         sub_title: 'опытных экспертов, которые работают на ваш результат',
-        icon: <Stat1SVG />,
-        mobile_icon: <MobileStat1SVG/>
+        icon: <Stat1 />,
     },
     {
         title: 'Топ-1',
         sub_title: 'маркетинговая компания по версии The Great Award of the Year 2023 за выдающиеся достижения в продвижении бизнеса.',
-        icon: <Stat2SVG />,
-        mobile_icon: <MobileStat2SVG/>
+        icon: <Stat2 />,
     },
     {
         title: '60+',
         sub_title: 'успешных проектов, которые помогли нашим клиентам увеличить продажи на 189%.',
-        icon: <Stat3SVG />,
-        mobile_icon: <MobileStat3SVG/>
+        icon: <Stat3 />,
     },
     {
         title: '35+',
         sub_title: 'опыт в отраслях бизнеса — от салонов красоты до строительных компаний.',
-        icon: <Stat4SVG />,
-        mobile_icon: <MobileStat4SVG/>
+        icon: <Stat4 />,
     },
 ]
 
 export const CompanyInfo = () => {
     return (
-        <section className='w-full max-w-[1920px]'>
-            <div className='relative bg-background-dark py-14 lg:py-36 px-4 md:px-40 text-white overflow-hidden z-10'>
+        <section className='w-full max-w-[1920px] bg-background-dark'>
+            <div className='max-w-[1280px] m-auto relative px-4 py-14 lg:py-32 text-white overflow-hidden z-10'>
                 <h1 className='text-3xl md:text-5xl font-bold mb-5'>Bold Brands International</h1>
                 <p className='text-accent text-xl'>совместно создаём прочную основу и уверенное будущее для вашей компании</p>
                 <div className='flex justify-center flex-wrap gap-7 mt-8'>
@@ -55,7 +41,6 @@ export const CompanyInfo = () => {
                             title={stat.title}
                             sub_title={stat.sub_title}
                             icon={stat.icon}
-                            mobile_icon={stat.mobile_icon}
                             idx={index}
                         />
                     ))}

@@ -17,20 +17,20 @@ export const SmmAdItem = ({
     description
 }: SmmAdItemProps) => {
     return (
-        <Card className="rounded-2xl max-w-[421px] bg-transparent">
+        <Card className="rounded-2xl max-w-[421px] bg-transparent  h-full flex flex-col">
             <CardHeader className="relative p-0">
                 <Image
                     src={image}
                     alt={title}
                     width={421}
                     height={267}
-                    className="rounded-2xl"
+                    className="rounded-2xl h-[200px] md:h-[267px] object-cover w-full"
                 />
                 <span className="absolute top-3 left-3 bg-rose-500 p-2 rounded-2xl">
                     {icon}
                 </span>
             </CardHeader>
-            <CardContent className="mt-4 space-y-3">
+            <CardContent className="mt-4 space-y-3 flex-grow">
                 <Heading as="h4" className="text-primary text-xl md:text-2xl">{title}</Heading>
                 <SubTitle>{description}</SubTitle>
             </CardContent>

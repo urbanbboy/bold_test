@@ -23,8 +23,8 @@ export const ServicePostList = ({
     items
 }: ServicePostListProps) => {
     return (
-        <div className="w-full max-w-[1920px] flex justify-center px-4 md:px-16 lg:px-32 py-5 md:py-20">
-            <div className="max-w-[1280px] flex flex-col justify-cneter items-start gap-y-5 lg:gap-y-10">
+        <div className="w-full max-w-[1920px] flex justify-center px-4 md:px-16 lg:px-32 py-5 md:py-16">
+            <div className="max-w-[1280px] flex flex-col justify-center items-start gap-y-5 lg:gap-y-10">
                 {description
                     ? <div className="grid grid-cols-1 md:grid-cols-10 gap-4">
                         <Heading as="h2" className="md:col-span-5 space-y-5">{title}</Heading>
@@ -33,7 +33,7 @@ export const ServicePostList = ({
                     : <Heading as="h2">{title}</Heading>
                 }
 
-                <div className="w-full flex flex-col gap-y-12 md:gap-y-24">
+                <div className="w-full flex flex-col gap-y-12 md:gap-y-20">
                     {items.map((post) => (
                         <ServicePostItem
                             key={post.title}

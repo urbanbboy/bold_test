@@ -34,7 +34,12 @@ const HomePage = () => {
             <CompanyFeatures />
             <Checkup onScrollToFeedback={scrollToFeedback} />
             <CompanyPostList />
-            <Award />
+            <Award
+                badgeTitle={"Получили премию"}
+                title={"Маркетинговая компания года"}
+                sub_title="на The Great Award of the Year 2023!"
+                image={"/images/main_page/diploma.jpeg"}
+            />
             <CompanyPartners />
             <PartnerReviewList />
             <FormLayout

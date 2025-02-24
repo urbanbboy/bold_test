@@ -5,6 +5,5 @@ import withSvgr from 'next-plugin-svgr';
 
 const nextConfig: NextConfig = withSvgr({
     reactStrictMode: true,
-    swcMinify: true,
 });
 export default nextConfig;

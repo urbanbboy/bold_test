@@ -1,11 +1,11 @@
 import { InfoCard } from "@/components/organisms/info-card";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
-import MobileCardSVG from '@/assets/info-card/mobile_card.svg'
 import { VideoAboutCompany } from "@/components/organisms/video-about-company";
 import { ServicePostList } from "@/components/organisms/service-post-list";
 import { ClientReviewList } from "@/components/organisms/client-review-list";
 import { FormLayout } from "@/components/templates/form-layout";
 import { VideoProductionForm } from "@/components/forms/video-production-form";
+import { VideoProductionIcon } from "@/assets/info-card";
 
 const serviceData = {
     title: 'Наши услуги по Видеопродакшну',
@@ -91,7 +91,7 @@ const VideoProduction = () => {
                 video={'Здесь будет видео'}
                 card_title={"В Bold Brands мы уверены"}
                 card_description={"Качественный видеоконтент — это ключ к успешному продвижению вашего бизнеса."}
-                card_icon={<MobileCardSVG />}
+                card_icon={<VideoProductionIcon />}
             />
             <VideoAboutCompany />
             <ServicePostList
