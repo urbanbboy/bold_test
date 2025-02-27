@@ -15,15 +15,12 @@ import { FeedbackForm } from "@/components/forms/feedback-form";
 import { FormLayout } from "@/components/templates/form-layout";
 import { useRef } from "react";
 
-
 const HomePage = () => {
     const feedbackRef = useRef<HTMLDivElement>(null);
 
     const scrollToFeedback = () => {
         feedbackRef.current?.scrollIntoView({ behavior: "smooth" });
     };
-
-
     return (
         <>
             <SingleSliderList onScrollToFeedback={scrollToFeedback} />
@@ -38,7 +35,7 @@ const HomePage = () => {
                 badgeTitle={"Получили премию"}
                 title={"Маркетинговая компания года"}
                 sub_title="на The Great Award of the Year 2023!"
-                image={"/images/main_page/diploma.jpeg"}
+                image={"/images/main_page/diploma.jpg"}
             />
             <CompanyPartners />
             <PartnerReviewList />

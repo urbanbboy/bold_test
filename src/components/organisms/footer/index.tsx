@@ -1,17 +1,22 @@
+'use client';
+
 import { Designer } from "@/components/atoms/designer";
 import { Logo } from "@/components/atoms/logo";
 import { FooterLinks } from "@/components/molecules/footer-links";
 import { Separator } from "@/components/ui/separator";
+import { useAppData } from "@/context/app-context";
 import React from "react";
 
 export const Footer = () => {
+    const { data } = useAppData()
+
     return (
         <footer className="space-y-16 p-4 md:p-16 bg-background">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-3 mt-8">
                 <div className="flex flex-col justify-between">
                     <div className="flex flex-col gap-4">
                         <Logo className="w-[300px] h-[40px]" />
-                        <p className="text-gray2 text-base max-w-sm">Bold Brands International ваш внешний отдел маркетинга</p>
+                        <p className="text-gray2 text-base max-w-sm">{data?.description}</p>
                     </div>
                     <Designer className="hidden lg:flex" />
                 </div>

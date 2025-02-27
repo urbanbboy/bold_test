@@ -5,5 +5,8 @@ import withSvgr from 'next-plugin-svgr';
 
 const nextConfig: NextConfig = withSvgr({
     reactStrictMode: true,
+    images: {
+        domains: ['159.65.113.107'],
+    }
 });
 export default nextConfig;

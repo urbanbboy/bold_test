@@ -20,4 +20,7 @@ export const MarketingApi = baseApi.injectEndpoints({
     }
 })
 
-export const { useGetMarketingDepartmentQuery } = MarketingApi
+export const {
+    useGetMarketingDepartmentQuery,
+    useGetMarketingSupportQuery
+} = MarketingApi

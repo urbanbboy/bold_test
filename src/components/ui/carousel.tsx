@@ -8,6 +8,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { Progress } from "@/components/ui/progress";
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -19,6 +20,7 @@ type CarouselProps = {
     plugins?: CarouselPlugin
     orientation?: "horizontal" | "vertical"
     setApi?: (api: CarouselApi) => void
+    hasProgressBar?: boolean
 }
 
 type CarouselContextProps = {
@@ -54,6 +56,7 @@ const Carousel = React.forwardRef<
             plugins,
             className,
             children,
+            hasProgressBar,
             ...props
         },
         ref
@@ -68,57 +71,66 @@ const Carousel = React.forwardRef<
         const [canScrollPrev, setCanScrollPrev] = React.useState(false)
         const [canScrollNext, setCanScrollNext] = React.useState(false)
 
-        const onSelect = React.useCallback((api: CarouselApi) => {
-            if (!api) {
-                return
-            }
+        // Состояние для прогресса (от 0 до 100)
+        const [progress, setProgress] = React.useState(0)
+        // Реф для отметки времени последнего сброса таймера
+        const timerStartRef = React.useRef(Date.now())
 
-            setCanScrollPrev(api.canScrollPrev())
-            setCanScrollNext(api.canScrollNext())
+        // Функция сброса таймера прогрессбара
+        const resetTimer = React.useCallback(() => {
+            timerStartRef.current = Date.now()
+            setProgress(0)
         }, [])
+
+        const onSelect = React.useCallback(
+            (api: CarouselApi) => {
+                if (!api) return
+                setCanScrollPrev(api.canScrollPrev())
+                setCanScrollNext(api.canScrollNext())
+            },
+            []
+        )
 
         const scrollPrev = React.useCallback(() => {
             api?.scrollPrev()
-        }, [api])
+            if (hasProgressBar) resetTimer()
+        }, [api, hasProgressBar, resetTimer])
 
         const scrollNext = React.useCallback(() => {
             api?.scrollNext()
-        }, [api])
-
-        const handleKeyDown = React.useCallback(
-            (event: React.KeyboardEvent<HTMLDivElement>) => {
-                if (event.key === "ArrowLeft") {
-                    event.preventDefault()
-                    scrollPrev()
-                } else if (event.key === "ArrowRight") {
-                    event.preventDefault()
-                    scrollNext()
-                }
-            },
-            [scrollPrev, scrollNext]
-        )
+            if (hasProgressBar) resetTimer()
+        }, [api, hasProgressBar, resetTimer])
 
         React.useEffect(() => {
-            if (!api || !setApi) {
-                return
-            }
-
+            if (!api || !setApi) return
             setApi(api)
         }, [api, setApi])
 
         React.useEffect(() => {
-            if (!api) {
-                return
-            }
-
+            if (!api) return
             onSelect(api)
             api.on("reInit", onSelect)
             api.on("select", onSelect)
-
             return () => {
                 api?.off("select", onSelect)
             }
         }, [api, onSelect])
+
+        // Эффект для автоматического обновления прогрессбара и переключения слайда
+        React.useEffect(() => {
+            if (!hasProgressBar) return
+            const interval = setInterval(() => {
+                const elapsed = Date.now() - timerStartRef.current
+                const newProgress = (elapsed / 8000) * 100
+                if (newProgress >= 100) {
+                    scrollNext()
+                    resetTimer()
+                } else {
+                    setProgress(newProgress)
+                }
+            }, 100)
+            return () => clearInterval(interval)
+        }, [hasProgressBar, scrollNext, resetTimer])
 
         return (
             <CarouselContext.Provider
@@ -134,15 +146,32 @@ const Carousel = React.forwardRef<
                     canScrollNext,
                 }}
             >
-                <div
-                    ref={ref}
-                    onKeyDownCapture={handleKeyDown}
-                    className={cn("relative", className)}
-                    role="region"
-                    aria-roledescription="carousel"
-                    {...props}
-                >
-                    {children}
+                <div className="relative">
+                    <div
+                        ref={ref}
+                        onKeyDownCapture={(e) => {
+                            if (e.key === "ArrowLeft") {
+                                e.preventDefault()
+                                scrollPrev()
+                            } else if (e.key === "ArrowRight") {
+                                e.preventDefault()
+                                scrollNext()
+                            }
+                        }}
+                        className={cn("relative", className)}
+                        role="region"
+                        aria-roledescription="carousel"
+                        {...props}
+                    >
+                        {children}
+                    </div>
+
+                    {hasProgressBar && (
+                        <Progress
+                            className="absolute bottom-0 h-2"
+                            value={progress}
+                        />
+                    )}
                 </div>
             </CarouselContext.Provider>
         )

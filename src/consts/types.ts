@@ -23,3 +23,10 @@ export interface ISmmTeamMembers {
         description?: string;
     }[];
 }
+
+export type IconProps = {
+    color?: string;
+    size?: string | number;
+    width?: string;
+    height?: string;
+} & React.SVGAttributes<SVGElement>;

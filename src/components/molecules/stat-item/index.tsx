@@ -1,9 +1,10 @@
 import { cn } from "@/lib/utils";
+import { ReactElement } from "react";
 
 interface StatItemProps {
     title: string;
     sub_title: string;
-    icon: React.ReactNode;
+    icon: ReactElement;
     idx: number;
     isService?: boolean;
 }

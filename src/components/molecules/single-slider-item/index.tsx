@@ -1,6 +1,8 @@
+import { motion } from 'framer-motion';
 import { Heading } from "@/components/atoms/heading";
 import { ButtonWithIcon } from "@/components/atoms/button-with-icon";
 import { CarouselItem } from "@/components/ui/carousel"
+import { fadeIn, textVariant } from '@/lib/motion';
 
 interface SingleSliderProps {
     index: number;
@@ -29,8 +31,23 @@ export const SingleSliderItem = ({
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-black to-black/20"></div>
                 <div className="flex flex-col text-left mb-3 gap-y-2 md:gap-y-10 z-50 px-5 md:pl-0 md:mx-40 max-w-[1280px]">
-                    <Heading as="h1" className="font-bold text-white">{title}</Heading>
-                    <p className="text-lg md:text-2xl text-gray mt-2">{sub_title}</p>
+                    <motion.div
+                        variants={textVariant(0.3)}
+                        initial="hidden"
+                        animate="show"
+                    >
+                        <Heading as="h1" className="font-bold text-white">
+                            {title}
+                        </Heading>
+                    </motion.div>
+                    <motion.p
+                        variants={fadeIn("up", "spring", 0.5, 1)}
+                        initial="hidden"
+                        animate="show"
+                        className="text-lg md:text-2xl text-gray mt-2"
+                    >
+                        {sub_title}
+                    </motion.p>
                     <ButtonWithIcon onClick={onScrollToFeedback}>
                         {button_text}
                     </ButtonWithIcon>

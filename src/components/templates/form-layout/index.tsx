@@ -50,7 +50,7 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
                 <Image
                     src={"/images/form_bg.png"}
                     alt="form_bg"
-                    layout="responsive"
+                    // fill
                     width={800}
                     height={600}
                 />

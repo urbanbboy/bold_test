@@ -10,7 +10,7 @@ interface CompanyPostItemProps {
     tags: { tags: string }[];
     social_media: {
         title: string;
-        logo: React.ReactNode;
+        logo: string;
         subscribers: string;
     }[];
 }
@@ -51,7 +51,14 @@ export const CompanyPostItem = (props: CompanyPostItemProps) => {
                         className="flex items-center gap-1 whitespace-nowrap overflow-hidden"
                         key={social.title}
                     >
-                        <span>{social.logo}</span>
+                        {/* <span>{social.logo}</span> */}
+                        <Image
+                            src={social.logo}
+                            alt={social.title}
+                            width={24}
+                            height={24}
+                            className="w-auto h-auto"
+                        />
                         <span className="truncate">{social.subscribers} {social.title}</span>
                     </Badge>
                 ))}
