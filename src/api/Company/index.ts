@@ -11,6 +11,7 @@ import {
     CompanyPartnersResponse,
     CompanyPostsResponse,
     CompanyServicesResponse,
+    CompanyTeamResponse,
     CompanyVideoReviewsResponse
 } from "./types";
 
@@ -74,7 +75,7 @@ export const companyApi = baseApi.injectEndpoints({
                     url: '/company-services/'
                 })
             }),
-            getCompanyTeam: build.query({
+            getCompanyTeam: build.query<CompanyTeamResponse, void>({
                 query: () => ({
                     url: '/company-team/'
                 })

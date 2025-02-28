@@ -53,7 +53,7 @@ export const ReviewItem = ({ rating, user_image, user_name, user_position, text 
                         </DialogTrigger>
                         <DialogContent className="max-w-lg">
                             {/* Контент модалки с полным текстом */}
-                            <div className="lg:px-5 ">
+                            <div className="lg:px-5">
                                 <div className="pt-5">
                                     <DialogTitle>
                                         <div className="flex mb-4 gap-x-2">
@@ -73,7 +73,7 @@ export const ReviewItem = ({ rating, user_image, user_name, user_position, text 
                                         </div>
                                     </div>
                                     {/* Полный текст */}
-                                    <ScrollArea className="h-[400px] w-full my-3">
+                                    <ScrollArea className="max-h-[400px] w-full my-3">
                                         {text}
                                     </ScrollArea>
                                 </div>

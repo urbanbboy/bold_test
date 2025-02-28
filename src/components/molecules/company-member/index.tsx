@@ -17,7 +17,7 @@ export const CompanyMember: FC<CompanyMemberProps> = ({
             <div className="relative border-none flex justify-center rounded-2xl grayscale hover:grayscale-0 transition-all duration-300 group">
                 <Image
                     src={image}
-                    alt={'case image'}
+                    alt={name}
                     width={308}
                     height={460}
                     className="rounded-2xl w-full h-auto object-cover"

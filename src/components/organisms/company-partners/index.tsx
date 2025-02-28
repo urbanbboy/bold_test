@@ -12,7 +12,7 @@ export const CompanyPartners = () => {
             error={error}
             data={data}
         >
-            <Heading as="h4" className="text-center font-normal uppercase md:text-xl text-gray2">{data?.title}</Heading>
+            <Heading as="h4" className="text-center font-normal uppercase md:text-xl text-gray2 mt-20">{data?.title}</Heading>
             <div className="relative flex overflow-hidden group mb-14 lg:mb-28">
                 <div className="relative w-full overflow-hidden">
                     <div className="flex whitespace-nowrap animate-loop-scroll">

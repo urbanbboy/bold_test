@@ -22,11 +22,16 @@ export const PageTitleLayout = ({
     title,
     sub_title,
     button_text,
-    breadcrumb
+    breadcrumb,
+    bg_image
 }: PageTitleLayoutProps) => {
     return (
-        <div className="h-screen max-w-[1920px] flex justify-center items-center bg-black/30">
-            <div className="max-w-[1280px] h-screen flex flex-col justify-center md:items-center gap-y-6 px-5">
+        <div 
+            className="relative h-screen max-w-[1920px] flex justify-center items-center bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${bg_image})` }}
+        >
+            <div className="absolute inset-0 bg-gradient-to-r from-black to-black/20"></div>
+            <div className="max-w-[1280px] h-screen flex flex-col justify-center md:items-center gap-y-6 px-5 z-10">
                 <Breadcrumb>
                     <BreadcrumbList>
                         {breadcrumb?.map((item, idx) => (
