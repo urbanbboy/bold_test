@@ -4,7 +4,7 @@ import { ReactElement } from "react";
 interface StatItemProps {
     title: string;
     sub_title: string;
-    icon: ReactElement;
+    icon?: ReactElement;
     idx: number;
     isService?: boolean;
 }
