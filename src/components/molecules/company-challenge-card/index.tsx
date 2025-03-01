@@ -20,7 +20,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
     return (
         <div
             className={cn(
-                'relative border hover:shadow-lg hover:border-transparent shadow-[#D1D7E2] hover:cursor-pointer transition-all duration-300 rounded-3xl px-4 py-10 text-center w-[335px] h-auto xl:w-[421px] line-clamp-6 flex flex-col items-center justify-center gap-2 lg:gap-4',
+                'relative border hover:shadow-lg hover:border-transparent shadow-[#D1D7E2] transition-all duration-300 rounded-3xl px-4 py-10 text-center w-[335px] min-h-[340px] xl:w-[421px] line-clamp-6 flex flex-col items-center justify-center gap-2 lg:gap-4',
                 idx === 2 ? 'xl:mr-40' : '',
                 idx === 3 ? 'xl:ml-40' : '',
                 className

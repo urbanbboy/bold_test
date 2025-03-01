@@ -31,7 +31,7 @@ export const CompanyChallengeList = () => {
                         </div>
                     </div>
                 </RequestHandler>
-                <ChallengesBg className="hidden lg:block absolute top-44 mx-auto w-full -z-10" />
+                <ChallengesBg className="hidden lg:block absolute top-52 mx-auto w-full -z-10" />
             </div>
         </section>
     );
