@@ -30,7 +30,7 @@ export const SingleSliderItem = ({
                 style={{ backgroundImage: `url(${image})` }}
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-black to-black/20"></div>
-                <div className="flex flex-col text-left mb-3 gap-y-2 md:gap-y-10 z-50 px-5 md:pl-0 md:mx-40 max-w-[1280px]">
+                <div className="flex flex-col text-left mb-12 md:mb-0 gap-y-2 md:gap-y-10 z-50 px-5 md:pl-0 md:mx-40 max-w-[1280px]">
                     <motion.div
                         variants={textVariant(0.3)}
                         initial="hidden"
