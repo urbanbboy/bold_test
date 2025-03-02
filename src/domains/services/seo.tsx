@@ -10,12 +10,13 @@ import { ServiceStaticCardList } from "@/components/organisms/service-static-car
 import { FormLayout } from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { seoData, seoPostsData, seoCardsData } from "@/consts/data";
+import { useAppData } from "@/context/app-context";
 import { useSlug } from "@/hooks/useSlug";
 
 const SeoPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
-
+    const { business_types } = useAppData()
 
     return (
         <RequestHandler
@@ -53,7 +54,7 @@ const SeoPage = () => {
                 title="Узнайте стоимость SEO-оптимизации "
                 nestedForm={
                     <SeoFeedbackForm
-                        business_types={[]}
+                        business_types={business_types}
                         promotion_types={[]}
                     />
                 }

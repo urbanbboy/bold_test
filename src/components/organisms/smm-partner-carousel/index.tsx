@@ -4,7 +4,7 @@ import { SmmCompanyPartnerItem } from "@/components/molecules/smm-company-partne
 interface SMMPartnersCarouselProps {
     title: string;
     sub_title: string;
-    partnerList: { id: string, image: string }[];
+    partnerList: { image: string }[];
 }
 
 export const SMMPartnersCarousel = ({
@@ -23,7 +23,6 @@ export const SMMPartnersCarousel = ({
                             {[...partnerList, ...partnerList, ...partnerList].map((partner, idx) => (
                                 <SmmCompanyPartnerItem
                                     key={idx}
-                                    company_name={partner.id}
                                     company_logo={partner.image}
                                 />
                             ))}

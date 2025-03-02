@@ -22,12 +22,12 @@ import { Type } from "@/api/Types/types";
 
 
 interface CostCalculationFormProps {
-    business_type: Type[];
+    business_types: Type[];
     service_type: Type[];
 }
 
 export const CostCalculationForm = ({
-    business_type,
+    business_types,
     service_type,
 }: CostCalculationFormProps) => {
     const form = useForm<z.infer<typeof CostCalculationSchema>>({
@@ -123,7 +123,7 @@ export const CostCalculationForm = ({
                                 <TabsContent value="business" className="space-y-8">
                                     <MultiSelect
                                         label="Тип бизнеса"
-                                        options={business_type}
+                                        options={business_types}
                                         selected={selectedBusinesses}
                                         setSelected={setSelectedBusinesses}
                                         placeholder="Выберите тип бизнеса"

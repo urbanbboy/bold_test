@@ -12,6 +12,7 @@ import { ServicePostList } from "@/components/organisms/service-post-list";
 import { FormLayout } from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { serviceCrmData, serviceData } from "@/consts/data";
+import { useAppData } from "@/context/app-context";
 import { useSlug } from "@/hooks/useSlug";
 
 
@@ -19,6 +20,7 @@ import { useSlug } from "@/hooks/useSlug";
 const CrmPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
+    const { business_types } = useAppData()
 
     return (
         <RequestHandler
@@ -64,7 +66,7 @@ const CrmPage = () => {
             <FormLayout
                 nestedForm={
                     <CrmFeedbackForm
-                        business_types={[]}
+                        business_types={business_types}
                         service_types={[]}
                     />
                 }

@@ -40,7 +40,7 @@ export const InfoCard = ({
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 place-items-center">
                     <Card className="rounded-2xl lg:h-[336px] xl:h-[404px]">
                         <CardContent className="h-full flex flex-col justify-center space-y-5 py-10 lg:py-14 px-10">
-                            {card_icon}
+                            <span className="w-[80px] h-[80px] md:w-[119px] md:h-[118px]">{card_icon}</span>
                             <Heading as="h4">{card_title}</Heading>
                             <p className="text-gray2">
                                 {card_description}

@@ -12,6 +12,7 @@ import { ServicePostList } from "@/components/organisms/service-post-list";
 import { FormLayout } from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { smmTeamMembers } from "@/consts/data";
+import { useAppData } from "@/context/app-context";
 import { useSlug } from "@/hooks/useSlug";
 
 const serviceData = {
@@ -71,6 +72,7 @@ const serviceData = {
 const MarketingSupportPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
+    const { business_types } = useAppData()
 
     return (
         <RequestHandler
@@ -112,7 +114,7 @@ const MarketingSupportPage = () => {
             <FormLayout
                 nestedForm={
                     <MarketingSupportFeedbackForm
-                        business_types={[]}
+                        business_types={business_types}
                         task_types={[]}
                     />
                 }

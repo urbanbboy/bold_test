@@ -7,7 +7,7 @@ export interface CompanyAchievementsResponse {
 export interface CompanyAdvertisingResponse {
     title: string;
     sub_title: string;
-    items: { image: string; }[]
+    items: { image: string; }[];
 }
 
 export interface CompanyApplicationsResponse {

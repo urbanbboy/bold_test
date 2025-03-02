@@ -13,6 +13,8 @@ import { OurPhilosophyIcon } from "@/assets/info-card";
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { useSlug } from "@/hooks/useSlug";
+import { useGetBusinessTypesQuery } from "@/api/BusinessType";
+import { useAppData } from "@/context/app-context";
 
 const servicesTypes = [
     { id: 1, name: "Брендинг" },
@@ -24,16 +26,11 @@ const servicesTypes = [
     { id: 7, name: "Создание сайта" },
 ];
 
-const businessTypes = [
-    { id: 1, name: "B2C" },
-    { id: 2, name: "B2B" },
-    { id: 3, name: "B2G" },
-];
-
 
 const AboutPage = () => {
     const slug = useSlug()
-    const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
+    const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug);
+    const { business_types } = useAppData()
 
     return (
         <RequestHandler
@@ -70,7 +67,7 @@ const AboutPage = () => {
                 title={'Рассчитайте стоимость услуги'}
                 nestedForm={
                     <CostCalculationForm
-                        business_type={businessTypes}
+                        business_types={business_types}
                         service_type={servicesTypes}
                     />
                 }

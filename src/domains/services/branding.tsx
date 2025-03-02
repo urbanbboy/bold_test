@@ -12,6 +12,8 @@ import { BrandingIcon } from "@/assets/info-card";
 import { useSlug } from "@/hooks/useSlug";
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
 import { RequestHandler } from "@/components/atoms/request-handler";
+import { CompanyBranding } from "@/components/organisms/company-branding";
+import { useAppData } from "@/context/app-context";
 
 
 const serviceData = {
@@ -78,15 +80,11 @@ const servicesTypes = [
     { id: 7, name: "Создание сайта" },
 ];
 
-const businessTypes = [
-    { id: 1, name: "B2C" },
-    { id: 2, name: "B2B" },
-    { id: 3, name: "B2G" },
-];
 
 const BradingPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
+    const { business_types } = useAppData()
 
     return (
         <RequestHandler
@@ -106,6 +104,7 @@ const BradingPage = () => {
                     ]}
                     isGray
                 />}
+            <CompanyBranding />
             <ServicePostList
                 title={serviceData.title}
                 items={serviceData.items}
@@ -119,7 +118,7 @@ const BradingPage = () => {
                 title={"Дизайн-поддержка "}
                 sub_title={"Ваш внешний отдел дизайна"}
                 description={"Мы регулярно обновляем визуальные материалы вашего бренда, чтобы он оставался современным и привлекательным. Наши эксперты быстро адаптируют дизайн под новые тренды и платформы, поддерживая интерес аудитории."}
-                image={"/images/about_page/our_philosophy.webp"}
+                image={"/images/services/branding/card_img.webp"}
                 card_title={"Наши эксперты"}
                 card_description={"быстро адаптируют дизайн под новые тренды и платформы, поддерживая интерес аудитории. С нами ваш бренд всегда выделяется и эффективно взаимодействует с клиентами."}
                 card_icon={<BrandingIcon />}
@@ -128,7 +127,7 @@ const BradingPage = () => {
                 title={"Узнайте стоимость разработки бренда"}
                 nestedForm={
                     <BrandingFeedbackForm
-                        business_types={businessTypes}
+                        business_types={business_types}
                         service_types={servicesTypes}
                     />
                 }

@@ -11,6 +11,7 @@ import { VideoProductionIcon } from "@/assets/info-card";
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
 import { useSlug } from "@/hooks/useSlug";
 import { RequestHandler } from "@/components/atoms/request-handler";
+import { useAppData } from "@/context/app-context";
 
 const serviceData = {
     title: 'Наши услуги по Видеопродакшну',
@@ -81,6 +82,7 @@ const serviceData = {
 const VideoProductionPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
+    const { business_types } = useAppData()
 
     return (
         <RequestHandler
@@ -117,7 +119,7 @@ const VideoProductionPage = () => {
                 title={"Рассчитайте стоимость вашего Видеопроекта"}
                 nestedForm={
                     <VideoProductionForm
-                        business_types={[]}
+                        business_types={business_types}
                         service_types={[]}
                     />
                 }

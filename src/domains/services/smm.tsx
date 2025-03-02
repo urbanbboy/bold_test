@@ -1,5 +1,6 @@
 'use client'
 
+import { useGetCompanyAdvertisingQuery } from "@/api/Company";
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { SmmFeedbackForm } from "@/components/forms/smm-feedback-form";
@@ -12,6 +13,7 @@ import { SmmStats } from "@/components/organisms/smm-stats";
 import { FormLayout } from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { smmCreatingAdData, smmTeamMembers } from "@/consts/data";
+import { useAppData } from "@/context/app-context";
 import { useSlug } from "@/hooks/useSlug";
 
 
@@ -86,15 +88,11 @@ const promotionTypes = [
     { id: 7, name: "Создание сайта" },
 ];
 
-const businessTypes = [
-    { id: 1, name: "B2C" },
-    { id: 2, name: "B2B" },
-    { id: 3, name: "B2G" },
-];
-
 const SmmPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
+    const { data: ads } = useGetCompanyAdvertisingQuery()
+    const { business_types } = useAppData()
 
     return (
         <RequestHandler
@@ -118,11 +116,13 @@ const SmmPage = () => {
                 title={serviceData.title}
                 items={serviceData.items}
             />
-            <SMMPartnersCarousel
-                title={'Контент, который продает'}
-                sub_title={'Мы создаем визуалы, которые выделяют ваш бренд среди конкурентов'}
-                partnerList={partnersData}
-            />
+            {ads &&
+                <SMMPartnersCarousel
+                    title={ads.title}
+                    sub_title={ads.sub_title}
+                    partnerList={ads.items}
+                />
+            }
             <ServiceStaticCardList
                 title={smmCreatingAdData.title}
                 eyebrow={smmCreatingAdData.eyebrow}
@@ -139,7 +139,7 @@ const SmmPage = () => {
                 title={"Узнайте стоимость SMM-продвижения"}
                 nestedForm={
                     <SmmFeedbackForm
-                        business_types={businessTypes}
+                        business_types={business_types}
                         promotion_types={promotionTypes}
                     />
                 }

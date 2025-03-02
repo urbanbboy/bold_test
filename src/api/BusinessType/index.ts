@@ -1,11 +1,10 @@
 import { baseApi } from "../Base";
-import { BusinessTypeResponse } from "./types";
-
+import { Type } from "../Types/types";
 
 export const businessTypes = baseApi.injectEndpoints({
     endpoints(build) {
         return {
-            getBusinessTypes: build.query<BusinessTypeResponse, void>({
+            getBusinessTypes: build.query<Type[], void>({
                 query: () => ({
                     url: '/business-types/',
                 })
