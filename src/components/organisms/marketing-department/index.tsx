@@ -4,7 +4,7 @@ import { Heading } from "@/components/atoms/heading"
 import { useGetMarketingDepartmentQuery } from "@/api/Marketing"
 import { RequestHandler } from "@/components/atoms/request-handler"
 import { motion } from "framer-motion"
-import { fadeIn } from "@/lib/motion"
+import { defaultTransition, fadeIn, staggerTransition, viewportConfig } from "@/lib/motion"
 
 export const MarketingDepartment = () => {
     const { data, isLoading, error } = useGetMarketingDepartmentQuery()
@@ -20,6 +20,10 @@ export const MarketingDepartment = () => {
                 >
                     <motion.div
                         variants={fadeIn('left')}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={viewportConfig}
+                        transition={defaultTransition}
                         className="flex flex-col md:flex-row gap-y-5 gap-x-10"
                     >
                         <Heading as="h2">
@@ -31,11 +35,14 @@ export const MarketingDepartment = () => {
                     </motion.div>
                     {/* Главы */}
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                        {data?.chapters.map((chapter) => (
+                        {data?.chapters.map((chapter, idx) => (
                             <motion.div
                                 key={chapter.number}
-                                variants={fadeIn('up')}
-                                transition={{ duration: 0.6 }}
+                                variants={fadeIn('up', 'spring', idx * 0.1)}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={viewportConfig}
+                                transition={staggerTransition(idx)}
                             >
                                 <MarketingChapter
                                     number={chapter.number}

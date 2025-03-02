@@ -25,6 +25,11 @@ export const typesApi = baseApi.injectEndpoints({
                     url: '/site-types/'
                 })
             }),
+            getSiteStatus: build.query<Type[], void>({
+                query: () => ({
+                    url: '/site-status/'
+                })
+            }),
             getTaskTypes: build.query<Type[], void>({
                 query: () => ({
                     url: '/task-types/'
@@ -33,6 +38,11 @@ export const typesApi = baseApi.injectEndpoints({
             getVideoTypes: build.query<Type[], void>({
                 query: () => ({
                     url: '/video-types/'
+                })
+            }),
+            getSocialTypes: build.query<Type[], void>({
+                query: () => ({
+                    url: '/social-types/'
                 })
             }),
         }
@@ -44,6 +54,8 @@ export const {
     useGetPurposeTypesQuery,
     useGetServiceTypesQuery,
     useGetSiteTypesQuery,
+    useGetSiteStatusQuery,
     useGetTaskTypesQuery,
     useGetVideoTypesQuery,
+    useGetSocialTypesQuery,
 } = typesApi

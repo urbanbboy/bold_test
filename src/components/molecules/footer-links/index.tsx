@@ -4,6 +4,8 @@ import React from 'react';
 import InstagramIcon from '@/assets/socials/instagram.svg';
 import FacebookIcon from '@/assets/socials/facebook.svg';
 import WhatsAppIcon from '@/assets/socials/whatsapp.svg';
+import { motion } from 'framer-motion';
+import { fadeIn, viewportConfig, staggerTransition } from '@/lib/motion';
 
 interface LinkProps {
     title?: string;
@@ -78,8 +80,16 @@ const contacts: { label: string; title: string; href?: string; }[] = [
 
 export const FooterLinks = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 lg:gap-y-10 gap-x-3">
-        {links.map(({ title, items }) => (
-            <div key={title} className="flex flex-col gap-y-3">
+        {links.map(({ title, items }, idx) => (
+            <motion.div
+                key={title}
+                variants={fadeIn('up', 'spring', idx * 0.2)}
+                initial="hidden"
+                whileInView="show"
+                viewport={viewportConfig}
+                transition={staggerTransition(idx)}
+                className="flex flex-col gap-y-3"
+            >
                 <h2 className="text-xl">{title}</h2>
                 <ul className={cn('text-lg text-gray2', items[0].icon ? 'flex gap-x-3' : '')}>
                     {items.map((item) =>
@@ -90,15 +100,25 @@ export const FooterLinks = () => (
                         )
                     )}
                 </ul>
-            </div>
+            </motion.div>
         ))}
-        {contacts.map((contact) => (
-            <ContactItem
+        {contacts.map((contact, idx) => (
+            <motion.div
                 key={contact.label}
-                label={contact.label}
-                title={contact.title}
-                href={contact.href}
-            />
+                variants={fadeIn('up', 'spring', idx * 0.1)}
+                initial="hidden"
+                whileInView="show"
+                viewport={viewportConfig}
+                transition={staggerTransition(idx)}
+                className="flex flex-col gap-y-3"
+            >
+                <ContactItem
+                    label={contact.label}
+                    title={contact.title}
+                    href={contact.href}
+                />
+            </motion.div>
+
         ))}
     </div>
 );

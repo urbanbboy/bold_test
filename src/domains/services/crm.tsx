@@ -1,6 +1,7 @@
 'use client';
 
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
+import { useGetTaskTypesQuery } from "@/api/Types";
 import { CrmIcon } from "@/assets/info-card";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { CrmFeedbackForm } from "@/components/forms/crm-feedback-form";
@@ -20,6 +21,7 @@ import { useSlug } from "@/hooks/useSlug";
 const CrmPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
+    const { data: task_types } = useGetTaskTypesQuery()
     const { business_types } = useAppData()
 
     return (
@@ -67,7 +69,7 @@ const CrmPage = () => {
                 nestedForm={
                     <CrmFeedbackForm
                         business_types={business_types}
-                        service_types={[]}
+                        task_types={task_types || []}
                     />
                 }
             />

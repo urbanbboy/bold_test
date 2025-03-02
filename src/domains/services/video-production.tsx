@@ -12,6 +12,7 @@ import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
 import { useSlug } from "@/hooks/useSlug";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { useAppData } from "@/context/app-context";
+import { useGetVideoTypesQuery } from "@/api/Types";
 
 const serviceData = {
     title: 'Наши услуги по Видеопродакшну',
@@ -82,8 +83,9 @@ const serviceData = {
 const VideoProductionPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
+    const { data: video_types } = useGetVideoTypesQuery()
     const { business_types } = useAppData()
-
+    
     return (
         <RequestHandler
             isLoading={isLoading}
@@ -120,7 +122,7 @@ const VideoProductionPage = () => {
                 nestedForm={
                     <VideoProductionForm
                         business_types={business_types}
-                        service_types={[]}
+                        video_types={video_types || []}
                     />
                 }
             />

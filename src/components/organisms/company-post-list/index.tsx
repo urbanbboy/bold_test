@@ -7,7 +7,9 @@ import { Heading } from '@/components/atoms/heading'
 import { RequestHandler } from '@/components/atoms/request-handler';
 import { CompanyPostItem } from '@/components/molecules/company-post-item'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
+import { fadeIn, staggerTransition, viewportConfig } from '@/lib/motion';
 import Autoplay from 'embla-carousel-autoplay'
+import { motion } from 'framer-motion';
 import Link from 'next/link'
 
 
@@ -42,15 +44,34 @@ export const CompanyPostList = () => {
                     >
                         <CarouselContent className="w-full gap-4">
                             {data?.items.map((post, idx) => (
-                                <CarouselItem key={idx} className="md:basis-1/2 xl:basis-1/3">
-                                    <CompanyPostItem {...post} />
-                                </CarouselItem>
+                                <motion.div
+                                    key={idx}
+                                    variants={fadeIn('up', 'spring', idx * 0.2)}
+                                    initial="hidden"
+                                    whileInView="show"
+                                    viewport={viewportConfig}
+                                    transition={staggerTransition(idx)}
+                                >
+                                    <CarouselItem className="md:basis-1/2 xl:basis-1/3">
+                                        <CompanyPostItem {...post} />
+                                    </CarouselItem>
+                                </motion.div>
+
                             ))}
                         </CarouselContent>
                     </Carousel>
                     <div className="flex flex-col md:hidden">
                         {mobilePosts?.map((post, idx) => (
-                            <CompanyPostItem key={idx} {...post} />
+                            <motion.div
+                                key={idx}
+                                variants={fadeIn('up', 'spring', idx * 0.2)}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={viewportConfig}
+                                transition={staggerTransition(idx)}
+                            >
+                                <CompanyPostItem {...post} />
+                            </motion.div>
                         ))}
                     </div>
                 </div>

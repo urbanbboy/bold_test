@@ -1,6 +1,7 @@
 'use client';
 
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
+import { useGetSiteTypesQuery } from "@/api/Types";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { SiteCreatingFeedbackForm } from "@/components/forms/site-creating-form";
 import { CompanyPostList } from "@/components/organisms/company-post-list";
@@ -48,6 +49,8 @@ const serviceData = {
 const SiteCreatingPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
+    const { data: site_types } = useGetSiteTypesQuery()
+
     const { business_types } = useAppData()
 
     return (
@@ -80,7 +83,7 @@ const SiteCreatingPage = () => {
                 nestedForm={
                     <SiteCreatingFeedbackForm
                         business_types={business_types}
-                        service_types={[]} />
+                        site_types={site_types || []} />
                 }
             />
         </RequestHandler>

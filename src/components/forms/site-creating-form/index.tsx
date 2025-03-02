@@ -22,12 +22,12 @@ import { Type } from "@/api/Types/types";
 
 interface FeedbackFormProps {
     business_types: Type[];
-    service_types: Type[];   
+    site_types: Type[];   
 }
 
 export const SiteCreatingFeedbackForm = ({
     business_types,
-    service_types,
+    site_types,
 }: FeedbackFormProps) => {
     const form = useForm<z.infer<typeof BrandingFeedbackFormSchema>>({
         resolver: zodResolver(BrandingFeedbackFormSchema),
@@ -130,7 +130,7 @@ export const SiteCreatingFeedbackForm = ({
                                     />
                                     <MultiSelect
                                         label="Выберите тип сайта"
-                                        options={service_types}
+                                        options={site_types}
                                         selected={selectedSiteTypes}
                                         setSelected={setSelectedSiteTypes}
                                         placeholder="Выберите из списка тип сайта"

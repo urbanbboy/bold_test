@@ -4,6 +4,8 @@ import ChallengeCard from '@/components/molecules/company-challenge-card'
 import { Heading } from '@/components/atoms/heading'
 import { ChallengesBg } from '@/assets/backgrounds'
 import { RequestHandler } from '@/components/atoms/request-handler'
+import { motion } from 'framer-motion'
+import { fadeIn, staggerTransition, textVariant, viewportConfig } from '@/lib/motion'
 
 export const CompanyChallengeList = () => {
     const { data, isLoading, error } = useGetCompanyChallengesQuery()
@@ -20,13 +22,21 @@ export const CompanyChallengeList = () => {
                     <div className="relative">
                         <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-8 mt-5 lg:mt-14">
                             {data?.items.map((challenge, index) => (
-                                <ChallengeCard
+                                <motion.div
                                     key={index}
-                                    idx={index}
-                                    logo={challenge.logo}
-                                    title={challenge.title}
-                                    description={challenge.description}
-                                />
+                                    variants={fadeIn('up', 'spring', index * 0.2)}
+                                    initial="hidden"
+                                    whileInView="show"
+                                    viewport={viewportConfig}
+                                    transition={staggerTransition(index)}
+                                >
+                                    <ChallengeCard
+                                        idx={index}
+                                        logo={challenge.logo}
+                                        title={challenge.title}
+                                        description={challenge.description}
+                                    />
+                                </motion.div>
                             ))}
                         </div>
                     </div>

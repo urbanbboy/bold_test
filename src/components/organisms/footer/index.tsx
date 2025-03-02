@@ -5,6 +5,8 @@ import { Logo } from "@/components/atoms/logo";
 import { FooterLinks } from "@/components/molecules/footer-links";
 import { Separator } from "@/components/ui/separator";
 import { useAppData } from "@/context/app-context";
+import { textVariant, viewportConfig, staggerTransition } from "@/lib/motion";
+import { motion } from "framer-motion";
 import React from "react";
 
 export const Footer = () => {
@@ -14,10 +16,17 @@ export const Footer = () => {
         <footer className="space-y-16 p-4 md:p-16 bg-background">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-3 mt-8">
                 <div className="flex flex-col justify-between">
-                    <div className="flex flex-col gap-4">
+                    <motion.div
+                        variants={textVariant(0.3)}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={viewportConfig}
+                        transition={staggerTransition(0)}
+                        className="flex flex-col gap-4"
+                    >
                         <Logo className="w-[300px] h-[40px]" />
                         <p className="text-gray2 text-base max-w-sm">{data?.description}</p>
-                    </div>
+                    </motion.div>
                     <Designer className="hidden lg:flex" />
                 </div>
                 <FooterLinks />

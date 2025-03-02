@@ -19,16 +19,14 @@ import { Input } from "@/components/ui/input";
 import { Check } from "lucide-react";
 import { Type } from "@/api/Types/types";
 
-
-
 interface CostCalculationFormProps {
     business_types: Type[];
-    service_type: Type[];
+    promotion_types: Type[];
 }
 
 export const CostCalculationForm = ({
     business_types,
-    service_type,
+    promotion_types,
 }: CostCalculationFormProps) => {
     const form = useForm<z.infer<typeof CostCalculationSchema>>({
         resolver: zodResolver(CostCalculationSchema),
@@ -67,7 +65,7 @@ export const CostCalculationForm = ({
         }
         const formData = {
             ...data,
-            service_types: selectedServices,
+            promotion_types: selectedServices,
             business_types: selectedBusinesses,
         };
         console.log(formData);
@@ -131,7 +129,7 @@ export const CostCalculationForm = ({
                                     />
                                     <MultiSelect
                                         label="Какая услуга вам нужна?"
-                                        options={service_type}
+                                        options={promotion_types}
                                         selected={selectedServices}
                                         setSelected={setSelectedServices}
                                         placeholder="Выберите услуги"

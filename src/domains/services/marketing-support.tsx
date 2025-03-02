@@ -1,6 +1,7 @@
 'use client';
 
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
+import { useGetTaskTypesQuery } from "@/api/Types";
 import { MarketingSupportIcon } from "@/assets/info-card";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { MarketingSupportFeedbackForm } from "@/components/forms/marketing-support-form";
@@ -72,6 +73,7 @@ const serviceData = {
 const MarketingSupportPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
+    const { data: task_types } = useGetTaskTypesQuery()
     const { business_types } = useAppData()
 
     return (
@@ -115,7 +117,7 @@ const MarketingSupportPage = () => {
                 nestedForm={
                     <MarketingSupportFeedbackForm
                         business_types={business_types}
-                        task_types={[]}
+                        task_types={task_types || []}
                     />
                 }
             />

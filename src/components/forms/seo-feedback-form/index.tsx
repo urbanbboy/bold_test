@@ -22,12 +22,12 @@ import { Type } from "@/api/Types/types";
 
 interface FeedbackFormProps {
     business_types: Type[];
-    promotion_types: Type[]; 
+    site_statuses: Type[];
 }
 
 export const SeoFeedbackForm = ({
     business_types,
-    promotion_types,
+    site_statuses,
 }: FeedbackFormProps) => {
     const form = useForm<z.infer<typeof SeoFeedbackFormSchema>>({
         resolver: zodResolver(SeoFeedbackFormSchema),
@@ -35,6 +35,7 @@ export const SeoFeedbackForm = ({
             sender_name: "",
             sender_phone: "",
             sender_email: "",
+            purpose_of_promotion: "",
             acceptTerms: false,
         },
     });
@@ -50,8 +51,13 @@ export const SeoFeedbackForm = ({
     };
 
     const handleNextStep = () => {
+        const purposeLength = form.getValues("purpose_of_promotion").length
 
-        if (selectedBusinessTypes.length > 0 && selectedPromotionTypes.length > 0) {
+        if (
+            selectedBusinessTypes.length > 0 &&
+            selectedPromotionTypes.length > 0 &&
+            purposeLength > 0
+        ) {
             setIsFirstStepCompleted(true);
             setTabValue('contacts');
         } else {
@@ -67,7 +73,7 @@ export const SeoFeedbackForm = ({
         }
         const formData = {
             ...data,
-            promotion_type: selectedPromotionTypes,
+            site_status: selectedPromotionTypes,
             business_type: selectedBusinessTypes,
         };
         console.log(formData);
@@ -131,18 +137,29 @@ export const SeoFeedbackForm = ({
                                     />
                                     <MultiSelect
                                         label="Текущее состояние сайта"
-                                        options={promotion_types}
+                                        options={site_statuses}
                                         selected={selectedPromotionTypes}
                                         setSelected={setSelectedPromotionTypes}
                                         placeholder="Введите текущее состояние вашего сайта"
                                         description="Мы адаптируем стратегию под ваши цели и платформы"
                                     />
-                                    <MultiSelect
-                                        label="Цель продвижения"
-                                        options={promotion_types}
-                                        selected={selectedPromotionTypes}
-                                        setSelected={setSelectedPromotionTypes}
-                                        placeholder="Введите цель продвижения"
+                                    <FormField
+                                        control={form.control}
+                                        name="purpose_of_promotion"
+                                        render={({ field }) => (
+                                            <FormItem className="flex flex-col items-start">
+                                                <FormLabel className="text-left text-slate-400">Цель продвижения</FormLabel>
+                                                <FormControl className="w-full">
+                                                    <Input
+                                                        {...field}
+                                                        placeholder="Введите цель продвижения"
+                                                        className="border-b-2 bg-transparent"
+                                                        onClear={() => form.setValue("purpose_of_promotion", "")}
+                                                    />
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
                                     />
                                     <ButtonWithIcon type="button" onClick={handleNextStep}>
                                         Продолжить

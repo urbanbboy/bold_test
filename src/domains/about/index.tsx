@@ -13,23 +13,14 @@ import { OurPhilosophyIcon } from "@/assets/info-card";
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { useSlug } from "@/hooks/useSlug";
-import { useGetBusinessTypesQuery } from "@/api/BusinessType";
+
 import { useAppData } from "@/context/app-context";
-
-const servicesTypes = [
-    { id: 1, name: "Брендинг" },
-    { id: 2, name: "SMM-продвижение" },
-    { id: 3, name: "Продакшн" },
-    { id: 4, name: "Дизайн" },
-    { id: 5, name: "Контекстная реклама" },
-    { id: 6, name: "Таргетированная реклама" },
-    { id: 7, name: "Создание сайта" },
-];
-
+import { useGetPromotionTypesQuery } from "@/api/Types";
 
 const AboutPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug);
+    const { data: promotion_types } = useGetPromotionTypesQuery()
     const { business_types } = useAppData()
 
     return (
@@ -68,7 +59,7 @@ const AboutPage = () => {
                 nestedForm={
                     <CostCalculationForm
                         business_types={business_types}
-                        service_type={servicesTypes}
+                        promotion_types={promotion_types || []}
                     />
                 }
             />

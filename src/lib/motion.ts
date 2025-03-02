@@ -1,3 +1,32 @@
+
+export const viewportConfig = {
+    once: true,
+    amount: 0.1,
+};
+
+export const defaultTransition = {
+    duration: 0.5,
+    ease: "easeOut",
+};
+
+export const staggerTransition = (index: number, delayStep = 0.2) => ({
+    duration: 0.5,
+    delay: index * delayStep,
+    ease: "easeOut",
+});
+
+// export const staggerContainer = (staggerChildren, delayChildren) => {
+//     return {
+//         hidden: {},
+//         show: {
+//             transition: {
+//                 staggerChildren: staggerChildren,
+//                 delayChildren: delayChildren || 0,
+//             },
+//         },
+//     };
+// };
+
 export const textVariant = (delay = 0) => ({
     hidden: {
         y: -50,

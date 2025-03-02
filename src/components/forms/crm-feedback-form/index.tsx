@@ -22,12 +22,12 @@ import { Type } from "@/api/Types/types";
 
 interface FeedbackFormProps {
     business_types: Type[];
-    service_types: Type[];   
+    task_types: Type[];   
 }
 
 export const CrmFeedbackForm = ({
     business_types,
-    service_types,
+    task_types,
 }: FeedbackFormProps) => {
     const form = useForm<z.infer<typeof CrmFeedbackFormSchema>>({
         resolver: zodResolver(CrmFeedbackFormSchema),
@@ -130,7 +130,7 @@ export const CrmFeedbackForm = ({
                                     />
                                     <MultiSelect
                                         label="Какие задачи вы хотите автоматизировать?"
-                                        options={service_types}
+                                        options={task_types}
                                         selected={selectedServiceTypes}
                                         setSelected={setSelectedServiceTypes}
                                         placeholder="Выберите задачи для автоматизации из списка"

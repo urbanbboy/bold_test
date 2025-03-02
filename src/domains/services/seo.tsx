@@ -1,6 +1,7 @@
 'use client';
 
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
+import { useGetSiteStatusQuery } from "@/api/Types";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { SeoFeedbackForm } from "@/components/forms/seo-feedback-form";
 import { CompanyServiceCardList } from "@/components/organisms/company-service-card-list";
@@ -16,6 +17,7 @@ import { useSlug } from "@/hooks/useSlug";
 const SeoPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
+    const { data: site_statuses } = useGetSiteStatusQuery()
     const { business_types } = useAppData()
 
     return (
@@ -55,7 +57,7 @@ const SeoPage = () => {
                 nestedForm={
                     <SeoFeedbackForm
                         business_types={business_types}
-                        promotion_types={[]}
+                        site_statuses={site_statuses || []}
                     />
                 }
             />

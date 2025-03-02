@@ -5,6 +5,8 @@ import { Heading } from "@/components/atoms/heading";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { ReviewItem } from "@/components/molecules/partner-review-item"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { fadeIn, viewportConfig, staggerTransition, textVariant } from "@/lib/motion";
+import { motion } from "framer-motion";
 
 // const data = {
 //     title: "Отзывы наших партнеров",
@@ -63,9 +65,25 @@ export const PartnerReviewList = () => {
 
                     <div className="flex flex-col justify-center gap-y-5 text-center lg:w-3/4">
                         <Heading as="h2">{data?.title}</Heading>
-                        <p className="text-xl text-gray2">{data?.description}</p>
+                        <motion.p
+                            variants={textVariant(0.3)}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={viewportConfig}
+                            transition={staggerTransition(0)}
+                            className="text-xl text-gray2"
+                        >
+                            {data?.description}
+                        </motion.p>
                     </div>
-                    <div className="flex items-center justify-center">
+                    <motion.div
+                        variants={fadeIn('right', 'spring', 0.3)}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={viewportConfig}
+                        transition={staggerTransition(0)}
+                        className="flex items-center justify-center"
+                    >
                         <Carousel className="w-[350px] md:w-[480px] max-w-md">
                             <CarouselContent className="">
                                 {data?.items.map((review, idx) => (
@@ -85,7 +103,7 @@ export const PartnerReviewList = () => {
                                 <CarouselNext iconColor="text-black" variant={'review'} className="right-28 md:-right-10 xl:-right-16 top-5 md:-top-60 lg:-top-72" />
                             </div>
                         </Carousel>
-                    </div>
+                    </motion.div>
                 </div>
             </RequestHandler>
         </div>

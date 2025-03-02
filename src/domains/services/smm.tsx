@@ -2,6 +2,7 @@
 
 import { useGetCompanyAdvertisingQuery } from "@/api/Company";
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
+import { useGetSocialTypesQuery } from "@/api/Types";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { SmmFeedbackForm } from "@/components/forms/smm-feedback-form";
 import { ClientReviewList } from "@/components/organisms/client-review-list";
@@ -92,6 +93,7 @@ const SmmPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
     const { data: ads } = useGetCompanyAdvertisingQuery()
+    const { data: social_types } = useGetSocialTypesQuery()
     const { business_types } = useAppData()
 
     return (
@@ -140,7 +142,7 @@ const SmmPage = () => {
                 nestedForm={
                     <SmmFeedbackForm
                         business_types={business_types}
-                        promotion_types={promotionTypes}
+                        social_types={social_types || []}
                     />
                 }
             />

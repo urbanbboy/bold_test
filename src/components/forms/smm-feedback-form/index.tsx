@@ -22,12 +22,12 @@ import { Type } from "@/api/Types/types";
 
 interface SmmFeedbackFormProps {
     business_types: Type[];
-    promotion_types: Type[];   
+    social_types: Type[];   
 }
 
 export const SmmFeedbackForm = ({
     business_types,
-    promotion_types,
+    social_types,
 }: SmmFeedbackFormProps) => {
     const form = useForm<z.infer<typeof SmmFeedbackFormSchema>>({
         resolver: zodResolver(SmmFeedbackFormSchema),
@@ -132,12 +132,12 @@ export const SmmFeedbackForm = ({
                                         description="Это поможет нам лучше понять ваш бизнес и предложить оптимальное решение"
                                     />
                                     <MultiSelect
-                                        label="Текущее состояние сайта"
-                                        options={promotion_types}
+                                        label="Платформы для продвижения"
+                                        options={social_types}
                                         selected={selectedPromotionTypes}
                                         setSelected={setSelectedPromotionTypes}
-                                        placeholder="Введите текущее состояние вашего сайта"
-                                        description="Мы адаптируем стратегию под ваши цели и платформы"
+                                        placeholder="Выберите платформы для продвижения"
+                                        description="Мы адаптируем стратегию под каждую выбранную платформ"
                                     />
                                     <FormField
                                         control={form.control}

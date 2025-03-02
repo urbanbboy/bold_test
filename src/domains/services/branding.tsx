@@ -14,6 +14,7 @@ import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { CompanyBranding } from "@/components/organisms/company-branding";
 import { useAppData } from "@/context/app-context";
+import { useGetServiceTypesQuery } from "@/api/Types";
 
 
 const serviceData = {
@@ -84,6 +85,7 @@ const servicesTypes = [
 const BradingPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
+    const { data: services_types } = useGetServiceTypesQuery()
     const { business_types } = useAppData()
 
     return (
@@ -128,7 +130,7 @@ const BradingPage = () => {
                 nestedForm={
                     <BrandingFeedbackForm
                         business_types={business_types}
-                        service_types={servicesTypes}
+                        services_types={services_types || []}
                     />
                 }
             />

@@ -1,5 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { staggerTransition, textVariant, viewportConfig } from "@/lib/motion";
 
 const headingVariants = cva("text-primary font-bold", {
     variants: {
@@ -22,7 +24,19 @@ type HeadingProps = {
 } & VariantProps<typeof headingVariants>;
 
 export const Heading = ({ as: Tag = "h1", className, children }: HeadingProps) => {
-    return <Tag className={cn(headingVariants({ variant: Tag }), className)}>
-        {children}
-    </Tag>;
+    return (
+        <motion.div
+            variants={textVariant(0.3)}
+            initial="hidden"
+            whileInView="show"
+            viewport={viewportConfig}
+            transition={staggerTransition(0)}
+        >
+            <Tag className={cn(headingVariants({ variant: Tag }), className)}>
+                {children}
+            </Tag>
+        </motion.div>
+    )
 };
+
+

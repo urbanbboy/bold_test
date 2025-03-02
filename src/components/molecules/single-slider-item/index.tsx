@@ -2,7 +2,12 @@ import { motion } from 'framer-motion';
 import { Heading } from "@/components/atoms/heading";
 import { ButtonWithIcon } from "@/components/atoms/button-with-icon";
 import { CarouselItem } from "@/components/ui/carousel"
-import { fadeIn, textVariant } from '@/lib/motion';
+import {
+    defaultTransition,
+    fadeIn,
+    textVariant,
+    viewportConfig
+} from '@/lib/motion';
 
 interface SingleSliderProps {
     index: number;
@@ -30,11 +35,13 @@ export const SingleSliderItem = ({
                 style={{ backgroundImage: `url(${image})` }}
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-black to-black/20"></div>
-                <div className="flex flex-col text-left mb-12 md:mb-0 gap-y-2 md:gap-y-10 z-50 px-5 md:pl-0 md:mx-40 max-w-[1280px]">
+                <div className="flex flex-col text-left mb-12 md:mb-0 gap-y-2 md:gap-y-5 z-50 px-5 md:pl-0 md:mx-40 max-w-[1280px]">
                     <motion.div
                         variants={textVariant(0.3)}
                         initial="hidden"
-                        animate="show"
+                        whileInView="show"
+                        viewport={viewportConfig}
+                        transition={defaultTransition}
                     >
                         <Heading as="h1" className="font-bold text-white">
                             {title}
@@ -43,14 +50,25 @@ export const SingleSliderItem = ({
                     <motion.p
                         variants={fadeIn("up", "spring", 0.5, 1)}
                         initial="hidden"
-                        animate="show"
+                        whileInView="show"
+                        viewport={viewportConfig}
+                        transition={defaultTransition}
                         className="text-lg md:text-2xl text-gray mt-2"
                     >
                         {sub_title}
                     </motion.p>
-                    <ButtonWithIcon onClick={onScrollToFeedback}>
-                        {button_text}
-                    </ButtonWithIcon>
+                    <motion.div
+                        variants={fadeIn('up', 'spring')}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={viewportConfig}
+                        transition={defaultTransition}
+                    >
+                        <ButtonWithIcon onClick={onScrollToFeedback}>
+                            {button_text}
+                        </ButtonWithIcon>
+                    </motion.div>
+
                 </div>
             </div>
         </CarouselItem>

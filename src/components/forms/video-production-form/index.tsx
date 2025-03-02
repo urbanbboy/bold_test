@@ -22,12 +22,12 @@ import { Type } from "@/api/Types/types";
 
 interface FeedbackFormProps {
     business_types: Type[];
-    service_types: Type[];   
+    video_types: Type[];   
 }
 
 export const VideoProductionForm = ({
     business_types,
-    service_types,
+    video_types,
 }: FeedbackFormProps) => {
     const form = useForm<z.infer<typeof BrandingFeedbackFormSchema>>({
         resolver: zodResolver(BrandingFeedbackFormSchema),
@@ -130,7 +130,7 @@ export const VideoProductionForm = ({
                                     />
                                     <MultiSelect
                                         label="Выберите тип видео"
-                                        options={service_types}
+                                        options={video_types}
                                         selected={selectedServiceTypes}
                                         setSelected={setSelectedServiceTypes}
                                         placeholder="Выберите из списка тип видео"

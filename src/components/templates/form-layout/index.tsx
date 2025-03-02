@@ -1,5 +1,7 @@
 import { FeedbackContactItem } from "@/components/atoms/feedback-contact-item";
 import { Heading } from "@/components/atoms/heading";
+import { fadeIn, staggerTransition, textVariant, viewportConfig } from "@/lib/motion";
+import { motion } from "framer-motion";
 import { Mail, Phone } from "lucide-react"
 import Image from "next/image";
 import { forwardRef } from "react";
@@ -60,21 +62,46 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
             <div className="relative z-10 m-auto max-w-[1280px] flex flex-col lg:flex-row items-center gap-3 py-10 lg:py-0 justify-center px-4 text-white">
                 <div className="flex flex-col gap-y-3 md:gap-y-8 lg:w-1/2">
                     <Heading as="h2" className="text-primary-foreground">{title}</Heading>
-                    <h3 className="text-gray text-xl">Оставьте контакты для связи, и мы перезвоним вам</h3>
+                    <motion.h3
+                        className="text-gray text-xl"
+                        variants={textVariant(0.3)}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={viewportConfig}
+                        transition={staggerTransition(0)}
+                    >
+                        Оставьте контакты для связи, и мы перезвоним вам
+                    </motion.h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
                         {data.map((contact, idx) => (
-                            <FeedbackContactItem
+                            <motion.div
                                 key={contact.title}
-                                {...contact}
-                                idx={idx}
-                                lastIdx={data.length - 1}
-                            />
+                                variants={fadeIn('up', 'spring', idx * 0.2)}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={viewportConfig}
+                                transition={staggerTransition(idx)}
+                            >
+                                <FeedbackContactItem
+                                    {...contact}
+                                    idx={idx}
+                                    lastIdx={data.length - 1}
+                                />
+                            </motion.div>
+
                         ))}
                     </div>
                 </div>
-                <div className="flex-1 w-full lg:w-1/2 max-w-[600px]">
+                <motion.div
+                    variants={fadeIn('right', 'spring', 0.2)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={viewportConfig}
+                    transition={staggerTransition(0)}
+                    className="flex-1 w-full lg:w-1/2 max-w-[600px]"
+                >
                     {nestedForm}
-                </div>
+                </motion.div>
             </div>
         </div>
     );
