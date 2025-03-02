@@ -42,24 +42,23 @@ export const VideoAboutCompany = () => {
                     </motion.div>
                 </>
             ) : (
-                // <iframe
-                //     className="absolute inset-0 w-full h-full"
-                //     src={data?.video || ''}
-                //     title="Company Video"
-                //     frameBorder="0"
-                //     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                //     allowFullScreen
-                // />
-                <video
-                    className="w-full"
-                    controls
-                    autoPlay
-                    muted
-                >
-                    {/* Если data?.video содержит ссылку на mp4 видео */}
-                    <source src={data?.video} type="video/mp4" />
-                    Ваш браузер не поддерживает тег video.
-                </video>
+                <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src={data?.video || ''}
+                    title="Company Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                />
+                // <video
+                //     className="w-full"
+                //     controls
+                //     autoPlay
+                //     muted
+                // >
+                //     {/* Если data?.video содержит ссылку на mp4 видео */}
+                //     <source src={data?.video} type="video/mp4" />
+                //     Ваш браузер не поддерживает тег video.
+                // </video>
             )}
         </div>
     );

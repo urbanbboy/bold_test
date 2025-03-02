@@ -37,11 +37,11 @@ export const Checkup: React.FC<CheckupProps> = ({ onScrollToFeedback }) => {
                 </motion.p>
                 <motion.div
                     className="z-40"
-                    variants={fadeIn('up', 'spring')}
+                    variants={textVariant(0.3)}
                     initial="hidden"
                     whileInView="show"
                     viewport={viewportConfig}
-                    transition={defaultTransition}
+                    transition={staggerTransition(0)}
                 >
                     <ButtonWithIcon
                         onClick={onScrollToFeedback}
@@ -49,7 +49,8 @@ export const Checkup: React.FC<CheckupProps> = ({ onScrollToFeedback }) => {
                         Пройти диагностику
                     </ButtonWithIcon>
                 </motion.div>
-                <CheckupBg className="absolute max-w-[1920px] m-auto" />
+
+                <CheckupBg className="absolute max-w-[1920px] m-auto z-20" />
             </div>
         </div>
     )

@@ -65,22 +65,14 @@ export const ClientReviewList = ({ hasSubTitle }: { hasSubTitle?: boolean }) => 
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -50 }}
                             transition={{ duration: 0.5 }}
-                        // className="absolute inset-0 w-full h-full"
                         >
-                            {/* <iframe
-                                className="w-full h-[240px] md:h-[400px] lg:h-[600px] rounded-[24px]"
-                                src={`https://www.youtube.com/embed/${extractYouTubeID(reviews.items[currentPage].video)}`}
+                            <iframe
+                                className="w-full h-[240px] md:h-[600px] rounded-md"
+                                src={data?.items[currentPage].video}
+                                title="Company Video"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
-                            /> */}
-                            <video
-                                className="w-full rounded-[24px]"
-                                controls
-                                autoPlay
-                                muted
-                            >
-                                <source src={data?.items[currentPage].video} type="video/mp4" />
-                                Ваш браузер не поддерживает тег video.
-                            </video>
+                            />
                         </motion.div>
                     </AnimatePresence>
                 </div>

@@ -5,7 +5,7 @@ const baseUrl = 'https://api.boldbrands.pro/api/v1'
 export const baseApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl,
-        // credentials: "same-origin"
+        credentials: "include"
     }),
     reducerPath: "baseApi",
     endpoints: () => ({}),
