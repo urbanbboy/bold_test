@@ -92,12 +92,16 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
                         ))}
                     </div>
                 </div>
-                <div
-                    
+                <motion.div
+                    variants={fadeIn('right', 'spring', 0.2)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={viewportConfig}
+                    transition={staggerTransition(0)}
                     className="flex-1 w-full lg:w-1/2 max-w-[600px]"
                 >
                     {nestedForm}
-                </div>
+                </motion.div>
             </div>
         </div>
     );
