@@ -59,15 +59,16 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
             </div>
 
             {/* Контент */}
-            <div className="relative z-10 m-auto max-w-[1280px] flex flex-col lg:flex-row items-center gap-3 py-10 lg:py-0 justify-center px-4 text-white">
+            <motion.div
+                variants={fadeIn('up', 'spring', 0.2)}
+                initial="hidden"
+                whileInView="show"
+                viewport={viewportConfig}
+                transition={staggerTransition(0)}
+                className="relative z-10 m-auto max-w-[1280px] flex flex-col lg:flex-row items-center gap-3 py-10 lg:py-0 justify-center px-4 text-white">
                 <div className="flex flex-col gap-y-3 md:gap-y-8 lg:w-1/2">
                     <Heading as="h2" className="text-primary-foreground">{title}</Heading>
                     <motion.h3
-                        className="text-gray text-xl"
-                        variants={textVariant(0.3)}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={viewportConfig}
                         transition={staggerTransition(0)}
                     >
                         Оставьте контакты для связи, и мы перезвоним вам
@@ -93,16 +94,11 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
                     </div>
                 </div>
                 <motion.div
-                    variants={fadeIn('right', 'spring', 0.2)}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={viewportConfig}
-                    transition={staggerTransition(0)}
                     className="flex-1 w-full lg:w-1/2 max-w-[600px]"
                 >
                     {nestedForm}
                 </motion.div>
-            </div>
+            </motion.div>
         </div>
     );
 });

@@ -62,7 +62,6 @@ export const PartnerReviewList = () => {
                 data={data}
             >
                 <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-10">
-
                     <div className="flex flex-col justify-center gap-y-5 text-center lg:w-3/4">
                         <Heading as="h2">{data?.title}</Heading>
                         <motion.p
@@ -77,7 +76,7 @@ export const PartnerReviewList = () => {
                         </motion.p>
                     </div>
                     <motion.div
-                        variants={fadeIn('right', 'spring', 0.3)}
+                        variants={fadeIn('up', 'spring', 0.3)}
                         initial="hidden"
                         whileInView="show"
                         viewport={viewportConfig}
