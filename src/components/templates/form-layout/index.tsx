@@ -1,5 +1,6 @@
 import { FeedbackContactItem } from "@/components/atoms/feedback-contact-item";
 import { Heading } from "@/components/atoms/heading";
+import { useAppData } from "@/context/app-context";
 import { fadeIn, staggerTransition, textVariant, viewportConfig } from "@/lib/motion";
 import { motion } from "framer-motion";
 import { Mail, Phone } from "lucide-react"
@@ -42,6 +43,7 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
     title = 'Рассчитайте стоимость услуги',
     nestedForm
 }, ref) => {
+
     return (
         <div
             ref={ref}

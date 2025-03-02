@@ -15,7 +15,9 @@ import { FormLayout } from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { smmCreatingAdData, smmTeamMembers } from "@/consts/data";
 import { useAppData } from "@/context/app-context";
+import useScrollToFeedback from "@/hooks/useScrollToFeedback";
 import { useSlug } from "@/hooks/useSlug";
+import { useRef } from "react";
 
 
 const serviceData = {
@@ -48,46 +50,6 @@ const serviceData = {
     ]
 }
 
-const partnersData = [
-    {
-        id: "1",
-        image: '/images/services/smm/smm_partner.webp',
-    },
-    {
-        id: "2",
-        image: '/images/services/smm/smm_partner.webp',
-    },
-    {
-        id: "3",
-        image: '/images/services/smm/smm_partner.webp',
-    },
-    {
-        id: "4",
-        image: '/images/services/smm/smm_partner.webp',
-    },
-    {
-        id: "5",
-        image: '/images/services/smm/smm_partner.webp',
-    },
-    {
-        id: "6",
-        image: '/images/services/smm/smm_partner.webp',
-    },
-    {
-        id: "7",
-        image: '/images/services/smm/smm_partner.webp',
-    },
-]
-
-const promotionTypes = [
-    { id: 1, name: "Брендинг" },
-    { id: 2, name: "SMM-продвижение" },
-    { id: 3, name: "Продакшн" },
-    { id: 4, name: "Дизайн" },
-    { id: 5, name: "Контекстная реклама" },
-    { id: 6, name: "Таргетированная реклама" },
-    { id: 7, name: "Создание сайта" },
-];
 
 const SmmPage = () => {
     const slug = useSlug()
@@ -95,6 +57,7 @@ const SmmPage = () => {
     const { data: ads } = useGetCompanyAdvertisingQuery()
     const { data: social_types } = useGetSocialTypesQuery()
     const { business_types } = useAppData()
+    const { ref, scrollToFeedback } = useScrollToFeedback()
 
     return (
         <RequestHandler
@@ -104,6 +67,7 @@ const SmmPage = () => {
         >
             {data &&
                 <PageTitleLayout
+                    scrollToFeedback={scrollToFeedback}
                     title={data.title}
                     sub_title={data.content}
                     button_text={"Получить консультацию"}
@@ -138,6 +102,7 @@ const SmmPage = () => {
             <SmmStats />
             <ClientReviewList hasSubTitle />
             <FormLayout
+                ref={ref}
                 title={"Узнайте стоимость SMM-продвижения"}
                 nestedForm={
                     <SmmFeedbackForm

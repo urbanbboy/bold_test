@@ -9,11 +9,14 @@ import { ServiceStaticCardList } from "@/components/organisms/service-static-car
 import { FormLayout } from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { contextAdCardData, contextAdData } from "@/consts/data";
+import useScrollToFeedback from "@/hooks/useScrollToFeedback";
 import { useSlug } from "@/hooks/useSlug";
 
 const ContextAdsPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
+    const { ref, scrollToFeedback } = useScrollToFeedback()
+
 
     return (
         <RequestHandler
@@ -23,6 +26,7 @@ const ContextAdsPage = () => {
         >
             {data &&
                 <PageTitleLayout
+                    scrollToFeedback={scrollToFeedback}
                     title={data.title}
                     sub_title={data.content}
                     bg_image={data.image}
@@ -44,6 +48,7 @@ const ContextAdsPage = () => {
             />
             <CompanyPostList />
             <FormLayout
+                ref={ref}
                 nestedForm={<FeedbackForm />}
             />
         </RequestHandler>

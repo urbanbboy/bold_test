@@ -11,6 +11,7 @@ import { BreadcrumbProps } from "./type";
 import { Heading } from "@/components/atoms/heading";
 import { motion } from "framer-motion";
 import { fadeIn, viewportConfig, staggerTransition } from "@/lib/motion";
+import { useAppData } from "@/context/app-context";
 
 interface PageTitleLayoutProps {
     title: string;
@@ -19,6 +20,7 @@ interface PageTitleLayoutProps {
     bg_image?: string;
     breadcrumb?: BreadcrumbProps[],
     isGray?: boolean;
+    scrollToFeedback?: () => void;
 }
 
 export const PageTitleLayout = ({
@@ -27,8 +29,10 @@ export const PageTitleLayout = ({
     button_text,
     breadcrumb,
     bg_image,
-    isGray
+    isGray,
+    scrollToFeedback
 }: PageTitleLayoutProps) => {
+
     return (
         <div
             className="relative h-screen max-w-[1920px] flex justify-center items-center bg-cover bg-center bg-no-repeat"
@@ -68,7 +72,7 @@ export const PageTitleLayout = ({
                 </Breadcrumb>
                 <Heading as="h1" className="text-secondary md:text-center">{title}</Heading>
                 {sub_title && <h3 className="text-gray text-sm md:text-md lg:text-lg md:text-center">{sub_title}</h3>}
-                <ButtonWithIcon className="mt-3">
+                <ButtonWithIcon onClick={scrollToFeedback} className="mt-3">
                     {button_text}
                 </ButtonWithIcon>
             </div>

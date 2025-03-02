@@ -16,12 +16,19 @@ import { useSlug } from "@/hooks/useSlug";
 
 import { useAppData } from "@/context/app-context";
 import { useGetPromotionTypesQuery } from "@/api/Types";
+import { useRef } from "react";
 
 const AboutPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug);
     const { data: promotion_types } = useGetPromotionTypesQuery()
     const { business_types } = useAppData()
+
+    const feedbackRef = useRef<HTMLDivElement>(null);
+
+    const scrollToFeedback = () => {
+        feedbackRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
 
     return (
         <RequestHandler
@@ -34,6 +41,7 @@ const AboutPage = () => {
                     bg_image={data.image}
                     title={data.title}
                     button_text={"Получить консультацию"}
+                    scrollToFeedback={scrollToFeedback}
                     breadcrumb={[
                         { text: 'Главная', href: '/home' },
                         { text: 'О нас', href: '/about' },
@@ -55,6 +63,7 @@ const AboutPage = () => {
             <CompanyPartners />
             <PartnerReviewList />
             <FormLayout
+                ref={feedbackRef}
                 title={'Рассчитайте стоимость услуги'}
                 nestedForm={
                     <CostCalculationForm

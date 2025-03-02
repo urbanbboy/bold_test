@@ -10,10 +10,10 @@ import { motion } from "framer-motion";
 import React from "react";
 
 export const Footer = () => {
-    const { data } = useAppData()
+    const { data, feedbackRef } = useAppData()
 
     return (
-        <footer className="space-y-16 p-4 md:p-16 bg-background">
+        <footer ref={feedbackRef} className="space-y-16 p-4 md:p-16 bg-background">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-3 mt-8">
                 <div className="flex flex-col justify-between">
                     <motion.div

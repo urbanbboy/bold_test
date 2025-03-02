@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation"
 
-export const useSlug = () => {
+export const useSlug = (): string => {
     const pathname = usePathname()
     return pathname.split('/').pop() || ''
 }

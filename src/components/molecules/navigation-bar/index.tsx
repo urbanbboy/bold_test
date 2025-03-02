@@ -22,6 +22,8 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { useAppData } from "@/context/app-context";
+import { Button } from "@/components/ui/button";
 
 interface ComponentsProps {
     title: string;
@@ -73,6 +75,8 @@ const components: ComponentsProps[] = [
 ]
 
 export const NavigationBar = () => {
+    const { scrollToFeedback } = useAppData()
+
     return (
         <NavigationMenu>
             <NavigationMenuList className='hidden lg:flex'>
@@ -113,11 +117,11 @@ export const NavigationBar = () => {
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href="/" legacyBehavior passHref>
+                    <Button className="bg-transparent hover:bg-transparent p-0" onClick={scrollToFeedback}>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             Контакты
                         </NavigationMenuLink>
-                    </Link>
+                    </Button>
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>

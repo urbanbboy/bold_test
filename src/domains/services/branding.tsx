@@ -15,6 +15,7 @@ import { RequestHandler } from "@/components/atoms/request-handler";
 import { CompanyBranding } from "@/components/organisms/company-branding";
 import { useAppData } from "@/context/app-context";
 import { useGetServiceTypesQuery } from "@/api/Types";
+import { useRef } from "react";
 
 
 const serviceData = {
@@ -71,22 +72,17 @@ const serviceData = {
     ]
 }
 
-const servicesTypes = [
-    { id: 1, name: "Брендинг" },
-    { id: 2, name: "SMM-продвижение" },
-    { id: 3, name: "Продакшн" },
-    { id: 4, name: "Дизайн" },
-    { id: 5, name: "Контекстная реклама" },
-    { id: 6, name: "Таргетированная реклама" },
-    { id: 7, name: "Создание сайта" },
-];
-
-
 const BradingPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
     const { data: services_types } = useGetServiceTypesQuery()
     const { business_types } = useAppData()
+
+    const feedbackRef = useRef<HTMLDivElement>(null);
+
+    const scrollToFeedback = () => {
+        feedbackRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
 
     return (
         <RequestHandler
@@ -100,6 +96,7 @@ const BradingPage = () => {
                     sub_title={data.content}
                     bg_image={data.image}
                     button_text={"Получить консультацию"}
+                    scrollToFeedback={scrollToFeedback}
                     breadcrumb={[
                         { text: 'Главная', href: '/home' },
                         { text: 'Брендинг', href: '/services/branding' },
@@ -126,6 +123,7 @@ const BradingPage = () => {
                 card_icon={<BrandingIcon />}
             />
             <FormLayout
+                ref={feedbackRef}
                 title={"Узнайте стоимость разработки бренда"}
                 nestedForm={
                     <BrandingFeedbackForm

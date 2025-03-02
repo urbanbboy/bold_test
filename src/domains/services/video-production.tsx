@@ -13,6 +13,7 @@ import { useSlug } from "@/hooks/useSlug";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { useAppData } from "@/context/app-context";
 import { useGetVideoTypesQuery } from "@/api/Types";
+import useScrollToFeedback from "@/hooks/useScrollToFeedback";
 
 const serviceData = {
     title: 'Наши услуги по Видеопродакшну',
@@ -85,7 +86,8 @@ const VideoProductionPage = () => {
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
     const { data: video_types } = useGetVideoTypesQuery()
     const { business_types, data: info } = useAppData()
-    
+    const { ref, scrollToFeedback } = useScrollToFeedback()
+
     return (
         <RequestHandler
             isLoading={isLoading}
@@ -94,6 +96,7 @@ const VideoProductionPage = () => {
         >
             {data &&
                 <PageTitleLayout
+                    scrollToFeedback={scrollToFeedback}
                     title={data.title}
                     sub_title={data.content}
                     button_text={"Заказать видео-ролик"}
@@ -118,6 +121,7 @@ const VideoProductionPage = () => {
             />
             <ClientReviewList />
             <FormLayout
+                ref={ref}
                 title={"Рассчитайте стоимость вашего Видеопроекта"}
                 nestedForm={
                     <VideoProductionForm

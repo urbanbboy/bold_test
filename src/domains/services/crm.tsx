@@ -14,6 +14,7 @@ import { FormLayout } from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { serviceCrmData, serviceData } from "@/consts/data";
 import { useAppData } from "@/context/app-context";
+import useScrollToFeedback from "@/hooks/useScrollToFeedback";
 import { useSlug } from "@/hooks/useSlug";
 
 
@@ -23,6 +24,7 @@ const CrmPage = () => {
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
     const { data: task_types } = useGetTaskTypesQuery()
     const { business_types } = useAppData()
+    const { ref, scrollToFeedback } = useScrollToFeedback()
 
     return (
         <RequestHandler
@@ -32,6 +34,7 @@ const CrmPage = () => {
         >
             {data &&
                 <PageTitleLayout
+                    scrollToFeedback={scrollToFeedback}
                     title={data.title}
                     sub_title={data.content}
                     bg_image={data.image}
@@ -66,6 +69,7 @@ const CrmPage = () => {
             />
             <CompanyPostList />
             <FormLayout
+                ref={ref}
                 nestedForm={
                     <CrmFeedbackForm
                         business_types={business_types}
@@ -78,3 +82,7 @@ const CrmPage = () => {
 }
 
 export default CrmPage;
+
+function scrollToFeedback() {
+    throw new Error("Function not implemented.");
+}
