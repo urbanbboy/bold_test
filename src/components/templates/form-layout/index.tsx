@@ -93,7 +93,7 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
                     </div>
                 </div>
                 <motion.div
-                    variants={fadeIn('right', 'spring', 0.2)}
+                    variants={fadeIn('down', 'spring', 0.2)}
                     initial="hidden"
                     whileInView="show"
                     viewport={viewportConfig}
