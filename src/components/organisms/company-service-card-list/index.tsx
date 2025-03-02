@@ -1,3 +1,4 @@
+import { AnimatedItem } from "@/components/atoms/animated-item"
 import { ButtonWithIcon } from "@/components/atoms/button-with-icon"
 import { Heading } from "@/components/atoms/heading"
 import { ServiceCardItem } from "@/components/molecules/service-card-item"
@@ -21,11 +22,13 @@ export const CompanyServiceCardList = ({
                     </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-5 md:mt-10">
-                    {items.map((member) => (
-                        <ServiceCardItem
-                            key={member.title}
-                            {...member}
-                        />
+                    {items.map((member, idx) => (
+                        <AnimatedItem key={idx} idx={idx}>
+                            <ServiceCardItem
+                                key={member.title}
+                                {...member}
+                            />
+                        </AnimatedItem>
                     ))}
                 </div>
             </div>

@@ -1,3 +1,4 @@
+import { AnimatedItem } from "@/components/atoms/animated-item";
 import { Heading } from "@/components/atoms/heading";
 import { SubTitle } from "@/components/atoms/sub-title";
 import { SmmAdItem } from "@/components/molecules/smm-ad-item";
@@ -25,14 +26,16 @@ export const ServiceStaticCardList = ({
                     }
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {items.map((item) => (
-                        <SmmAdItem
-                            key={item.title}
-                            image={item.image}
-                            icon={item.icon}
-                            title={item.title}
-                            description={item.description}
-                        />
+                    {items.map((item, idx) => (
+                        <AnimatedItem key={idx} idx={idx}>
+                            <SmmAdItem
+                                key={item.title}
+                                image={item.image}
+                                icon={item.icon}
+                                title={item.title}
+                                description={item.description}
+                            />
+                        </AnimatedItem>
                     ))}
                 </div>
             </div>

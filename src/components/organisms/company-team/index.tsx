@@ -1,6 +1,7 @@
 'use client';
 
 import { useGetCompanyTeamQuery } from '@/api/Company';
+import { AnimatedItem } from '@/components/atoms/animated-item';
 import { Heading } from '@/components/atoms/heading';
 import { RequestHandler } from '@/components/atoms/request-handler';
 import { CompanyMember } from '@/components/molecules/company-member'
@@ -90,20 +91,13 @@ export const CompanyTeam = () => {
                         </Carousel>
                         <div className='hidden md:grid grid-cols-3 lg:grid-cols-4'>
                             {data?.items.map((member, idx) => (
-                                <motion.div
-                                    key={member.name}
-                                    variants={fadeIn('up', 'spring', idx * 0.2)}
-                                    initial="hidden"
-                                    whileInView="show"
-                                    viewport={viewportConfig}
-                                    transition={staggerTransition(idx)}
-                                >
+                                <AnimatedItem key={idx} idx={idx}>
                                     <CompanyMember
                                         name={member.name}
                                         position={member.position}
                                         image={member.image}
                                     />
-                                </motion.div>
+                                </AnimatedItem>
                             ))}
                         </div>
                     </div>
