@@ -36,6 +36,7 @@ export const Checkup: React.FC<CheckupProps> = ({ onScrollToFeedback }) => {
                     {checkupData.description}
                 </motion.p>
                 <motion.div
+                    className="z-40"
                     variants={fadeIn('up', 'spring')}
                     initial="hidden"
                     whileInView="show"
@@ -43,7 +44,6 @@ export const Checkup: React.FC<CheckupProps> = ({ onScrollToFeedback }) => {
                     transition={defaultTransition}
                 >
                     <ButtonWithIcon
-                        className="z-40"
                         onClick={onScrollToFeedback}
                     >
                         Пройти диагностику
