@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Heading } from "@/components/atoms/heading";
 import { SubTitle } from "@/components/atoms/sub-title";
 import { Button } from "@/components/ui/button";
 import { useGetCompanyVideoReviewsQuery } from "@/api/Company";
+import ReactPlayer from 'react-player/lazy';
 
 
 export const ClientReviewList = ({ hasSubTitle }: { hasSubTitle?: boolean }) => {
@@ -57,27 +57,32 @@ export const ClientReviewList = ({ hasSubTitle }: { hasSubTitle?: boolean }) => 
 
                     </div>
                 </div>
-                <div className="relative mt-4 rounded-md">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={currentPage}
-                            initial={{ opacity: 0, x: 50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -50 }}
-                            transition={{ duration: 0.5 }}
-                        >
-                            <iframe
-                                className="w-full h-[240px] md:h-[600px] rounded-md"
-                                src={data?.items[currentPage].video}
-                                title="Company Video"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            />
-                        </motion.div>
-                    </AnimatePresence>
+                <div
+                    className="player-wrapper rounded-md mt-5 md:mt-10"
+                >
+                    <ReactPlayer
+                        fallback={<>Загрузка...</>}
+                        url={data?.items[currentPage].video}
+                        width={'100%'}
+                        height={'100%'}
+                        controls={true}
+                        playsinline
+                        className='react-player'
+                    />
                 </div>
             </div>
 
-        </div>
+        </div >
     )
 }
+
+{/* <video
+    className="w-full h-auto rounded-md"
+    src={data?.items[currentPage].video}
+    controls
+    autoPlay
+    playsInline
+    muted
+>
+    Ваш браузер не поддерживает тег
+</video> */}

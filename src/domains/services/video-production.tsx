@@ -84,7 +84,7 @@ const VideoProductionPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
     const { data: video_types } = useGetVideoTypesQuery()
-    const { business_types } = useAppData()
+    const { business_types, data: info } = useAppData()
     
     return (
         <RequestHandler
@@ -106,7 +106,7 @@ const VideoProductionPage = () => {
             <InfoCard
                 title={"Креатив, который выделяет ваш бренд"}
                 description={"С более чем 10-летним опытом в видеопродакшн, наша команда профессионалов создает видеоролики, которые не только привлекают внимание, но и эффективно достигают ваших бизнес-целей."}
-                video={'Здесь будет видео'}
+                video={info?.video}
                 card_title={"В Bold Brands мы уверены"}
                 card_description={"Качественный видеоконтент — это ключ к успешному продвижению вашего бизнеса."}
                 card_icon={<VideoProductionIcon />}

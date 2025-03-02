@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import { Heading } from "@/components/atoms/heading"
+import ReactPlayer from "react-player";
+import { VideoPlayer } from "@/components/atoms/video-player";
 
 interface InfoCardProps {
     title: string;
@@ -38,7 +40,7 @@ export const InfoCard = ({
                     </p>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 place-items-center">
-                    <Card className="rounded-2xl lg:h-[336px] xl:h-[404px]">
+                    <Card className="w-full rounded-2xl lg:h-[336px] xl:h-[344px]">
                         <CardContent className="h-full flex flex-col justify-center space-y-5 py-10 lg:py-14 px-10">
                             <span className="w-[80px] h-[80px] md:w-[119px] md:h-[118px]">{card_icon}</span>
                             <Heading as="h4">{card_title}</Heading>
@@ -47,7 +49,22 @@ export const InfoCard = ({
                             </p>
                         </CardContent>
                     </Card>
-                    {video && <div>Если есть видео, то видео</div>}
+                    {video &&
+                        // <div className="relative w-full overflow-hidden rounded-md">
+                        //     <ReactPlayer
+                        //         url={video}
+                        //         fallback={<>Загрузка</>}
+                        //         controls={true}
+                        //         playing={true}
+                        //         playsinline
+                        //         width={'100%'}
+                        //         height={'100%'}
+                        //         className="react-player"
+                        //     />
+                        // </div>
+                        <VideoPlayer controls={false} video={video} />
+
+                    }
                     {image &&
                         <Image
                             src={image}

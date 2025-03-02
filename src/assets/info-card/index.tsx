@@ -16,7 +16,7 @@ export const OurPhilosophyIcon: FC<IconProps> = ({
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox={`0 0 118 118`}
-            className="w-20 h-20 md:w-[118px] md:h-[118px]"
+            // className="w-20 h-20 md:w-[118px] md:h-[118px]"
             {...attributes}
         >
             <rect
@@ -54,7 +54,7 @@ export const BrandingIcon: FC<IconProps> = ({
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 118 118"
-            className="w-20 h-20 md:w-[118px] md:h-[118px]"
+            // className="w-20 h-20 md:w-[118px] md:h-[118px]"
             {...attributes}
         >
             <rect
@@ -92,7 +92,7 @@ export const VideoProductionIcon: FC<IconProps> = ({
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox='0 0 118 119'
-            className="w-[80px] h-[80px] md:w-[118px] md:h-[119px] !important"
+            // className="w-[80px] h-[80px] md:w-[118px] md:h-[119px] !important"
             {...attributes}
         >
             <rect
@@ -167,7 +167,7 @@ export const CrmIcon: FC<IconProps> = ({
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 118 119"
-            className="w-[80px] h-[80px] md:w-[118px] md:h-[119px] !important"
+            // className="w-[80px] h-[80px] md:w-[118px] md:h-[119px] !important"
             {...attributes}
         >
             <rect
@@ -205,7 +205,7 @@ export const MarketingSupportIcon: FC<IconProps> = ({
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 118 118"
-            className="w-[80px] h-[80px] md:w-[118px] md:h-[119px] !important"
+            // className="w-[80px] h-[80px] md:w-[118px] md:h-[119px] !important"
             {...attributes}
         >
             <rect
