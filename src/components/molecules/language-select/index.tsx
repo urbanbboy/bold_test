@@ -24,7 +24,7 @@ const languageList: LanguageProps[] = [
     {
         id: "1",
         title: "English",
-        shortTitle: "ENG",
+        shortTitle: "EN",
         icon: <UsaIcon />
     },
     {
@@ -36,7 +36,7 @@ const languageList: LanguageProps[] = [
     {
         id: "3",
         title: "О'zbek",
-        shortTitle: "UZB",
+        shortTitle: "UZ",
         icon: <UzbIcon />
     }
 ];

@@ -5,7 +5,9 @@ import { Heading } from '@/components/atoms/heading';
 import { RequestHandler } from '@/components/atoms/request-handler';
 import { CompanyMember } from '@/components/molecules/company-member'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
+import { fadeIn, viewportConfig, staggerTransition } from '@/lib/motion';
 import Autoplay from 'embla-carousel-autoplay'
+import { motion } from 'framer-motion';
 import React from 'react'
 
 const data = {
@@ -79,21 +81,29 @@ export const CompanyTeam = () => {
                                 {data?.items.map((member, idx) => (
                                     <CarouselItem key={idx} className="basis-4/5 md:basis-1/2 lg:basis-1/4 p-4">
                                         <CompanyMember
-                                            key={idx}
                                             {...member}
                                         />
                                     </CarouselItem>
+
                                 ))}
                             </CarouselContent>
                         </Carousel>
                         <div className='hidden md:grid grid-cols-3 lg:grid-cols-4'>
-                            {data?.items.map((member) => (
-                                <CompanyMember
+                            {data?.items.map((member, idx) => (
+                                <motion.div
                                     key={member.name}
-                                    name={member.name}
-                                    position={member.position}
-                                    image={member.image}
-                                />
+                                    variants={fadeIn('up', 'spring', idx * 0.2)}
+                                    initial="hidden"
+                                    whileInView="show"
+                                    viewport={viewportConfig}
+                                    transition={staggerTransition(idx)}
+                                >
+                                    <CompanyMember
+                                        name={member.name}
+                                        position={member.position}
+                                        image={member.image}
+                                    />
+                                </motion.div>
                             ))}
                         </div>
                     </div>

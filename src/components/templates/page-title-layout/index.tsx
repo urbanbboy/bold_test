@@ -9,6 +9,8 @@ import {
 } from "@/components/ui/breadcrumb"
 import { BreadcrumbProps } from "./type";
 import { Heading } from "@/components/atoms/heading";
+import { motion } from "framer-motion";
+import { fadeIn, viewportConfig, staggerTransition } from "@/lib/motion";
 
 interface PageTitleLayoutProps {
     title: string;
@@ -43,7 +45,15 @@ export const PageTitleLayout = ({
                 <Breadcrumb>
                     <BreadcrumbList>
                         {breadcrumb?.map((item, idx) => (
-                            <div key={idx} className="flex items-center gap-3">
+                            <motion.div
+                                key={idx}
+                                variants={fadeIn('up', 'spring', idx * 0.2)}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={viewportConfig}
+                                transition={staggerTransition(idx)}
+                                className="flex items-center gap-3"
+                            >
                                 <BreadcrumbItem>
                                     {idx !== breadcrumb.length - 1
                                         ? <BreadcrumbLink href={item.href}>{item.text}</BreadcrumbLink>
@@ -51,7 +61,7 @@ export const PageTitleLayout = ({
                                     }
                                 </BreadcrumbItem>
                                 {idx !== breadcrumb.length - 1 && <BreadcrumbSeparator />}
-                            </div>
+                            </motion.div>
 
                         ))}
                     </BreadcrumbList>

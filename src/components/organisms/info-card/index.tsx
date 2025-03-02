@@ -1,8 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import { Heading } from "@/components/atoms/heading"
-import ReactPlayer from "react-player";
 import { VideoPlayer } from "@/components/atoms/video-player";
+import { motion } from "framer-motion";
+import { deafultTextAnimation } from "@/lib/motion";
 
 interface InfoCardProps {
     title: string;
@@ -35,9 +36,12 @@ export const InfoCard = ({
                         </Heading>
                         {sub_title && <div className="text-accent uppercase text-base md:text-xl">{sub_title}</div>}
                     </div>
-                    <p className="md:col-span-3 text-gray2 flex items-end text-sm md:text-base">
+                    <motion.p
+                        className="md:col-span-3 text-gray2 flex items-end text-sm md:text-base"
+                        {...deafultTextAnimation}
+                    >
                         {description}
-                    </p>
+                    </motion.p>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 place-items-center">
                     <Card className="w-full rounded-2xl lg:h-[336px] xl:h-[344px]">
@@ -49,20 +53,7 @@ export const InfoCard = ({
                             </p>
                         </CardContent>
                     </Card>
-                    {video &&
-                        // <div className="relative w-full overflow-hidden rounded-md">
-                        //     <ReactPlayer
-                        //         url={video}
-                        //         fallback={<>Загрузка</>}
-                        //         controls={true}
-                        //         playing={true}
-                        //         playsinline
-                        //         width={'100%'}
-                        //         height={'100%'}
-                        //         className="react-player"
-                        //     />
-                        // </div>
-                        <VideoPlayer controls={false} video={video} />
+                    {video && <VideoPlayer controls={false} video={video} />
 
                     }
                     {image &&
@@ -70,8 +61,8 @@ export const InfoCard = ({
                             src={image}
                             alt={"Our philosophy"}
                             width={648}
-                            height={404}
-                            className="rounded-2xl w-full min-h-[404px]"
+                            height={344}
+                            className="rounded-2xl w-full max-h-[344px]"
                         />
                     }
                 </div>

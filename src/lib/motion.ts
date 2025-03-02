@@ -62,3 +62,12 @@ export const fadeIn = (direction = "up", type = "spring", delay = 0, duration = 
     },
 });
 
+
+
+export const deafultTextAnimation = {
+    variants: textVariant(0.3),
+    initial: "hidden",
+    whileInView: "show",
+    viewport: viewportConfig,
+    transition: defaultTransition,
+}
