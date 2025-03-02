@@ -58,7 +58,7 @@ export const LanguageSelect = ({ isMobile }: { isMobile?: boolean }) => {
             <Select value={selectedLanguage} onValueChange={onChangeLanguage}>
                 <SelectTrigger
                     className={cn(
-                        'hover:bg-white/20 transition-all duration-200',
+                        'hover:bg-white/20 transition-all duration-200 w-[110px]',
                         isMobile ? 'text-black' : ''
                     )}>
                     <SelectValue>
