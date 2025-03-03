@@ -61,7 +61,7 @@ export const InfoCard = ({
                             src={image}
                             alt={"Our philosophy"}
                             width={648}
-                            height={344}
+                            height={404}
                             className="rounded-2xl w-full max-h-[344px]"
                         />
                     }

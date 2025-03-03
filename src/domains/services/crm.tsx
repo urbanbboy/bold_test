@@ -56,7 +56,7 @@ const CrmPage = () => {
                 card_title={"Мы также обучаем вашу команду"}
                 card_description={"и предоставляем регулярную техническую поддержку для удобного использования CRM."}
                 card_icon={<CrmIcon />}
-                image={'/images/services/crm/info_card.png'}
+                image={'/images/services/crm/info-crm.png'}
             />
             <Award
                 badgeTitle={"Партнерство"}
