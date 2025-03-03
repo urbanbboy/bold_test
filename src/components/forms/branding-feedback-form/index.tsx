@@ -18,6 +18,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { BrandingFeedbackFormSchema } from "./schema";
 import { Type } from "@/api/Types/types";
+import { useSendServiceFormMutation } from "@/api/Form";
+import { ServiceFormRequest } from "@/api/Form/types";
 
 
 interface FeedbackFormProps {
@@ -29,6 +31,14 @@ export const BrandingFeedbackForm = ({
     business_types,
     services_types,
 }: FeedbackFormProps) => {
+
+      const [sendForm, { 
+            isLoading, 
+            isSuccess, 
+            isError, 
+            reset: resetApi 
+          }] = useSendServiceFormMutation()
+
     const form = useForm<z.infer<typeof BrandingFeedbackFormSchema>>({
         resolver: zodResolver(BrandingFeedbackFormSchema),
         defaultValues: {
@@ -50,6 +60,7 @@ export const BrandingFeedbackForm = ({
     };
 
     const handleNextStep = () => {
+
         if (selectedBusinessTypes.length > 0 && selectedServiceTypes.length > 0) {
             setIsFirstStepCompleted(true);
             setTabValue('contacts');
@@ -59,18 +70,45 @@ export const BrandingFeedbackForm = ({
         }
     };
 
-    const onSubmit = (data: z.infer<typeof BrandingFeedbackFormSchema>) => {
-        if (!selectedServiceTypes.length || !selectedBusinessTypes.length) {
+    const onSubmit = async (data: z.infer<typeof BrandingFeedbackFormSchema>) => {
+
+        if (selectedBusinessTypes.length === 0 || selectedServiceTypes.length === 0) {
             toast.error("Выберите хотя бы один пункт в каждом поле!");
             return;
         }
-        const formData = {
-            ...data,
-            promotion_type: selectedServiceTypes,
-            business_type: selectedBusinessTypes,
-        };
-        console.log(formData);
-        toast.success("Успешно отправлено");
+    
+     
+        if (!data.acceptTerms) {
+            toast.error('Примите соглашение с политикой конфиденциальности!');
+            return;
+        }
+    
+        try {
+            const formData: ServiceFormRequest = {
+                ...data,
+                business_type: selectedBusinessTypes,
+                service_type: selectedServiceTypes
+            };
+            console.log('Data being sent:', JSON.stringify(formData, null, 2));
+            await sendForm(formData).unwrap();
+            
+            form.reset({
+                sender_name: "",
+                sender_phone: "",
+                sender_email: "",
+                acceptTerms: false,
+            });
+            setSelectedServiceTypes([]);
+            setSelectedBusinessTypes([]);
+            setIsFirstStepCompleted(false);
+            setTabValue('business');
+    
+            toast.success('Успешно отправлено');
+            setTimeout(resetApi, 3000);
+        } catch (err) {
+            console.error('Form submission error:', err);
+            toast.error('Ошибка при отправке формы');
+        }
     };
 
     return (

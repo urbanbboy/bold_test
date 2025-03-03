@@ -4,6 +4,7 @@ import {
     CrmServiceFormRequest,
     ServiceFormRequest,
     SiteServiceFormRequest,
+    SiteStatusFormRequest,
     SmmServiceFormRequest,
     VideoServiceFormRequest
 } from "./types";
@@ -52,6 +53,14 @@ export const formApi = baseApi.injectEndpoints({
                     body: data
                 })
             }),
+            //Страница "СЕО оптимизация"
+            sendSiteSeoForm: build.mutation<void, SiteStatusFormRequest>({
+                    query: (data) => ({
+                        url: '/application-form/site-status/',
+                        method: 'POST',
+                        body: data
+                    })
+                }),
             //Страница "CRM"
             sendSrmServiceForm: build.mutation<void, CrmServiceFormRequest>({
                 query: (data) => ({
@@ -76,6 +85,7 @@ export const {
     useSendContactsFormMutation,
     useSendServiceFormMutation,
     useSendSmmServiceFormMutation,
+    useSendSiteSeoFormMutation,
     useSendVideoServiceFormMutation,
     useSendSiteServiceFormMutation,
     useSendSrmServiceFormMutation,

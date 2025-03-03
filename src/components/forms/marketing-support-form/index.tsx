@@ -18,7 +18,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { MarketingSupportFeedbackFormSchema } from "./schema";
 import { Type } from "@/api/Types/types";
-
+import { useSendSrmServiceFormMutation } from "@/api/Form";
 
 interface FeedbackFormProps {
     business_types: Type[];
@@ -29,6 +29,16 @@ export const MarketingSupportFeedbackForm = ({
     business_types,
     task_types,
 }: FeedbackFormProps) => {
+
+      const [
+        sendForm, { 
+            isLoading, 
+            isSuccess, 
+            isError, 
+            reset: resetApi 
+          }
+       ] = useSendSrmServiceFormMutation()
+
     const form = useForm<z.infer<typeof MarketingSupportFeedbackFormSchema>>({
         resolver: zodResolver(MarketingSupportFeedbackFormSchema),
         defaultValues: {
@@ -58,21 +68,47 @@ export const MarketingSupportFeedbackForm = ({
             setIsFirstStepCompleted(false)
         }
     };
+const onSubmit = async (data: z.infer<typeof MarketingSupportFeedbackFormSchema>) => {
 
-    const onSubmit = (data: z.infer<typeof MarketingSupportFeedbackFormSchema>) => {
-        if (!selectedTaskTypes.length || !selectedBusinessTypes.length) {
+        if (selectedBusinessTypes.length === 0 || selectedTaskTypes.length === 0) {
             toast.error("Выберите хотя бы один пункт в каждом поле!");
             return;
         }
-        const formData = {
-            ...data,
-            task_type: selectedTaskTypes,
-            business_type: selectedBusinessTypes,
-        };
-        console.log(formData);
-        toast.success("Успешно отправлено");
+    
+     
+        if (!data.acceptTerms) {
+            toast.error('Примите соглашение с политикой конфиденциальности!');
+            return;
+        }
+    
+        try {
+            const formData = {
+                ...data,
+                business_type: selectedBusinessTypes,
+                task_type: selectedTaskTypes
+            };
+            console.log('Data being sent:', JSON.stringify(formData, null, 2));
+            await sendForm(formData).unwrap();
+            
+            form.reset({
+                sender_name: "",
+                sender_phone: "",
+                sender_email: "",
+                acceptTerms: false,
+            });
+            setSelectedTaskTypes([]);
+            setSelectedBusinessTypes([]);
+            setIsFirstStepCompleted(false);
+            setTabValue('business');
+    
+            toast.success('Успешно отправлено');
+            setTimeout(resetApi, 3000);
+        } catch (err) {
+            console.error('Form submission error:', err);
+            toast.error('Ошибка при отправке формы');
+        }
     };
-
+    
     return (
         <Card className="bg-background-dark2 border-none md:p-8 rounded-3xl">
             <CardHeader className="font-bold text-primary-foreground text-xl md:text-2xl">
