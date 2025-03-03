@@ -1,8 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
+import Link from "next/link";
 
 
 interface CompanyPostItemProps {
+    id: number;
     image: string
     title: string;
     company_name: string;
@@ -18,6 +20,7 @@ interface CompanyPostItemProps {
 
 export const CompanyPostItem = (props: CompanyPostItemProps) => {
     const {
+        id,
         title,
         image,
         company_name,
@@ -27,14 +30,14 @@ export const CompanyPostItem = (props: CompanyPostItemProps) => {
     } = props
 
     return (
-        <div className="p-4">
-            <div className="relative overflow-hidden rounded-3xl">
+        <Link href={`/cases/${id}`} className="p-4">
+            <div className="relative overflow-hidden rounded-3xl group">
                 <Image
                     src={image}
                     alt={'case image'}
                     width={535}
                     height={320}
-                    className="rounded-2xl w-full h-auto object-cover"
+                    className="rounded-2xl w-full h-[320px] object-cover transition-transform duration-500 scale-100 group-hover:scale-125"
                 />
                 <div className="absolute top-7 left-6 flex gap-2 flex-wrap">
                     {tags.map((tag) => (
@@ -71,6 +74,6 @@ export const CompanyPostItem = (props: CompanyPostItemProps) => {
                     <span className="text-sm">{created_at}</span>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }

@@ -21,7 +21,7 @@ export const ReviewItem = ({ rating, user_image, user_name, user_position, text 
     return (
         <>
             {/* Основной элемент карточки с урезанным текстом */}
-            <div className="w-[335px] md:w-[380px] p-5 lg:px-9 rounded-2xl shadow-lg border-none">
+            <div className="w-full md:w-[380px] p-5 lg:px-9 rounded-2xl shadow-lg border-none">
                 <div className="p-0 pt-5 lg:pt-12">
                     <div className="flex mb-4 gap-x-2">
                         {Array.from({ length: rating }).map((_, idx) => (

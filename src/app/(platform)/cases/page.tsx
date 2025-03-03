@@ -1,11 +1,13 @@
+import AboutPage from "@/domains/about";
+import CasesPage from "@/domains/cases";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+    title: "Кейсы",
+};
 
-const CasesPage = () => {
-    return (
-        <div>
-            Cases Page
-        </div>
-    );
+const Cases = () => {
+    return <CasesPage />
 }
 
-export default CasesPage;
+export default Cases;

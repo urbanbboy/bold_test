@@ -6,12 +6,14 @@ import FacebookIcon from '@/assets/socials/facebook.svg';
 import WhatsAppIcon from '@/assets/socials/whatsapp.svg';
 import { motion } from 'framer-motion';
 import { fadeIn, viewportConfig, staggerTransition } from '@/lib/motion';
+import { useAppData } from '@/context/app-context';
 
 interface LinkProps {
     title?: string;
     label?: string;
     icon?: React.ReactNode;
-    href: string;
+    href?: string;
+    hasScrollToReview?: boolean;
 }
 
 const links: {
@@ -23,7 +25,7 @@ const links: {
         items: [
             { title: 'О нас', href: '/about' },
             { title: 'Кейсы', href: '/cases' },
-            { title: 'Отзывы', href: '#reviews' }
+            { title: 'Отзывы', hasScrollToReview: true }
         ]
     },
     {
@@ -78,50 +80,54 @@ const contacts: { label: string; title: string; href?: string; }[] = [
     },
 ]
 
-export const FooterLinks = () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 lg:gap-y-10 gap-x-3">
-        {links.map(({ title, items }, idx) => (
-            <motion.div
-                key={title}
-                variants={fadeIn('up', 'spring', idx * 0.2)}
-                initial="hidden"
-                whileInView="show"
-                viewport={viewportConfig}
-                transition={staggerTransition(idx)}
-                className="flex flex-col gap-y-3"
-            >
-                <h2 className="text-xl">{title}</h2>
-                <ul className={cn('text-lg text-gray2', items[0].icon ? 'flex gap-x-3' : '')}>
-                    {items.map((item) =>
-                        item.icon ? (
-                            <SocialItem key={item.href} {...item} />
-                        ) : (
-                            <LinkItem key={item.title} {...item} />
-                        )
-                    )}
-                </ul>
-            </motion.div>
-        ))}
-        {contacts.map((contact, idx) => (
-            <motion.div
-                key={contact.label}
-                variants={fadeIn('up', 'spring', idx * 0.1)}
-                initial="hidden"
-                whileInView="show"
-                viewport={viewportConfig}
-                transition={staggerTransition(idx)}
-                className="flex flex-col gap-y-3"
-            >
-                <ContactItem
-                    label={contact.label}
-                    title={contact.title}
-                    href={contact.href}
-                />
-            </motion.div>
+export const FooterLinks = () => {
 
-        ))}
-    </div>
-);
+    return (
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 lg:gap-y-10 gap-x-3">
+            {links.map(({ title, items }, idx) => (
+                <motion.div
+                    key={title}
+                    variants={fadeIn('up', 'spring', idx * 0.2)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={viewportConfig}
+                    transition={staggerTransition(idx)}
+                    className="flex flex-col gap-y-3"
+                >
+                    <h2 className="text-xl">{title}</h2>
+                    <ul className={cn('text-lg text-gray2', items[0].icon ? 'flex gap-x-3' : '')}>
+                        {items.map((item) =>
+                            item.icon ? (
+                                <SocialItem key={item.href} {...item} />
+                            ) : (
+                                <LinkItem key={item.title} {...item} />
+                            )
+                        )}
+                    </ul>
+                </motion.div>
+            ))}
+            {contacts.map((contact, idx) => (
+                <motion.div
+                    key={contact.label}
+                    variants={fadeIn('up', 'spring', idx * 0.1)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={viewportConfig}
+                    transition={staggerTransition(idx)}
+                    className="flex flex-col gap-y-3"
+                >
+                    <ContactItem
+                        label={contact.label}
+                        title={contact.title}
+                        href={contact.href}
+                    />
+                </motion.div>
+
+            ))}
+        </div>
+    )
+};
 
 const ContactItem = ({ label, href, title }: { label: string; href?: string; title: string; }) => (
     <li className="flex flex-col gap-y-2">
@@ -146,16 +152,29 @@ const ContactItem = ({ label, href, title }: { label: string; href?: string; tit
 
 const SocialItem = ({ href, icon, label }: LinkProps) => (
     <li className="flex items-center gap-x-2">
-        <Link className="hover:text-accent rounded-full hover:shadow-md transition-all duration-300" href={href} target="_blank" aria-label={label}>
+        <Link className="hover:text-accent rounded-full hover:shadow-md transition-all duration-300" href={href || ''} target="_blank" aria-label={label}>
             {icon}
         </Link>
     </li>
 );
 
-const LinkItem = ({ href, title }: LinkProps) => (
-    <li className=''>
-        <Link className="hover:text-accent" href={href}>
-            {title}
-        </Link>
-    </li>
-);
+const LinkItem = ({ href, title, hasScrollToReview }: LinkProps) => {
+    const { scrollToReview } = useAppData()
+
+    return (
+        <li className=''>
+            <Link
+                className="hover:text-accent"
+                href={href || ''}
+                onClick={(e) => {
+                    if (hasScrollToReview) {
+                        e.preventDefault(); // Чтобы страница не перезагружалась
+                        scrollToReview();
+                    }
+                }}
+            >
+                {title}
+            </Link>
+        </li>
+    );
+}

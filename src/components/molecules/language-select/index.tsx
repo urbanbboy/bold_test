@@ -73,7 +73,7 @@ export const LanguageSelect = ({ isMobile }: { isMobile?: boolean }) => {
                 <SelectContent className="min-w-[180px]">
                     {languageList.map((language) => (
                         <SelectItem key={language.id} value={language.id}>
-                            <div className="flex items-center space-x-2 focus:ring-offset-0">
+                            <div className="flex items-center space-x-2 hover:text-red-500 transition-colors duration-200">
                                 <span>{language.icon}</span>
                                 <span>{language.title}</span>
                             </div>

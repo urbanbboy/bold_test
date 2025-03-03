@@ -12,7 +12,9 @@ interface AppContextType {
     isLoading: boolean;
     error: unknown;
     scrollToFeedback: () => void;
+    scrollToReview: () => void;
     feedbackRef: RefObject<HTMLDivElement | null>;
+    reviewRef: RefObject<HTMLDivElement | null>;
 }
 
 const AppContext = createContext<AppContextType | null>(null)
@@ -21,9 +23,14 @@ export const AppContextProvider = ({ children }: { children: React.ReactNode }) 
     const { data, isLoading, error } = useGetCompanyInfoQuery()
     const { data: business_types } = useGetBusinessTypesQuery()
     const feedbackRef = useRef<HTMLDivElement>(null);
+    const reviewRef = useRef<HTMLDivElement>(null);
 
     const scrollToFeedback = () => {
         feedbackRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
+
+    const scrollToReview = () => {
+        reviewRef.current?.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
@@ -33,7 +40,9 @@ export const AppContextProvider = ({ children }: { children: React.ReactNode }) 
             error,
             business_types: business_types ?? [],
             scrollToFeedback,
+            scrollToReview,
             feedbackRef,
+            reviewRef
         }}>
             {children}
         </AppContext.Provider>

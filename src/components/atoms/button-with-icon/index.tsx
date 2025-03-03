@@ -3,11 +3,9 @@ import { cn } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
 import { cva } from "class-variance-authority";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { fadeIn, viewportConfig, defaultTransition } from "@/lib/motion";
 
 const buttonVariants = cva(
-    "w-fit inline-flex items-center gap-1 text-base rounded-md px-3 py-6 font-medium",
+    "w-fit inline-flex items-center gap-2 text-base rounded-md px-3 py-7 font-medium",
     {
         variants: {
             variant: {
@@ -35,36 +33,27 @@ const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
     ...props
 }) => {
     return (
-        <motion.div
-            variants={fadeIn('up', 'spring')}
-            initial="hidden"
-            whileInView="show"
-            viewport={viewportConfig}
-            transition={defaultTransition}
+        <Button
+            variant="ghost"
+            className={cn(buttonVariants({ variant, className }), 'group')}
+            {...props}
         >
-            <Button
-                variant="ghost"
-                className={cn(buttonVariants({ variant, className }), 'group')}
-                {...props}
-            >
-                {children}
-                <span className={cn(
-                    'rounded-sm',
-                    variant == 'primary' ? 'bg-white p-2.5' : '',
-                    variant == 'secondary' ? 'rounded-none group-hover:bg-transparent' : '',
-                )}>
-                    <ChevronRight
-                        className={cn(
-                            'text-primary',
-                            variant == 'feature' && 'text-accent',
-                            variant == 'secondary' && 'group-hover:text-white',
-                        )}
-                        size={32}
-                    />
-                </span>
-            </Button >
-        </motion.div>
-
+            {children}
+            <span className={cn(
+                'rounded-sm',
+                variant == 'primary' ? 'bg-white p-3' : '',
+                variant == 'secondary' ? 'rounded-none group-hover:bg-transparent' : '',
+            )}>
+                <ChevronRight
+                    className={cn(
+                        'text-primary',
+                        variant == 'feature' && 'text-accent',
+                        variant == 'secondary' && 'group-hover:text-white',
+                    )}
+                    size={32}
+                />
+            </span>
+        </Button >
     );
 };
 

@@ -1,9 +1,9 @@
 import React from "react";
 
 interface MapButtonProps {
-  text: string;
-  isActive: boolean;
-  onClick: () => void;
+    text: string;
+    isActive: boolean;
+    onClick: () => void;
 }
 
 const MapButton: React.FC<MapButtonProps> = ({ text, isActive, onClick }) => {
@@ -11,9 +11,8 @@ const MapButton: React.FC<MapButtonProps> = ({ text, isActive, onClick }) => {
         <button
             className={`px-4 py-2 border border-none rounded-2xl text-sm pt-3 pb-3 transition-all duration-300 
                   max-sm:text-[0.7rem] max-sm:px-[0.85rem]
-                  ${
-        isActive 
-            ? "bg-white text-black" 
+                  ${isActive
+            ? "bg-white text-black"
             : "bg-[#313336] text-[#AAADB5]"
         }`}
             onClick={onClick}

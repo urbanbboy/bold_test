@@ -11,7 +11,6 @@ import { BreadcrumbProps } from "./type";
 import { Heading } from "@/components/atoms/heading";
 import { motion } from "framer-motion";
 import { fadeIn, viewportConfig, staggerTransition } from "@/lib/motion";
-import { useAppData } from "@/context/app-context";
 
 interface PageTitleLayoutProps {
     title: string;

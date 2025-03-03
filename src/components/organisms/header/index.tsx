@@ -10,11 +10,26 @@ export const Header = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [scrollUpDistance, setScrollUpDistance] = useState(0);
+    const [isBlurred, setIsBlurred] = useState(true);
+    const [isShadowVisible, setIsShadowVisible] = useState(true);
+
 
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
             const deltaY = lastScrollY - currentScrollY;
+
+            if (currentScrollY === 0) {
+                setIsBlurred(false);
+            } else {
+                setIsBlurred(true);
+            }
+
+            if (currentScrollY === 0) {
+                setIsShadowVisible(false);
+            } else {
+                setIsShadowVisible(true);
+            }
 
             if (deltaY > 0) {
                 setScrollUpDistance(prev => prev + deltaY);
@@ -37,14 +52,12 @@ export const Header = () => {
 
     return (
         <div
-            className={`fixed top-0 left-0 right-0 w-full max-w-[1920px] m-auto z-50 transition-transform duration-300 ${
-                isVisible ? "translate-y-0" : "-translate-y-full"
-            } bg-black/30 backdrop-blur-md shadow-md`}
+            className={`fixed top-0 left-0 right-0 w-full max-w-[1920px] m-auto z-50 transition-all duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"} ${isBlurred ? "bg-black/30 backdrop-blur-md" : "bg-black/0"} ${isShadowVisible ? "shadow-md" : "shadow-none"}`}
         >
             <div className="flex justify-between items-center p-5 md:px-14 md:py-5">
                 <Logo />
                 <NavigationBar />
-                <div className="flex gap-x-0.5">
+                <div className="flex gap-x-0.5 items-center">
                     <LanguageSelect />
                     <div className="flex lg:hidden">
                         <MenuSheet />

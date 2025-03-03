@@ -188,28 +188,60 @@ export const serviceData = {
     title: 'Наши услуги по интеграции CRM',
     items: [
         {
-            image: "/images/about_page/our_philosophy.webp",
+            image: "/images/services/crm/crm1.png",
             image_right: false,
-            title: 'Рекламные видеоролики',
-            description: 'Анализируем рынок, изучаем конкурентов, выявляем особенности вашей целевой аудитории. Вместе с вами формируем цели продвижения.',
+            title: 'Выбор и настройка CRM-системы',
+            description: '',
+            tags: [
+                {
+                    tags: 'Подбор наиболее подходящей CRM-платформы для вашего бизнеса.',
+                },
+                {
+                    tags: 'Индивидуальная настройка системы под ваши требования.',
+                }
+            ]
         },
         {
-            image: "/images/about_page/our_philosophy.webp",
+            image: "/images/services/crm/crm2.png",
             image_right: true,
-            title: 'Разработка стратегии',
-            description: 'Создаем уникальную SMM-стратегию, которая выделяет ваш бренд и приносит реальные результаты.',
+            title: 'Миграция данных',
+            description: '',
+            tags: [
+                {
+                    tags: 'Безопасный и точный перенос данных из существующих систем.',
+                },
+                {
+                    tags: 'Обеспечение целостности и сохранности информации.'
+                }
+            ]
         },
         {
-            image: "/images/about_page/our_philosophy.webp",
+            image: "/images/services/crm/crm3.png",
             image_right: false,
-            title: 'Создание контента',
-            description: 'Креатив-команда: мобилограф, копирайтер и дизайнер — разрабатывает визуалы и тексты, которые привлекают внимание и побуждают к покупкам.',
+            title: 'Автоматизация процессов',
+            description: '',
+            tags: [
+                {
+                    tags: 'Настройка автоматизированных рабочих процессов для повышения эффективности',
+                },
+                {
+                    tags: 'Интеграция CRM с другими инструментами и системами вашего бизнеса.'
+                }
+            ]
         },
         {
-            image: "/images/about_page/our_philosophy.webp",
+            image: "/images/services/crm/crm4.png",
             image_right: true,
-            title: 'Настройка рекламы',
-            description: 'Таргетолог настраивает рекламу так, чтобы привлекать вашу целевую аудиторию и создавать поток заявок.',
+            title: 'Обучение и поддержка',
+            description: '',
+            tags: [
+                {
+                    tags: 'Проведение обучающих сессий для вашей команды.',
+                },
+                {
+                    tags: 'Предоставление технической поддержки и сопровождение после внедрения.'
+                }
+            ]
         },
     ]
 }
@@ -243,7 +275,7 @@ export const seoPostsData = {
     title: 'Наши услуги по SEO-оптимизации',
     items: [
         {
-            image: "/images/services/seo/post_1.webp",
+            image: "/images/services/seo/seo1-min.png",
             image_right: false,
             title: 'Технический аудит сайта',
             tags: [
@@ -253,7 +285,7 @@ export const seoPostsData = {
             ]
         },
         {
-            image: "/images/services/seo/post_2.webp",
+            image: "/images/services/seo/seo2-min.png",
             image_right: true,
             title: 'Подбор эффективных ключевых слов',
             tags: [
@@ -263,7 +295,7 @@ export const seoPostsData = {
             ]
         },
         {
-            image: "/images/services/seo/post_3.webp",
+            image: "/images/services/seo/seo3-min.png",
             image_right: false,
             title: 'Внутренняя оптимизация',
             tags: [
@@ -273,7 +305,7 @@ export const seoPostsData = {
             ]
         },
         {
-            image: "/images/services/seo/post_4.webp",
+            image: "/images/services/seo/seo4-min.png",
             image_right: true,
             title: 'Внешняя оптимизация (линкбилдинг)',
             tags: [
@@ -283,7 +315,7 @@ export const seoPostsData = {
             ]
         },
         {
-            image: "/images/services/seo/post_5.webp",
+            image: "/images/services/seo/seo5-min.png",
             image_right: false,
             title: 'Локальное SEO',
             tags: [
@@ -293,7 +325,7 @@ export const seoPostsData = {
             ]
         },
         {
-            image: "/images/services/seo/post_6.webp",
+            image: "/images/services/seo/seo6-min.png",
             image_right: true,
             title: 'Постоянный мониторинг и аналитика',
             tags: [

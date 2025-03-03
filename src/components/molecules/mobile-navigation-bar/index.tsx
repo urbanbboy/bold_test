@@ -15,7 +15,7 @@ interface LinkProps {
 
 interface innerLinksProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     linkTitle: string,
-    linkHref: string,
+    linkHref?: string,
     linkIcon?: React.ReactNode
 }
 
@@ -36,6 +36,7 @@ const links: LinkProps[] = [
 ]
 
 export const MobileNavigationBar = ({ closeSheet }: { closeSheet: () => void }) => {
+
     return (
         <nav className="mt-8 space-y-2 font-bold">
             {links.map((link) => (
@@ -64,9 +65,9 @@ export const MobileNavigationBar = ({ closeSheet }: { closeSheet: () => void }) 
                 </AccordionItem>
             </Accordion>
             <LinkItem
-                linkTitle={"Контакты"}
-                linkHref={"/contacts"}
                 closeSheet={closeSheet}
+                linkHref="/contacts"
+                linkTitle={"Контакты"}
             />
         </nav>
     );
@@ -87,7 +88,7 @@ const LinkItem = ({
                 cn('flex justify-start text-base w-full text-wrap rounded-none border-b-2 border-graphic-gray hover:border-graphic-gray2  hover:bg-background-gray', className)
             }
         >
-            <Link href={linkHref} className="text-start leading-5 gap-x-2">
+            <Link href={linkHref || ''} className="text-start leading-5 gap-x-2">
                 <span>{linkTitle}</span>
             </Link>
         </Button>

@@ -60,7 +60,7 @@ export default {
                 }
             },
             borderRadius: {
-                lg: 'var(--radius) + 8px',
+                lg: 'calc(var(--radius) + 8px)',
                 md: 'var(--radius)',
                 sm: 'calc(var(--radius) - 8px)'
             },

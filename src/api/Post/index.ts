@@ -2,7 +2,7 @@ import { baseApi } from "../Base";
 import { Post, PostsResponse } from "./types";
 
 
-export const partnersReviewsApi = baseApi.injectEndpoints({
+export const postApi = baseApi.injectEndpoints({
     endpoints(build) {
         return {
             getPosts: build.query<PostsResponse, void>({
@@ -22,4 +22,4 @@ export const partnersReviewsApi = baseApi.injectEndpoints({
 export const {
     useGetPostsQuery,
     useGetPostByIdQuery,
-} = partnersReviewsApi
+} = postApi

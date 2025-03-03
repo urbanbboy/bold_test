@@ -2,6 +2,7 @@ import { FeedbackContactItem } from "@/components/atoms/feedback-contact-item";
 import { Heading } from "@/components/atoms/heading";
 import { useAppData } from "@/context/app-context";
 import { fadeIn, staggerTransition, textVariant, viewportConfig } from "@/lib/motion";
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Mail, Phone } from "lucide-react"
 import Image from "next/image";
@@ -37,11 +38,13 @@ const data: ContactItem[] = [
 interface FormProps {
     title?: string;
     nestedForm: React.ReactNode;
+    isContactPage?: boolean;
 }
 
 export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
     title = 'Рассчитайте стоимость услуги',
-    nestedForm
+    nestedForm,
+    isContactPage
 }, ref) => {
 
     return (
@@ -67,7 +70,10 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
                 whileInView="show"
                 viewport={viewportConfig}
                 transition={staggerTransition(0)}
-                className="relative z-10 m-auto max-w-[1280px] flex flex-col lg:flex-row items-center gap-3 py-10 lg:py-0 justify-center px-4 text-white">
+                className={cn(
+                    "relative z-10 m-auto max-w-[1280px] flex flex-col lg:flex-row items-center gap-3 py-10 lg:py-0 justify-center px-4 text-white",
+                    isContactPage ? 'pt-24' : ''
+                )}>
                 <div className="flex flex-col gap-y-3 md:gap-y-8 lg:w-1/2">
                     <Heading as="h2" className="text-primary-foreground">{title}</Heading>
                     <motion.h3
@@ -95,11 +101,11 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
                         ))}
                     </div>
                 </div>
-                <motion.div
+                <div
                     className="flex-1 w-full lg:w-1/2 max-w-[600px]"
                 >
                     {nestedForm}
-                </motion.div>
+                </div>
             </motion.div>
         </div>
     );
