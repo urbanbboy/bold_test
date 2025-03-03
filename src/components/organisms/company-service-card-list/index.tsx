@@ -21,7 +21,7 @@ export const CompanyServiceCardList = ({
                         </ButtonWithIcon>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-5 md:mt-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-5 md:mt-10 grid-equal-height">
                     {items.map((member, idx) => (
                         <AnimatedItem key={idx} idx={idx}>
                             <ServiceCardItem

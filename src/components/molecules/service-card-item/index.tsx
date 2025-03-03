@@ -20,7 +20,7 @@ export const ServiceCardItem = ({
 }: ServiceCardItemProps) => {
     return (
         <Card className={cn(
-            'flex flex-col xl:flex-row gap-6 p-6 rounded-3xl hover:shadow-xl transition-all duration-300',
+            'flex flex-col xl:flex-row gap-6 p-6 md:min-h-[461px] lg:min-h-[280px] rounded-3xl hover:shadow-xl min-h-[280px] transition-all duration-300',
             isContextAd ? 'px-6 py-10' : ''
         )}>
             <div className="w-20 h-20 md:w-[140px] md:h-[140px] md:m-auto">

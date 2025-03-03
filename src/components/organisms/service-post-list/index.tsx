@@ -5,7 +5,8 @@ import { deafultTextAnimation } from "@/lib/motion";
 import { motion } from "framer-motion";
 
 export interface IServicePostItem {
-    image: string;
+    image?: string;
+    video_link?:string;
     image_right: boolean;
     title: string;
     sub_title?: string;
