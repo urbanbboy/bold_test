@@ -8,6 +8,7 @@ const ContactsPage = () => {
     return (
         <>
             <FormLayout
+                isContactPage
                 title={'Получите бесплатную консультацию'}
                 nestedForm={<FeedbackForm />}
             />

@@ -13,7 +13,7 @@ const mapContainerStyle: React.CSSProperties = {
     width: "95%",
     height: "70vh",
     borderRadius: "32px",
-    margin: "3vh",
+    margin: "3vh auto",
 };
 
 // Координаты для Бишкека
@@ -130,9 +130,8 @@ export const Map: React.FC = () => {
     if (!isLoaded) return <p>Загрузка карты</p>;
 
     return (
-        <div className="relative w-full flex flex-col items-start justify-center bg-[#0D0D0D]">
-            {/* Блок с кнопками switch */}
-            <div className="flex gap-2 bg-transparent map-buttons-container">
+        <div className="relative w-full flex flex-col items-start justify-center bg-background-dark ">
+            <div className="absolute z-40 top-7 left-7 lg:top-14 lg:left-14 bg-transparent">
                 <MapButton
                     text="Бишкек"
                     isActive={mapCondition}
