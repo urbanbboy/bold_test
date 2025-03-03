@@ -10,12 +10,7 @@ import { Heading } from "@/components/atoms/heading"
 import { useGetCompanyServicesQuery } from "@/api/Company"
 import { RequestHandler } from "@/components/atoms/request-handler"
 import { motion } from "framer-motion"
-import { fadeIn, staggerTransition, textVariant, viewportConfig } from "@/lib/motion"
-import { CompanyServicesResponse } from "@/api/Company/types"
-
-// --------------------------------
-// Сделать кнопки кликабельными подробнее
-// --------------------------------
+import { fadeIn, staggerTransition, viewportConfig } from "@/lib/motion"
 
 const hrefMap: Record<string, string> = {
     "брендинг": "/services/branding",

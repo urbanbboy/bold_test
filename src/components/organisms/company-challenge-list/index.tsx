@@ -2,7 +2,7 @@ import React from 'react'
 import { useGetCompanyChallengesQuery } from '@/api/Company'
 import ChallengeCard from '@/components/molecules/company-challenge-card'
 import { Heading } from '@/components/atoms/heading'
-import { ChallengesBg } from '@/assets/backgrounds'
+import { ChallengesBg, ChallengesSVG } from '@/assets/backgrounds'
 import { RequestHandler } from '@/components/atoms/request-handler'
 import { motion } from 'framer-motion'
 import { fadeIn, staggerTransition, textVariant, viewportConfig } from '@/lib/motion'
@@ -20,7 +20,7 @@ export const CompanyChallengeList = () => {
                 >
                     <Heading as="h2" className="text-center">{data?.title}</Heading>
                     <div className="relative">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-8 mt-5 lg:mt-14">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-y-12 mt-5 lg:mt-14">
                             {data?.items.map((challenge, index) => (
                                 <motion.div
                                     key={index}
@@ -42,6 +42,7 @@ export const CompanyChallengeList = () => {
                     </div>
                 </RequestHandler>
                 <ChallengesBg className="hidden lg:block absolute top-52 mx-auto w-full -z-10" />
+                <ChallengesSVG className='absolute top-[400px] left-[405px] hidden xl:flex' />
             </div>
         </section>
     );

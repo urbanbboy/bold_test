@@ -109,3 +109,75 @@ export const CheckupBg: FC<IconProps> = ({
     )
 }
 
+
+export const ChallengesSVG: FC<IconProps> = ({
+    width = '471',
+    height = '800',
+    ...attributes
+}) => {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width={width}
+            height={height}
+            fill="none"
+            viewBox="0 0 471 870"
+            {...attributes}
+        >
+            <path
+                stroke="#A8B0BB"
+                strokeDasharray="3 4"
+                strokeWidth="2"
+                d="M126 15h30.301c22.091 0 40 17.909 40 40v340.301C196.301 417.226 214.075 435 236 435M346 15h-30.301c-22.091 0-40 17.909-40 40v340.301C275.699 417.226 257.925 435 236 435M126 854h30.301c22.091 0 40-17.909 40-40V474.699C196.301 452.774 214.075 435 236 435M346 854h-30.301c-22.091 0-40-17.909-40-40V474.699C275.699 452.774 257.925 435 236 435M455 435H17"
+            ></path>
+            <circle
+                cx="126"
+                cy="16"
+                r="12"
+                fill="#A8B0BB"
+                stroke="#FAFAFC"
+                strokeWidth="8"
+            ></circle>
+            <circle
+                cx="346"
+                cy="16"
+                r="12"
+                fill="#A8B0BB"
+                stroke="#FAFAFC"
+                strokeWidth="8"
+            ></circle>
+            <circle
+                cx="455"
+                cy="435"
+                r="12"
+                fill="#A8B0BB"
+                stroke="#FAFAFC"
+                strokeWidth="8"
+            ></circle>
+            <circle
+                cx="346"
+                cy="854"
+                r="12"
+                fill="#A8B0BB"
+                stroke="#FAFAFC"
+                strokeWidth="8"
+            ></circle>
+            <circle
+                cx="16"
+                cy="435"
+                r="12"
+                fill="#A8B0BB"
+                stroke="#FAFAFC"
+                strokeWidth="8"
+            ></circle>
+            <circle
+                cx="126"
+                cy="854"
+                r="12"
+                fill="#A8B0BB"
+                stroke="#FAFAFC"
+                strokeWidth="8"
+            ></circle>
+        </svg>
+    )
+}
