@@ -3,11 +3,9 @@ import { cn } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
 import { cva } from "class-variance-authority";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { fadeIn, viewportConfig, defaultTransition } from "@/lib/motion";
 
 const buttonVariants = cva(
-    "w-fit inline-flex items-center gap-1 text-base rounded-md px-3 py-6 font-medium",
+    "w-fit inline-flex items-center gap-2 text-base rounded-md px-3 py-7 font-medium",
     {
         variants: {
             variant: {
@@ -35,13 +33,6 @@ const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
     ...props
 }) => {
     return (
-        // <motion.div
-        //     variants={fadeIn('up', 'spring')}
-        //     initial="hidden"
-        //     whileInView="show"
-        //     viewport={viewportConfig}
-        //     transition={defaultTransition}
-        // >
         <Button
             variant="ghost"
             className={cn(buttonVariants({ variant, className }), 'group')}
@@ -50,7 +41,7 @@ const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
             {children}
             <span className={cn(
                 'rounded-sm',
-                variant == 'primary' ? 'bg-white p-2.5' : '',
+                variant == 'primary' ? 'bg-white p-3' : '',
                 variant == 'secondary' ? 'rounded-none group-hover:bg-transparent' : '',
             )}>
                 <ChevronRight
@@ -63,8 +54,6 @@ const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
                 />
             </span>
         </Button >
-        // </motion.div>
-
     );
 };
 

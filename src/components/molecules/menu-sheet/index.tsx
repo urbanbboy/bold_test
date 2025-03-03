@@ -11,7 +11,6 @@ import { LanguageSelect } from "../language-select"
 export const MenuSheet = () => {
     const [open, setOpen] = useState<boolean>(false)
 
-
     return (
         <Sheet open={open} onOpenChange={setOpen} >
             <SheetTrigger asChild>

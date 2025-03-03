@@ -57,7 +57,7 @@ export const Header = () => {
             <div className="flex justify-between items-center p-5 md:px-14 md:py-5">
                 <Logo />
                 <NavigationBar />
-                <div className="flex gap-x-0.5">
+                <div className="flex gap-x-0.5 items-center">
                     <LanguageSelect />
                     <div className="flex lg:hidden">
                         <MenuSheet />

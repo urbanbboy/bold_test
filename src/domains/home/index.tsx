@@ -14,9 +14,12 @@ import { SingleSliderList } from "@/components/organisms/single-slider-list";
 import { VideoAboutCompany } from "@/components/organisms/video-about-company";
 import { FeedbackForm } from "@/components/forms/feedback-form";
 import { FormLayout } from "@/components/templates/form-layout";
+import { PartnerReviewList } from "@/components/organisms/partner-review-list";
+import { useAppData } from "@/context/app-context";
 
 const HomePage = () => {
     const feedbackRef = useRef<HTMLDivElement>(null);
+    const { feedbackRef: reviewsRef } = useAppData()
 
     const scrollToFeedback = () => {
         feedbackRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -48,6 +51,7 @@ const HomePage = () => {
                 image={"/images/main_page/diploma.jpg"}
             />
             <CompanyPartners />
+            <PartnerReviewList />
             <FormLayout
                 ref={feedbackRef}
                 title={'Получите бесплатную консультацию'}

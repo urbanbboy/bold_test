@@ -10,7 +10,7 @@ export interface FeatureProps {
     image: string;
 }
 
-export const CompanyFeatureItem = ({ image, title, tags }: FeatureProps) => {
+export const CompanyFeatureItem = ({ image, title, tags, href }: FeatureProps) => {
     return (
         <div className="h-full border rounded-2xl shadow-lg flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl">
             <div className="w-full h-[250px]  relative overflow-hidden">
@@ -40,7 +40,9 @@ export const CompanyFeatureItem = ({ image, title, tags }: FeatureProps) => {
                     variant="feature"
                     className="text-accent mt-auto"
                 >
-                    Подробнее
+                    <Link href={href || ''}>
+                        Подробнее
+                    </Link>
                 </ButtonWithIcon>
             </div>
         </div>

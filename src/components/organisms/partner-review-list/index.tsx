@@ -5,6 +5,7 @@ import { Heading } from "@/components/atoms/heading";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { ReviewItem } from "@/components/molecules/partner-review-item"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useAppData } from "@/context/app-context";
 import { fadeIn, viewportConfig, staggerTransition, textVariant } from "@/lib/motion";
 import { motion } from "framer-motion";
 
@@ -53,9 +54,10 @@ import { motion } from "framer-motion";
 
 export const PartnerReviewList = () => {
     const { data, isLoading, error } = useGetPartnersReviewsQuery()
+    const { reviewRef } = useAppData()
 
     return (
-        <div className="w-full max-w-[1920px] px-4 md:px-40 mb-24">
+        <div ref={reviewRef} className="w-full max-w-[1920px] px-4 md:px-40 mb-24">
             <RequestHandler
                 isLoading={isLoading}
                 error={error}

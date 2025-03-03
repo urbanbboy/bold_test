@@ -19,7 +19,7 @@ export const CompanyPostList = ({ title }: { title?: string }) => {
     const mobilePosts = data?.items.slice(0, 3)
 
     return (
-        <div className="w-screen overflow-x-hidden py-20 bg-background-gray">
+        <div className="w-full overflow-x-hidden py-20 bg-background-gray">
             <RequestHandler
                 isLoading={isLoading}
                 error={error}
