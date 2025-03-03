@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from "react";
+import { FloatingWhatsApp } from 'react-floating-whatsapp';
 import { Award } from "@/components/organisms/award";
 import { Checkup } from "@/components/organisms/checkup";
 import { CompanyChallengeList } from "@/components/organisms/company-challenge-list";
@@ -23,6 +24,16 @@ const HomePage = () => {
     return (
         <>
             <SingleSliderList onScrollToFeedback={scrollToFeedback} />
+            <FloatingWhatsApp
+                phoneNumber="+996500160074"  // Номер телефона в международном формате
+                accountName="Bold Brands International" 
+                notificationSound
+                chatMessage="Доброго времени суток, чем могу вам помочь?"
+                statusMessage="Онлайн"
+                darkMode
+                avatar='/images/main_page/diploma.jpg'
+                placeholder="Введите текст"
+            />
             <MarketingDepartment />
             <VideoAboutCompany />
             <CompanyInfo />
