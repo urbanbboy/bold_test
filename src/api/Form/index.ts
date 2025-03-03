@@ -55,12 +55,12 @@ export const formApi = baseApi.injectEndpoints({
             }),
             //Страница "СЕО оптимизация"
             sendSiteSeoForm: build.mutation<void, SiteStatusFormRequest>({
-                    query: (data) => ({
-                        url: '/application-form/site-status/',
-                        method: 'POST',
-                        body: data
-                    })
-                }),
+                query: (data) => ({
+                    url: '/application-form/site-status/',
+                    method: 'POST',
+                    body: data
+                })
+            }),
             //Страница "CRM"
             sendSrmServiceForm: build.mutation<void, CrmServiceFormRequest>({
                 query: (data) => ({

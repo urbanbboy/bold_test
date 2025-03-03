@@ -31,14 +31,14 @@ export const SmmFeedbackForm = ({
     business_types,
     social_types,
 }: SmmFeedbackFormProps) => {
-   const [
-    sendForm, { 
-        isLoading, 
-        isSuccess, 
-        isError, 
-        reset: resetApi 
-      }
-   ] = useSendSmmServiceFormMutation()
+    const [
+        sendForm, { 
+            isLoading, 
+            isSuccess, 
+            isError, 
+            reset: resetApi 
+        }
+    ] = useSendSmmServiceFormMutation()
 
     const form = useForm<z.infer<typeof SmmFeedbackFormSchema>>({
         resolver: zodResolver(SmmFeedbackFormSchema),
@@ -194,11 +194,11 @@ export const SmmFeedbackForm = ({
                                                         onChange={(e) => {
                                                             field.onChange(e);
                                                             setQuantity(e.target.value);
-                                                          }}
-                                                          onClear={() => {
+                                                        }}
+                                                        onClear={() => {
                                                             form.setValue("quantity_of_publications", "");
                                                             setQuantity("");
-                                                          }}
+                                                        }}
                                                     />
                                                 </FormControl>
                                                 <span className="text-gray text-xs">Определим частоту взаимодействия с вашей аудиторией и объем охвата</span>

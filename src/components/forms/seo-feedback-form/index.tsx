@@ -31,14 +31,14 @@ export const SeoFeedbackForm = ({
     site_statuses,
 }: FeedbackFormProps) => {
 
-       const [
-                sendForm, { 
-                    isLoading, 
-                    isSuccess, 
-                    isError, 
-                    reset: resetApi 
-                  }
-               ] = useSendSiteSeoFormMutation()
+    const [
+        sendForm, { 
+            isLoading, 
+            isSuccess, 
+            isError, 
+            reset: resetApi 
+        }
+    ] = useSendSiteSeoFormMutation()
 
     const form = useForm<z.infer<typeof SeoFeedbackFormSchema>>({
         resolver: zodResolver(SeoFeedbackFormSchema),
@@ -78,48 +78,48 @@ export const SeoFeedbackForm = ({
         }
     };
 
-   const onSubmit = async (data: z.infer<typeof SeoFeedbackFormSchema>) => {
+    const onSubmit = async (data: z.infer<typeof SeoFeedbackFormSchema>) => {
      
-             if (selectedBusinessTypes.length === 0 || selectedPromotionTypes.length === 0) {
-                 toast.error("Выберите хотя бы один пункт в каждом поле!");
-                 return;
-             }
+        if (selectedBusinessTypes.length === 0 || selectedPromotionTypes.length === 0) {
+            toast.error("Выберите хотя бы один пункт в каждом поле!");
+            return;
+        }
          
           
-             if (!data.acceptTerms) {
-                 toast.error('Примите соглашение с политикой конфиденциальности!');
-                 return;
-             }
+        if (!data.acceptTerms) {
+            toast.error('Примите соглашение с политикой конфиденциальности!');
+            return;
+        }
          
-             try {
-                 const formData = {
-                     ...data,
-                     business_type: selectedBusinessTypes,
-                     site_status: selectedPromotionTypes,
-                     purpose_of_promotion:purpose
-                 };
-                 console.log('Data being sent:', JSON.stringify(formData, null, 2));
-                 await sendForm(formData).unwrap();
+        try {
+            const formData = {
+                ...data,
+                business_type: selectedBusinessTypes,
+                site_status: selectedPromotionTypes,
+                purpose_of_promotion:purpose
+            };
+            console.log('Data being sent:', JSON.stringify(formData, null, 2));
+            await sendForm(formData).unwrap();
                  
-                 form.reset({
-                     sender_name: "",
-                     sender_phone: "",
-                     sender_email: "",
-                     acceptTerms: false,
-                 });
-                 setSelectedPromotionTypes([]);
-                 setSelectedBusinessTypes([]);
-                 setIsFirstStepCompleted(false);
-                 setPurpose('')
-                 setTabValue('business');
+            form.reset({
+                sender_name: "",
+                sender_phone: "",
+                sender_email: "",
+                acceptTerms: false,
+            });
+            setSelectedPromotionTypes([]);
+            setSelectedBusinessTypes([]);
+            setIsFirstStepCompleted(false);
+            setPurpose('')
+            setTabValue('business');
          
-                 toast.success('Успешно отправлено');
-                 setTimeout(resetApi, 3000);
-             } catch (err) {
-                 console.error('Form submission error:', err);
-                 toast.error('Ошибка при отправке формы');
-             }
-         };
+            toast.success('Успешно отправлено');
+            setTimeout(resetApi, 3000);
+        } catch (err) {
+            console.error('Form submission error:', err);
+            toast.error('Ошибка при отправке формы');
+        }
+    };
 
     return (
         <Card className="bg-background-dark2 border-none md:p-8 rounded-3xl">
@@ -199,11 +199,11 @@ export const SeoFeedbackForm = ({
                                                         onChange={(e) => {
                                                             field.onChange(e);
                                                             setPurpose(e.target.value);
-                                                          }}
-                                                          onClear={() => {
+                                                        }}
+                                                        onClear={() => {
                                                             form.setValue("purpose_of_promotion", "");
                                                             setPurpose("");
-                                                          }}
+                                                        }}
                                                     />
                                                 </FormControl>
                                                 <FormMessage />

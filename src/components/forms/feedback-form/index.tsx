@@ -24,7 +24,7 @@ export const FeedbackForm = () => {
         isSuccess, 
         isError, 
         reset: resetApi 
-      }] = useSendContactsFormMutation()
+    }] = useSendContactsFormMutation()
     const [openTerms, setOpenTerms] = useState(false)
 
     const showTerms = () => {
@@ -51,22 +51,22 @@ export const FeedbackForm = () => {
         }
         
         if (!data.acceptTerms) {
-          toast.error('Примите соглашение с политикой конфиденциальности!');
-          return;
+            toast.error('Примите соглашение с политикой конфиденциальности!');
+            return;
         }
     
         try {
-          const { acceptTerms, ...formData } = data;
-          await sendForm(formData).unwrap();
-          form.reset();
+            const { acceptTerms, ...formData } = data;
+            await sendForm(formData).unwrap();
+            form.reset();
        
-          toast.success('Успешно отправлено');
-          setTimeout(resetApi, 3000);
+            toast.success('Успешно отправлено');
+            setTimeout(resetApi, 3000);
         } catch (err) {
-          console.error('Form submission error:', err);
-          toast.error('Ошибка при отправке формы');
+            console.error('Form submission error:', err);
+            toast.error('Ошибка при отправке формы');
         }
-      };
+    };
 
     return (
         <Card className="bg-[#18181A] border-none md:p-8 rounded-3xl">

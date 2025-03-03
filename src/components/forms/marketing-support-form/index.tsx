@@ -30,14 +30,14 @@ export const MarketingSupportFeedbackForm = ({
     task_types,
 }: FeedbackFormProps) => {
 
-      const [
+    const [
         sendForm, { 
             isLoading, 
             isSuccess, 
             isError, 
             reset: resetApi 
-          }
-       ] = useSendSrmServiceFormMutation()
+        }
+    ] = useSendSrmServiceFormMutation()
 
     const form = useForm<z.infer<typeof MarketingSupportFeedbackFormSchema>>({
         resolver: zodResolver(MarketingSupportFeedbackFormSchema),
@@ -68,7 +68,7 @@ export const MarketingSupportFeedbackForm = ({
             setIsFirstStepCompleted(false)
         }
     };
-const onSubmit = async (data: z.infer<typeof MarketingSupportFeedbackFormSchema>) => {
+    const onSubmit = async (data: z.infer<typeof MarketingSupportFeedbackFormSchema>) => {
 
         if (selectedBusinessTypes.length === 0 || selectedTaskTypes.length === 0) {
             toast.error("Выберите хотя бы один пункт в каждом поле!");

@@ -32,12 +32,12 @@ export const BrandingFeedbackForm = ({
     services_types,
 }: FeedbackFormProps) => {
 
-      const [sendForm, { 
-            isLoading, 
-            isSuccess, 
-            isError, 
-            reset: resetApi 
-          }] = useSendServiceFormMutation()
+    const [sendForm, { 
+        isLoading, 
+        isSuccess, 
+        isError, 
+        reset: resetApi 
+    }] = useSendServiceFormMutation()
 
     const form = useForm<z.infer<typeof BrandingFeedbackFormSchema>>({
         resolver: zodResolver(BrandingFeedbackFormSchema),

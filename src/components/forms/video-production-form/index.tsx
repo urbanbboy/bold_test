@@ -31,14 +31,14 @@ export const VideoProductionForm = ({
     video_types,
 }: FeedbackFormProps) => {
 
-       const [
+    const [
         sendForm, { 
             isLoading, 
             isSuccess, 
             isError, 
             reset: resetApi 
-          }
-       ] = useSendVideoServiceFormMutation()
+        }
+    ] = useSendVideoServiceFormMutation()
 
     const form = useForm<z.infer<typeof BrandingFeedbackFormSchema>>({
         resolver: zodResolver(BrandingFeedbackFormSchema),
@@ -70,7 +70,7 @@ export const VideoProductionForm = ({
         }
     };
 
- const onSubmit = async (data: z.infer<typeof BrandingFeedbackFormSchema>) => {
+    const onSubmit = async (data: z.infer<typeof BrandingFeedbackFormSchema>) => {
 
         if (selectedBusinessTypes.length === 0 || selectedServiceTypes.length === 0) {
             toast.error("Выберите хотя бы один пункт в каждом поле!");
