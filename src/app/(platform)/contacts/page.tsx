@@ -8,10 +8,10 @@ const ContactsPage = () => {
     return (
         <>
             <FormLayout
-                           title={'Получите бесплатную консультацию'}
-                           nestedForm={<FeedbackForm />}
+                title={'Получите бесплатную консультацию'}
+                nestedForm={<FeedbackForm />}
             />
-           <Map/>
+            <Map/>
         </>
     );
 }

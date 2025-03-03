@@ -22,7 +22,6 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { useAppData } from "@/context/app-context";
 import { Button } from "@/components/ui/button";
 import { usePrevSlug } from "@/hooks/useSlug";
 
@@ -76,7 +75,6 @@ const components: ComponentsProps[] = [
 ]
 
 export const NavigationBar = () => {
-    const { scrollToFeedback } = useAppData()
     const slug = usePrevSlug()
     const isCases = slug === 'cases'
 
@@ -140,7 +138,7 @@ export const NavigationBar = () => {
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Button className="bg-transparent hover:bg-transparent p-0" onClick={scrollToFeedback}>
+                    <Link href="/contacts" legacyBehavior passHref>
                         <NavigationMenuLink
                             className={cn(
                                 navigationMenuTriggerStyle(),
@@ -149,7 +147,7 @@ export const NavigationBar = () => {
                         >
                             Контакты
                         </NavigationMenuLink>
-                    </Button>
+                    </Link>
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>

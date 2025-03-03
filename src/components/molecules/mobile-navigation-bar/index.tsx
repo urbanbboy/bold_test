@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useAppData } from "@/context/app-context";
 
 interface LinkProps {
     title: string;
@@ -37,12 +36,6 @@ const links: LinkProps[] = [
 ]
 
 export const MobileNavigationBar = ({ closeSheet }: { closeSheet: () => void }) => {
-    const { scrollToFeedback } = useAppData()
-
-    const scrollToFooter = () => {
-        closeSheet()
-        scrollToFeedback()
-    }
 
     return (
         <nav className="mt-8 space-y-2 font-bold">
@@ -72,8 +65,9 @@ export const MobileNavigationBar = ({ closeSheet }: { closeSheet: () => void }) 
                 </AccordionItem>
             </Accordion>
             <LinkItem
+                closeSheet={closeSheet}
+                linkHref="/contacts"
                 linkTitle={"Контакты"}
-                closeSheet={scrollToFooter}
             />
         </nav>
     );
