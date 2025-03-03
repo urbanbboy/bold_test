@@ -117,11 +117,13 @@ export const NavigationBar = () => {
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Button className="bg-transparent hover:bg-transparent p-0" onClick={scrollToFeedback}>
+                    <Link href={'/contacts'} legacyBehavior passHref>
+                    <Button className="bg-transparent hover:bg-transparent p-0" >
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             Контакты
                         </NavigationMenuLink>
                     </Button>
+                    </Link>
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>

@@ -55,7 +55,7 @@ export const PartnerReviewList = () => {
     const { data, isLoading, error } = useGetPartnersReviewsQuery()
 
     return (
-        <div className="w-full max-w-[1920px] px-4 md:px-40 mb-24">
+        <div id="reviews" className="w-full max-w-[1920px] px-4 md:px-40 mb-24">
             <RequestHandler
                 isLoading={isLoading}
                 error={error}

@@ -58,12 +58,12 @@ export const LanguageSelect = ({ isMobile }: { isMobile?: boolean }) => {
             <Select value={selectedLanguage} onValueChange={onChangeLanguage}>
                 <SelectTrigger
                     className={cn(
-                        'hover:bg-white/20 transition-all duration-200 w-[110px]',
+                        'hover:bg-white/20 transition-all focus:ring-offset-0 outline-none duration-200 w-[110px]',
                         isMobile ? 'text-black' : ''
                     )}>
                     <SelectValue>
                         {selectedLang && (
-                            <div className="flex items-center space-x-1">
+                            <div className="flex items-center space-x-1 focus:ring-offset-0">
                                 <span>{selectedLang.icon}</span>
                                 <span className="pr-1">{selectedLang.shortTitle}</span>
                             </div>
@@ -73,7 +73,7 @@ export const LanguageSelect = ({ isMobile }: { isMobile?: boolean }) => {
                 <SelectContent className="min-w-[180px]">
                     {languageList.map((language) => (
                         <SelectItem key={language.id} value={language.id}>
-                            <div className="flex items-center space-x-2">
+                            <div className="flex items-center space-x-2 focus:ring-offset-0">
                                 <span>{language.icon}</span>
                                 <span>{language.title}</span>
                             </div>

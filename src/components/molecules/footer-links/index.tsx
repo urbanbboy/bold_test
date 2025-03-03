@@ -23,18 +23,18 @@ const links: {
         items: [
             { title: 'О нас', href: '/about' },
             { title: 'Кейсы', href: '/cases' },
-            { title: 'Отзывы', href: '/reviews' }
+            { title: 'Отзывы', href: '#reviews' }
         ]
     },
     {
         title: 'Услуги',
         items: [
             { title: 'Брендинг', href: '/services/branding' },
-            { title: 'Digital продвижение', href: '/services/digital' },
-            { title: 'Видеопродакшн', href: '/services/video' },
-            { title: 'Веб-разработка и дизайн', href: '/services/web' },
-            { title: 'Комплексное маркетинговое продвижение', href: '/services/marketing' },
-            { title: 'Автоматизация и аналитика', href: '/services/analytics' }
+            { title: 'Digital продвижение', href: '/services/smm' },
+            { title: 'Видеопродакшн', href: '/services/video-production' },
+            { title: 'Веб-разработка и дизайн', href: '/services/site-creating' },
+            { title: 'Комплексное маркетинговое продвижение', href: '/services/marketing-support' },
+            { title: 'Автоматизация и аналитика', href: '/services/crm' }
         ]
     },
     {
