@@ -23,7 +23,7 @@ const serviceData = {
     items: [
         {
 
-            image: "/images/about_page/our_philosophy.webp",
+            image: "/images/services/branding/brand-1.jpg",
             image_right: false,
             title: 'Нейминг',
             sub_title: 'Названия, которые остаются в памяти',
@@ -39,7 +39,7 @@ const serviceData = {
         },
         {
 
-            image: "/images/about_page/our_philosophy.webp",
+            image: "/images/services/branding/brand-2.jpg",
             image_right: true,
             title: 'Дизайн логотипа и фирменного стиля',
             sub_title: 'Названия, которые остаются в памяти',
@@ -55,7 +55,7 @@ const serviceData = {
         },
         {
 
-            image: "/images/about_page/our_philosophy.webp",
+            image: "/images/services/branding/brand-3.jpg",
             image_right: false,
             title: 'Брендбук',
             sub_title: 'Названия, которые остаются в памяти',

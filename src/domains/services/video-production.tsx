@@ -19,7 +19,7 @@ const serviceData = {
     title: 'Наши услуги по Видеопродакшну',
     items: [
         {
-            image: "/images/about_page/our_philosophy.webp",
+            video_link: "https://www.youtube.com/embed/Tf9ei_tQ_QA?si=ZzWL8KKNljesrGOk",
             image_right: false,
             title: 'Рекламные видеоролики',
             description: 'Анализируем рынок, изучаем конкурентов, выявляем особенности вашей целевой аудитории. Вместе с вами формируем цели продвижения.',
@@ -34,7 +34,7 @@ const serviceData = {
             ]
         },
         {
-            image: "/images/about_page/our_philosophy.webp",
+            video_link: "https://www.youtube.com/embed/Tf9ei_tQ_QA?si=ZzWL8KKNljesrGOk",
             image_right: true,
             title: 'Разработка стратегии',
             description: 'Создаем уникальную SMM-стратегию, которая выделяет ваш бренд и приносит реальные результаты.',
@@ -49,7 +49,7 @@ const serviceData = {
             ]
         },
         {
-            image: "/images/about_page/our_philosophy.webp",
+            video_link: "https://www.youtube.com/embed/Tf9ei_tQ_QA?si=ZzWL8KKNljesrGOk",
             image_right: false,
             title: 'Создание контента',
             description: 'Креатив-команда: мобилограф, копирайтер и дизайнер — разрабатывает визуалы и тексты, которые привлекают внимание и побуждают к покупкам.',
@@ -64,7 +64,7 @@ const serviceData = {
             ]
         },
         {
-            image: "/images/about_page/our_philosophy.webp",
+            video_link: "https://www.youtube.com/embed/Tf9ei_tQ_QA?si=ZzWL8KKNljesrGOk",
             image_right: true,
             title: 'Настройка рекламы',
             description: 'Таргетолог настраивает рекламу так, чтобы привлекать вашу целевую аудиторию и создавать поток заявок.',

@@ -24,28 +24,46 @@ const serviceData = {
     title: 'Подход, который выделит ваш бренд среди конкурентов',
     items: [
         {
-            image: "/images/about_page/our_philosophy.webp",
+            image: "/images/services/smm/smmBg-1-min.jpg",
             image_right: false,
             title: 'Погружение в ваш бизнес',
             description: 'Анализируем рынок, изучаем конкурентов, выявляем особенности вашей целевой аудитории. Вместе с вами формируем цели продвижения.',
         },
         {
-            image: "/images/about_page/our_philosophy.webp",
+            image: "/images/services/smm/smmBg-2-min.jpg",
             image_right: true,
             title: 'Разработка стратегии',
             description: 'Создаем уникальную SMM-стратегию, которая выделяет ваш бренд и приносит реальные результаты.',
         },
         {
-            image: "/images/about_page/our_philosophy.webp",
+            image: "/images/services/smm/smmBg-3-min.jpg",
             image_right: false,
             title: 'Создание контента',
             description: 'Креатив-команда: мобилограф, копирайтер и дизайнер — разрабатывает визуалы и тексты, которые привлекают внимание и побуждают к покупкам.',
         },
         {
-            image: "/images/about_page/our_philosophy.webp",
+            image: "/images/services/smm/smmBg-4-min.jpg",
             image_right: true,
             title: 'Настройка рекламы',
             description: 'Таргетолог настраивает рекламу так, чтобы привлекать вашу целевую аудиторию и создавать поток заявок.',
+        },
+        {
+            image: "/images/services/smm/smmBg-5-min.jpg",
+            image_right: false,
+            title: 'Инфлюенс-маркетинг ',
+            description: 'Подбираем лидеров мнений, которые помогают увеличить охват и доверие к вашему бренду.',
+        },
+        {
+            image: "/images/services/smm/smmBg-6-min.jpg",
+            image_right: true,
+            title: 'Запуск и управление проектом',
+            description: 'Project Manager следит за выполнением сроков, результатами работы команды и постоянно держит вас в курсе.',
+        },
+        {
+            image: "/images/services/smm/smmBg-7-min.jpg",
+            image_right: false,
+            title: 'Аналитика и оптимизация',
+            description: 'Еженедельно анализируем эффективность контента и рекламы, вносим улучшения и корректируем стратегии для максимального результата.',
         },
     ]
 }
