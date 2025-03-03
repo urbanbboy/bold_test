@@ -38,7 +38,7 @@ const HomePage = () => {
                 image={"/images/main_page/diploma.jpg"}
             />
             <CompanyPartners />
-             <PartnerReviewList />
+            <PartnerReviewList />
             <FormLayout
                 ref={feedbackRef}
                 title={'Получите бесплатную консультацию'}

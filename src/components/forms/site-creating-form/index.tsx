@@ -18,6 +18,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { BrandingFeedbackFormSchema } from "./schema";
 import { Type } from "@/api/Types/types";
+import { useSendServiceFormMutation, useSendSiteServiceFormMutation } from "@/api/Form";
+import { SiteServiceFormRequest } from "@/api/Form/types";
 
 
 interface FeedbackFormProps {
@@ -29,6 +31,16 @@ export const SiteCreatingFeedbackForm = ({
     business_types,
     site_types,
 }: FeedbackFormProps) => {
+
+        const [
+            sendForm, { 
+                isLoading, 
+                isSuccess, 
+                isError, 
+                reset: resetApi 
+              }
+           ] = useSendSiteServiceFormMutation()
+
     const form = useForm<z.infer<typeof BrandingFeedbackFormSchema>>({
         resolver: zodResolver(BrandingFeedbackFormSchema),
         defaultValues: {
@@ -59,19 +71,46 @@ export const SiteCreatingFeedbackForm = ({
         }
     };
 
-    const onSubmit = (data: z.infer<typeof BrandingFeedbackFormSchema>) => {
-        if (!selectedSiteTypes.length || !selectedBusinessTypes.length) {
-            toast.error("Выберите хотя бы один пункт в каждом поле!");
-            return;
-        }
-        const formData = {
-            ...data,
-            site_status: selectedSiteTypes,
-            business_type: selectedBusinessTypes,
-        };
-        console.log(formData);
-        toast.success("Успешно отправлено");
-    };
+  const onSubmit = async (data: z.infer<typeof BrandingFeedbackFormSchema>) => {
+  
+          if (selectedBusinessTypes.length === 0 || selectedSiteTypes.length === 0) {
+              toast.error("Выберите хотя бы один пункт в каждом поле!");
+              return;
+          }
+      
+       
+          if (!data.acceptTerms) {
+              toast.error('Примите соглашение с политикой конфиденциальности!');
+              return;
+          }
+      
+          try {
+              const formData:SiteServiceFormRequest = {
+                  ...data,
+                  business_type: selectedBusinessTypes,
+                  site_type: selectedSiteTypes
+              };
+              console.log('Data being sent:', JSON.stringify(formData, null, 2));
+              await sendForm(formData).unwrap();
+              
+              form.reset({
+                  sender_name: "",
+                  sender_phone: "",
+                  sender_email: "",
+                  acceptTerms: false,
+              });
+              setSelectedSiteTypes([]);
+              setSelectedBusinessTypes([]);
+              setIsFirstStepCompleted(false);
+              setTabValue('business');
+      
+              toast.success('Успешно отправлено');
+              setTimeout(resetApi, 3000);
+          } catch (err) {
+              console.error('Form submission error:', err);
+              toast.error('Ошибка при отправке формы');
+          }
+      };
 
     return (
         <Card className="bg-background-dark2 border-none md:p-8 rounded-3xl">

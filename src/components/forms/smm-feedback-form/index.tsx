@@ -18,6 +18,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { SmmFeedbackFormSchema } from "./schema";
 import { Type } from "@/api/Types/types";
+import { useSendSmmServiceFormMutation } from "@/api/Form";
+import { SmmServiceFormRequest } from "@/api/Form/types";
 
 
 interface SmmFeedbackFormProps {
@@ -29,6 +31,15 @@ export const SmmFeedbackForm = ({
     business_types,
     social_types,
 }: SmmFeedbackFormProps) => {
+   const [
+    sendForm, { 
+        isLoading, 
+        isSuccess, 
+        isError, 
+        reset: resetApi 
+      }
+   ] = useSendSmmServiceFormMutation()
+
     const form = useForm<z.infer<typeof SmmFeedbackFormSchema>>({
         resolver: zodResolver(SmmFeedbackFormSchema),
         defaultValues: {
@@ -43,6 +54,7 @@ export const SmmFeedbackForm = ({
     const [tabValue, setTabValue] = useState("business");
     const [selectedPromotionTypes, setSelectedPromotionTypes] = useState<number[]>([]);
     const [selectedBusinessTypes, setSelectedBusinessTypes] = useState<number[]>([]);
+    const [quantity, setQuantity] = useState<string>('');
     const [openTerms, setOpenTerms] = useState(false);
     const [isFirstStepCompleted, setIsFirstStepCompleted] = useState(false);
 
@@ -62,18 +74,46 @@ export const SmmFeedbackForm = ({
         }
     };
 
-    const onSubmit = (data: z.infer<typeof SmmFeedbackFormSchema>) => {
-        if (!selectedPromotionTypes.length || !selectedBusinessTypes.length) {
+    const onSubmit = async (data: z.infer<typeof SmmFeedbackFormSchema>) => {
+
+        if (selectedBusinessTypes.length === 0 || selectedPromotionTypes.length === 0) {
             toast.error("Выберите хотя бы один пункт в каждом поле!");
             return;
         }
-        const formData = {
-            ...data,
-            promotion_type: selectedPromotionTypes,
-            business_type: selectedBusinessTypes,
-        };
-        console.log(formData);
-        toast.success("Успешно отправлено");
+    
+     
+        if (!data.acceptTerms) {
+            toast.error('Примите соглашение с политикой конфиденциальности!');
+            return;
+        }
+    
+        try {
+            const formData: SmmServiceFormRequest = {
+                ...data,
+                business_type: selectedBusinessTypes,
+                social_type: selectedPromotionTypes, 
+                quantity_of_publications: quantity 
+            };
+            console.log('Data being sent:', JSON.stringify(formData, null, 2));
+            await sendForm(formData).unwrap();
+            
+            form.reset({
+                sender_name: "",
+                sender_phone: "",
+                sender_email: "",
+                acceptTerms: false,
+            });
+            setSelectedPromotionTypes([]);
+            setSelectedBusinessTypes([]);
+            setIsFirstStepCompleted(false);
+            setTabValue('business');
+    
+            toast.success('Успешно отправлено');
+            setTimeout(resetApi, 3000);
+        } catch (err) {
+            console.error('Form submission error:', err);
+            toast.error('Ошибка при отправке формы');
+        }
     };
 
     return (
@@ -151,7 +191,14 @@ export const SmmFeedbackForm = ({
                                                         type="number"
                                                         placeholder="Сколько публикаций вам нужно в месяц"
                                                         className="border-b-2 bg-transparent"
-                                                        onClear={() => form.setValue("quantity_of_publications", "")}
+                                                        onChange={(e) => {
+                                                            field.onChange(e);
+                                                            setQuantity(e.target.value);
+                                                          }}
+                                                          onClear={() => {
+                                                            form.setValue("quantity_of_publications", "");
+                                                            setQuantity("");
+                                                          }}
                                                     />
                                                 </FormControl>
                                                 <span className="text-gray text-xs">Определим частоту взаимодействия с вашей аудиторией и объем охвата</span>

@@ -6,7 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { PhoneInput } from "@/components/ui/phone-input";
 import ruLabels from "react-phone-number-input/locale/ru.json";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { z } from "zod";
+import { isValid, z } from "zod";
 import { FeedbackSchema } from "./schema";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -14,9 +14,17 @@ import { ButtonWithIcon } from "@/components/atoms/button-with-icon";
 import { toast } from "sonner";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { useSendContactsFormMutation } from "@/api/Form";
 
 
 export const FeedbackForm = () => {
+    
+    const [sendForm, { 
+        isLoading, 
+        isSuccess, 
+        isError, 
+        reset: resetApi 
+      }] = useSendContactsFormMutation()
     const [openTerms, setOpenTerms] = useState(false)
 
     const showTerms = () => {
@@ -33,17 +41,32 @@ export const FeedbackForm = () => {
         }
     })
 
-    const onSubmit = (data: z.infer<typeof FeedbackSchema>) => {
-        if(!data.acceptTerms) {
-            toast.error('Примите соглашение с политикой конфиденциальности!')
-        } else {
-            const {acceptTerms, ...formData} = data
+    const onSubmit = async (data: z.infer<typeof FeedbackSchema>) => {
+        if (!form.formState.isValid) return;
 
-            console.log(formData)
-            toast.success('Успешно отправлено')
+        const validation = await form.trigger();
+        if (!validation) {
+            toast.error('Исправьте ошибки в форме');
+            return;
         }
- 
-    }
+        
+        if (!data.acceptTerms) {
+          toast.error('Примите соглашение с политикой конфиденциальности!');
+          return;
+        }
+    
+        try {
+          const { acceptTerms, ...formData } = data;
+          await sendForm(formData).unwrap();
+          form.reset();
+       
+          toast.success('Успешно отправлено');
+          setTimeout(resetApi, 3000);
+        } catch (err) {
+          console.error('Form submission error:', err);
+          toast.error('Ошибка при отправке формы');
+        }
+      };
 
     return (
         <Card className="bg-[#18181A] border-none md:p-8 rounded-3xl">
@@ -163,3 +186,5 @@ export const FeedbackForm = () => {
         </Card>
     )
 }
+
+

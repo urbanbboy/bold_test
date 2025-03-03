@@ -118,11 +118,11 @@ export const NavigationBar = () => {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <Link href={'/contacts'} legacyBehavior passHref>
-                    <Button className="bg-transparent hover:bg-transparent p-0" >
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <Button className="bg-transparent hover:bg-transparent p-0" >
+                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             Контакты
-                        </NavigationMenuLink>
-                    </Button>
+                            </NavigationMenuLink>
+                        </Button>
                     </Link>
                 </NavigationMenuItem>
             </NavigationMenuList>

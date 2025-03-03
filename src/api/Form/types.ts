@@ -18,8 +18,8 @@ export interface SmmServiceFormRequest {
     sender_phone: string;
     sender_email: string;
     business_type: number[];
-    promotion_type: number[];
-    uantity_of_publications: string;
+    social_type: number[];
+    quantity_of_publications: string;
 }
 
 export interface VideoServiceFormRequest {
@@ -30,13 +30,21 @@ export interface VideoServiceFormRequest {
     video_type: number[];
 }
 
-export interface SiteServiceFormRequest {
+export interface SiteStatusFormRequest {
     sender_name: string;
     sender_phone: string;
     sender_email: string;
     business_type: number[];
     site_status: number[];
-    purpose_of_promotion: number[];
+    purpose_of_promotion: string;
+}
+
+export interface SiteServiceFormRequest {
+    sender_name: string;
+    sender_phone: string;
+    sender_email: string;
+    business_type: number[];
+    site_type: number[];
 }
 
 export interface CrmServiceFormRequest {
