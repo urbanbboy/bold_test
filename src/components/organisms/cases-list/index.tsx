@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { fadeIn, staggerTransition, viewportConfig } from "@/lib/motion";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Divide } from "lucide-react";
 import { useState, useMemo, useEffect } from "react";
 
 interface CasesListProps {
@@ -29,19 +29,19 @@ export const CasesList = ({ posts }: CasesListProps) => {
 
     const useDebounce = (value: string, delay: number) => {
         const [debouncedValue, setDebouncedValue] = useState(value);
-    
+
         useEffect(() => {
             const handler = setTimeout(() => {
                 setDebouncedValue(value);
                 setIsLoading(false); // останавливаем индикатор загрузки
             }, delay);
-    
+
             setIsLoading(true); // запускаем индикатор загрузки
             return () => {
                 clearTimeout(handler);
             };
         }, [value, delay]);
-    
+
         return debouncedValue;
     };
 
@@ -72,15 +72,15 @@ export const CasesList = ({ posts }: CasesListProps) => {
     return (
         <section className="max-w-[1920px] mt-16">
             <div className="max-w-[1280px] m-auto px-5">
-                <div className="flex flex-col md:flex-row justify-between md:items-end">
-                    <div className="space-y-4">
+                <div className="flex flex-col md:flex-row justify-between md:items-end gap-y-5">
+                    <div className="space-y-5">
                         <Heading as="h2">Кейсы</Heading>
                         <div className="flex gap-2">
                             {tags.map((tag) => (
                                 <Badge
                                     key={tag.name}
                                     variant={'case'}
-                                    className={`hover:cursor-pointer ${selectedTags.includes(tag.tag) ? 'bg-blue-500 text-white' : ''}`}
+                                    className={`hover:cursor-pointer ${selectedTags.includes(tag.tag) ? 'bg-background-dark text-white' : ''}`}
                                     onClick={() => toggleTag(tag.tag)}
                                 >
                                     {tag.name}
@@ -104,13 +104,14 @@ export const CasesList = ({ posts }: CasesListProps) => {
                                 whileInView="show"
                                 viewport={viewportConfig}
                                 transition={staggerTransition(idx)}
-                                className="max-w-[422px]"
+                                className="max-w-full"
                             >
                                 <CompanyPostItem {...post} />
                             </motion.div>
                         ))
                     )}
                 </article>
+                {paginatedPosts.length < 1 && <div className="flex justify-center items-center min-h-[250px]">По вашему запросу ничего не найдено</div>}
 
                 {/* Pagination */}
                 <div className="flex justify-end items-center gap-2 mt-5">
