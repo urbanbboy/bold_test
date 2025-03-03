@@ -34,7 +34,7 @@ const CasesPage = () => {
                     scrollToFeedback={scrollToFeedback}
                     breadcrumb={[
                         { text: 'Главная', href: '/home' },
-                        { text: 'О нас', href: '/about' },
+                        { text: 'Кейсы', href: '/cases' },
                     ]}
                 />
             }
