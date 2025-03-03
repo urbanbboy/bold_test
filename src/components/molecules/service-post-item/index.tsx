@@ -28,7 +28,7 @@ export const ServicePostItem = ({
     return (
         <div className={cn('flex gap-5 flex-col-reverse', image_right ? 'lg:flex-row-reverse' : 'lg:flex-row')}>
             <div className="lg:w-1/2 m-auto">
-            {image && (  <Image
+                {image && (  <Image
                     src={image}
                     alt={title}
                     width={648}
@@ -38,15 +38,15 @@ export const ServicePostItem = ({
 
                 {video_link && (
                     <div className="w-full h-full max-h-[540px] max-w-[648px] relative aspect-video">
-                    <iframe 
-                      className="w-full h-full object-cover"
-                      src={video_link}
-                      title="YouTube video player"  
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                      referrerPolicy="strict-origin-when-cross-origin" 
-                      allowFullScreen
-                    ></iframe>
-                  </div>
+                        <iframe 
+                            className="w-full h-full object-cover"
+                            src={video_link}
+                            title="YouTube video player"  
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerPolicy="strict-origin-when-cross-origin" 
+                            allowFullScreen
+                        ></iframe>
+                    </div>
                 )}
               
             </div>
