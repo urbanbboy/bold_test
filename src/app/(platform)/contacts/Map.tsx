@@ -131,7 +131,7 @@ export const Map: React.FC = () => {
 
     return (
         <div className="relative w-full flex flex-col items-start justify-center bg-background-dark ">
-            <div className="absolute z-40 top-7 left-7 lg:top-14 lg:left-14 bg-transparent">
+            <div className="absolute z-40 top-10 left-7 lg:top-14 lg:left-14 bg-transparent space-x-1.5">
                 <MapButton
                     text="Бишкек"
                     isActive={mapCondition}
