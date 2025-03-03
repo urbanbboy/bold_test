@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { useAppData } from "@/context/app-context";
 import { Button } from "@/components/ui/button";
+import { usePrevSlug } from "@/hooks/useSlug";
 
 interface ComponentsProps {
     title: string;
@@ -76,33 +77,55 @@ const components: ComponentsProps[] = [
 
 export const NavigationBar = () => {
     const { scrollToFeedback } = useAppData()
+    const slug = usePrevSlug()
+    const isCases = slug === 'cases'
 
     return (
         <NavigationMenu>
-            <NavigationMenuList className='hidden lg:flex'>
+            <NavigationMenuList
+                className={cn(
+                    'hidden lg:flex',
+                )}
+            >
                 <NavigationMenuItem>
                     <Link href="/home" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <NavigationMenuLink className={cn(
+                            navigationMenuTriggerStyle(),
+                            isCases ? "text-primary hover:bg-black/5" : "text-white"
+                        )}>
                             Главная
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <Link href="/about" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <NavigationMenuLink className={cn(
+                            navigationMenuTriggerStyle(),
+                            isCases ? "text-primary hover:bg-black/5" : "text-white"
+                        )}>
                             О нас
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <Link href="/cases" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <NavigationMenuLink className={cn(
+                            navigationMenuTriggerStyle(),
+                            isCases ? "text-primary hover:bg-black/5" : "text-white"
+                        )}>
                             Кейсы
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger>Услуги</NavigationMenuTrigger>
+                    <NavigationMenuTrigger
+                        className={cn(
+                            navigationMenuTriggerStyle(),
+                            isCases ? "text-primary hover:bg-black/5" : "text-white"
+                        )}
+                    >
+                        Услуги
+                    </NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="flex flex-col w-[350px] gap-2 p-3">
                             {components.map((component) => (
@@ -118,7 +141,12 @@ export const NavigationBar = () => {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <Button className="bg-transparent hover:bg-transparent p-0" onClick={scrollToFeedback}>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <NavigationMenuLink
+                            className={cn(
+                                navigationMenuTriggerStyle(),
+                                isCases ? "text-primary hover:bg-black/5" : "text-white"
+                            )}
+                        >
                             Контакты
                         </NavigationMenuLink>
                     </Button>

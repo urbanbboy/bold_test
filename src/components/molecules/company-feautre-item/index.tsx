@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Badge } from "@/components/ui/badge";
 import { ButtonWithIcon } from "@/components/atoms/button-with-icon";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 export interface FeatureProps {
     title: string;
     tags: { tags: string; }[];
@@ -9,16 +10,16 @@ export interface FeatureProps {
     image: string;
 }
 
-export const CompanyFeatureItem = ({ image, title, href, tags }: FeatureProps) => {
+export const CompanyFeatureItem = ({ image, title, tags }: FeatureProps) => {
     return (
         <div className="h-full border rounded-2xl shadow-lg flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl">
             <div className="w-full h-[250px]  relative overflow-hidden">
                 <div className="w-full h-full absolute inset-0">
-                    <Image 
-                        src={image} 
+                    <Image
+                        src={image}
                         alt={title}
-                        fill 
-                        className="object-cover"                   
+                        fill
+                        className="object-cover"
                     />
                 </div>
             </div>
@@ -35,14 +36,12 @@ export const CompanyFeatureItem = ({ image, title, href, tags }: FeatureProps) =
                         </Badge>
                     ))}
                 </div>
-                {/* <Link href={href} className="mt-auto">
-                    <ButtonWithIcon
-                        variant="feature"
-                        className="text-accent"
-                    >
-                        Подробнее
-                    </ButtonWithIcon>
-                </Link> */}
+                <ButtonWithIcon
+                    variant="feature"
+                    className="text-accent mt-auto"
+                >
+                    Подробнее
+                </ButtonWithIcon>
             </div>
         </div>
     );

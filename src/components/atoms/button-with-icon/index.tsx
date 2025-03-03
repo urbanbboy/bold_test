@@ -35,35 +35,35 @@ const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
     ...props
 }) => {
     return (
-        <motion.div
-            variants={fadeIn('up', 'spring')}
-            initial="hidden"
-            whileInView="show"
-            viewport={viewportConfig}
-            transition={defaultTransition}
+        // <motion.div
+        //     variants={fadeIn('up', 'spring')}
+        //     initial="hidden"
+        //     whileInView="show"
+        //     viewport={viewportConfig}
+        //     transition={defaultTransition}
+        // >
+        <Button
+            variant="ghost"
+            className={cn(buttonVariants({ variant, className }), 'group')}
+            {...props}
         >
-            <Button
-                variant="ghost"
-                className={cn(buttonVariants({ variant, className }), 'group')}
-                {...props}
-            >
-                {children}
-                <span className={cn(
-                    'rounded-sm',
-                    variant == 'primary' ? 'bg-white p-2.5' : '',
-                    variant == 'secondary' ? 'rounded-none group-hover:bg-transparent' : '',
-                )}>
-                    <ChevronRight
-                        className={cn(
-                            'text-primary',
-                            variant == 'feature' && 'text-accent',
-                            variant == 'secondary' && 'group-hover:text-white',
-                        )}
-                        size={32}
-                    />
-                </span>
-            </Button >
-        </motion.div>
+            {children}
+            <span className={cn(
+                'rounded-sm',
+                variant == 'primary' ? 'bg-white p-2.5' : '',
+                variant == 'secondary' ? 'rounded-none group-hover:bg-transparent' : '',
+            )}>
+                <ChevronRight
+                    className={cn(
+                        'text-primary',
+                        variant == 'feature' && 'text-accent',
+                        variant == 'secondary' && 'group-hover:text-white',
+                    )}
+                    size={32}
+                />
+            </span>
+        </Button >
+        // </motion.div>
 
     );
 };

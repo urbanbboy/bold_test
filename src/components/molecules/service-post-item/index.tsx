@@ -12,6 +12,7 @@ interface ServicePostItemProps {
     tags?: { tags: string }[],
     description?: string;
     has_button?: boolean;
+    scrollToFeedback?: () => void;
 }
 
 export const ServicePostItem = ({
@@ -22,6 +23,7 @@ export const ServicePostItem = ({
     tags,
     description,
     has_button,
+    scrollToFeedback
 }: ServicePostItemProps) => {
     return (
         <div className={cn('flex gap-5 flex-col-reverse', image_right ? 'lg:flex-row-reverse' : 'lg:flex-row')}>
@@ -45,7 +47,7 @@ export const ServicePostItem = ({
                         ))}
                     </div>
                 }
-                {has_button && <ButtonWithIcon variant="feature">Заказать</ButtonWithIcon>}
+                {has_button && <ButtonWithIcon onClick={scrollToFeedback} variant="feature">Заказать</ButtonWithIcon>}
             </div>
         </div>
     )

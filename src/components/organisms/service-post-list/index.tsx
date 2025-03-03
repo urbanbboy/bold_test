@@ -18,12 +18,14 @@ interface ServicePostListProps {
     title: string;
     description?: string;
     items: IServicePostItem[];
+    scrollToFeedback?: () => void
 }
 
 export const ServicePostList = ({
     title,
     description,
-    items
+    items,
+    scrollToFeedback
 }: ServicePostListProps) => {
     return (
         <div className="w-full max-w-[1920px] flex justify-center px-4 md:px-16 lg:px-32 py-5 md:py-16">
@@ -47,6 +49,7 @@ export const ServicePostList = ({
                                 description={post.description}
                                 tags={post.tags}
                                 has_button={post.has_button}
+                                scrollToFeedback={scrollToFeedback}
                             />
                         </AnimatedItem>
 

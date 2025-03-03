@@ -1,6 +1,6 @@
 
 
 export interface BreadcrumbProps {
-    text: string;
+    text: string | undefined;
     href: string;
 }
