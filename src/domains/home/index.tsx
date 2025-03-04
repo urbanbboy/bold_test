@@ -1,6 +1,5 @@
-'use client';
+'use client'
 
-import { useRef } from "react";
 import { FloatingWhatsApp } from 'react-floating-whatsapp';
 import { Award } from "@/components/organisms/award";
 import { Checkup } from "@/components/organisms/checkup";
@@ -17,14 +16,10 @@ import { FormLayout } from "@/components/templates/form-layout";
 import { PartnerReviewList } from "@/components/organisms/partner-review-list";
 
 const HomePage = () => {
-    const feedbackRef = useRef<HTMLDivElement>(null);
-
-    const scrollToFeedback = () => {
-        feedbackRef.current?.scrollIntoView({ behavior: "smooth" });
-    };
+   
     return (
         <>
-            <SingleSliderList onScrollToFeedback={scrollToFeedback} />
+            <SingleSliderList />
             <FloatingWhatsApp
                 phoneNumber="+996500160074"  // Номер телефона в международном формате
                 accountName="Bold Brands International" 
@@ -40,7 +35,7 @@ const HomePage = () => {
             <CompanyInfo />
             <CompanyChallengeList />
             <CompanyFeatures />
-            <Checkup onScrollToFeedback={scrollToFeedback} />
+            <Checkup />
             <CompanyPostList />
             <Award
                 badgeTitle={"Получили премию"}
@@ -51,7 +46,6 @@ const HomePage = () => {
             <CompanyPartners />
             <PartnerReviewList />
             <FormLayout
-                ref={feedbackRef}
                 title={'Получите бесплатную консультацию'}
                 nestedForm={<FeedbackForm />}
             />

@@ -116,7 +116,6 @@ const VideoProductionPage = () => {
             />
             <VideoAboutCompany />
             <ServicePostList
-                scrollToFeedback={scrollToFeedback}
                 title={serviceData.title}
                 items={serviceData.items}
             />

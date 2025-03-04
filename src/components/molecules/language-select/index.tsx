@@ -51,6 +51,7 @@ const languageList: LanguageProps[] = [
 ];
 
 export const LanguageSelect = ({ isMobile }: { isMobile?: boolean }) => {
+    const [isClient, setIsClient] = useState(false);
     const dispatch = useAppDispatch();
     const selectedLanguage = useSelector(getLanguage)
 
@@ -59,7 +60,12 @@ export const LanguageSelect = ({ isMobile }: { isMobile?: boolean }) => {
         dispatch(baseApi.util.resetApiState());
     };
 
-    if (selectedLanguage === null) return null;
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    if (!isClient || selectedLanguage === null) return null;
 
     const selectedLang = languageList.find((lang) => lang.headers === selectedLanguage) || languageList[1];
 

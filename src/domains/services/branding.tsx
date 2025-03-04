@@ -105,7 +105,6 @@ const BradingPage = () => {
                 />}
             <CompanyBranding />
             <ServicePostList
-                scrollToFeedback={scrollToFeedback}
                 title={serviceData.title}
                 items={serviceData.items}
             />

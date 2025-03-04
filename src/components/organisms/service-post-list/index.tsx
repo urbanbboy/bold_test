@@ -3,10 +3,11 @@ import { Heading } from "@/components/atoms/heading";
 import { ServicePostItem } from "@/components/molecules/service-post-item";
 import { deafultTextAnimation } from "@/lib/motion";
 import { motion } from "framer-motion";
+import { memo } from "react";
 
 export interface IServicePostItem {
     image?: string;
-    video_link?:string;
+    video_link?: string;
     image_right: boolean;
     title: string;
     sub_title?: string;
@@ -19,17 +20,15 @@ interface ServicePostListProps {
     title: string;
     description?: string;
     items: IServicePostItem[];
-    scrollToFeedback?: () => void
 }
 
-export const ServicePostList = ({
+export const ServicePostList = memo(({
     title,
     description,
     items,
-    scrollToFeedback
 }: ServicePostListProps) => {
     return (
-        <div className="w-full max-w-[1920px] flex justify-center px-4 md:px-16 lg:px-32 py-5 md:py-16">
+        <div className="w-full max-w-[1920px] flex justify-center px-4 lg:px-10 py-5 md:py-16">
             <div className="max-w-[1280px] flex flex-col justify-center items-start gap-y-5 lg:gap-y-10">
                 {description
                     ? <div className="flex flex-col lg:flex-row gap-4">
@@ -48,9 +47,9 @@ export const ServicePostList = ({
                                 title={post.title}
                                 sub_title={post.sub_title}
                                 description={post.description}
+                                video_link={post.video_link}
                                 tags={post.tags}
                                 has_button={post.has_button}
-                                scrollToFeedback={scrollToFeedback}
                             />
                         </AnimatedItem>
 
@@ -59,4 +58,6 @@ export const ServicePostList = ({
             </div>
         </div>
     )
-}
+})
+
+ServicePostList.displayName = 'ServicePostList'

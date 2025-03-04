@@ -1,25 +1,24 @@
+'use client'
+
 import { ButtonWithIcon } from "@/components/atoms/button-with-icon"
 import { CheckupBg } from "@/assets/backgrounds";
 import { Heading } from "@/components/atoms/heading";
 import { motion } from "framer-motion";
 import {
-    defaultTransition,
-    fadeIn,
     staggerTransition,
     textVariant,
     viewportConfig
 } from "@/lib/motion";
-
-interface CheckupProps {
-    onScrollToFeedback: () => void;
-}
+import { useAppData } from "@/context/app-context";
 
 const checkupData = {
     title: 'Не знаете, с чего начать?',
     description: 'Запишитесь на диагностику маркетинга, и мы поможем определить эффективные решения для вашего бизнеса.',
 }
 
-export const Checkup: React.FC<CheckupProps> = ({ onScrollToFeedback }) => {
+export const Checkup = () => {
+
+    const { scrollToFeedback } = useAppData()
 
     return (
         <div className="w-full max-w-[1920px] p-4">
@@ -44,7 +43,7 @@ export const Checkup: React.FC<CheckupProps> = ({ onScrollToFeedback }) => {
                     transition={staggerTransition(0)}
                 >
                     <ButtonWithIcon
-                        onClick={onScrollToFeedback}
+                        onClick={scrollToFeedback}
                     >
                         Пройти диагностику
                     </ButtonWithIcon>

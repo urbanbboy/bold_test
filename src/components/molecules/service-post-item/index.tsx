@@ -1,8 +1,10 @@
 import { ButtonWithIcon } from "@/components/atoms/button-with-icon";
 import { Heading } from "@/components/atoms/heading";
 import { Badge } from "@/components/ui/badge";
+import { useAppData } from "@/context/app-context";
 import { cn } from "@/lib/utils";
 import Image from "next/image"
+import { memo } from "react";
 
 interface ServicePostItemProps {
     image?: string;
@@ -16,7 +18,7 @@ interface ServicePostItemProps {
     scrollToFeedback?: () => void;
 }
 
-export const ServicePostItem = ({
+export const ServicePostItem = memo(({
     image,
     video_link,
     image_right,
@@ -25,11 +27,13 @@ export const ServicePostItem = ({
     tags,
     description,
     has_button,
-    scrollToFeedback
 }: ServicePostItemProps) => {
+
+    const { scrollToFeedback } = useAppData()
+
     return (
         <div className={cn('flex gap-5 flex-col-reverse', image_right ? 'lg:flex-row-reverse' : 'lg:flex-row')}>
-            <div className="lg:w-1/2 m-auto">
+            <div className="lg:w-1/2 lg:m-auto">
                 {image && (  <Image
                     src={image}
                     alt={title}
@@ -41,7 +45,7 @@ export const ServicePostItem = ({
                 {video_link && (
                     <div className="w-full h-full max-h-[540px] max-w-[648px] relative aspect-video">
                         <iframe 
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover rounded-md"
                             src={video_link}
                             title="YouTube video player"  
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -50,7 +54,6 @@ export const ServicePostItem = ({
                         ></iframe>
                     </div>
                 )}
-              
             </div>
             <div className="lg:w-1/2 flex flex-col justify-center items-start gap-y-2 md:gap-y-4 lg:p-14">
                 <Heading as="h4" className="text-2xl md:text-3xl">{title}</Heading>
@@ -67,4 +70,6 @@ export const ServicePostItem = ({
             </div>
         </div>
     )
-}
+})
+
+ServicePostItem.displayName = 'ServicePostItem'
