@@ -1,0 +1,112 @@
+{
+  "HomePage": {
+    "section1": {
+      "title": "Don't know where to start?",
+      "description": "Sign up for a marketing audit and we'll help identify effective solutions for your business.",
+      "btn": "Get Audit"
+    },
+    "section2": {
+      "title": "Marketing Company of the Year",
+      "description": "at The Great Award of the Year 2023!",
+      "btn": "Received the Award"
+    }
+  },
+  "AboutPage": {
+    "BusinessResults": {
+      "title": "Results that work for your business",
+      "description": "We understand that entrepreneurs need not just ideas, but measurable results - increased leads, customer acquisition, and profit growth.",
+      "subtitle": "Our Philosophy",
+      "subdesk": "Working for your success by offering strategies that solve your specific business challenges and deliver tangible achievements."
+    }
+  },
+  "ServicesPage1": {
+    "zigzak": {
+      "title": "An approach that makes your brand stand out",
+      "subtitle1": "Deep dive into your business",
+      "subdesk1": "We analyze the market, study competitors, identify your target audience's characteristics. Together we define promotion goals.",
+      "subtitle2": "Strategy development",
+      "subdesk2": "Create a unique SMM strategy that differentiates your brand and delivers real results.",
+      "subtitle3": "Content creation",
+      "subdesk3": "Creative team: mobile photographer, copywriter and designer develop visuals and texts that attract attention and drive sales.",
+      "subtitle4": "Advertising setup",
+      "subdesk4": "Targeting specialist configures ads to attract your target audience and generate leads.",
+      "subtitle5": "Influencer marketing",
+      "subdesk5": "Select opinion leaders to increase reach and brand trust.",
+      "subtitle6": "Launch & project management",
+      "subdesk6": "Project Manager monitors deadlines, team performance, and keeps you informed.",
+      "subtitle7": "Analytics & optimization",
+      "subdesk7": "Weekly analysis of content and ad performance with improvements for maximum results."
+    },
+    "createReklam": {
+      "title": "We create trusted advertising",
+      "description": "Engage bloggers and influencers to make your business accessible to thousands of clients.",
+      "miniText": "Influencer Marketing",
+      "title1": "Careful selection",
+      "desk1": "analyze influencers, their audience and reputation to maximize campaign results.",
+      "title2": "Creative integration development",
+      "desk2": "analyze influencers, their audience and reputation to maximize campaign results.",
+      "title3": "Performance evaluation",
+      "desk3": "measure reach, engagement and conversions to show influencer impact on your business growth."
+    },
+    "smm": {
+      "title": "Your personal SMM department of 6 experts",
+      "btn": "Get Consultation",
+      "title1": "Project Manager",
+      "desk1": "Coordinates team work, manages timelines, and communicates with you to achieve goals.",
+      "title2": "SMM Manager",
+      "desk2": "Develops promotion strategies, analyzes audience and competitors, plans content and campaigns.",
+      "title3": "Mobile Photographer",
+      "desk3": "Creates dynamic visual content: photos, videos, Reels - everything that captures attention.",
+      "title4": "Graphic Designer",
+      "desk4": "Develops unique visual solutions and graphics to differentiate your brand.",
+      "title5": "Copywriter",
+      "desk5": "Writes compelling texts: posts, headlines, product descriptions that drive action.",
+      "title6": "Targeting Specialist",
+      "desk6": "Attracts target audience and configures ads for maximum leads and new clients."
+    },
+    "advantages": {
+      "title": "Numbers that speak for themselves",
+      "subtitle1": "Successful SMM campaigns",
+      "subtitle2": "Advertising ROI: up to",
+      "subtitle3": "Average lead growth for clients:",
+      "subtitle4": "organic content views (million)"
+    }
+  },
+  "ServicesPage2": {
+    "banner": {
+      "title": "Don't Miss Customers Ready to Buy Right Now!",
+      "description": "We set up ads that generate leads from the first day of launch",
+      "btn": "Submit Application"
+    },
+    "whyContext": {
+      "title": "Why Contextual Advertising?",
+      "subtitle1": "Precise Targeting",
+      "subdesk1": "Your ads are seen by users already interested in your products/services.",
+      "subtitle2": "Flexible Budget",
+      "subdesk2": "Control costs by paying only for actual clicks on your ads.",
+      "subtitle3": "Measurable Effect",
+      "subdesk3": "Track ad performance through precise analytics."
+    },
+    "howWeWork": {
+      "title": "How We Work",
+      "btn": "Get Consultation",
+      "subdesk1": "We study your niche, competitors, and target audience",
+      "subdesk2": "Identify keywords that will help clients find you",
+      "subdesk3": "Write compelling texts and create effective creatives",
+      "subdesk4": "Launch campaigns on Google Ads and Yandex Direct with precise targeting",
+      "subdesk5": "Continuously monitor results and implement improvements",
+      "subdesk6": "Provide regular reports and suggest growth strategies"
+    }
+  },
+  "ServicesPage3": {
+    "whySEO": {
+      "title": "Why is SEO optimization essential for your business?",
+      "title1": "Increased Organic Traffic",
+      "content1": "Over 70% of users click on the first three search results. Ranking in the top positions increases website traffic without additional advertising costs.",
+      "title2": "Enhanced Trust and Brand Recognition",
+      "content2": "Top-ranked websites are perceived as more reliable. This builds customer trust and encourages repeat sales.",
+      "title3": "Long-Term Results",
+      "content3": "SEO investments pay off in the long run, unlike paid advertising, which only provides short-term effects."
+    }
+  }
+}

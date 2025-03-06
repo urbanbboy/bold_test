@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { FloatingWhatsApp } from 'react-floating-whatsapp';
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 import { Award } from "@/components/organisms/award";
 import { Checkup } from "@/components/organisms/checkup";
 import { CompanyChallengeList } from "@/components/organisms/company-challenge-list";
@@ -14,20 +14,22 @@ import { VideoAboutCompany } from "@/components/organisms/video-about-company";
 import { FeedbackForm } from "@/components/forms/feedback-form";
 import { FormLayout } from "@/components/templates/form-layout";
 import { PartnerReviewList } from "@/components/organisms/partner-review-list";
+import { useTranslations } from "next-intl";
 
 const HomePage = () => {
-   
+    const t = useTranslations("HomePage");
+
     return (
         <>
             <SingleSliderList />
             <FloatingWhatsApp
-                phoneNumber="+996500160074"  // Номер телефона в международном формате
-                accountName="Bold Brands International" 
+                phoneNumber="+996500160074" // Номер телефона в международном формате
+                accountName="Bold Brands International"
                 notificationSound
                 chatMessage="Доброго времени суток, чем могу вам помочь?"
                 statusMessage="Онлайн"
                 darkMode
-                avatar='/images/main_page/diploma.jpg'
+                avatar="/images/main_page/diploma.jpg"
                 placeholder="Введите текст"
             />
             <MarketingDepartment />
@@ -38,19 +40,19 @@ const HomePage = () => {
             <Checkup />
             <CompanyPostList />
             <Award
-                badgeTitle={"Получили премию"}
-                title={"Маркетинговая компания года"}
-                sub_title="на The Great Award of the Year 2023!"
+                badgeTitle={t("section2.btn")}
+                title={t("section2.title")}
+                sub_title={t("section2.description")}
                 image={"/images/main_page/diploma.jpg"}
             />
             <CompanyPartners />
             <PartnerReviewList />
             <FormLayout
-                title={'Получите бесплатную консультацию'}
+                title={"Получите бесплатную консультацию"}
                 nestedForm={<FeedbackForm />}
             />
         </>
     );
-}
+};
 
 export default HomePage;

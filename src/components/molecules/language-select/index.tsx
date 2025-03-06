@@ -5,7 +5,7 @@ import {
     SelectContent,
     SelectItem,
     SelectTrigger,
-    SelectValue
+    SelectValue,
 } from "@/components/ui/select";
 import RussianIcon from "@/assets/dropdown/rus.svg";
 import UzbIcon from "@/assets/dropdown/usb.svg";
@@ -17,13 +17,16 @@ import { baseApi } from "@/api/Base";
 import { useSelector } from "react-redux";
 import { getLanguage } from "@/api/LanguageSelect/selector";
 import { languageActions } from "@/api/LanguageSelect";
+import { Locale } from "@/i18n/routing";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { useLocale } from "next-intl";
 
 interface LanguageProps {
-    id: string;
-    title: string;
-    headers: string;
-    shortTitle: string;
-    icon: React.ReactNode;
+  id: string;
+  title: string;
+  headers: string;
+  shortTitle: string;
+  icon: React.ReactNode;
 }
 
 const languageList: LanguageProps[] = [
@@ -32,34 +35,47 @@ const languageList: LanguageProps[] = [
         title: "English",
         shortTitle: "EN",
         headers: "en",
-        icon: <UsaIcon />
+        icon: <UsaIcon />,
     },
     {
         id: "2",
         title: "Русский",
         shortTitle: "РУ",
         headers: "ru",
-        icon: <RussianIcon />
+        icon: <RussianIcon />,
     },
     {
         id: "3",
         title: "О'zbek",
         shortTitle: "UZ",
         headers: "uz",
-        icon: <UzbIcon />
-    }
+        icon: <UzbIcon />,
+    },
 ];
 
 export const LanguageSelect = ({ isMobile }: { isMobile?: boolean }) => {
+    const locale = useLocale() as Locale;
+    const router = useRouter();
+    const pathname = usePathname();
+
     const [isClient, setIsClient] = useState(false);
     const dispatch = useAppDispatch();
-    const selectedLanguage = useSelector(getLanguage)
+    const selectedLanguage = useSelector(getLanguage);
+
+    useEffect(() => {
+        if (isClient && locale) {
+            dispatch(languageActions.setLanguage(locale));
+        }
+    }, [locale, dispatch, isClient]);
 
     const onChangeLanguage = (value: string) => {
         dispatch(languageActions.setLanguage(value));
         dispatch(baseApi.util.resetApiState());
-    };
 
+        if (value !== locale) {
+            router.replace(pathname, { locale: value as Locale });
+        }
+    };
 
     useEffect(() => {
         setIsClient(true);
@@ -67,7 +83,9 @@ export const LanguageSelect = ({ isMobile }: { isMobile?: boolean }) => {
 
     if (!isClient || selectedLanguage === null) return null;
 
-    const selectedLang = languageList.find((lang) => lang.headers === selectedLanguage) || languageList[1];
+    const selectedLang =
+    languageList.find((lang) => lang.headers === selectedLanguage) ||
+    languageList[1];
 
     return (
         <div>
@@ -76,7 +94,8 @@ export const LanguageSelect = ({ isMobile }: { isMobile?: boolean }) => {
                     className={cn(
                         "hover:bg-white/20 transition-all focus:ring-offset-0 outline-none duration-200 w-[110px]",
                         isMobile ? "text-black" : ""
-                    )}>
+                    )}
+                >
                     <SelectValue>
                         {selectedLang && (
                             <div className="flex items-center space-x-1 focus:ring-offset-0">
