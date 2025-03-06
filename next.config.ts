@@ -13,6 +13,8 @@ const nextConfig: NextConfig = withSvgr({
                 pathname: '**'
             }
         ]
-    }
+    },
+    
+    
 });
 export default nextConfig;
