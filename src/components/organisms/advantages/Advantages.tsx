@@ -36,31 +36,31 @@ interface Smm {
 
 const advantagesStatic = [
     {
-      title: "15+",
-      sub_title: "Успешные SMM-компании",
+        title: "15+",
+        sub_title: "Успешные SMM-компании",
     },
     {
-      title: "600%",
-      sub_title:
+        title: "600%",
+        sub_title:
         "ROI от рекламы:",
     },
     {
-      title: "80%",
-      sub_title:
+        title: "80%",
+        sub_title:
         "Средний рост заявок клиентов:",
     },
     {
-      title: "1.5+",
-      sub_title:
+        title: "1.5+",
+        sub_title:
         "Количество просмотров органического контента в млн:",
     },
-  ];
+];
 
 export const Advantages: React.FC<Smm> = ({isSmm = false}) => {
 
- const {data, isLoading, isError} = useGetCompanyAchievementsQuery()
+    const {data, isLoading, isError} = useGetCompanyAchievementsQuery()
  
- const advantages = isSmm ? advantagesStatic : data?.items; 
+    const advantages = isSmm ? advantagesStatic : data?.items; 
 
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
@@ -76,13 +76,13 @@ export const Advantages: React.FC<Smm> = ({isSmm = false}) => {
         >
             <div className={styles.advantages__container}>
 
-  {/* 🔹 Заголовок и подзаголовок */}
-  <motion.div className={styles.advantages__text} variants={textVariants} style={isSmm ? {marginLeft:0,maxWidth:'25rem'}:undefined}>
-          <h3 className={styles.advantages__title} style={isSmm ? {color:'#AAADB5',fontSize:'24px'}:undefined}>{isSmm ? 'Цифры которые говорят сами за себя' : data?.title}</h3>
-          <span style={isSmm ? {display:'none'}:undefined} className={styles.advantages__subtitle}>
-            {data?.sub_title}
-          </span>
-        </motion.div>
+                {/* 🔹 Заголовок и подзаголовок */}
+                <motion.div className={styles.advantages__text} variants={textVariants} style={isSmm ? {marginLeft:0,maxWidth:'25rem'}:undefined}>
+                    <h3 className={styles.advantages__title} style={isSmm ? {color:'#AAADB5',fontSize:'24px'}:undefined}>{isSmm ? 'Цифры которые говорят сами за себя' : data?.title}</h3>
+                    <span style={isSmm ? {display:'none'}:undefined} className={styles.advantages__subtitle}>
+                        {data?.sub_title}
+                    </span>
+                </motion.div>
 
                 <motion.div
                     className={styles.advantages__circles}
