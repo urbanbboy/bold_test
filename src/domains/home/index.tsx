@@ -14,11 +14,14 @@ import { VideoAboutCompany } from "@/components/organisms/video-about-company";
 import { FeedbackForm } from "@/components/forms/feedback-form";
 import { FormLayout } from "@/components/templates/form-layout";
 import { PartnerReviewList } from "@/components/organisms/partner-review-list";
+import NewsBanner from '@/components/atoms/NewsBanne/NewsBanne';
+
 
 const HomePage = () => {
    
     return (
         <>
+        <NewsBanner/>
             <SingleSliderList />
             <FloatingWhatsApp
                 phoneNumber="+996500160074"  // Номер телефона в международном формате
