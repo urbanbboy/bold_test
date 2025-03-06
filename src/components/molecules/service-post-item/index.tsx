@@ -1,5 +1,6 @@
 import { ButtonWithIcon } from "@/components/atoms/button-with-icon";
 import { Heading } from "@/components/atoms/heading";
+import { VideoPlayer } from "@/components/atoms/video-player";
 import { Badge } from "@/components/ui/badge";
 import { useAppData } from "@/context/app-context";
 import { cn } from "@/lib/utils";
@@ -43,15 +44,8 @@ export const ServicePostItem = memo(({
                 />)}
 
                 {video_link && (
-                    <div className="w-full h-full max-h-[540px] max-w-[648px] relative aspect-video">
-                        <iframe 
-                            className="w-full h-full object-cover rounded-md"
-                            src={video_link}
-                            title="YouTube video player"  
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerPolicy="strict-origin-when-cross-origin" 
-                            allowFullScreen
-                        ></iframe>
+                    <div className="w-full h-full lg:min-h-[400px] xl:min-h-[540px] max-w-[648px] relative aspect-video">
+                        <VideoPlayer video={video_link} controls={false} />
                     </div>
                 )}
             </div>

@@ -52,7 +52,7 @@ export const CompanyPostList = ({ title }: { title?: string }) => {
                                     whileInView="show"
                                     viewport={viewportConfig}
                                     transition={staggerTransition(idx)}
-                                    className='max-w-[559px] min-w-[335px] max-lg:flex-shrink flex-shrink-0'
+                                    className='max-w-[535px] min-w-[335px] max-lg:flex-shrink flex-shrink-0'
                                 >
                                     <CarouselItem className="md:basis-1/2 xl:basis-1/3">
                                         <CompanyPostItem {...post} />
