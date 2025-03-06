@@ -17,42 +17,42 @@ import { PartnerReviewList } from "@/components/organisms/partner-review-list";
 import { useTranslations } from "next-intl";
 
 const HomePage = () => {
-  const t = useTranslations("HomePage");
+    const t = useTranslations("HomePage");
 
-  return (
-    <>
-      <SingleSliderList />
-      <FloatingWhatsApp
-        phoneNumber="+996500160074" // Номер телефона в международном формате
-        accountName="Bold Brands International"
-        notificationSound
-        chatMessage="Доброго времени суток, чем могу вам помочь?"
-        statusMessage="Онлайн"
-        darkMode
-        avatar="/images/main_page/diploma.jpg"
-        placeholder="Введите текст"
-      />
-      <MarketingDepartment />
-      <VideoAboutCompany />
-      <CompanyInfo />
-      <CompanyChallengeList />
-      <CompanyFeatures />
-      <Checkup />
-      <CompanyPostList />
-      <Award
-        badgeTitle={t("section2.btn")}
-        title={t("section2.title")}
-        sub_title={t("section2.description")}
-        image={"/images/main_page/diploma.jpg"}
-      />
-      <CompanyPartners />
-      <PartnerReviewList />
-      <FormLayout
-        title={"Получите бесплатную консультацию"}
-        nestedForm={<FeedbackForm />}
-      />
-    </>
-  );
+    return (
+        <>
+            <SingleSliderList />
+            <FloatingWhatsApp
+                phoneNumber="+996500160074" // Номер телефона в международном формате
+                accountName="Bold Brands International"
+                notificationSound
+                chatMessage="Доброго времени суток, чем могу вам помочь?"
+                statusMessage="Онлайн"
+                darkMode
+                avatar="/images/main_page/diploma.jpg"
+                placeholder="Введите текст"
+            />
+            <MarketingDepartment />
+            <VideoAboutCompany />
+            <CompanyInfo />
+            <CompanyChallengeList />
+            <CompanyFeatures />
+            <Checkup />
+            <CompanyPostList />
+            <Award
+                badgeTitle={t("section2.btn")}
+                title={t("section2.title")}
+                sub_title={t("section2.description")}
+                image={"/images/main_page/diploma.jpg"}
+            />
+            <CompanyPartners />
+            <PartnerReviewList />
+            <FormLayout
+                title={"Получите бесплатную консультацию"}
+                nestedForm={<FeedbackForm />}
+            />
+        </>
+    );
 };
 
 export default HomePage;
