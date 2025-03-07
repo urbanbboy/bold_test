@@ -1,0 +1,112 @@
+{
+  "HomePage": {
+    "section1": {
+      "title": "Qayerdan boshlashni bilmayapsizmi?",
+      "description": "Marketing auditiga yoziling va biz sizning biznesingiz uchun samarali yechimlarni topamiz.",
+      "btn": "Auditdan o‘tish"
+    },
+    "section2": {
+      "title": "Yilning eng yaxshi marketing kompaniyasi",
+      "description": "The Great Award of the Year 2023 da!",
+      "btn": "Mukofotni qo‘lga kiritdik"
+    }
+  },
+  "AboutPage": {
+    "BusinessResults": {
+      "title": "Biznesingiz uchun ishlaydigan natijalar",
+      "description": "Biz tadbirkorlar uchun g'oyalar emas, balki o'lchanadigan natijalar - mijozlar sonining o'sishi, daromadning ko'payishi muhim ekanligini tushunamiz.",
+      "subtitle": "Bizning falsafamiz",
+      "subdesk": "Sizning muvaffaqiyatingiz uchun ishlaymiz, biznes muammolaringizni hal qiladigan va aniq natijalar beradigan strategiyalarni taklif qilamiz."
+    }
+  },
+  "ServicesPage1": {
+    "zigzak": {
+      "title": "Brendingizni raqobatchilardan ajratib turadigan yondashuv",
+      "subtitle1": "Biznesingizga chuqur kirib borish",
+      "subdesk1": "Bozor va raqobatchilarni tahlil qilamiz, auditoriya xususiyatlarini aniqlaymiz. Siz bilan birga reklama maqsadlarini belgilaymiz.",
+      "subtitle2": "Strategiya ishlab chiqish",
+      "subdesk2": "Brendingizni ajratib turadigan va haqiqiy natijalar beradigan SMM strategiyasini yaratamiz.",
+      "subtitle3": "Kontent yaratish",
+      "subdesk3": "Mobilograf, kopiraiter va dizayner - diqqatni tortadigan va savdoni oshiradigan vizuallar ishlab chiqadi.",
+      "subtitle4": "Reklamani sozlash",
+      "subdesk4": "Targetchi mutaxassis maqsadli auditoriyani jalb qiladigan va so'rovlar oqimini yaratadigan reklamalarni sozlaydi.",
+      "subtitle5": "Inflyuencer marketing",
+      "subdesk5": "Brendingiz obro'sini oshiruvchi opinion liderlarni tanlaymiz.",
+      "subtitle6": "Loyihani boshlash va boshqarish",
+      "subdesk6": "Project Manager muddatlar, natijalar nazorati va siz bilan doimiy aloqada bo'ladi.",
+      "subtitle7": "Tahlil va optimallashtirish",
+      "subdesk7": "Haftalik reklama va kontent samaradorligini tahlil qilish va maksimal natijalar uchun takomillashtirish."
+    },
+    "createReklam": {
+      "title": "Ishonchli reklamalar yaratamiz",
+      "description": "Blogerlar va opinion liderlar bilan hamkorlik qilib, biznesingizni minglab mijozlar uchun qilamiz.",
+      "miniText": "Inflyuencer marketing",
+      "title1": "Diqqat bilan tanlash",
+      "desk1": "blogerlarni, ularning auditoriyasi va obro'sini tahlil qilamiz.",
+      "title2": "Kreativ integratsiyalar",
+      "desk2": "blogerlarni, ularning auditoriyasi va obro'sini tahlil qilamiz.",
+      "title3": "Samaradorlikni baholash",
+      "desk3": "qamrov, mijozlar reaktsiyasi va konversiyalarni o'lchaymiz."
+    },
+    "smm": {
+      "title": "Shaxsiy SMM bo'limingiz - 6 mutaxassis",
+      "btn": "Maslahat olish",
+      "title1": "Project Manager",
+      "desk1": "Jamoa ishini muvofiqlashtiradi va siz bilan doimiy aloqada bo'ladi.",
+      "title2": "SMM menejeri",
+      "desk2": "Reklama strategiyasini ishlab chiqadi va auditoriyani tahlil qiladi.",
+      "title3": "Mobilograf",
+      "desk3": "Foto, video, Reels kabi dinamik kontent yaratadi.",
+      "title4": "Grafik dizayner",
+      "desk4": "Brendingizni ajratib turadigan dizaynlar yaratadi.",
+      "title5": "Kopiraiter",
+      "desk5": "Postlar, sarlavhalar va tavsiflar yozadi.",
+      "title6": "Targetchi mutaxassis",
+      "desk6": "Maqsadli auditoriyani jalb qiladi va samarali reklamalarni sozlaydi."
+    },
+    "advantages": {
+      "title": "Raqamlar o'zi gapira oladi",
+      "subtitle1": "Muvaffaqiyatli SMM kampaniyalari",
+      "subtitle2": "Reklamadan ROI: gacha",
+      "subtitle3": "Mijozlarda o'rtacha so'rovlar o'sishi:",
+      "subtitle4": "organik kontent ko'rishlari (mln)"
+    }
+  },
+  "ServicesPage2": {
+    "banner": {
+      "title": "Хозир сотиб олмокчи бўлган мижозларни қолдирманг!",
+      "description": "Ишга туширилгани биринчи кундан бошлаб сўровлар олиб келадиган рекламани созамиз",
+      "btn": "Ариза қолдириш"
+    },
+    "whyContext": {
+      "title": "Нега контекстли реклама?",
+      "subtitle1": "Аник таргетинг",
+      "subdesk1": "Рекламангиз сизнинг махсулот ёки хизматларингизга қизиқаётган фойдаланувчиларга кўрсатилади.",
+      "subtitle2": "Иккиламчи бюджет",
+      "subdesk2": "Фақат рекламаларга босган хақиқий кликлар учун пул тўлаб, харажатларни назорат қилинг.",
+      "subtitle3": "Ўлчанадиган самара",
+      "subdesk3": "Аник аналитика орқали реклама самарадорлигини кузатинг."
+    },
+    "howWeWork": {
+      "title": "Биз қандай ишлаймиз",
+      "btn": "Маслиҳат олиш",
+      "subdesk1": "Сизнинг ниша, рақобатчилар ва мақсадли аудиторияни ўрганамиз",
+      "subdesk2": "Мижозлар сизни топиши учун керак бўладиган калит сўзларни аниклаймиз",
+      "subdesk3": "Қизиқарли матнлар ва самарали креативлар яратамиз",
+      "subdesk4": "Google Ads ва Яндекс Direct платформаларида аник таргетинг билан кампанияларни бошлаймиз",
+      "subdesk5": "Натижаларни доим кузатиб, такомиллаштирамиз",
+      "subdesk6": "Мунтазам хисоботлар ва ривожланиш стратегияларини такдим этамиз"
+    }
+  },
+  "ServicesPage3": {
+    "whySEO": {
+      "title": "Nega SEO optimallashtirish sizning biznesingiz uchun zarur?",
+      "title1": "Organik trafikni oshirish",
+      "content1": "Foydalanuvchilarning 70% dan ko‘pi qidiruv natijalaridagi dastlabki uchta natijani bosadi. Saytni yuqori pozitsiyalarga olib chiqish, reklama xarajatlarisiz saytga tashrif buyuruvchilar sonini ko‘paytiradi.",
+      "title2": "Ishonch va brendni tanilishini oshirish",
+      "content2": "Yuqori reytingdagi saytlar ishonchliroq deb hisoblanadi. Bu mijozlarning ishonchini mustahkamlab, takroriy savdolarni rag‘batlantiradi.",
+      "title3": "Uzoq muddatli natijalar",
+      "content3": "SEO ga sarmoya uzoq muddatda o‘z samarasini beradi, reklamadan farqli o‘laroq (uning ta’siri vaqtinchalik)."
+    }
+  }
+}
