@@ -10,6 +10,7 @@ import { memo } from "react";
 interface ServicePostItemProps {
     image?: string;
     video_link?:string;
+    btn?:string;
     image_right: boolean;
     title: string;
     sub_title?: string;
@@ -25,6 +26,7 @@ export const ServicePostItem = memo(({
     image_right,
     title,
     sub_title,
+    btn,
     tags,
     description,
     has_button,
@@ -60,7 +62,7 @@ export const ServicePostItem = memo(({
                         ))}
                     </div>
                 }
-                {has_button && <ButtonWithIcon onClick={scrollToFeedback} variant="feature">Заказать</ButtonWithIcon>}
+                {has_button && <ButtonWithIcon onClick={scrollToFeedback} variant="feature">{btn}</ButtonWithIcon>}
             </div>
         </div>
     )

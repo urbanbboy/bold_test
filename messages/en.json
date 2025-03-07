@@ -112,6 +112,61 @@
       "content3": "SEO investments pay off in the long run, unlike paid advertising, which only provides short-term effects."
     }
   },
+  "ServicePage5":{
+    "headerBtn":"Order Video",
+ "Services": {
+        "title": "Our Video Production Services",
+        "btn":"Order",
+        "items": [
+            {
+                "title": "Promotional Videos",
+                "description": "Creating a scripted video based on thorough market research allows us to precisely match your business goals and elicit the right response from your target audience. Our promotional videos are designed to attract applications from those who are ready to become your customers.",
+                "tags": [
+                    { "tag": "Precise targeting of the right audience" },
+                    { "tag": "Creative and memorable scenarios" },
+                    { "tag": "High conversion and ROI" }
+                ]
+            },
+            {
+                "title": "Promotional and Corporate Videos",
+                "description": "Promotional videos build trust in your brand, increase customer loyalty, and demonstrate the scope of your company. Our team can handle any challenge, creating videos that reflect your corporate ethos and values.",
+                "tags": [
+                    { "tag": "Increase brand awareness" },
+                    { "tag": "Demonstrate corporate values and culture" },
+                    { "tag": "Strengthen customer trust and loyalty" }
+                ]
+            },
+            {
+                "title": "Media Content for SMM Promotion",
+                "description": "Creating content for social networks is an art that we master perfectly. Our media content increases the attractiveness of your advertising campaigns and enhances their effectiveness. We offer lucrative package deals integrated into your SMM strategy to maximize audience reach and engagement.",
+                "tags": [
+                    { "tag": "Increase audience engagement and activity" },
+                    { "tag": "Creative and diverse content formats" },
+                    { "tag": "Synergy with your overall marketing strategy" }
+                ]
+            },
+            {
+                "title": "Shooting Life Events",
+                "description": "We shoot important events and activities: conferences, concerts, forums, and much more. Our report videos preserve the brightest moments and convey the atmosphere of the event, helping you share your achievements and successes with your audience.",
+                "tags": [
+                    { "tag": "Professional shooting and editing" },
+                    { "tag": "Capture the atmosphere and emotion of the event" },
+                    { "tag": "Creating high-quality reporting materials" }
+                ]
+            },
+            {
+                "title": "Photo Shoot",
+                "description": "Offsite and studio shoots are performed by our experienced photographers, creating spectacular images and providing flawless processing. We offer several types of photo shoots: product, FASHION, portrait, and others to meet any needs of your business.",
+                "tags": [
+                    { "tag": "Professional staging and shooting" },
+                    { "tag": "Creative processing and retouching" },
+                    { "tag": "Variety of formats and styles of photo shoots" }
+                ]
+            }
+        ]
+    }
+  
+  },
   "ServicePage6":{
      "headerBtn":"Order Website",
      "Approach":{

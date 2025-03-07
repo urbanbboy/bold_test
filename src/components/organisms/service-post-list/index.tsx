@@ -8,6 +8,7 @@ import { memo } from "react";
 export interface IServicePostItem {
     image?: string;
     video_link?: string;
+    btn?:string;
     image_right: boolean;
     title: string;
     sub_title?: string;
@@ -49,6 +50,7 @@ export const ServicePostList = memo(({
                                 description={post.description}
                                 video_link={post.video_link}
                                 tags={post.tags}
+                                btn={post.btn}
                                 has_button={post.has_button}
                             />
                         </AnimatedItem>

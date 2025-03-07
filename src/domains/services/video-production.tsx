@@ -14,102 +14,9 @@ import { RequestHandler } from "@/components/atoms/request-handler";
 import { useAppData } from "@/context/app-context";
 import { useGetVideoTypesQuery } from "@/api/Types";
 import useScrollToFeedback from "@/hooks/useScrollToFeedback";
+import { useTranslations } from "next-intl";
 
-const serviceData = {
-    title: 'Наши услуги по Видеопродакшну',
-    items: [
-        {
-            video_link: "/videos/lex.mp4",
-            image_right: false,
-            title: 'Рекламные видеоролики',
-            description: 'Создание сценарного видео, основанного на тщательном маркетинговогом исследовании, позволяет нам точно соответствовать вашим бизнес-целям и вызывать нужную реакцию у целевой аудитории. Наши рекламные видеоролики направлены на привлечение заявок именно от тех, кто готов стать вашими клиентами.',
-            has_button: true,
-            tags: [
-                {
-                    tags: 'Точный таргетинг на нужную аудиторию',
-                },
-                {
-                    tags: 'Креативные и запоминающиеся сценарии'
-                },
-                {
-                    tags:'Высокая конверсия и возврат инвестиций'
-                }
-            ]
-        },
-        {
-            video_link: "/videos/elazyk.mp4",
-            image_right: true,
-            title: 'Имиджевые и корпоративные видеоролики',
-            description: 'Имиджевые видеоролики укрепляют доверие к вашему бренду, повышают лояльность клиентов и демонстрируют масштабы вашей компании. Наша команда справится с любой задачей, создавая видео, которые отражают ваш корпоративный дух и ценности.',
-            has_button: true,
-            tags: [
-                {
-                    tags: 'Повышение узнаваемости бренда',
-                },
-                {
-                    tags: 'Демонстрация корпоративных ценностей и культуры'
-                },
-                {
-                    tags:'Усиление доверия и лояльности клиентов'
-                }
-            ]
-        },
-        {
-            video_link: "https://www.youtube.com/embed/Tf9ei_tQ_QA?si=ZzWL8KKNljesrGOk",
-            image_right: false,
-            title: 'Медиаконтент для SMM-продвижения',
-            description: 'Создание контента для социальных сетей — это искусство, которым мы владеем в совершенстве. Наш медиаконтент увеличивает привлекательность ваших рекламных кампаний и повышает их эффективность. Мы предлагаем выгодные пакетные предложения, интегрированные в вашу SMM-стратегию, чтобы обеспечить максимальный охват и вовлеченность аудитории.',
-            has_button: true,
-            tags: [
-                {
-                    tags: 'Повышение вовлеченности и активности аудитории',
-                },
-                {
-                    tags: 'Креативные и разнообразные форматы контента'
-                },
-                {
-                    tags:'Синергия с общей маркетинговой стратегией'
-                }
-            ]
-        },
-        {
-            video_link: "https://www.youtube.com/embed/Tf9ei_tQ_QA?si=ZzWL8KKNljesrGOk",
-            image_right: true,
-            title: 'Съемка Life Events',
-            description: 'Мы проводим съемки важных событий и мероприятий: конференций, концертов, форумов и многого другого. Наши отчетные видеоролики сохраняют самые яркие моменты и передают атмосферу события, помогая вам делиться достижениями и успехами с вашей аудиторией.',
-            has_button: true,
-            tags: [
-                {
-                    tags: 'Профессиональная съемка и монтаж',
-                },
-                {
-                    tags: 'Передача атмосферы и эмоций события'
-                },
-                {
-                    tags:'Создание качественных отчетных материалов'
-                }
-            ]
-        },
-        {
-            video_link: "https://www.youtube.com/embed/Tf9ei_tQ_QA?si=ZzWL8KKNljesrGOk",
-            image_right: false,
-            title: 'Фотосессия',
-            description: 'Выездные и студийные съемки выполняют наши опытные фотографы, создавая эффектные снимки и обеспечивая безупречную обработку. Мы предлагаем несколько видов фотосессий: продуктовые, FASHION, портретные и другие, чтобы удовлетворить любые потребности вашего бизнеса.',
-            has_button: true,
-            tags: [
-                {
-                    tags: 'Профессиональная постановка и съемка',
-                },
-                {
-                    tags: 'Креативная обработка и ретушь'
-                },
-                {
-                    tags:'Разнообразие форматов и стилей фотосессий'
-                }
-            ]
-        },
-    ]
-}
+
 
 const VideoProductionPage = () => {
     const slug = useSlug()
@@ -117,6 +24,81 @@ const VideoProductionPage = () => {
     const { data: video_types } = useGetVideoTypesQuery()
     const { business_types, data: info } = useAppData()
     const { ref, scrollToFeedback } = useScrollToFeedback()
+    const t = useTranslations("ServicePage5");
+
+
+    const serviceData = {
+        title: t('Services.title'),
+        btn: t('Services.btn'),
+        items: [
+            {
+                video_link: "/videos/lex.mp4",
+                image_right: false,
+                title: t('Services.items.0.title'),
+                description: t('Services.items.0.description'),
+                has_button: true,
+                btn: t('Services.btn'),
+                tags: [
+                    { tags: t('Services.items.0.tags.0.tag') },
+                    { tags: t('Services.items.0.tags.1.tag') },
+                    { tags: t('Services.items.0.tags.2.tag') }
+                ]
+            },
+            {
+                video_link: "/videos/elazyk.mp4",
+                image_right: true,
+                title: t('Services.items.1.title'),
+                description: t('Services.items.1.description'),
+                has_button: true,
+                btn: t('Services.btn'),
+                tags: [
+                    { tags: t('Services.items.1.tags.0.tag') },
+                    { tags: t('Services.items.1.tags.1.tag') },
+                    { tags: t('Services.items.1.tags.2.tag') }
+                ]
+            },
+            {
+                video_link: "https://www.youtube.com/embed/Tf9ei_tQ_QA?si=ZzWL8KKNljesrGOk",
+                image_right: false,
+                title: t('Services.items.2.title'),
+                description: t('Services.items.2.description'),
+                has_button: true,
+                btn: t('Services.btn'),
+                tags: [
+                    { tags: t('Services.items.2.tags.0.tag') },
+                    { tags: t('Services.items.2.tags.1.tag') },
+                    { tags: t('Services.items.2.tags.2.tag') }
+                ]
+            },
+            {
+                video_link: "https://www.youtube.com/embed/Tf9ei_tQ_QA?si=ZzWL8KKNljesrGOk",
+                image_right: true,
+                title: t('Services.items.3.title'),
+                description: t('Services.items.3.description'),
+                has_button: true,
+                btn: t('Services.btn'),
+                tags: [
+                    { tags: t('Services.items.3.tags.0.tag') },
+                    { tags: t('Services.items.3.tags.1.tag') },
+                    { tags: t('Services.items.3.tags.2.tag') }
+                ]
+            },
+            {
+                video_link: "https://www.youtube.com/embed/Tf9ei_tQ_QA?si=ZzWL8KKNljesrGOk",
+                image_right: false,
+                title: t('Services.items.4.title'),
+                description: t('Services.items.4.description'),
+                has_button: true,
+                btn: t('Services.btn'),
+                tags: [
+                    { tags: t('Services.items.4.tags.0.tag') },
+                    { tags: t('Services.items.4.tags.1.tag') },
+                    { tags: t('Services.items.4.tags.2.tag') }
+                ]
+            }
+        ]
+    };
+    
 
     return (
         <RequestHandler
@@ -129,7 +111,7 @@ const VideoProductionPage = () => {
                     scrollToFeedback={scrollToFeedback}
                     title={data.title}
                     sub_title={data.content}
-                    button_text={"Заказать видео-ролик"}
+                    button_text={t('headerBtn')}
                     breadcrumb={[
                         { text: 'Главная', href: '/home' },
                         { text: 'Видеопродакшн', href: '/services/video-production' },
