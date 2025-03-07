@@ -39,6 +39,14 @@ export const VideoPlayer = ({ video, controls }: { video: string; controls: bool
             }
         };
     }, []); // Зависимости остаются пустыми, так как ref должен сохранять свою идентичность
+
+    const handleToggleMute = () => {
+        setIsMuted((prev) => !prev);
+    };
+
+    const handleTogglePlaying = () => {
+        setIsPlaying((prev) => !prev);
+    };
     
     return (
         <div
