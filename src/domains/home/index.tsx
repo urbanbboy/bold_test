@@ -15,6 +15,7 @@ import { FeedbackForm } from "@/components/forms/feedback-form";
 import { FormLayout } from "@/components/templates/form-layout";
 import { PartnerReviewList } from "@/components/organisms/partner-review-list";
 import { useTranslations } from "next-intl";
+import { Advantages } from "@/components/organisms/advantages/Advantages";
 
 const HomePage = () => {
     const t = useTranslations("HomePage");
@@ -34,7 +35,7 @@ const HomePage = () => {
             />
             <MarketingDepartment />
             <VideoAboutCompany />
-            <CompanyInfo />
+           <Advantages />
             <CompanyChallengeList />
             <CompanyFeatures />
             <Checkup />
