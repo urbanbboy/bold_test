@@ -35,7 +35,7 @@ const HomePage = () => {
             />
             <MarketingDepartment />
             <VideoAboutCompany />
-           <Advantages />
+            <Advantages />
             <CompanyChallengeList />
             <CompanyFeatures />
             <Checkup />
