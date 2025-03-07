@@ -22,61 +22,56 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Button } from "@/components/ui/button";
 import { usePrevSlug } from "@/hooks/useSlug";
-
-interface ComponentsProps {
-    title: string;
-    href: string;
-    icon?: React.ReactNode;
-}
-
-const components: ComponentsProps[] = [
-    {
-        title: "Брендинг",
-        href: "/services/branding",
-        icon: <BrandingIcon />
-    },
-    {
-        title: "Digital продвижение",
-        href: "/services/smm",
-        icon: <DigitalPromotionIcon />
-    },
-    {
-        title: "Видеопродакшн",
-        href: "/services/video-production",
-        icon: <VideoProductionIcon />
-    },
-    {
-        title: "Веб-разработка и дизайн",
-        href: "/services/site-creating",
-        icon: <WebDevIcon />
-    },
-    {
-        title: "Комплексное маркетинговое продвижение",
-        href: "/services/marketing-support",
-        icon: <MarketingPromotionIcon />
-    },
-    {
-        title: "Внедрение CRM системы",
-        href: "/services/crm",
-        icon: <CRMIcon />
-    },
-    {
-        title: "SEO-оптимизация",
-        href: "/services/seo",
-        icon: <CRMIcon />
-    },
-    {
-        title: "Контекстная реклама",
-        href: "/services/context-ads",
-        icon: <CRMIcon />
-    },
-]
+import { useTranslations } from "next-intl";
 
 export const NavigationBar = () => {
     const slug = usePrevSlug()
     const isCases = slug === 'cases'
+    const t = useTranslations("HomePage");
+
+    const components = React.useMemo(() => [
+        {
+            title: t('navLinks.services.branding'),
+            href: "/services/branding",
+            icon: <BrandingIcon />
+        },
+        {
+            title: t('navLinks.services.smm'),
+            href: "/services/smm",
+            icon: <DigitalPromotionIcon />
+        },
+        {
+            title: t('navLinks.services.videoProduction'),
+            href: "/services/video-production",
+            icon: <VideoProductionIcon />
+        },
+        {
+            title: t('navLinks.services.siteCreating'),
+            href: "/services/site-creating",
+            icon: <WebDevIcon />
+        },
+        {
+            title: t('navLinks.services.marketingSupport'),
+            href: "/services/marketing-support",
+            icon: <MarketingPromotionIcon />
+        },
+        {
+            title: t('navLinks.services.crm'),
+            href: "/services/crm",
+            icon: <CRMIcon />
+        },
+        {
+            title: t('navLinks.services.seo'),
+            href: "/services/seo",
+            icon: <CRMIcon />
+        },
+        {
+            title: t('navLinks.services.contextAd'),
+            href: "/services/context-ads",
+            icon: <CRMIcon />
+        }
+    ], []);
 
     return (
         <NavigationMenu>
@@ -91,7 +86,7 @@ export const NavigationBar = () => {
                             navigationMenuTriggerStyle(),
                             isCases ? "text-primary hover:bg-black/5" : "text-white"
                         )}>
-                            Главная
+                            {t('navLinks.home')}
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
@@ -101,7 +96,7 @@ export const NavigationBar = () => {
                             navigationMenuTriggerStyle(),
                             isCases ? "text-primary hover:bg-black/5" : "text-white"
                         )}>
-                            О нас
+                            {t('navLinks.about')}
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
@@ -111,7 +106,7 @@ export const NavigationBar = () => {
                             navigationMenuTriggerStyle(),
                             isCases ? "text-primary hover:bg-black/5" : "text-white"
                         )}>
-                            Кейсы
+                            {t('navLinks.cases')}
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
@@ -122,7 +117,7 @@ export const NavigationBar = () => {
                             isCases ? "text-primary hover:bg-black/5" : "text-white"
                         )}
                     >
-                        Услуги
+                        {t('navLinks.services.initial')}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="flex flex-col w-[350px] gap-2 p-3">
@@ -145,7 +140,7 @@ export const NavigationBar = () => {
                                 isCases ? "text-primary hover:bg-black/5" : "text-white"
                             )}
                         >
-                            Контакты
+                            {t('navLinks.contacts')}
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>

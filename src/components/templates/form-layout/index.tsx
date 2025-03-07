@@ -7,8 +7,9 @@ import { fadeIn, staggerTransition, textVariant, viewportConfig } from "@/lib/mo
 import mergeRefs, { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Mail, Phone } from "lucide-react"
+import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { forwardRef } from "react";
+import { forwardRef, useMemo } from "react";
 
 interface ContactItem {
     icon?: React.ReactNode;
@@ -17,25 +18,7 @@ interface ContactItem {
     href?: string;
 }
 
-const data: ContactItem[] = [
-    {
-        icon: <Phone />,
-        title: "Телефон (Бишкек)",
-        contact: '+996 999 50 44 44',
-        href: 'tel:+996 999 50 44 44'
-    },
-    {
-        title: "Телефон (Ташкент)",
-        contact: '+998 909 36 09 36',
-        href: 'tel:+998 909 36 09 36'
-    },
-    {
-        icon: <Mail />,
-        title: "Электронная почта",
-        contact: 'info@boldbrands.kg',
-        href: 'mailto:info@boldbrands.kg',
-    },
-]
+
 
 interface FormProps {
     title?: string;
@@ -49,8 +32,29 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
     isContactPage
 }, ref) => {
 
+    const t = useTranslations("FormLayout")
     const { feedbackRef } = useAppData()
     const refs = mergeRefs(ref, feedbackRef)
+
+    const data: ContactItem[] = useMemo(() => [
+        {
+            icon: <Phone />,
+            title: t("companyKGPhone"),
+            contact: '+996 999 50 44 44',
+            href: 'tel:+996 999 50 44 44'
+        },
+        {
+            title: t("companyUZPhone"),
+            contact: '+998 909 36 09 36',
+            href: 'tel:+998 909 36 09 36'
+        },
+        {
+            icon: <Mail />,
+            title: t("companyEmail"),
+            contact: 'info@boldbrands.kg',
+            href: 'mailto:info@boldbrands.kg',
+        },
+    ], [])
 
     return (
         <div
@@ -80,11 +84,12 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
                     isContactPage ? 'pt-24' : ''
                 )}>
                 <div className="flex flex-col gap-y-3 md:gap-y-8 lg:w-1/2">
-                    <Heading as="h2" className="text-primary-foreground lg:text-3xl xl:">{title}</Heading>
+                    <Heading as="h2" className="text-primary-foreground lg:text-3xl xl:text-5xl">{t("title")}</Heading>
                     <motion.h3
                         transition={staggerTransition(0)}
+                        className="text-base md:text-lg text-gray2"
                     >
-                        Оставьте контакты для связи, и мы перезвоним вам
+                        {t("subTitle")}
                     </motion.h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
                         {data.map((contact, idx) => (

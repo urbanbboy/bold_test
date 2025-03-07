@@ -1,5 +1,22 @@
 {
   "HomePage": {
+    "navLinks": {
+      "home": "Home",
+      "about": "About",
+      "cases": "Cases",
+      "contacts": "Contacts",
+      "services": {
+        "initial": "Services",
+        "branding": "Branding",
+        "smm": "Digital promotion",
+        "videoProduction": "Video production",
+        "siteCreating": "Web development and design",
+        "marketingSupport": "Integrated marketing promotion",
+        "crm": "Implementation of CRM system",
+        "seo": "SEO optimization",
+        "contextAd": "Contextual advertising"
+      }
+    },
     "section1": {
       "title": "Don't know where to start?",
       "description": "Sign up for a marketing audit and we'll help identify effective solutions for your business.",
@@ -19,8 +36,8 @@
       "subdesk": "Working for your success by offering strategies that solve your specific business challenges and deliver tangible achievements."
     }
   },
-  "ThreePost":{
-    "btn":"All cases"
+  "ThreePost": {
+    "btn": "All cases"
   },
   "ServicesPage1": {
     "zigzak": {
@@ -112,70 +129,97 @@
       "content3": "SEO investments pay off in the long run, unlike paid advertising, which only provides short-term effects."
     }
   },
-  "ServicePage4":{
-    "btn":"Получить консультацию",
-    "howWeWork":{
-      
-    }
+  "ServicePage4": {
+    "btn": "Получить консультацию",
+    "howWeWork": {}
   },
-  "ServicePage5":{
-    "headerBtn":"Order Video",
- "Services": {
-        "title": "Our Video Production Services",
-        "btn":"Order",
-        "items": [
+  "ServicePage5": {
+    "headerBtn": "Order Video",
+    "Services": {
+      "title": "Our Video Production Services",
+      "btn": "Order",
+      "items": [
+        {
+          "title": "Promotional Videos",
+          "description": "Creating a scripted video based on thorough market research allows us to precisely match your business goals and elicit the right response from your target audience. Our promotional videos are designed to attract applications from those who are ready to become your customers.",
+          "tags": [
             {
-                "title": "Promotional Videos",
-                "description": "Creating a scripted video based on thorough market research allows us to precisely match your business goals and elicit the right response from your target audience. Our promotional videos are designed to attract applications from those who are ready to become your customers.",
-                "tags": [
-                    { "tag": "Precise targeting of the right audience" },
-                    { "tag": "Creative and memorable scenarios" },
-                    { "tag": "High conversion and ROI" }
-                ]
+              "tag": "Precise targeting of the right audience"
             },
             {
-                "title": "Promotional and Corporate Videos",
-                "description": "Promotional videos build trust in your brand, increase customer loyalty, and demonstrate the scope of your company. Our team can handle any challenge, creating videos that reflect your corporate ethos and values.",
-                "tags": [
-                    { "tag": "Increase brand awareness" },
-                    { "tag": "Demonstrate corporate values and culture" },
-                    { "tag": "Strengthen customer trust and loyalty" }
-                ]
+              "tag": "Creative and memorable scenarios"
             },
             {
-                "title": "Media Content for SMM Promotion",
-                "description": "Creating content for social networks is an art that we master perfectly. Our media content increases the attractiveness of your advertising campaigns and enhances their effectiveness. We offer lucrative package deals integrated into your SMM strategy to maximize audience reach and engagement.",
-                "tags": [
-                    { "tag": "Increase audience engagement and activity" },
-                    { "tag": "Creative and diverse content formats" },
-                    { "tag": "Synergy with your overall marketing strategy" }
-                ]
-            },
-            {
-                "title": "Shooting Life Events",
-                "description": "We shoot important events and activities: conferences, concerts, forums, and much more. Our report videos preserve the brightest moments and convey the atmosphere of the event, helping you share your achievements and successes with your audience.",
-                "tags": [
-                    { "tag": "Professional shooting and editing" },
-                    { "tag": "Capture the atmosphere and emotion of the event" },
-                    { "tag": "Creating high-quality reporting materials" }
-                ]
-            },
-            {
-                "title": "Photo Shoot",
-                "description": "Offsite and studio shoots are performed by our experienced photographers, creating spectacular images and providing flawless processing. We offer several types of photo shoots: product, FASHION, portrait, and others to meet any needs of your business.",
-                "tags": [
-                    { "tag": "Professional staging and shooting" },
-                    { "tag": "Creative processing and retouching" },
-                    { "tag": "Variety of formats and styles of photo shoots" }
-                ]
+              "tag": "High conversion and ROI"
             }
-        ]
+          ]
+        },
+        {
+          "title": "Promotional and Corporate Videos",
+          "description": "Promotional videos build trust in your brand, increase customer loyalty, and demonstrate the scope of your company. Our team can handle any challenge, creating videos that reflect your corporate ethos and values.",
+          "tags": [
+            {
+              "tag": "Increase brand awareness"
+            },
+            {
+              "tag": "Demonstrate corporate values and culture"
+            },
+            {
+              "tag": "Strengthen customer trust and loyalty"
+            }
+          ]
+        },
+        {
+          "title": "Media Content for SMM Promotion",
+          "description": "Creating content for social networks is an art that we master perfectly. Our media content increases the attractiveness of your advertising campaigns and enhances their effectiveness. We offer lucrative package deals integrated into your SMM strategy to maximize audience reach and engagement.",
+          "tags": [
+            {
+              "tag": "Increase audience engagement and activity"
+            },
+            {
+              "tag": "Creative and diverse content formats"
+            },
+            {
+              "tag": "Synergy with your overall marketing strategy"
+            }
+          ]
+        },
+        {
+          "title": "Shooting Life Events",
+          "description": "We shoot important events and activities: conferences, concerts, forums, and much more. Our report videos preserve the brightest moments and convey the atmosphere of the event, helping you share your achievements and successes with your audience.",
+          "tags": [
+            {
+              "tag": "Professional shooting and editing"
+            },
+            {
+              "tag": "Capture the atmosphere and emotion of the event"
+            },
+            {
+              "tag": "Creating high-quality reporting materials"
+            }
+          ]
+        },
+        {
+          "title": "Photo Shoot",
+          "description": "Offsite and studio shoots are performed by our experienced photographers, creating spectacular images and providing flawless processing. We offer several types of photo shoots: product, FASHION, portrait, and others to meet any needs of your business.",
+          "tags": [
+            {
+              "tag": "Professional staging and shooting"
+            },
+            {
+              "tag": "Creative processing and retouching"
+            },
+            {
+              "tag": "Variety of formats and styles of photo shoots"
+            }
+          ]
+        }
+      ]
     }
-  
   },
-  "ServicePage6":{
-     "headerBtn":"Order Website",
-     "Approach":{
+  "ServicePage6": {
+    "headerBtn": "Order Website",
+    "Approach": {
       "title": "Our Approach to Website Creation",
       "description": "We identify the unique characteristics of your brand and create a clear positioning for it. Our creative designs attract attention and retain customers, making your site memorable. We integrate state-of-the-art technology, ensuring your web solution is functional and effective.",
       "items": [
@@ -201,51 +245,105 @@
         }
       ]
     }
-    
   },
-  "ServicesPage8":{
-    "headerBtn":"Order Integration",
-    "MarketingSupport":{
-      "title":"Comprehensive marketing support",
-      "subtitle":"Integrated marketing support is a strategic approach that helps businesses not just to make themselves known, but to achieve real results: increase sales, expand their customer base and strengthen their market position.",
-      "bottomTitle":"At Bold Brands, we:",
-      "bottomText":"combine all key digital marketing tools into a single ecosystem so that you get the most out of every investment."
+  "ServicesPage8": {
+    "headerBtn": "Order Integration",
+    "MarketingSupport": {
+      "title": "Comprehensive marketing support",
+      "subtitle": "Integrated marketing support is a strategic approach that helps businesses not just to make themselves known, but to achieve real results: increase sales, expand their customer base and strengthen their market position.",
+      "bottomTitle": "At Bold Brands, we:",
+      "bottomText": "combine all key digital marketing tools into a single ecosystem so that you get the most out of every investment."
     },
-    "WhatWeDo":{
-      "mainTitle":"What we do:",
-      "fTitle":"Strategy development and implementation",
-      "fText":"We analyze your goals, audience and market characteristics, create an effective promotion plan and implement it step-by-step.",
-      "sTitle":"Promotion in digital channels",
-      "sText":"From SEO and contextual advertising to social media management and e-mail marketing, we select the optimal set of tools to achieve specific KPIs.",
-      "thTitle":"Content and creative",
-      "thText":"We create texts, visuals and video content that doesn't just “look pretty”, but works to engage audiences and increase conversions.",
-      "fourTitle":"Integration and automation",
-      "fourText":"We help you set up end-to-end analytics, integrate CRM, and build efficient call center and sales processes to ensure that every lead reaches a deal.",
-      "fiveTitle":"Analytics and optimization",
-      "fiveText":"We track performance at every stage, provide regular reports and make adjustments to improve efficiency and cost transparency."
+    "WhatWeDo": {
+      "mainTitle": "What we do:",
+      "fTitle": "Strategy development and implementation",
+      "fText": "We analyze your goals, audience and market characteristics, create an effective promotion plan and implement it step-by-step.",
+      "sTitle": "Promotion in digital channels",
+      "sText": "From SEO and contextual advertising to social media management and e-mail marketing, we select the optimal set of tools to achieve specific KPIs.",
+      "thTitle": "Content and creative",
+      "thText": "We create texts, visuals and video content that doesn't just “look pretty”, but works to engage audiences and increase conversions.",
+      "fourTitle": "Integration and automation",
+      "fourText": "We help you set up end-to-end analytics, integrate CRM, and build efficient call center and sales processes to ensure that every lead reaches a deal.",
+      "fiveTitle": "Analytics and optimization",
+      "fiveText": "We track performance at every stage, provide regular reports and make adjustments to improve efficiency and cost transparency."
     },
-    "WhyChoose":{
-      "btn":"Получить консультацию",
-      "title":"Why choose Bold Brands:",
-      "fBlockTitle":"A focus on measurable results",
-      "fBlockText":"Focuses on key metrics: revenue growth, reduced cost of customer acquisition, increased ROI.",
-      "sBlockTitle":"Integrated approach",
-      "sBlockText":"We don't just run ads: we build an entire promotion system to reach audiences at all stages of the sales funnel.",
-      "tBlockTitle":"Flexibility and adaptation",
-      "tBlockText":"We react quickly to market changes and optimize strategies to keep you one step ahead of the competition.",
-      "fourBlockTitle":"Technology solutions",
-      "fourBlockText":"We use advanced analytics and automation tools, provide transparent statistics and detailed reports to make it easy for you to control your budget and evaluate effectiveness."
+    "WhyChoose": {
+      "btn": "Получить консультацию",
+      "title": "Why choose Bold Brands:",
+      "fBlockTitle": "A focus on measurable results",
+      "fBlockText": "Focuses on key metrics: revenue growth, reduced cost of customer acquisition, increased ROI.",
+      "sBlockTitle": "Integrated approach",
+      "sBlockText": "We don't just run ads: we build an entire promotion system to reach audiences at all stages of the sales funnel.",
+      "tBlockTitle": "Flexibility and adaptation",
+      "tBlockText": "We react quickly to market changes and optimize strategies to keep you one step ahead of the competition.",
+      "fourBlockTitle": "Technology solutions",
+      "fourBlockText": "We use advanced analytics and automation tools, provide transparent statistics and detailed reports to make it easy for you to control your budget and evaluate effectiveness."
     },
-    "ResultsBlock":{
-      "title":"Result",
-      "number1":"1",
-      "text1":"A well-organized marketing department working as a well-coordinated mechanism.",
-      "number2":"2",
-      "text2":"A clear promotional policy and financial model that allows you to forecast costs and revenues.",
-      "number3":"3",
-      "text3":"Подготовленный маркетолог, знающий все тонкости продвижения именно вашего продукта или услуги.",
-      "number4":"4",
-     "text4":"A trained marketer who knows the ins and outs of promoting your product or service."
-      }
+    "ResultsBlock": {
+      "title": "Result",
+      "number1": "1",
+      "text1": "A well-organized marketing department working as a well-coordinated mechanism.",
+      "number2": "2",
+      "text2": "A clear promotional policy and financial model that allows you to forecast costs and revenues.",
+      "number3": "3",
+      "text3": "Подготовленный маркетолог, знающий все тонкости продвижения именно вашего продукта или услуги.",
+      "number4": "4",
+      "text4": "A trained marketer who knows the ins and outs of promoting your product or service."
+    },
+    "FormLayout": {
+      "title": "Get a free consultation",
+      "subTitle": "Leave your contact details, and we will call you back",
+      "companyKGPhone": "Phone (Bishkek)",
+      "companyUZPhone": "Phone (Tashkent)",
+      "companyEmail": "E-mail"
+    },
+    "Form": {
+      "title": "Fill out the form and get an offer",
+      "name": "Name",
+      "namePlaceholder": "Ivanov Ivan Ivanovich",
+      "phone": "Phone number",
+      "email": "Email",
+      "emailPlaceholder": "Enter email",
+      "terms": "I agree to the processing of my data in accordance with the ",
+      "termsLink": "privacy policy",
+      "submitButton": "Send",
+      "nextButton": "Continue",
+      "tabs": {
+        "title1": "About your business",
+        "subTitle1": "Type of business and services",
+        "title2": "Contacts",
+        "subTitle2": "Your contact details"
+      },
+      "businessType": "Business type",
+      "businessTypePlaceholder": "Select a business type",
+      "businessTypeDescriptoin": "This will help us better understand your business and offer the best solution",
+      "promotionTypePlaceholder": "Select services",
+      "promotionTypeDescriptoin": "We adapt the strategy to your goals and platforms",
+      "promotionType": "What service do you need?",
+      "socialType": "Promotion platforms",
+      "socialTypePlaceholder": "Select platforms for promotion",
+      "socialTypeDescriptoin": "We adapt the strategy to your goals and platforms",
+      "publicationType": "Number of publications per month",
+      "publicationTypePlaceholder": "How many publications do you need per month?",
+      "publicationTypeDescription": "We will determine the frequency of interaction with your audience and the scope of coverage",
+      "videoType": "Select a video type",
+      "videoTypePlaceholder": "Select a video type from the list",
+      "videoTypeDescription": "We adapt the strategy to your goals and platforms",
+      "siteType": "Select a site type",
+      "siteTypePlaceholder": "Select the site type from the list",
+      "siteTypeDescription": "We adapt the strategy to your goals and platforms",
+      "marketingType": "What tasks do you want to automate?",
+      "marketingTypePlaceholder": "Select tasks to automate from the list",
+      "marketingTypeDescription": "We adapt the strategy to your goals and platforms",
+      "siteStatus": "Current state of the site",
+      "siteStatusPlaceholder": "Enter the current status of your site",
+      "siteStatusDescription": "We adapt the strategy to your goals and platforms",
+      "target": "Promotion goal",
+      "targetPlaceholder": "Enter your promotion goal"
+    },
+    "FormErrors": {
+      "required": "Please fill out this field",
+      "phone_error": "Incorrect phone number!"
+    }
   }
 }
