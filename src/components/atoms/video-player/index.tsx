@@ -12,6 +12,8 @@ export const VideoPlayer = ({ video, controls }: { video: string; controls: bool
     const [isHovered, setIsHovered] = useState(false);
 
     useEffect(() => {
+        const currentRef = playerRef.current; // Сохраняем ссылку в локальную переменную
+        
         const observer = new IntersectionObserver(
             ([entry]) => {
                 setIsVisible(entry.isIntersecting);
@@ -23,29 +25,21 @@ export const VideoPlayer = ({ video, controls }: { video: string; controls: bool
             },
             {
                 root: null,
-                threshold: 0.8, // 80% видео должно быть видно
+                threshold: 0.8,
             }
         );
-
-        if (playerRef.current) {
-            observer.observe(playerRef.current);
+    
+        if (currentRef) {
+            observer.observe(currentRef);
         }
-
+    
         return () => {
-            if (playerRef.current) {
-                observer.unobserve(playerRef.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
-    }, []);
-
-    const handleToggleMute = () => {
-        setIsMuted((prev) => !prev);
-    };
-
-    const handleTogglePlaying = () => {
-        setIsPlaying((prev) => !prev);
-    };
-
+    }, []); // Зависимости остаются пустыми, так как ref должен сохранять свою идентичность
+    
     return (
         <div
             ref={playerRef}

@@ -17,10 +17,22 @@ export interface IServicePostItem {
     has_button?: boolean;
 }
 
+export interface IServicePostItemBranding {
+    image: string; 
+    video_link?: string;
+    btn?: string;
+    image_right: boolean;
+    title: string;
+    sub_title?: string;
+    tags: { tags: string }[]; 
+    description: string; 
+    has_button?: boolean;
+}
+
 interface ServicePostListProps {
     title: string;
     description?: string;
-    items: IServicePostItem[];
+    items?: IServicePostItemBranding[];
 }
 
 export const ServicePostList = memo(({
@@ -40,7 +52,7 @@ export const ServicePostList = memo(({
                 }
 
                 <div className="w-full flex flex-col gap-y-12 md:gap-y-20">
-                    {items.map((post, idx) => (
+                    {items?.map((post, idx) => (
                         <AnimatedItem key={idx} idx={idx}>
                             <ServicePostItem
                                 image={post.image}
