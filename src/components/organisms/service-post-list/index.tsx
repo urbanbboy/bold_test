@@ -24,7 +24,7 @@ export interface IServicePostItemBranding {
     image_right: boolean;
     title: string;
     sub_title?: string;
-    tags: { tags: string }[]; 
+    tags?: { tags: string }[]; 
     description?: string; 
     has_button?: boolean;
 }
