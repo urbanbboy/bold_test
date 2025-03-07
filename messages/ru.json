@@ -1,0 +1,386 @@
+{
+  "HomePage": {
+    "section1": {
+      "title": "Не знаете, с чего начать?",
+      "description": "Запишитесь на диагностику маркетинга, и мы поможем определить эффективные решения для вашего бизнеса.",
+      "btn": "Пройти диагностику"
+    },
+    "section2": {
+      "title": "Маркетинговая компания года",
+      "description": "на The Great Award of the Year 2023!",
+      "btn": "получили Премию"
+    }
+  },
+  "AboutPage": {
+    "BusinessResults": {
+      "title": "Результаты, которые работают на ваш бизнес",
+      "description": "Мы понимаем, что для предпринимателей важны не просто идеи, а измеримые результаты - рост заявок, привлечение клиентов и увеличение прибыли.",
+      "subtitle": "Наша философия",
+      "subdesk": "Работать для вашего успеха, предлагая стратегии, которые решают именно ваши бизнес-задачи и обеспечивают конкретные достижения."
+    }
+  },
+  "ServicesPage1": {
+    "zigzak": {
+      "title": "Подход, который выделит ваш бренд среди конкурентов",
+      "subtitle1": "Погружение в ваш бизнес",
+      "subdesk1": "Анализируем рынок, изучаем конкурентов, выявляем особенности вашей целевой аудитории. Вместе с вами формируем цели продвижения.",
+      "subtitle2": "Разработка стратегии",
+      "subdesk2": "Создаем уникальную SMM-стратегию, которая выделяет ваш бренд и приносит реальные результаты.",
+      "subtitle3": "Создание контента",
+      "subdesk3": "Креатив-команда: мобилограф, копирайтер и дизайнер — разрабатывает визуалы и тексты, которые привлекают внимание и побуждают к покупкам.",
+      "subtitle4": "Настройка рекламы",
+      "subdesk4": "Таргетолог настраивает рекламу так, чтобы привлекать вашу целевую аудиторию и создавать поток заявок.",
+      "subtitle5": "Инфлюенс-маркетинг",
+      "subdesk5": "Подбираем лидеров мнений, которые помогают увеличить охват и доверие к вашему бренду.",
+      "subtitle6": "Запуск и управление проектом",
+      "subdesk6": "Project Manager следит за выполнением сроков, результатами работы команды и постоянно держит вас в курсе.",
+      "subtitle7": "Аналитика и оптимизация",
+      "subdesk7": "Еженедельно анализируем эффективность контента и рекламы, вносим улучшения и корректируем стратегии для максимального результата."
+    },
+    "createReklam": {
+      "title": "Создаем рекламу, которой доверяют",
+      "description": "Привлекаем блогеров и лидеров мнений, чтобы ваш бизнес стал доступнее для тысяч клиентов. ",
+      "miniText": "Инфлюенс-маркетинг",
+      "title1": "Тщательный подбор",
+      "desk1": "анализируем блогеров, их аудиторию и репутацию, чтобы сотрудничество принесло максимальный результат.",
+      "title2": "Разработка креативных интеграций",
+      "desk2": "анализируем блогеров, их аудиторию и репутацию, чтобы сотрудничество принесло максимальный результат.",
+      "title3": "Оценка эффективности",
+      "desk3": "измеряем охваты, вовлеченность и конверсии, чтобы вы видели, как инфлюенсеры влияют на рост вашего бизнеса."
+    },
+    "smm": {
+      "title": "Ваш личный SMM-отделиз 6 экспертов",
+      "btn": "Получить консультацию",
+      "title1": "Project Manager",
+      "desk1": "Координирует работу команды, управляет сроками и постоянно взаимодействует с вами для достижения поставленных целей.",
+      "title2": "SMM-менеджер",
+      "desk2": "Разрабатывает стратегию продвижения, анализирует аудиторию и конкурентов, планирует контент и рекламные кампании.",
+      "title3": "Мобилограф",
+      "desk3": "Создает динамичный визуальный контент: фото, видео, Reels — все, что привлекает и удерживает внимание аудитории.",
+      "title4": "Графический дизайнер",
+      "desk4": "Разрабатывает уникальные визуальные решения, создавая графику, которая выделит ваш бренд среди конкурентов.",
+      "title5": "Копирайтер",
+      "desk5": "Пишет тексты, которые цепляют и побуждают к действию: посты, заголовки, описания продуктов и услуг.",
+      "title6": "Таргетолог",
+      "desk6": "Привлечет вашу целевую аудиторию и настроит рекламу для максимального количества заявок и новых клиентов."
+    },
+    "advantages": {
+      "title": "Цифры, которые говорят сами за себя",
+      "subtitle1": "Успешных SMM-кампаний.",
+      "subtitle2": "ROI от рекламы: до",
+      "subtitle3": "Средний рост заявок у клиентов:",
+      "subtitle4": "просмотров органического контента (млн)"
+    }
+  },
+  "ServicesPage2": {
+    "banner": {
+      "title": "Не упустите клиентов, готовых купить прямо сейчас!",
+      "description": "Настраиваем рекламу, которая приносит заявки с первого дня запуска",
+      "btn": "Оставить заявку"
+    },
+    "whyContext": {
+      "title": "Почему контекстная реклама?",
+      "subtitle1": "Точный таргетинг",
+      "subdesk1": "Ваши объявление видят пользователи уже заинтересованные в ваших товарах или услугах.",
+      "subtitle2": "Гибкий бюджет",
+      "subdesk2": "Контролируйте расходы, оплачивая только реальные клики по вашим объявлениям.",
+      "subtitle3": "Измеримый эффект",
+      "subdesk3": "Отслеживайте эффективность рекламы с помощью точной аналитики."
+    },
+    "howWeWork": {
+      "title": "Как мы работаем",
+      "btn": "Получить консультацию",
+      "subdesk1": "Изучаем вашу нишу, конкурентов и целевую аудиторию",
+      "subdesk2": "Определяем запросы, по которым вас будут находить клиенты",
+      "subdesk3": "Пишем привлекательные тексты и создаем эффективные креативы",
+      "subdesk4": "Запускаем кампании в Google Ads и Яндекс Директ с точным таргетингом",
+      "subdesk5": "Постоянно следим за результатами и вносим улучшения",
+      "subdesk6": "Предоставляем регулярные отчеты и предлагаем стратегии для роста"
+    }
+  },
+  "ServicesPage3": {
+    "whySEO": {
+      "title": "Почему SEO-оптимизация необходима вашему бизнесу?",
+      "title1": "Увеличение органического трафика",
+      "content1": "Более 70% пользователей кликают на первые три результата поиска. Попадание в топ позволяет увеличить посещаемость сайта без дополнительных затрат на рекламу.",
+      "title2": "Повышение доверия и узнаваемости",
+      "content2": "Сайты в топе воспринимаются как более надежные. Это укрепляет доверие клиентов и стимулирует повторные продажи.",
+      "title3": "Долгосрочные результаты",
+      "content3": "Инвестиции в SEO окупаются в долгосрочной перспективе, в отличие от платной рекламы, эффект от которой краткосрочен."
+    }
+  },
+  
+    "ServicesPage7": {
+      "VideoBanner": {
+        "titleBlog": "Управляйте клиентами эффективно",
+        "subtitle1": "Интеграция CRM-систем для оптимизации процессов и роста продаж",
+        "buttonOrderIntegration": "Заказать интеграцию"
+      },
+      "sectionBenefits": {
+        "titleBenefits": "Почему вашему бизнесу нужна CRM?",
+        "buttonOrderConsultation": "Получить консультацию",
+        "benefitsList": [
+          {
+            "benefitId": "01",
+            "benefitTitle": "Увеличение продаж",
+            "benefitDescription": "Автоматизация рутины и анализ структурированных сегментов данных помогает сосредоточиться на главном — привлечении и удержании клиентов, что значительно повышает конверсию и общий объем продаж."
+          },
+          {
+            "benefitId": "02",
+            "benefitTitle": "Простота управления клиентами",
+            "benefitDescription": "Все данные о клиентах собраны в одном месте, что упрощает доступ к информации и позволяет вашей команде быстрее персонализировать взаимодействие."
+          },
+          {
+            "benefitId": "03",
+            "benefitTitle": "Экономия времени и ресурсов",
+            "benefitDescription": "Оптимизация рабочих процессов снижает нагрузку на сотрудников, упрощает выполнение задач и минимизирует ошибки, помогая сократить издержки."
+          },
+          {
+            "benefitId": "04",
+            "benefitTitle": "Аналитика для роста",
+            "benefitDescription": "Систематизированная CRM-платформа предоставляет глубокую аналитику и отчеты, которые помогают выявить слабые места, принимать стратегические решения и улучшать бизнес-процессы."
+          }
+        ]
+      },
+      "integrationApproach": {
+        "titleIntegration": "Наш подход к интеграции CRM",
+        "descriptionIntegration": "Мы анализируем потребности вашего бизнеса и подбираем подходящую CRM-систему, которая соответствует вашим целям. Наша команда выполняет плавную миграцию данных и настраивает систему так, чтобы она полностью поддерживала ваши бизнес-процессы.",
+        "teamTraining": {
+          "titleTeamTraining": "Мы также обучаем вашу команду",
+          "descriptionTeamTraining": "и предоставляем регулярную техническую поддержку для удобного использования CRM."
+        }
+      },
+      "integrationServices": {
+        "titleIntegrationServices": "Наши услуги по интеграции CRM",
+        "servicesList": [
+          {
+            "serviceId": "01",
+            "serviceTitle": "Выбор и настройка CRM-системы",
+            "serviceDescription": "Подбор наиболее подходящей CRM-платформы для вашего бизнеса. Индивидуальная настройка системы под ваши требования."
+          },
+          {
+            "serviceId": "02",
+            "serviceTitle": "Миграция данных",
+            "serviceDescription": "Безопасный и точный перенос данных из существующей системы. Обеспечение целостности и сохранности информации."
+          },
+          {
+            "serviceId": "03",
+            "serviceTitle": "Автоматизация процессов",
+            "serviceDescription": "Настройка автоматизированных рабочих процессов для повышения эффективности. Интеграция CRM с другими инструментами и системами вашего бизнеса."
+          },
+          {
+            "serviceId": "04",
+            "serviceTitle": "Обучение и поддержка",
+            "serviceDescription": "Проведение обучающих сессий для вашей команды. Предоставление технической поддержки и сопровождения."
+          }
+        ]
+      },
+      "PartersBlog": {
+        "titleParters": "партнерство",
+        "SubTitleParters": "Мы официальные партнеры Битрикс24"
+      }
+    },
+    "costCalculator": {
+      "titleCalculator": "Рассчитайте стоимость услуги",
+      "descriptionCalculator": "Оставьте контакты для связи, и мы перезвоним вам",
+      "businessPhones": {
+        "Bishkek": "+996 999 50 44 44",
+        "Tashkent": "+998 909 36 09 36"
+      },
+      "emailContact": "info@boldbrands.kg",
+      "form": {
+        "titleForm": "Заполните форму и получите предложение",
+        "step1": {
+          "titleStep1": "О вашем бизнесе",
+          "descriptionStep1": "Тип бизнеса и услуги",
+          "businessTypeLabel": "Тип бизнеса",
+          
+          "tasksLabel": "Какие задачи вы хотите автоматизировать?"
+          
+        },
+        "step2": {
+          "titleStep2": "Контактные данные",
+          "descriptionStep2": "Ваши данные для связи"
+        },
+        "buttonNext": "Продолжить"
+      },
+      "footer": {
+        "companyInfo": {
+          "companyName": "Bold Brands International",
+          "companyDescription": "ваш внешний отдел маркетинга",
+          "websiteDesign": "Веб-дизайн — aidarsopubekov.framer.ai",
+          "copyright": "© 2024 Bold Brands International. Все права защищены"
+        },
+        "companyLinks": {
+          "aboutUs": "О нас",
+          "cases": "Кейсы",
+          "reviews": "Отзывы"
+        },
+        "servicesLinks": {
+          "branding": "Брендинг",
+          "digitalMarketing": "Digital продвижение",
+          "videoProduction": "Видеопродакшн",
+          "webDevelopment": "Веб-разработка и дизайн",
+          "marketingSupport": "Комплексное маркетинговое сопровождение",
+          "automationAnalytics": "Автоматизация и аналитика"
+        },
+        "contactInfo": {
+          "addresses": {
+            "Bishkek": "ул. Матросова, дом 102",
+            "Tashkent": "Янгибозорский район, Янгибозор 1"
+          },
+          "phones": {
+            "Bishkek": "+996 999 50 44 44",
+            "Tashkent": "+998 909 36 09 36"
+          },
+          "email": "info@boldbrands.kg",
+          "workingHours": "Пн — Пт 9:00 — 18:00"
+        },
+        "socialLinks": {
+          "instagram": "Instagram",
+          "facebook": "Facebook",
+          "telegram": "Telegram"
+        },
+        "privacyPolicy": "Политика конфиденциальности"
+      }
+    },
+    "ServicesPage7": {
+      "VideoBanner": {
+        "titleBlog": "Mijozlarni samarali boshqaring",
+        "subtitle1": "Jarayonlarni optimallashtirish va savdo hajmini oshirish uchun CRM tizimlarini integratsiyalash",
+        "buttonOrderIntegration": "Integratsiyani buyurtma qilish"
+      },
+      "sectionBenefits": {
+        "titleBenefits": "Biznesingizga nima uchun CRM kerak?",
+        "buttonOrderConsultation": "Maslahat olish",
+        "benefitsList": [
+          {
+            "benefitId": "01",
+            "benefitTitle": "Sotuvlarni ko‘paytirish",
+            "benefitDescription": "Kundalik vazifalarni avtomatlashtirish va mijozlar ma’lumotlarini tizimlashtirish asosiy maqsadga - mijozlarni jalb qilish va ularni saqlab qolishga e’tibor qaratish imkonini beradi. Bu esa konversiya va umumiy savdo hajmini sezilarli darajada oshiradi."
+          },
+          {
+            "benefitId": "02",
+            "benefitTitle": "Mijozlarni boshqarishning qulayligi",
+            "benefitDescription": "Barcha mijozlar haqidagi ma’lumotlar bir joyda to‘planganligi sababli, axborotga kirish osonlashadi va jamoangiz shaxsiylashtirilgan munosabatlar o‘rnatishi mumkin bo‘ladi."
+          },
+          {
+            "benefitId": "03",
+            "benefitTitle": "Vaqt va resurslarni tejash",
+            "benefitDescription": "Оптимизация рабочих процессов снижает нагрузку на сотрудников, упрощает выполнение задач и минимизирует ошибки, помогая сократить издержки."
+          },
+          {
+            "benefitId": "04",
+            "benefitTitle": "Rivojlanish uchun tahlil",
+            "benefitDescription": "Tizimli CRM platformasi chuqur tahlil va hisobotlar taqdim etadi. Bu esa zaif tomonlarni aniqlash, strategik qarorlar qabul qilish va biznes jarayonlarini takomillashtirish imkonini beradi."
+          }
+        ]
+      },
+      "integrationApproach": {
+        "titleIntegration": "CRM integratsiyasiga bizning yondashuvimiz",
+        "descriptionIntegration": "Biznesingiz ehtiyojlarini o‘rganib chiqib, maqsadlaringizga mos keladigan CRM tizimini tanlaymiz. Jamoamiz ma’lumotlarni uzluksiz ko‘chiradi va tizimni biznes jarayonlaringizni to‘liq qo‘llab-quvvatlaydigan tarzda sozlaydi.",
+        "teamTraining": {
+          "titleTeamTraining": "Shuningdek, jamoangizni o‘qitamiz ",
+          "descriptionTeamTraining": "va CRMdan qulay foydalanish uchun muntazam texnik yordam ko‘rsatamiz."
+        }
+      },
+      "integrationServices": {
+        "titleIntegrationServices": "Наши услуги по интеграции CRM",
+        "servicesList": [
+          {
+            "serviceId": "01",
+            "serviceTitle": "Выбор и настройка CRM-системы",
+            "serviceDescription": "Подбор наиболее подходящей CRM-платформы для вашего бизнеса. Индивидуальная настройка системы под ваши требования."
+          },
+          {
+            "serviceId": "02",
+            "serviceTitle": "Миграция данных",
+            "serviceDescription": "Безопасный и точный перенос данных из существующей системы. Обеспечение целостности и сохранности информации."
+          },
+          {
+            "serviceId": "03",
+            "serviceTitle": "Автоматизация процессов",
+            "serviceDescription": "Настройка автоматизированных рабочих процессов для повышения эффективности. Интеграция CRM с другими инструментами и системами вашего бизнеса."
+          },
+          {
+            "serviceId": "04",
+            "serviceTitle": "Обучение и поддержка",
+            "serviceDescription": "Проведение обучающих сессий для вашей команды. Предоставление технической поддержки и сопровождения."
+          }
+        ]
+      },
+      "PartersBlog": {
+        "titleParters": "партнерство",
+        "SubTitleParters": "Мы официальные партнеры Битрикс24"
+      }
+    },
+    "costCalculator": {
+      "titleCalculator": "Рассчитайте стоимость услуги",
+      "descriptionCalculator": "Оставьте контакты для связи, и мы перезвоним вам",
+      "businessPhones": {
+        "Bishkek": "+996 999 50 44 44",
+        "Tashkent": "+998 909 36 09 36"
+      },
+      "emailContact": "info@boldbrands.kg",
+      "form": {
+        "titleForm": "Заполните форму и получите предложение",
+        "step1": {
+          "titleStep1": "О вашем бизнесе",
+          "descriptionStep1": "Тип бизнеса и услуги",
+          "businessTypeLabel": "Тип бизнеса",
+          
+          "tasksLabel": "Какие задачи вы хотите автоматизировать?"
+          
+        },
+        "step2": {
+          "titleStep2": "Контактные данные",
+          "descriptionStep2": "Ваши данные для связи"
+        },
+        "buttonNext": "Продолжить"
+      },
+      "footer": {
+        "companyInfo": {
+          "companyName": "Bold Brands International",
+          "companyDescription": "ваш внешний отдел маркетинга",
+          "websiteDesign": "Веб-дизайн — aidarsopubekov.framer.ai",
+          "copyright": "© 2024 Bold Brands International. Все права защищены"
+        },
+        "companyLinks": {
+          "aboutUs": "О нас",
+          "cases": "Кейсы",
+          "reviews": "Отзывы"
+        },
+        "servicesLinks": {
+          "branding": "Брендинг",
+          "digitalMarketing": "Digital продвижение",
+          "videoProduction": "Видеопродакшн",
+          "webDevelopment": "Веб-разработка и дизайн",
+          "marketingSupport": "Комплексное маркетинговое сопровождение",
+          "automationAnalytics": "Автоматизация и аналитика"
+        },
+        "contactInfo": {
+          "addresses": {
+            "Bishkek": "ул. Матросова, дом 102",
+            "Tashkent": "Янгибозорский район, Янгибозор 1"
+          },
+          "phones": {
+            "Bishkek": "+996 999 50 44 44",
+            "Tashkent": "+998 909 36 09 36"
+          },
+          "email": "info@boldbrands.kg",
+          "workingHours": "Пн — Пт 9:00 — 18:00"
+        },
+        "socialLinks": {
+          "instagram": "Instagram",
+          "facebook": "Facebook",
+          "telegram": "Telegram"
+        },
+        "privacyPolicy": "Политика конфиденциальности"
+      }
+  }
+}
+
+   
+
+
+  

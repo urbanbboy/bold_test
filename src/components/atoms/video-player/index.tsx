@@ -49,7 +49,7 @@ export const VideoPlayer = ({ video, controls }: { video: string; controls: bool
     return (
         <div
             ref={playerRef}
-            className="relative w-full overflow-hidden rounded-md"
+            className="relative w-full h-full overflow-hidden rounded-md"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >

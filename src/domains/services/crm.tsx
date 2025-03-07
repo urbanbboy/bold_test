@@ -16,11 +16,13 @@ import { serviceCrmData, serviceData } from "@/consts/data";
 import { useAppData } from "@/context/app-context";
 import useScrollToFeedback from "@/hooks/useScrollToFeedback";
 import { useSlug } from "@/hooks/useSlug";
+import { useTranslations } from "next-intl";
 
 
 
 const CrmPage = () => {
     const slug = useSlug()
+    const t = useTranslations("ServicesPage7")
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
     const { data: task_types } = useGetTaskTypesQuery()
     const { business_types } = useAppData()
@@ -51,7 +53,7 @@ const CrmPage = () => {
                 items={serviceCrmData.items}
             />
             <InfoCard
-                title={"Наш подход к интеграции CRM"}
+                title={t(['integrationApproach', 'titleIntegration'].join('.'))}
                 description={"Мы анализируем потребности вашего бизнеса и подбираем подходящую CRM-систему, которая соответствует вашим целям. Наша команда выполняет плавную миграцию данных и настраивает систему так, чтобы она полностью поддерживала ваши бизнес-процессы."}
                 card_title={"Мы также обучаем вашу команду"}
                 card_description={"и предоставляем регулярную техническую поддержку для удобного использования CRM."}
