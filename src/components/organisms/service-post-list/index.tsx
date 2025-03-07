@@ -18,7 +18,7 @@ export interface IServicePostItem {
 }
 
 export interface IServicePostItemBranding {
-    image: string; 
+    image?: string; 
     video_link?: string;
     btn?: string;
     image_right: boolean;
