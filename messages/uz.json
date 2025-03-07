@@ -112,6 +112,35 @@
       "content3": "SEO ga sarmoya uzoq muddatda o‘z samarasini beradi, reklamadan farqli o‘laroq (uning ta’siri vaqtinchalik)."
     }
   },
+  "ServicePage6":{
+     "headerBtn":"Veb-sayt buyurtma qilish",
+     "Approach":{
+      "title": "Veb-sayt yaratishdagi yondashuvimiz",
+      "description": "Brendingizning o‘ziga xos xususiyatlarini aniqlab, aniq joylashuvni shakllantiramiz. Ijodiy veb-dizaynimiz mijozlarni jalb qiladi va ularni ushlab turadi, bu esa veb-saytni esda qolarli qiladi. Veb-yechimingizning funksionalligi, moslashuvchanligi va samaradorligini ta’minlash uchun zamonaviy veb-sayt ishlab chiqish texnologiyalarini joriy etamiz.",
+      "items": [
+        {
+          "title": "Lendinglar",
+          "sub_title": "Tashrif buyuruvchilarni jalb qilib, konversiyani oshiramiz",
+          "description": "Lendinglarimiz yuqori konversiyaga e’tibor qaratgan holda ishlab chiqiladi. Yorqin dizayn va tushunarli tuzilishga ega bo‘lgan bir sahifali veb-saytlarni yaratamiz, ular foydalanuvchini xarid qilishga, ariza topshirishga yoki obuna bo‘lishga undaydi."
+        },
+        {
+          "title": "Korporativ veb-saytlar",
+          "sub_title": "Brendingizning professional taqdimoti",
+          "description": "Bold Brands kompaniyasining korporativ veb-saytlari biznesingizning o‘ziga xosligini aks ettiradi va mijozlar ishonchini mustahkamlaydi. Kompaniyaning qadriyatlari va takliflarini samarali yetkazadigan tushunarli, moslashuvchan va SEO-optimallashtirilgan veb-saytlar yaratamiz. Bunday veb-sayt qulay muloqot vositasi va qidiruv tizimlarida yanada rivojlanish uchun asos bo‘ladi."
+        },
+        {
+          "title": "Internet-do‘konlar",
+          "sub_title": "Onlayn savdoni ko‘paytirmoqdamiz",
+          "description": "Internet-do‘konlar yaratish bilan shug‘ullanamiz, qulay xarid jarayoni va savdo hajmining o‘sishini ta’minlaymiz. Zamonaviy elektron tijorat platformalari va ishonchli to‘lov usullaridan foydalanamiz, sodda interfeys va moslashuvchan dizayn ishlab chiqamiz. Shunday qilib, mijozlaringiz kerakli mahsulotlarni osonlik bilan topib, yana qaytib kelishadi."
+        },
+        {
+          "title": "UX/UI dizayn",
+          "sub_title": "Veb-saytingiz uchun intuitiv va noyob interfeys",
+          "description": "UX/UI dizayn bo‘yicha mutaxassislarimiz qulay va jozibador interfeyslar yaratib, foydalanuvchilarga veb-sayt bilan qulay muloqot qilishga yordam beradi. Oddiy navigatsiya va vizual estetikaga e’tibor qaratamiz, bu tashrif buyuruvchilarni ushlab turadi va konversiyani oshiradi."
+        }
+      ]
+    }
+  },
   "ServicesPage8":{
     "headerBtn":"Integratsiyaga buyurtma berish",
     "MarketingSupport":{

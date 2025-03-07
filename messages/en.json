@@ -112,6 +112,36 @@
       "content3": "SEO investments pay off in the long run, unlike paid advertising, which only provides short-term effects."
     }
   },
+  "ServicePage6":{
+     "headerBtn":"Order Website",
+     "Approach":{
+      "title": "Our Approach to Website Creation",
+      "description": "We identify the unique characteristics of your brand and create a clear positioning for it. Our creative designs attract attention and retain customers, making your site memorable. We integrate state-of-the-art technology, ensuring your web solution is functional and effective.",
+      "items": [
+        {
+          "title": "Landing Pages",
+          "sub_title": "Attract attention and convert visitors",
+          "description": "Our landing pages are designed with a focus on maximizing conversion rates. We create attractive and modern pages that not only attract attention but also encourage visitors to take action - buying, registering or requesting information."
+        },
+        {
+          "title": "Corporate Websites",
+          "sub_title": "Professional representation of your brand",
+          "description": "Corporate websites from Bold Brands reflect the uniqueness of your business and build customer trust. We create intuitive, responsive and SEO-optimized websites that effectively communicate your values and offerings with easy navigation and attractive design."
+        },
+        {
+          "title": "Online Stores",
+          "sub_title": "Increase sales online",
+          "description": "We create online stores that provide a convenient shopping experience and help increase sales. We use modern e-commerce platforms, guarantee payment security and develop easy-to-use interfaces to keep your customers coming back again."
+        },
+        {
+          "title": "UX/UI Design",
+          "sub_title": "Intuitive and unique interface for your website",
+          "description": "Our UX/UI design experts create user-friendly and attractive interfaces to make users feel comfortable interacting with your website. We focus on easy navigation and beautiful design to help retain visitors and increase conversion rates."
+        }
+      ]
+    }
+    
+  },
   "ServicesPage8":{
     "headerBtn":"Order Integration",
     "MarketingSupport":{
