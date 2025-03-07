@@ -29,7 +29,7 @@ export const ServicePostList = memo(({
 }: ServicePostListProps) => {
     return (
         <div className="w-full max-w-[1920px] flex justify-center px-4 lg:px-10 py-5 md:py-16">
-            <div className="max-w-[1280px] flex flex-col justify-center items-start gap-y-5 lg:gap-y-10">
+            <div className="max-w-[1328px] flex flex-col justify-center items-start gap-y-5 lg:gap-y-10">
                 {description
                     ? <div className="flex flex-col lg:flex-row gap-4">
                         <Heading as="h2" className="lg:basis-[60%] space-y-5">{title}</Heading>

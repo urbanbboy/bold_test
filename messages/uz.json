@@ -19,6 +19,9 @@
       "subdesk": "Sizning muvaffaqiyatingiz uchun ishlaymiz, biznes muammolaringizni hal qiladigan va aniq natijalar beradigan strategiyalarni taklif qilamiz."
     }
   },
+  "ThreePost":{
+    "btn":"Barcha Keys"
+  },
   "ServicesPage1": {
     "zigzak": {
       "title": "Brendingizni raqobatchilardan ajratib turadigan yondashuv",
@@ -108,5 +111,50 @@
       "title3": "Uzoq muddatli natijalar",
       "content3": "SEO ga sarmoya uzoq muddatda o‘z samarasini beradi, reklamadan farqli o‘laroq (uning ta’siri vaqtinchalik)."
     }
+  },
+  "ServicesPage8":{
+    "headerBtn":"Integratsiyaga buyurtma berish",
+    "MarketingSupport":{
+      "title":"Kompleks marketing hamrohligi",
+      "subtitle":"bu shunday strategik yondashuvki, biznesga nafaqat o‘zini namoyon qilishga, balki haqiqiy natijalarga erishishga yordam beradi: sotuvlarni ko‘paytirish, mijozlar bazasini kengaytirish va bozordagi o‘rnini mustahkamlash.",
+      "bottomTitle":"Bold Brands’da biz:",
+      "bottomText":"raqamli marketingning barcha asosiy vositalarini yagona ekotizimga birlashtiramiz, shunda siz har bir sarflagan mablag‘ingizdan maksimal foyda olasiz."
+    },
+    "WhatWeDo":{
+      "mainTitle":"Biz nimalar qilamiz",
+      "fTitle":"Strategiyani ishlab chiqish va amalga oshirish",
+      "fText":"Maqsadlarni tahlil qilamiz, bozor va raqobatchilarni batafsil o‘rganamiz, so‘ngra biznesga aniq ko‘rsatkichlarga erishish imkonini beradigan marketing strategiyasini yaratamiz.",
+      "sTitle":"Raqamli kanallarda targ‘ib qilish",
+      "sText":"SEO‘dan tortib ijtimoiy tarmoqlargacha - biznesingiz reklamasi sodiqlikni oshirishi va sotuvni rag‘batlantirishi uchun eng maqbul kanallardan foydalanamiz. Biz ma’lum KPI’larga erishish uchun eng samarali vositalar to‘plamini tanlaymiz.",
+      "thTitle":"Kontent va ijodkorlik",
+      "thText":"Auditoriyani jalb qiladigan materiallar yaratamiz. Marketing faqat raqamlardan iborat emas! Sifatli taqdimot ishonchni shakllantiradi va maqsadlarga tezroq erishishga yordam beradi.",
+      "fourTitle":"Integratsiya va avtomatlashtirish",
+      "fourText":"Har bir potensial mijozni bitimga olib kelish uchun to‘g‘ridan-to‘g‘ri tahlilni yo‘lga qo‘yish, CRM’ni integratsiya qilish va koll-markaz hamda savdo bo‘limida samarali jarayonlarni tashkil etishga yordam beramiz.",
+      "fiveTitle":"Tahlil va optimallashtirish",
+      "fiveText":"Ko‘rsatkichlarni kuzatib boramiz, tuzatishlar kiritamiz va reklama kampaniyalarini takomillashtiramiz. Bunday yondashuv biznesga shaffof marketing rejasini va sezilarli ROI o‘sishini ta’minlaydi."
+    },
+    "WhyChoose":{
+      "btn":"Получить консультацию",
+      "title":"Nima uchun Bold Brands tanlanadi?",
+      "fBlockTitle":"Natijaga yo‘naltirilganlik",
+      "fBlockText":"Biz sotuvlarni ko‘paytirish, mijozlarni jalb qilish xarajatlarini kamaytirish va investitsiyalar rentabelligini oshirishga e’tibor qaratamiz.",
+      "sBlockTitle":"Kompleks yondashuv",
+      "sBlockText":"Biz shunchaki reklamani ishga tushirmaymiz: savdo voronkasining barcha bosqichlarida auditoriyani qamrab olish uchun butun bir targ‘ibot tizimini yaratamiz.",
+      "tBlockTitle":"Moslashuvchanlik va moslashish",
+      "tBlockText":"Biz bozordagi o‘zgarishlarga tez munosabat bildiramiz va siz doimo raqobatchilaringizdan bir qadam oldinda bo‘lishingiz uchun strategiyalarni takomillashtiramiz.",
+      "fourBlockTitle":"Texnologik yechimlar",
+      "fourBlockText":"Zamonaviy avtomatlashtirish vositalaridan foydalanamiz, marketing samaradorligini baholash imkonini beruvchi shaffof hisobotlar va ko‘rsatkichlarni taqdim etamiz."
+    },
+"ResultsBlock": {
+    "title": "Natija",
+    "number1": "01",
+    "text1": "Mahsulotni ilgari surish strategiyasidan samarali foydalanadigan yaxshi yo'lga qo'yilgan marketing bo'limi.",
+    "number2": "02",
+    "text2": "Xarajatlar va daromadlarni boshqarish imkonini beruvchi shaffof moliyaviy model.",
+    "number3": "03",
+    "text3": "Mahsulotingizni chuqur biladigan va uni turli kanallarda qanday targ'ib qilishni tushunadigan malakali marketolog.",
+    "number4": "04",
+    "text4": "Asosiy ko'rsatkichlarning doimiy o'sishi: so'rovlar, sotuvlar va mijozlar sodiqligining oshishi, marketing biznesingizning asosiy harakatlantiruvchi kuchi ekanligini tasdiqlaydi."
+  }
   }
 }

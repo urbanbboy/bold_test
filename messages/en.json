@@ -19,6 +19,9 @@
       "subdesk": "Working for your success by offering strategies that solve your specific business challenges and deliver tangible achievements."
     }
   },
+  "ThreePost":{
+    "btn":"All cases"
+  },
   "ServicesPage1": {
     "zigzak": {
       "title": "An approach that makes your brand stand out",
@@ -108,5 +111,50 @@
       "title3": "Long-Term Results",
       "content3": "SEO investments pay off in the long run, unlike paid advertising, which only provides short-term effects."
     }
+  },
+  "ServicesPage8":{
+    "headerBtn":"Order Integration",
+    "MarketingSupport":{
+      "title":"Comprehensive marketing support",
+      "subtitle":"Integrated marketing support is a strategic approach that helps businesses not just to make themselves known, but to achieve real results: increase sales, expand their customer base and strengthen their market position.",
+      "bottomTitle":"At Bold Brands, we:",
+      "bottomText":"combine all key digital marketing tools into a single ecosystem so that you get the most out of every investment."
+    },
+    "WhatWeDo":{
+      "mainTitle":"What we do:",
+      "fTitle":"Strategy development and implementation",
+      "fText":"We analyze your goals, audience and market characteristics, create an effective promotion plan and implement it step-by-step.",
+      "sTitle":"Promotion in digital channels",
+      "sText":"From SEO and contextual advertising to social media management and e-mail marketing, we select the optimal set of tools to achieve specific KPIs.",
+      "thTitle":"Content and creative",
+      "thText":"We create texts, visuals and video content that doesn't just “look pretty”, but works to engage audiences and increase conversions.",
+      "fourTitle":"Integration and automation",
+      "fourText":"We help you set up end-to-end analytics, integrate CRM, and build efficient call center and sales processes to ensure that every lead reaches a deal.",
+      "fiveTitle":"Analytics and optimization",
+      "fiveText":"We track performance at every stage, provide regular reports and make adjustments to improve efficiency and cost transparency."
+    },
+    "WhyChoose":{
+      "btn":"Получить консультацию",
+      "title":"Why choose Bold Brands:",
+      "fBlockTitle":"A focus on measurable results",
+      "fBlockText":"Focuses on key metrics: revenue growth, reduced cost of customer acquisition, increased ROI.",
+      "sBlockTitle":"Integrated approach",
+      "sBlockText":"We don't just run ads: we build an entire promotion system to reach audiences at all stages of the sales funnel.",
+      "tBlockTitle":"Flexibility and adaptation",
+      "tBlockText":"We react quickly to market changes and optimize strategies to keep you one step ahead of the competition.",
+      "fourBlockTitle":"Technology solutions",
+      "fourBlockText":"We use advanced analytics and automation tools, provide transparent statistics and detailed reports to make it easy for you to control your budget and evaluate effectiveness."
+    },
+    "ResultsBlock":{
+      "title":"Result",
+      "number1":"1",
+      "text1":"A well-organized marketing department working as a well-coordinated mechanism.",
+      "number2":"2",
+      "text2":"A clear promotional policy and financial model that allows you to forecast costs and revenues.",
+      "number3":"3",
+      "text3":"Подготовленный маркетолог, знающий все тонкости продвижения именно вашего продукта или услуги.",
+      "number4":"4",
+     "text4":"A trained marketer who knows the ins and outs of promoting your product or service."
+      }
   }
 }

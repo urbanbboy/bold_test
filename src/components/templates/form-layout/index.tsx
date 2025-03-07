@@ -76,7 +76,7 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(({
                 viewport={viewportConfig}
                 transition={staggerTransition(0)}
                 className={cn(
-                    "relative z-10 m-auto max-w-[1280px] flex flex-col lg:flex-row items-center gap-y-3 py-10 lg:py-0 justify-center px-4 text-white",
+                    "relative z-10 m-auto max-w-[1328px] flex flex-col lg:flex-row items-center gap-y-3 py-10 lg:py-0 justify-center px-4 text-white",
                     isContactPage ? 'pt-24' : ''
                 )}>
                 <div className="flex flex-col gap-y-3 md:gap-y-8 lg:w-1/2">
