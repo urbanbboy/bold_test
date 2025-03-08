@@ -4,43 +4,43 @@ import CreatingAd3SVG from "@/assets/services/smm/creating-ad_3.svg";
 
 import { ISmmCreatingAdData, ISmmTeamMembers } from "./types";
 import {
-  ServiceBrandingIcon1,
-  ServiceBrandingIcon2,
-  ServiceBrandingIcon3,
-  ServiceBrandingIcon4,
-  ServiceBrandingIcon5,
+    ServiceBrandingIcon1,
+    ServiceBrandingIcon2,
+    ServiceBrandingIcon3,
+    ServiceBrandingIcon4,
+    ServiceBrandingIcon5,
 } from "@/assets/services/branding";
 import {
-  Card1Icon,
-  Card2Icon,
-  Card3Icon,
-  SeoHowWeWork2,
-  SeoHowWeWork3,
-  SeoHowWeWork4,
-  SeoHowWeWork5,
+    Card1Icon,
+    Card2Icon,
+    Card3Icon,
+    SeoHowWeWork2,
+    SeoHowWeWork3,
+    SeoHowWeWork4,
+    SeoHowWeWork5,
 } from "@/assets/services/seo";
 import {
-  ServiceSmmIcon1,
-  ServiceSmmIcon2,
-  ServiceSmmIcon3,
-  ServiceSmmIcon4,
-  ServiceSmmIcon5,
-  ServiceSmmIcon6,
+    ServiceSmmIcon1,
+    ServiceSmmIcon2,
+    ServiceSmmIcon3,
+    ServiceSmmIcon4,
+    ServiceSmmIcon5,
+    ServiceSmmIcon6,
 } from "@/assets/services/smm";
 import {
-  ServiceCrmIcon1,
-  ServiceCrmIcon2,
-  ServiceCrmIcon3,
+    ServiceCrmIcon1,
+    ServiceCrmIcon2,
+    ServiceCrmIcon3,
 } from "@/assets/services/crm";
 import {
-  ContextAd2Icon,
-  ContextAd3Icon,
-  ContextAd4Icon,
-  ContextAd5Icon,
-  ContextAd6Icon,
-  ContextAdCard1Icon,
-  ContextAdCard2Icon,
-  ContextAdCard3Icon,
+    ContextAd2Icon,
+    ContextAd3Icon,
+    ContextAd4Icon,
+    ContextAd5Icon,
+    ContextAd6Icon,
+    ContextAdCard1Icon,
+    ContextAdCard2Icon,
+    ContextAdCard3Icon,
 } from "@/assets/services/context-ad";
 import { useTranslations } from "next-intl";
 
@@ -125,141 +125,141 @@ export const useSmmTeamMembers = () => {
 
 //BRANDING
 export const serviceBrandingData: ISmmTeamMembers = {
-  title: "Как мы работаем",
-  items: [
-    {
-      image: <ServiceBrandingIcon1 />,
-      number: "01",
-      title: "Исследование и анализ",
-      description:
+    title: "Как мы работаем",
+    items: [
+        {
+            image: <ServiceBrandingIcon1 />,
+            number: "01",
+            title: "Исследование и анализ",
+            description:
         "Погружаемся в ваш бизнес, изучаем целевую аудиторию, рынок и конкурентов, чтобы понять уникальные преимущества вашего предложения.",
-    },
-    {
-      image: <ServiceBrandingIcon2 />,
-      number: "02",
-      title: "Разработка концепций",
-      description:
+        },
+        {
+            image: <ServiceBrandingIcon2 />,
+            number: "02",
+            title: "Разработка концепций",
+            description:
         "Создаем несколько вариантов названий, логотипов и фирменных стилей, отражающих суть вашего бренда.",
-    },
-    {
-      image: <ServiceBrandingIcon3 />,
-      number: "03",
-      title: "Согласование и доработка",
-      description:
+        },
+        {
+            image: <ServiceBrandingIcon3 />,
+            number: "03",
+            title: "Согласование и доработка",
+            description:
         "Совместно с вами выбираем лучший вариант и вносим необходимые правки для идеального соответствия вашим ожиданиям.",
-    },
-    {
-      image: <ServiceBrandingIcon4 />,
-      number: "04",
-      title: "Создание логобука и брендбука",
-      description:
+        },
+        {
+            image: <ServiceBrandingIcon4 />,
+            number: "04",
+            title: "Создание логобука и брендбука",
+            description:
         "Формализуем все элементы бренда в понятные и удобные документы для дальнейшего использования.",
-    },
-    {
-      image: <ServiceBrandingIcon5 />,
-      number: "05",
-      title: "Внедрение и поддержка",
-      description:
+        },
+        {
+            image: <ServiceBrandingIcon5 />,
+            number: "05",
+            title: "Внедрение и поддержка",
+            description:
         "Помогаем интегрировать новый бренд во все аспекты вашего бизнеса и предоставляем рекомендации по его развитию.",
-    },
-  ],
+        },
+    ],
 };
 
 //CRM
 export const serviceCrmData: ISmmTeamMembers = {
-  title: "Почему вашему бизнесу нужна CRM?",
-  items: [
-    {
-      image: <ServiceCrmIcon1 />,
-      number: "01",
-      title: "Увеличение продаж",
-      description:
+    title: "Почему вашему бизнесу нужна CRM?",
+    items: [
+        {
+            image: <ServiceCrmIcon1 />,
+            number: "01",
+            title: "Увеличение продаж",
+            description:
         "Автоматизация рутинных задач и структурирование клиентских данных помогают сосредоточиться на главном — привлечении и удержании клиентов, что значительно повышает конверсию и общий объем продаж.",
-    },
-    {
-      image: <ServiceCrmIcon2 />,
-      number: "02",
-      title: "Простота управления клиентами",
-      description:
+        },
+        {
+            image: <ServiceCrmIcon2 />,
+            number: "02",
+            title: "Простота управления клиентами",
+            description:
         "Все данные о клиентах собраны в одном месте, что упрощает доступ к информации и позволяет вашей команде выстраивать персонализированное взаимодействие.",
-    },
-    {
-      image: <ServiceCrmIcon3 />,
-      number: "03",
-      title: "Экономия времени и ресурсов",
-      description:
+        },
+        {
+            image: <ServiceCrmIcon3 />,
+            number: "03",
+            title: "Экономия времени и ресурсов",
+            description:
         "Оптимизация рабочих процессов снижает нагрузку на сотрудников, ускоряет выполнение задач и минимизирует ошибки, помогая снизить издержки.",
-    },
-    {
-      image: <SeoHowWeWork5 />,
-      number: "04",
-      title: "Аналитика для роста",
-      description:
+        },
+        {
+            image: <SeoHowWeWork5 />,
+            number: "04",
+            title: "Аналитика для роста",
+            description:
         "Систематизированная CRM-платформа предоставляет глубокую аналитику и отчеты, которые помогают выявлять слабые места, принимать стратегические решения и улучшать бизнес-процессы.",
-    },
-  ],
+        },
+    ],
 };
 
 export const serviceData = {
-  title: "Наши услуги по интеграции CRM",
-  items: [
-    {
-      image: "/images/services/crm/crm1.png",
-      image_right: false,
-      title: "Выбор и настройка CRM-системы",
-      description: "",
-      tags: [
+    title: "Наши услуги по интеграции CRM",
+    items: [
         {
-          tags: "Подбор наиболее подходящей CRM-платформы для вашего бизнеса.",
+            image: "/images/services/crm/crm1.png",
+            image_right: false,
+            title: "Выбор и настройка CRM-системы",
+            description: "",
+            tags: [
+                {
+                    tags: "Подбор наиболее подходящей CRM-платформы для вашего бизнеса.",
+                },
+                {
+                    tags: "Индивидуальная настройка системы под ваши требования.",
+                },
+            ],
         },
         {
-          tags: "Индивидуальная настройка системы под ваши требования.",
-        },
-      ],
-    },
-    {
-      image: "/images/services/crm/crm2.png",
-      image_right: true,
-      title: "Миграция данных",
-      description: "",
-      tags: [
-        {
-          tags: "Безопасный и точный перенос данных из существующих систем.",
-        },
-        {
-          tags: "Обеспечение целостности и сохранности информации.",
-        },
-      ],
-    },
-    {
-      image: "/images/services/crm/crm3.png",
-      image_right: false,
-      title: "Автоматизация процессов",
-      description: "",
-      tags: [
-        {
-          tags: "Настройка автоматизированных рабочих процессов для повышения эффективности",
+            image: "/images/services/crm/crm2.png",
+            image_right: true,
+            title: "Миграция данных",
+            description: "",
+            tags: [
+                {
+                    tags: "Безопасный и точный перенос данных из существующих систем.",
+                },
+                {
+                    tags: "Обеспечение целостности и сохранности информации.",
+                },
+            ],
         },
         {
-          tags: "Интеграция CRM с другими инструментами и системами вашего бизнеса.",
+            image: "/images/services/crm/crm3.png",
+            image_right: false,
+            title: "Автоматизация процессов",
+            description: "",
+            tags: [
+                {
+                    tags: "Настройка автоматизированных рабочих процессов для повышения эффективности",
+                },
+                {
+                    tags: "Интеграция CRM с другими инструментами и системами вашего бизнеса.",
+                },
+            ],
         },
-      ],
-    },
-    {
-      image: "/images/services/crm/crm4.png",
-      image_right: true,
-      title: "Обучение и поддержка",
-      description: "",
-      tags: [
         {
-          tags: "Проведение обучающих сессий для вашей команды.",
+            image: "/images/services/crm/crm4.png",
+            image_right: true,
+            title: "Обучение и поддержка",
+            description: "",
+            tags: [
+                {
+                    tags: "Проведение обучающих сессий для вашей команды.",
+                },
+                {
+                    tags: "Предоставление технической поддержки и сопровождение после внедрения.",
+                },
+            ],
         },
-        {
-          tags: "Предоставление технической поддержки и сопровождение после внедрения.",
-        },
-      ],
-    },
-  ],
+    ],
 };
 
 //SEO

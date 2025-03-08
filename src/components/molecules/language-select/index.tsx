@@ -1,11 +1,11 @@
 "use client";
 
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
 } from "@/components/ui/select";
 import RussianIcon from "@/assets/dropdown/rus.svg";
 import UzbIcon from "@/assets/dropdown/usb.svg";
@@ -30,92 +30,92 @@ interface LanguageProps {
 }
 
 const languageList: LanguageProps[] = [
-  {
-    id: "1",
-    title: "English",
-    shortTitle: "EN",
-    headers: "en",
-    icon: <UsaIcon />,
-  },
-  {
-    id: "2",
-    title: "Русский",
-    shortTitle: "РУ",
-    headers: "ru",
-    icon: <RussianIcon />,
-  },
-  {
-    id: "3",
-    title: "О'zbek",
-    shortTitle: "UZ",
-    headers: "uz",
-    icon: <UzbIcon />,
-  },
+    {
+        id: "1",
+        title: "English",
+        shortTitle: "EN",
+        headers: "en",
+        icon: <UsaIcon />,
+    },
+    {
+        id: "2",
+        title: "Русский",
+        shortTitle: "РУ",
+        headers: "ru",
+        icon: <RussianIcon />,
+    },
+    {
+        id: "3",
+        title: "О'zbek",
+        shortTitle: "UZ",
+        headers: "uz",
+        icon: <UzbIcon />,
+    },
 ];
 
 export const LanguageSelect = ({ isMobile }: { isMobile?: boolean }) => {
-  const locale = useLocale() as Locale;
-  const router = useRouter();
-  const pathname = usePathname();
+    const locale = useLocale() as Locale;
+    const router = useRouter();
+    const pathname = usePathname();
 
-  const [isClient, setIsClient] = useState(false);
-  const dispatch = useAppDispatch();
-  const selectedLanguage = useSelector(getLanguage);
+    const [isClient, setIsClient] = useState(false);
+    const dispatch = useAppDispatch();
+    const selectedLanguage = useSelector(getLanguage);
 
-  useEffect(() => {
-    if (isClient && locale) {
-      dispatch(languageActions.setLanguage(locale));
-    }
-  }, [locale, dispatch, isClient]);
+    useEffect(() => {
+        if (isClient && locale) {
+            dispatch(languageActions.setLanguage(locale));
+        }
+    }, [locale, dispatch, isClient]);
 
-  const onChangeLanguage = (value: string) => {
-    dispatch(languageActions.setLanguage(value));
-    dispatch(baseApi.util.resetApiState());
+    const onChangeLanguage = (value: string) => {
+        dispatch(languageActions.setLanguage(value));
+        dispatch(baseApi.util.resetApiState());
 
-    if (value !== locale) {
-      router.replace(pathname, { locale: value as Locale });
-    }
-  };
+        if (value !== locale) {
+            router.replace(pathname, { locale: value as Locale });
+        }
+    };
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
 
-  if (!isClient || selectedLanguage === null) return null;
+    if (!isClient || selectedLanguage === null) return null;
 
-  const selectedLang =
+    const selectedLang =
     languageList.find((lang) => lang.headers === selectedLanguage) ||
     languageList[1];
 
-  return (
-    <div>
-      <Select value={selectedLanguage} onValueChange={onChangeLanguage}>
-        <SelectTrigger
-          className={cn(
-            "hover:bg-white/20 transition-all focus:ring-offset-0 outline-none duration-200 w-[110px]",
-            isMobile ? "text-black" : ""
-          )}
-        >
-          <SelectValue>
-            {selectedLang && (
-              <div className="flex items-center space-x-1 focus:ring-offset-0">
-                <span>{selectedLang.icon}</span>
-                <span className="pr-1">{selectedLang.shortTitle}</span>
-              </div>
-            )}
-          </SelectValue>
-        </SelectTrigger>
-        <SelectContent className="min-w-[180px]">
-          {languageList.map((language) => (
-            <SelectItem key={language.id} value={language.headers}>
-              <div className="flex items-center space-x-2 hover:text-red-500 transition-colors duration-200">
-                <span>{language.icon}</span>
-                <span>{language.title}</span>
-              </div>
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
-    </div>
-  );
+    return (
+        <div>
+            <Select value={selectedLanguage} onValueChange={onChangeLanguage}>
+                <SelectTrigger
+                    className={cn(
+                        "hover:bg-white/20 transition-all focus:ring-offset-0 outline-none duration-200 w-[110px]",
+                        isMobile ? "text-black" : ""
+                    )}
+                >
+                    <SelectValue>
+                        {selectedLang && (
+                            <div className="flex items-center space-x-1 focus:ring-offset-0">
+                                <span>{selectedLang.icon}</span>
+                                <span className="pr-1">{selectedLang.shortTitle}</span>
+                            </div>
+                        )}
+                    </SelectValue>
+                </SelectTrigger>
+                <SelectContent className="min-w-[180px]">
+                    {languageList.map((language) => (
+                        <SelectItem key={language.id} value={language.headers}>
+                            <div className="flex items-center space-x-2 hover:text-red-500 transition-colors duration-200">
+                                <span>{language.icon}</span>
+                                <span>{language.title}</span>
+                            </div>
+                        </SelectItem>
+                    ))}
+                </SelectContent>
+            </Select>
+        </div>
+    );
 };
