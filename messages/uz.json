@@ -107,6 +107,51 @@
       "content2": "Yuqori reytingdagi saytlar ishonchliroq deb hisoblanadi. Bu mijozlarning ishonchini mustahkamlab, takroriy savdolarni rag‘batlantiradi.",
       "title3": "Uzoq muddatli natijalar",
       "content3": "SEO ga sarmoya uzoq muddatda o‘z samarasini beradi, reklamadan farqli o‘laroq (uning ta’siri vaqtinchalik)."
+    },
+    "servicesSEO": {
+      "title": "Bizning SEO Xizmatlarimiz",
+      "title1": "Saytning Texnik Auditi",
+      "tag1_1": "Sahifa yuklanish tezligini tekshirish",
+      "tag1_2": "Kod xatolarini aniqlash va tuzatish",
+      "tag1_3": "Mobil qurilmalar uchun optimallashtirish",
+
+      "title2": "Samarali Kalit So'zlar Tanlash",
+      "tag2_1": "Maqsadli auditoriya qidiruv so'rovlarini tahlil qilish",
+      "tag2_2": "Raqobatbardoshligi va so'rov chastotasini baholash",
+      "tag2_3": "Semantik yadro tuzish",
+
+      "title3": "Ichki Optimallashtirish",
+      "tag3_1": "Sayt tuzilmasi va navigatsiyasini yaxshilash",
+      "tag3_2": "Meta-teglar va sarlavhalarni optimallashtirish",
+      "tag3_3": "Yuqori sifatli noyob kontent yaratish",
+
+      "title4": "Tashqi Optimallashtirish (Linkbuilding)",
+      "tag4_1": "Havfli resurslarda maqola va havolalarni joylashtirish",
+      "tag4_2": "Sharhlar va brend haqida eslatmalar bilan ishlash",
+      "tag4_3": "Tabiiy havola profilini yaratish",
+
+      "title5": "Lokal SEO",
+      "tag5_1": "Mahalliy qidiruv so'rovlari uchun optimallashtirish",
+      "tag5_2": "Google My Business va Yandex.Spravachnik profil sozlamalari",
+      "tag5_3": "Mijoz sharhlarini yig'ish va boshqarish",
+
+      "title6": "Doimiy Monitoring va Analitika",
+      "tag6_1": "Qidiruv tizimidagi pozitsiyalarni kuzatish",
+      "tag6_2": "Saytdagi foydalanuvchi harakatlarini tahlil qilish",
+      "tag6_3": "Ma'lumotlar asosida strategiyani sozlash"
+    },
+    "howWeWork": {
+      "title": "Biz Qanday Ishlaymiz",
+      "title1": "Biznes va Raqobatchilar Tahlili",
+      "desk1": "Sizning bozorizgiz xususiyatlarini va raqobatchilarning kuchli va zaif tomonlarini o'rganamiz.",
+      "title2": "Individual Strategiya Ishlab Chiqish",
+      "desk2": "Biznesingiz xususiyatlari va maqsadlaringizga mos harakat rejasini yaratamiz",
+      "title3": "Optimallashtirish Choralarini Joriy Etish",
+      "desk3": "Texnik va kontent optimallashtirish, tashqi reyting omillari bilan ishlaymiz.",
+      "title4": "Natijalarni Kuzatish va Hisobotlar",
+      "desk4": "Bajarilgan ishlar va erishilgan natijalar haqida muntazam hisobotlar taqdim etamiz",
+      "title5": "Doimiy Takomillashtirish",
+      "desk5": "Qidiruv tizimi algoritmlari o'zgarishi va bozor tendentsiyalariga mos strategiyani sozlaymiz"
     }
   }
 }
