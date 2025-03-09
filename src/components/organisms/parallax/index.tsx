@@ -64,7 +64,7 @@ export const ParallaxSection: React.FC<ParallaxData> = ({
                 "linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%)",
                         }}
                     ></div>
-                    {/* Parallax image (positioned absolutely for movement) */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                         ref={(el) => {
                             imgRefs.current[index] = el;
@@ -72,12 +72,6 @@ export const ParallaxSection: React.FC<ParallaxData> = ({
                         src={item.image}
                         alt={`Parallax Speed`}
                         data-speed={item.speed || 1}
-                        /* 
-              - Absolute to allow top/left transforms.
-              - Center horizontally with translate-x-1/2.
-              - min-w-full/min-h-full ensures the image can fill (or exceed) the container.
-              - object-cover so it scales nicely without white gaps.
-            */
                         className="
               absolute 
               top-0 
