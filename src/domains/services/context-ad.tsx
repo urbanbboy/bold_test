@@ -13,39 +13,39 @@ import useScrollToFeedback from "@/hooks/useScrollToFeedback";
 import { useSlug } from "@/hooks/useSlug";
 
 const ContextAdsPage = () => {
-  const slug = useSlug();
-  const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug);
-  const { ref, scrollToFeedback } = useScrollToFeedback();
-  const contextAdData = useContextAdData();
-  const contextAdCardData = useContextAdCardData();
-  return (
-    <RequestHandler isLoading={isLoading} error={error} data={data}>
-      {data && (
-        <PageTitleLayout
-          scrollToFeedback={scrollToFeedback}
-          title={data.title}
-          sub_title={data.content}
-          bg_image={data.image}
-          isGray={true}
-          button_text={"Оставить заявку"}
-          breadcrumb={[
-            { text: "Главная", href: "/home" },
-            { text: "Контекстная реклама", href: "/services/context-ads" },
-          ]}
-        />
-      )}
-      <ServiceStaticCardList
-        title={contextAdData.title}
-        items={contextAdData.items}
-      />
-      <CompanyServiceCardList
-        title={contextAdCardData.title}
-        items={contextAdCardData.items}
-      />
-      <CompanyPostList />
-      <FormLayout ref={ref} nestedForm={<FeedbackForm />} />
-    </RequestHandler>
-  );
+    const slug = useSlug();
+    const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug);
+    const { ref, scrollToFeedback } = useScrollToFeedback();
+    const contextAdData = useContextAdData();
+    const contextAdCardData = useContextAdCardData();
+    return (
+        <RequestHandler isLoading={isLoading} error={error} data={data}>
+            {data && (
+                <PageTitleLayout
+                    scrollToFeedback={scrollToFeedback}
+                    title={data.title}
+                    sub_title={data.content}
+                    bg_image={data.image}
+                    isGray={true}
+                    button_text={"Оставить заявку"}
+                    breadcrumb={[
+                        { text: "Главная", href: "/home" },
+                        { text: "Контекстная реклама", href: "/services/context-ads" },
+                    ]}
+                />
+            )}
+            <ServiceStaticCardList
+                title={contextAdData.title}
+                items={contextAdData.items}
+            />
+            <CompanyServiceCardList
+                title={contextAdCardData.title}
+                items={contextAdCardData.items}
+            />
+            <CompanyPostList />
+            <FormLayout ref={ref} nestedForm={<FeedbackForm />} />
+        </RequestHandler>
+    );
 };
 
 export default ContextAdsPage;

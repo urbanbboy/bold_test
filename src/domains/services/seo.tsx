@@ -16,50 +16,50 @@ import useScrollToFeedback from "@/hooks/useScrollToFeedback";
 import { useSlug } from "@/hooks/useSlug";
 
 const SeoPage = () => {
-  const slug = useSlug();
-  const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug);
-  const { data: site_statuses } = useGetSiteStatusQuery();
-  const { business_types } = useAppData();
-  const { ref, scrollToFeedback } = useScrollToFeedback();
+    const slug = useSlug();
+    const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug);
+    const { data: site_statuses } = useGetSiteStatusQuery();
+    const { business_types } = useAppData();
+    const { ref, scrollToFeedback } = useScrollToFeedback();
 
-  const seoData = useSeoData();
-  const seoPostsData = useSeoPostsData();
-  const seoCardsData = useSeoCardsData();
-  return (
-    <RequestHandler isLoading={isLoading} error={error} data={data}>
-      {data && (
-        <PageTitleLayout
-          scrollToFeedback={scrollToFeedback}
-          title={data.title}
-          sub_title={data.content}
-          bg_image={data.image}
-          button_text={"Получить консультацию"}
-          breadcrumb={[
-            { text: "Главная", href: "/home" },
-            { text: "SEO-оптимизация", href: "/services/seo" },
-          ]}
-          isGray
-        />
-      )}
-      <ServiceStaticCardList title={seoData.title} items={seoData.items} />
-      <ServicePostList title={seoPostsData.title} items={seoPostsData.items} />
-      <CompanyServiceCardList
-        title={seoCardsData.title}
-        items={seoCardsData.items}
-      />
-      <Faq />
-      <FormLayout
-        ref={ref}
-        title="Узнайте стоимость SEO-оптимизации "
-        nestedForm={
-          <SeoFeedbackForm
-            business_types={business_types}
-            site_statuses={site_statuses || []}
-          />
-        }
-      />
-    </RequestHandler>
-  );
+    const seoData = useSeoData();
+    const seoPostsData = useSeoPostsData();
+    const seoCardsData = useSeoCardsData();
+    return (
+        <RequestHandler isLoading={isLoading} error={error} data={data}>
+            {data && (
+                <PageTitleLayout
+                    scrollToFeedback={scrollToFeedback}
+                    title={data.title}
+                    sub_title={data.content}
+                    bg_image={data.image}
+                    button_text={"Получить консультацию"}
+                    breadcrumb={[
+                        { text: "Главная", href: "/home" },
+                        { text: "SEO-оптимизация", href: "/services/seo" },
+                    ]}
+                    isGray
+                />
+            )}
+            <ServiceStaticCardList title={seoData.title} items={seoData.items} />
+            <ServicePostList title={seoPostsData.title} items={seoPostsData.items} />
+            <CompanyServiceCardList
+                title={seoCardsData.title}
+                items={seoCardsData.items}
+            />
+            <Faq />
+            <FormLayout
+                ref={ref}
+                title="Узнайте стоимость SEO-оптимизации "
+                nestedForm={
+                    <SeoFeedbackForm
+                        business_types={business_types}
+                        site_statuses={site_statuses || []}
+                    />
+                }
+            />
+        </RequestHandler>
+    );
 };
 
 export default SeoPage;

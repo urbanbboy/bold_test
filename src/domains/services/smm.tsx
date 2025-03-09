@@ -20,112 +20,112 @@ import { useSlug } from "@/hooks/useSlug";
 import { useTranslations } from "next-intl";
 
 const SmmPage = () => {
-  const t = useTranslations("ServicesPage1");
+    const t = useTranslations("ServicesPage1");
 
-  const serviceData = {
-    title: t("zigzak.title"),
-    items: [
-      {
-        image: "/images/services/smm/smmBg-1-min.jpg",
-        image_right: false,
-        title: t("zigzak.subtitle1"),
-        description: t("zigzak.subdesk1"),
-      },
-      {
-        image: "/images/services/smm/smmBg-2-min.jpg",
-        image_right: true,
-        title: t("zigzak.subtitle2"),
-        description: t("zigzak.subdesk2"),
-      },
-      {
-        image: "/images/services/smm/smmBg-3-min.jpg",
-        image_right: false,
-        title: t("zigzak.subtitle3"),
-        description: t("zigzak.subdesk3"),
-      },
-      {
-        image: "/images/services/smm/smmBg-4-min.jpg",
-        image_right: true,
-        title: t("zigzak.subtitle4"),
-        description: t("zigzak.subdesk4"),
-      },
-      {
-        image: "/images/services/smm/smmBg-5-min.jpg",
-        image_right: false,
-        title: t("zigzak.subtitle5"),
-        description: t("zigzak.subdesk5"),
-      },
-      {
-        image: "/images/services/smm/smmBg-6-min.jpg",
-        image_right: true,
-        title: t("zigzak.subtitle6"),
-        description: t("zigzak.subdesk6"),
-      },
-      {
-        image: "/images/services/smm/smmBg-7-min.jpg",
-        image_right: false,
-        title: t("zigzak.subtitle7"),
-        description: t("zigzak.subdesk7"),
-      },
-    ],
-  };
-  const slug = useSlug();
-  const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug);
-  const { data: ads } = useGetCompanyAdvertisingQuery();
-  const { data: social_types } = useGetSocialTypesQuery();
-  const { business_types } = useAppData();
-  const { ref, scrollToFeedback } = useScrollToFeedback();
+    const serviceData = {
+        title: t("zigzak.title"),
+        items: [
+            {
+                image: "/images/services/smm/smmBg-1-min.jpg",
+                image_right: false,
+                title: t("zigzak.subtitle1"),
+                description: t("zigzak.subdesk1"),
+            },
+            {
+                image: "/images/services/smm/smmBg-2-min.jpg",
+                image_right: true,
+                title: t("zigzak.subtitle2"),
+                description: t("zigzak.subdesk2"),
+            },
+            {
+                image: "/images/services/smm/smmBg-3-min.jpg",
+                image_right: false,
+                title: t("zigzak.subtitle3"),
+                description: t("zigzak.subdesk3"),
+            },
+            {
+                image: "/images/services/smm/smmBg-4-min.jpg",
+                image_right: true,
+                title: t("zigzak.subtitle4"),
+                description: t("zigzak.subdesk4"),
+            },
+            {
+                image: "/images/services/smm/smmBg-5-min.jpg",
+                image_right: false,
+                title: t("zigzak.subtitle5"),
+                description: t("zigzak.subdesk5"),
+            },
+            {
+                image: "/images/services/smm/smmBg-6-min.jpg",
+                image_right: true,
+                title: t("zigzak.subtitle6"),
+                description: t("zigzak.subdesk6"),
+            },
+            {
+                image: "/images/services/smm/smmBg-7-min.jpg",
+                image_right: false,
+                title: t("zigzak.subtitle7"),
+                description: t("zigzak.subdesk7"),
+            },
+        ],
+    };
+    const slug = useSlug();
+    const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug);
+    const { data: ads } = useGetCompanyAdvertisingQuery();
+    const { data: social_types } = useGetSocialTypesQuery();
+    const { business_types } = useAppData();
+    const { ref, scrollToFeedback } = useScrollToFeedback();
 
-  const smmCreatingAdData = useSmmCreatingAdData();
-  const smmTeamMembers = useSmmTeamMembers();
+    const smmCreatingAdData = useSmmCreatingAdData();
+    const smmTeamMembers = useSmmTeamMembers();
 
-  return (
-    <RequestHandler isLoading={isLoading} error={error} data={data}>
-      {data && (
-        <PageTitleLayout
-          scrollToFeedback={scrollToFeedback}
-          title={data.title}
-          sub_title={data.content}
-          button_text={"Получить консультацию"}
-          breadcrumb={[
-            { text: "Главная", href: "/home" },
-            { text: "Digital продвижение", href: "/services/smm" },
-          ]}
-          bg_image={data.image}
-        />
-      )}
-      <ServicePostList title={serviceData.title} items={serviceData.items} />
-      {ads && (
-        <SMMPartnersCarousel
-          title={ads.title}
-          sub_title={ads.sub_title}
-          partnerList={ads.items}
-        />
-      )}
-      <ServiceStaticCardList
-        title={smmCreatingAdData.title}
-        eyebrow={smmCreatingAdData.eyebrow}
-        sub_title={smmCreatingAdData.sub_title}
-        items={smmCreatingAdData.items}
-      />
-      <CompanyServiceCardList
-        title={smmTeamMembers.title}
-        items={smmTeamMembers.items}
-      />
-      <SmmStats />
-      <ClientReviewList hasSubTitle />
-      <FormLayout
-        ref={ref}
-        title={"Узнайте стоимость SMM-продвижения"}
-        nestedForm={
-          <SmmFeedbackForm
-            business_types={business_types}
-            social_types={social_types || []}
-          />
-        }
-      />
-    </RequestHandler>
-  );
+    return (
+        <RequestHandler isLoading={isLoading} error={error} data={data}>
+            {data && (
+                <PageTitleLayout
+                    scrollToFeedback={scrollToFeedback}
+                    title={data.title}
+                    sub_title={data.content}
+                    button_text={"Получить консультацию"}
+                    breadcrumb={[
+                        { text: "Главная", href: "/home" },
+                        { text: "Digital продвижение", href: "/services/smm" },
+                    ]}
+                    bg_image={data.image}
+                />
+            )}
+            <ServicePostList title={serviceData.title} items={serviceData.items} />
+            {ads && (
+                <SMMPartnersCarousel
+                    title={ads.title}
+                    sub_title={ads.sub_title}
+                    partnerList={ads.items}
+                />
+            )}
+            <ServiceStaticCardList
+                title={smmCreatingAdData.title}
+                eyebrow={smmCreatingAdData.eyebrow}
+                sub_title={smmCreatingAdData.sub_title}
+                items={smmCreatingAdData.items}
+            />
+            <CompanyServiceCardList
+                title={smmTeamMembers.title}
+                items={smmTeamMembers.items}
+            />
+            <SmmStats />
+            <ClientReviewList hasSubTitle />
+            <FormLayout
+                ref={ref}
+                title={"Узнайте стоимость SMM-продвижения"}
+                nestedForm={
+                    <SmmFeedbackForm
+                        business_types={business_types}
+                        social_types={social_types || []}
+                    />
+                }
+            />
+        </RequestHandler>
+    );
 };
 
 export default SmmPage;
