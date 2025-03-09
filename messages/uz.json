@@ -119,6 +119,11 @@
     }
   },
   "ServicesPage3": {
+    "banner": {
+      "title": "Biznesingizni qidiruv natijalari cho‘qqisiga olib chiqing",
+      "description": "Bold Brands’ning professional SEO optimizatsiyasi yordamida ko‘proq mijozlarni jalb qiling",
+      "btn": "Konsultatsiya olish"
+    },
     "whySEO": {
       "title": "Nega SEO optimallashtirish sizning biznesingiz uchun zarur?",
       "title1": "Organik trafikni oshirish",
@@ -172,6 +177,61 @@
       "desk4": "Bajarilgan ishlar va erishilgan natijalar haqida muntazam hisobotlar taqdim etamiz",
       "title5": "Doimiy Takomillashtirish",
       "desk5": "Qidiruv tizimi algoritmlari o'zgarishi va bozor tendentsiyalariga mos strategiyani sozlaymiz"
+    },
+    "services": {
+      "title": "Bizning SEO xizmatlarimiz va saytlarni ilgari surish",
+      "title1": "Saytning texnik auditi",
+      "tags1": {
+        "tag1": "Sahifalarni yuklash tezligini tekshirish",
+        "tag2": "Koddagi xatolarni bartaraf etish",
+        "tag3": "Mobil qurilmalar uchun SEO moslash"
+      },
+      "title2": "SEO uchun kalit so‘zlarni tanlash",
+      "tags2": {
+        "tag1": "Maqsadli auditoriyaning SEO so‘rovlarini tahlil qilish",
+        "tag2": "So‘rovlarning raqobatbardoshligi va chastotasini baholash",
+        "tag3": "SEO yadrosini tuzish"
+      },
+      "title3": "Ichki SEO optimallashuv",
+      "tags3": {
+        "tag1": "Sayt tuzilmasi va navigatsiyasini optimallash",
+        "tag2": "Meta-teglar va sarlavhalarni SEO optimallash",
+        "tag3": "Sifatli va noyob SEO kontentini yaratish"
+      },
+      "title4": "Tashqi SEO optimallashuv, linkbuilding",
+      "tags4": {
+        "tag1": "Nufuzli manbalarda maqolalar va havolalarni joylashtirish",
+        "tag2": "Sharhlar va brend eslatmalari bilan ishlash",
+        "tag3": "Tabiiy havola profilini shakllantirish"
+      },
+      "title5": "Lokal SEO",
+      "tags5": {
+        "tag1": "Lokal qidiruvlar uchun optimallash",
+        "tag2": "Google My Business va Yandex.Spravochnikda profillarni sozlash",
+        "tag3": "Mijozlar sharhlarini to‘plash va boshqarish"
+      },
+      "title6": "Doimiy monitoring va SEO tahlili",
+      "tags6": {
+        "tag1": "Qidiruv natijalaridagi pozitsiyalarni kuzatish",
+        "tag2": "Saytdagi foydalanuvchilar xatti-harakatini tahlil qilish",
+        "tag3": "Ma’lumotlarga asoslanib strategiyani tuzatish"
+      }
+    },
+    "howWeWork": {
+      "title1": "Biz qanday ishlaymiz",
+      "title11": "Biznes va raqobatchilarning SEO auditi",
+      "description11": "Bozoringizning o‘ziga xos xususiyatlarini chuqur o‘rganamiz, raqobatchilarning kuchli va zaif tomonlarini tahlil qilamiz.",
+      "title12": "Individual SEO strategiyasini ishlab chiqish",
+      "description12": "Biznesingiz xususiyatlari va maqsadlarini hisobga olgan holda harakat rejasini tuzamiz.",
+      "title13": "Optimallash choralarini joriy etish",
+      "description13": "Texnik va kontent SEO optimallashtirishni amalga oshiramiz, reytingning tashqi omillari ustida ishlaymiz.",
+      "title14": "Natijalarni kuzatish va hisobot berish",
+      "description14": "Bajarilgan ishlar va erishilgan natijalar haqida muntazam hisobot berib boramiz.",
+      "title15": "Doimiy takomillashtirish",
+      "description15": "Qidiruv tizimlari algoritmlaridagi o‘zgarishlar va bozor tendensiyalariga muvofiq strategiyani moslashtirish."
+    },
+    "faq": {
+      "title": "Ko‘p so‘raladigan savollar"
     }
   },
   "ServicesPage7": {
@@ -291,8 +351,32 @@
     "privacyPolicy": "Политика конфиденциальности"
   },
   "ServicePage4": {
-    "btn": "Получить консультацию",
-    "howWeWork": {}
+    "banner": {
+      "title": "Sizni raqobatchilaringizdan ajratib turadigan brending",
+      "description": "G‘oyadan to amalga oshirishgacha - brendingizni yaratishning har bir bosqichida sizga hamroh bo‘lamiz",
+      "btn": "Konsultatsiya olish"
+    },
+    "btn": "Konsultatsiya olish",
+    "howWeWork": {
+      "title1": "Biz qanday ishlaymiz",
+      "title11": "Tadqiqot va tahlil",
+      "description11": "Biznesingizga chuqur kirib boramiz, taklifingizning noyob afzalliklarini tushunish uchun maqsadli auditoriya, bozor va raqobatchilarni o'rganamiz. ",
+      "title12": "Konsepsiyalarni ishlab chiqish",
+      "description12": "Brendingiz mohiyatini aks ettiruvchi nomlar, logotiplar va firma uslublarining bir nechta variantlarini yaratamiz. ",
+      "title13": "Kelishish va takomillashtirish",
+      "description13": "Siz bilan hamkorlikda eng yaxshi variantni tanlaymiz va kutganlaringizga to'liq mos kelishi uchun zarur tuzatishlarni kiritamiz.",
+      "title14": "Logobuk va brendbuk yaratish",
+      "description14": "Brendning barcha elementlarini keyinchalik foydalanish uchun tushunarli va qulay hujjatlarga rasmiylashtiramiz",
+      "title15": "Joriy etish va qo'llab-quvvatlash",
+      "description15": "Biz yangi brendni biznesingizning barcha jabhalariga singdirishga yordam beramiz va uni rivojlantirish bo'yicha tavsiyalar beramiz."
+    },
+    "design": {
+      "title1": "Dizaynni qo'llab-quvvatlash",
+      "subtitle1": "SIZNING TASHQI DIZAYN BO'LIMINGIZ",
+      "description1": "Biz brendingizning vizual materiallarini (logotip, qadoqlash dizayni, reklama maketlari) muntazam ravishda yangilab boramiz, shunda u zamonaviy va jozibador bo'lib qoladi.Mutaxassislarimiz dizaynni yangi tendensiyalar va platformalarga tez moslashtiradi, shu bilan auditoriyaning qiziqishini saqlab qoladi.",
+      "title2": "",
+      "description2": "Biz bilan sizning brendingiz har doim ajralib turadi va raqamli brending, firma uslubi yoki oflayn brending marketingi bo'lishidan qat'i nazar, mijozlar bilan samarali o'zaro aloqa o'rnatadi."
+    }
   },
   "ServicePage5": {
     "headerBtn": "Заказать видеоролик",
@@ -506,5 +590,8 @@
   "FormErrors": {
     "required": "Maydonni to'ldiring!",
     "phone_error": "Telefon raqami noto'g'ri!"
+  },
+  "Buttons": {
+    "btn1": "Konsultatsiya olish"
   }
 }
