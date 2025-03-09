@@ -4,10 +4,6 @@ import { Heading } from "@/components/atoms/heading";
 import { ServiceCardItem } from "@/components/molecules/service-card-item";
 import { ISmmTeamMembers } from "@/consts/types";
 
-export const CompanyServiceCardList = ({ title, items }: ISmmTeamMembers) => {
-
-
-
 export const CompanyServiceCardList = ({
     title,
     items,
@@ -37,4 +33,6 @@ export const CompanyServiceCardList = ({
             </div>
         </section>
     );
-};
+}
+
+
