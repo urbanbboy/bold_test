@@ -1,31 +1,41 @@
 "use client";
 
 import { CostCalculationForm } from "@/components/forms/cost-calculation-form";
-import { CompanyInfo } from "@/components/organisms/company-info";
-import { CompanyPartners } from "@/components/organisms/company-partners";
-import { CompanyPostList } from "@/components/organisms/company-post-list";
-import { CompanyTeam } from "@/components/organisms/company-team";
-import { InfoCard } from "@/components/organisms/info-card";
-import { PartnerReviewList } from "@/components/organisms/partner-review-list";
 import { FormLayout } from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
-import { OurPhilosophyIcon } from "@/assets/info-card";
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { useSlug } from "@/hooks/useSlug";
-
 import { useAppData } from "@/context/app-context";
 import { useGetPromotionTypesQuery } from "@/api/Types";
 import { useRef } from "react";
 import { useTranslations } from "next-intl";
-import { Advantages } from "@/components/organisms/advantages/Advantages";
+import { MarketingDepartment } from "@/components/organisms/marketing-department";
+import { ParallaxSection } from "@/components/organisms/parallax";
+import { useGetBusinessCardsQuery } from "@/api/BusinessType";
 
-const AboutPage = () => {
-    const t = useTranslations("AboutPage");
+export interface ParallaxItem {
+  src: string;
+  speed: number;
+  alt?: string;
+  heading?: string;
+}
+
+export interface ParallaxProps {
+  images: ParallaxItem[];
+}
+
+const PrintPage = () => {
+    //   const t = useTranslations("AboutPage");
 
     const slug = useSlug();
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug);
     const { data: promotion_types } = useGetPromotionTypesQuery();
+    const {
+        data: cards,
+        isError,
+        isLoading: loading,
+    } = useGetBusinessCardsQuery();
     const { business_types } = useAppData();
 
     const feedbackRef = useRef<HTMLDivElement>(null);
@@ -40,30 +50,23 @@ const AboutPage = () => {
                 <PageTitleLayout
                     bg_image={data.image}
                     title={data.title}
-                    button_text={"Получить консультацию"}
+                    top_title="Печать, которая работает на вас"
+                    sub_title={data.content}
+                    button_text={"Заказать печать"}
                     scrollToFeedback={scrollToFeedback}
                     breadcrumb={[
                         { text: "Главная", href: "/home" },
-                        { text: "О нас", href: "/about" },
+                        { text: "Оперативная печать", href: "/services/operative-print" },
                     ]}
                 />
             )}
-            <InfoCard
-                title={t("BusinessResults.title")}
-                sub_title={""}
-                description={t("BusinessResults.description")}
-                image={"/images/about_page/our_philosophy.webp"}
-                card_title={t("BusinessResults.subtitle")}
-                card_description={t("BusinessResults.subdesk")}
-                card_icon={
-                    <OurPhilosophyIcon className="w-[80px] h-[80px] sm:w-[118px] sm:h-[118px]" />
-                }
-            />
-            <Advantages />
-            <CompanyTeam />
-            <CompanyPostList />
-            <CompanyPartners />
-            <PartnerReviewList />
+            <MarketingDepartment />
+            {cards && (
+                <ParallaxSection
+                    businesscards={cards?.businesscards}
+                    title={cards?.title}
+                />
+            )}
             <FormLayout
                 ref={feedbackRef}
                 title={"Рассчитайте стоимость услуги"}
@@ -78,4 +81,4 @@ const AboutPage = () => {
     );
 };
 
-export default AboutPage;
+export default PrintPage;

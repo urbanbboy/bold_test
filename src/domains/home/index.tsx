@@ -17,6 +17,7 @@ import { useTranslations } from "next-intl";
 import { Advantages } from "@/components/organisms/advantages/Advantages";
 import NewsBanner from '@/components/atoms/NewsBanne/NewsBanne';
 
+
 const HomePage = () => {
     const t = useTranslations("HomePage");
 
