@@ -129,6 +129,120 @@
       "content3": "SEO investments pay off in the long run, unlike paid advertising, which only provides short-term effects."
     }
   },
+  "ServicesPage7": {
+    "headerBtn": "Order integration",
+    "BenefitsSection":{
+      "title": "Why does your business need CRM?",
+      "button":"Get consultation",
+      "items": [
+        {
+          "image": "ServiceCrmIcon1",
+          "number": "01",
+          "title": "Sales Growth",
+          "description": "Automating routine tasks and structuring customer data helps you focus on what matters most - attracting and retaining customers, which significantly increases conversion rates and overall sales."
+        },
+        {
+          "image": "ServiceCrmIcon2",
+          "number": "02",
+          "title": "Easy customer management",
+          "description": "All customer data is collected in one place, making it easy to access information and allowing your team to build personalized interactions."
+        },
+        {
+          "image": "ServiceCrmIcon3",
+          "number": "03",
+          "title": "Save time and resources",
+          "description": "Streamlining workflows reduces employee workload, speeds up tasks and minimizes errors to help reduce costs."
+        },
+        {
+          "image": "SeoHowWeWork5",
+          "number": "04",
+          "title": "Analytics for growth",
+          "description": "A systematized CRM platform provides in-depth analytics and reports that help you identify weaknesses, make strategic decisions, and improve business processes."
+        }
+      ]
+    },
+    "integrationServices": {
+      "titleIntegrationServices": "Our CRM integration services",
+      "servicesList": [
+        {
+          "serviceId": "01",
+          "serviceTitle": "CRM system selection and customization",
+          "serviceDescription": "Selection of the most suitable CRM platform for your business. Individual customization of the system for your requirements."
+        },
+        {
+          "serviceId": "02",
+          "serviceTitle": "Data migration",
+          "serviceDescription": "Secure and accurate migration of data from existing systems. Ensuring the integrity and security of information."
+        },
+        {
+          "serviceId": "03",
+          "serviceTitle": "Process Automation",
+          "serviceDescription": "Customize automated workflows to increase efficiency. Integrate CRM with other tools and systems in your business."
+        },
+        {
+          "serviceId": "04",
+          "serviceTitle": "Training and support",
+          "serviceDescription": "Conducting training sessions for your team. Providing technical support and post-implementation maintenance."
+        }
+      ]
+    },
+    "VideoBanner": {
+      "titleBlog": "Manage your customers efficiently",
+      "subtitle1": "CRM system integration for process optimization and sales growth",
+      "buttonOrderIntegration": "Order"
+    },
+
+    "integrationApproach": {
+      "titleIntegration": "Our approach to CRM integration",
+      "teamTraining": {
+        "titleTeamTraining": "We also train your team ",
+        "descriptionTeamTraining": "and provide regular technical support to make your CRM user-friendly."
+      }
+    },
+
+    "PartersBlog": {
+      "titleParters": "Partnership",
+      "SubTitleParters": "We are official Bitrix24 partners"
+    }
+  },
+  "footer": {
+    "companyInfo": {
+      "companyName": "Bold Brands International",
+      "companyDescription": "your external marketing department",
+      "websiteDesign": "Web design — aidarsopubekov.framer.ai",
+      "copyright": "© 2024 Bold Brands International. All rights reserved"
+    },
+    "companyLinks": {
+      "aboutUs": "About Us",
+      "cases": "Cases",
+      "reviews": "Reviews"
+    },
+    "servicesLinks": {
+      "branding": "Branding",
+      "digitalMarketing": "Digital Marketing",
+      "videoProduction": "Video Production",
+      "webDevelopment": "Web Development and Design",
+      "marketingSupport": "Comprehensive Marketing Support",
+      "automationAnalytics": "Automation and Analytics"
+    },
+    "contactInfo": {
+      "addresses": {
+        "Bishkek": "102 Matrosova Street",
+        "Tashkent": "Yangibozor District, Yangibozor 1"
+      },
+      "phones": {
+        "Bishkek": "+996 999 50 44 44",
+        "Tashkent": "+998 909 36 09 36"
+      },
+      "email": "info@boldbrands.kg",
+      "workingHours": "Mon — Fri 9:00 AM — 6:00 PM"
+    },
+    "socialLinks": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "telegram": "Telegram"
+    },
+    "privacyPolicy": "Privacy Policy",
   "ServicePage4": {
     "btn": "Получить консультацию",
     "howWeWork": {}
@@ -346,4 +460,5 @@
     "required": "Please fill out this field",
     "phone_error": "Incorrect phone number!"
   }
+}
 }
