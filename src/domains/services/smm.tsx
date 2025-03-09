@@ -5,6 +5,7 @@ import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
 import { useGetSocialTypesQuery } from "@/api/Types";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { SmmFeedbackForm } from "@/components/forms/smm-feedback-form";
+import { Advantages } from "@/components/organisms/advantages/Advantages";
 import { ClientReviewList } from "@/components/organisms/client-review-list";
 import { CompanyServiceCardList } from "@/components/organisms/company-service-card-list";
 import { ServicePostList } from "@/components/organisms/service-post-list";
@@ -112,7 +113,7 @@ const SmmPage = () => {
                 title={smmTeamMembers.title}
                 items={smmTeamMembers.items}
             />
-            <SmmStats />
+            <Advantages isSmm/>
             <ClientReviewList hasSubTitle />
             <FormLayout
                 ref={ref}
