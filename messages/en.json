@@ -119,19 +119,103 @@
     }
   },
   "ServicesPage3": {
+    "banner": {
+      "title": "Take your business to the top of search rankings",
+      "description": "Attract more customers with professional SEO optimization from Bold Brands",
+      "btn": "Get a consultation"
+    },
     "whySEO": {
-      "title": "Why is SEO optimization essential for your business?",
-      "title1": "Increased Organic Traffic",
-      "content1": "Over 70% of users click on the first three search results. Ranking in the top positions increases website traffic without additional advertising costs.",
-      "title2": "Enhanced Trust and Brand Recognition",
-      "content2": "Top-ranked websites are perceived as more reliable. This builds customer trust and encourages repeat sales.",
+      "title": "Why Is SEO Optimization Essential for Your Business?",
+      "title1": "Increase in Organic Traffic",
+      "content1": "More than 70% of users click on the top three search results. Ranking higher allows you to increase website traffic without additional advertising costs.",
+      "title2": "Boost Trust and Brand Awareness",
+      "content2": "Websites in the top search results are perceived as more reliable. This strengthens customer trust and encourages repeat sales.",
       "title3": "Long-Term Results",
-      "content3": "SEO investments pay off in the long run, unlike paid advertising, which only provides short-term effects."
+      "content3": "SEO investments pay off in the long run, unlike paid advertising, which has only short-term effects."
+    },
+    "services": {
+      "title": "Our SEO Optimization Services",
+      "title1": "Technical Website Audit",
+      "tags1": {
+        "tag1": "Checking page load speed",
+        "tag2": "Identifying and fixing code errors",
+        "tag3": "Mobile optimization"
+      },
+      "title2": "Effective Keyword Research",
+      "tags2": {
+        "tag1": "Analyzing target audience search queries",
+        "tag2": "Evaluating keyword competitiveness and frequency",
+        "tag3": "Creating a semantic core"
+      },
+      "title3": "On-Page Optimization",
+      "tags3": {
+        "tag1": "Improving website structure and navigation",
+        "tag2": "Optimizing meta tags and headers",
+        "tag3": "Creating high-quality and unique content"
+      },
+      "title4": "Off-Page Optimization (Link Building)",
+      "tags4": {
+        "tag1": "Publishing articles and links on authoritative resources",
+        "tag2": "Managing reviews and brand mentions",
+        "tag3": "Building a natural backlink profile"
+      },
+      "title5": "Local SEO",
+      "tags5": {
+        "tag1": "Optimizing for local search queries",
+        "tag2": "Setting up Google My Business and Yandex.Directory profiles",
+        "tag3": "Collecting and managing customer reviews"
+      },
+      "title6": "Continuous Monitoring and Analytics",
+      "tags6": {
+        "tag1": "Tracking search engine rankings",
+        "tag2": "Analyzing user behavior on the site",
+        "tag3": "Adjusting the strategy based on data insights"
+      }
+    },
+    "howWeWork": {
+      "title1": "How We Work",
+      "title11": "Business and Competitor Analysis",
+      "description11": "We dive into your market specifics, studying the strengths and weaknesses of competitors.",
+      "title12": "Developing a Custom Strategy",
+      "description12": "We create an action plan tailored to your business and goals.",
+      "title13": "Implementing Optimization Measures",
+      "description13": "We conduct technical and content optimization and work on external ranking factors.",
+      "title14": "Tracking Results and Reporting",
+      "description14": "We provide regular reports on completed work and achieved results.",
+      "title15": "Continuous Improvement",
+      "description15": "We adapt the strategy in line with search engine algorithm changes and market trends."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions"
     }
   },
   "ServicePage4": {
-    "btn": "Получить консультацию",
-    "howWeWork": {}
+    "banner": {
+      "title": "Branding that sets you apart from competitors",
+      "description": "From concept to implementation — we guide you through every stage of building your brand",
+      "btn": "Get a consultation"
+    },
+    "btn": "Get a Consultation",
+    "howWeWork": {
+      "title1": "How We Work",
+      "title11": "Research and Analysis",
+      "description11": "We delve into your business, study the target audience, market, and competitors to understand your unique value proposition.",
+      "title12": "Concept Development",
+      "description12": "We create multiple name, logo, and brand style options that reflect your brand essence.",
+      "title13": "Approval and Refinement",
+      "description13": "Together, we select the best option and make necessary adjustments to meet your expectations perfectly.",
+      "title14": "Creating a Logo Book and Brand Book",
+      "description14": "We formalize all brand elements into clear and convenient documents for future use.",
+      "title15": "Implementation and Support",
+      "description15": "We help integrate the new brand into all aspects of your business and provide recommendations for its development."
+    },
+    "design": {
+      "title1": "Design Support",
+      "subtitle1": "Your External Design Department",
+      "description1": "We regularly update your brand’s visual materials to keep it modern and appealing. Our experts quickly adapt designs to new trends and platforms, maintaining audience engagement.",
+      "title2": "Our Experts",
+      "description2": "Quickly adapt designs to new trends and platforms, maintaining audience engagement. With us, your brand always stands out and effectively interacts with customers."
+    }
   },
   "ServicePage5": {
     "headerBtn": "Order Video",
@@ -345,5 +429,8 @@
   "FormErrors": {
     "required": "Please fill out this field",
     "phone_error": "Incorrect phone number!"
+  },
+  "Buttons": {
+    "btn1": "Get a consultation"
   }
 }

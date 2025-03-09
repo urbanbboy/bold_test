@@ -2,13 +2,14 @@ import { AnimatedItem } from "@/components/atoms/animated-item"
 import { ButtonWithIcon } from "@/components/atoms/button-with-icon"
 import { Heading } from "@/components/atoms/heading"
 import { ServiceCardItem } from "@/components/molecules/service-card-item"
-import { ISmmTeamMembers } from "@/consts/types"
+import {  ISmmTeamMembers } from "@/consts/types"
 
 
 
 export const CompanyServiceCardList = ({
     title,
-    items
+    items,
+    btn
 }: ISmmTeamMembers) => {
     return (
         <section className="w-full max-w-[1920px] flex justify-center px-4 lg:px-10 py-10 md:py-20">
@@ -17,7 +18,7 @@ export const CompanyServiceCardList = ({
                     <Heading className="text-primary lg:w-2/3" as="h2">{title}</Heading>
                     <div className="flex items-end">
                         <ButtonWithIcon variant="secondary" className="">
-                            Получить консультацию
+                            {btn}
                         </ButtonWithIcon>
                     </div>
                 </div>
