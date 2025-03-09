@@ -127,6 +127,51 @@
       "content2": "Top-ranked websites are perceived as more reliable. This builds customer trust and encourages repeat sales.",
       "title3": "Long-Term Results",
       "content3": "SEO investments pay off in the long run, unlike paid advertising, which only provides short-term effects."
+    },
+    "servicesSEO": {
+      "title": "Our SEO Optimization Services",
+      "title1": "Technical Website Audit",
+      "tag1_1": "Page load speed check",
+      "tag1_2": "Identifying and fixing code errors",
+      "tag1_3": "Mobile optimization",
+
+      "title2": "Effective Keyword Research",
+      "tag2_1": "Analysis of target audience search queries",
+      "tag2_2": "Competitiveness and keyword frequency evaluation",
+      "tag2_3": "Creating a semantic core",
+
+      "title3": "On-Page Optimization",
+      "tag3_1": "Improving website structure and navigation",
+      "tag3_2": "Optimizing meta tags and headers",
+      "tag3_3": "Creating high-quality unique content",
+
+      "title4": "Off-Page Optimization (Linkbuilding)",
+      "tag4_1": "Publishing articles and links on authoritative resources",
+      "tag4_2": "Managing reviews and brand mentions",
+      "tag4_3": "Building a natural backlink profile",
+
+      "title5": "Local SEO",
+      "tag5_1": "Optimizing for local search queries",
+      "tag5_2": "Setting up Google My Business and Yandex.Directory profiles",
+      "tag5_3": "Collecting and managing customer reviews",
+
+      "title6": "Continuous Monitoring and Analytics",
+      "tag6_1": "Tracking search engine rankings",
+      "tag6_2": "Analyzing user behavior on the website",
+      "tag6_3": "Adjusting strategy based on data"
+    },
+    "howWeWork": {
+      "title": "How We Work",
+      "title1": "Business and Competitor Analysis",
+      "desk1": "We delve into the specifics of your market, analyzing competitors' strengths and weaknesses.",
+      "title2": "Development of Individual Strategy",
+      "desk2": "We create an action plan tailored to your business specifics and goals",
+      "title3": "Implementation of Optimization Measures",
+      "desk3": "We carry out technical and content optimization, working on external ranking factors.",
+      "title4": "Result Tracking and Reporting",
+      "desk4": "We regularly provide reports on work progress and achieved results",
+      "title5": "Continuous Improvement",
+      "desk5": "We adapt the strategy according to search engine algorithm changes and market trends"
     }
   },
   "ServicesPage7": {
