@@ -1,5 +1,22 @@
 {
   "HomePage": {
+    "navLinks": {
+      "home": "Bosh sahifa",
+      "about": "Biz haqimizda",
+      "cases": "Ishlar",
+      "contacts": "Kontaktlar",
+      "services": {
+        "initial": "Xizmatlar",
+        "branding": "Brendlash",
+        "smm": "Raqamli reklama",
+        "videoProduction": "Video ishlab chiqarish",
+        "siteCreating": "Veb ishlab chiqish va dizayn",
+        "marketingSupport": "Integratsiyalashgan marketing targ'iboti",
+        "crm": "CRM tizimini joriy qilish",
+        "seo": "SEO optimallashtirish",
+        "contextAd": "Kontekstli reklama"
+      }
+    },
     "section1": {
       "title": "Qayerdan boshlashni bilmayapsizmi?",
       "description": "Marketing auditiga yoziling va biz sizning biznesingiz uchun samarali yechimlarni topamiz.",
@@ -18,6 +35,9 @@
       "subtitle": "Bizning falsafamiz",
       "subdesk": "Sizning muvaffaqiyatingiz uchun ishlaymiz, biznes muammolaringizni hal qiladigan va aniq natijalar beradigan strategiyalarni taklif qilamiz."
     }
+  },
+  "ThreePost": {
+    "btn": "Barcha Keys"
   },
   "ServicesPage1": {
     "zigzak": {
@@ -153,5 +173,338 @@
       "title5": "Doimiy Takomillashtirish",
       "desk5": "Qidiruv tizimi algoritmlari o'zgarishi va bozor tendentsiyalariga mos strategiyani sozlaymiz"
     }
+  },
+  "ServicesPage7": {
+    "headerBtn": "Integratsiyani buyurtma qilish",
+    "BenefitsSection": {
+      "button": "Maslahat olish",
+      "title": "Biznesingizga nima uchun CRM kerak?",
+      "items": [
+        {
+          "image": "ServiceCrmIcon1",
+          "number": "01",
+          "title": "Sotuvlarni ko‘paytirish",
+          "description": "Kundalik vazifalarni avtomatlashtirish va mijozlar ma’lumotlarini tizimlashtirish asosiy maqsadga - mijozlarni jalb qilish va ularni saqlab qolishga e’tibor qaratish imkonini beradi. Bu esa konversiya va umumiy savdo hajmini sezilarli darajada oshiradi."
+        },
+        {
+          "image": "ServiceCrmIcon2",
+          "number": "02",
+          "title": "Mijozlarni boshqarishning qulayligi",
+          "description": "Barcha mijozlar haqidagi ma’lumotlar bir joyda to‘planganligi sababli, axborotga kirish osonlashadi va jamoangiz shaxsiylashtirilgan munosabatlar o‘rnatishi mumkin bo‘ladi."
+        },
+        {
+          "image": "ServiceCrmIcon3",
+          "number": "03",
+          "title": "Vaqt va resurslarni tejash",
+          "description": "Ish jarayonlarini optimallashtirish xodimlarga bo‘lgan yukni kamaytiradi, vazifalarni tezroq bajarishga yordam beradi va xatolarni minimallashtiradi, bu esa xarajatlarni kamaytirishga yordam beradi."
+        },
+        {
+          "image": "SeoHowWeWork5",
+          "number": "04",
+          "title": "Rivojlanish uchun tahlil",
+          "description": "Tizimli CRM platformasi chuqur tahlil va hisobotlar taqdim etadi. Bu esa zaif tomonlarni aniqlash, strategik qarorlar qabul qilish va biznes jarayonlarini takomillashtirish imkonini beradi."
+        }
+      ]
+    },
+    "integrationServices": {
+      "titleIntegrationServices": "CRM integratsiyasi bo‘yicha xizmatlarimiz",
+      "servicesList": [
+        {
+          "serviceId": "01",
+          "serviceTitle": "CRM tizimini tanlash va sozlash",
+          "serviceDescription": "Biznesingiz uchun eng maqbul CRM platformasini tanlash. Tizimni talablaringizga moslash."
+        },
+        {
+          "serviceId": "02",
+          "serviceTitle": "Ma’lumotlarni ko‘chirish",
+          "serviceDescription": "Mavjud tizimlardan ma’lumotlarni xavfsiz va aniq o‘tkazish. Axborotning yaxlitligi va xavfsizligini ta’minlash."
+        },
+        {
+          "serviceId": "03",
+          "serviceTitle": "Jarayonlarni avtomatlashtirish",
+          "serviceDescription": "Samaradorlikni oshirish uchun avtomatlashtirilgan ish jarayonlarini sozlash. CRMni biznesingizning boshqa vositalari va tizimlari bilan integratsiyalash."
+        },
+        {
+          "serviceId": "04",
+          "serviceTitle": "O‘qitish va qo‘llab-quvvatlash",
+          "serviceDescription": "Jamoangiz uchun o‘quv mashg‘ulotlarini o‘tkazish. Joriy etilgandan so‘ng texnik yordam ko‘rsatish va kuzatib borish."
+        }
+      ]
+    },
+    "VideoBanner": {
+      "titleBlog": "Mijozlarni samarali boshqaring",
+      "subtitle1": "Jarayonlarni optimallashtirish va savdo hajmini oshirish uchun CRM tizimlarini integratsiyalash",
+      "buttonOrderIntegration": "Integratsiyani buyurtma qilish"
+    },
+
+    "integrationApproach": {
+      "titleIntegration": "CRM integratsiyasiga bizning yondashuvimiz",
+      "descriptionIntegration": "Biznesingiz ehtiyojlarini o‘rganib chiqib, maqsadlaringizga mos keladigan CRM tizimini tanlaymiz. Jamoamiz ma’lumotlarni uzluksiz ko‘chiradi va tizimni biznes jarayonlaringizni to‘liq qo‘llab-quvvatlaydigan tarzda sozlaydi.",
+      "teamTraining": {
+        "titleTeamTraining": "Shuningdek, jamoangizni o‘qitamiz ",
+        "descriptionTeamTraining": "va CRMdan qulay foydalanish uchun muntazam texnik yordam ko‘rsatamiz."
+      }
+    },
+
+    "PartersBlog": {
+      "titleParters": "hamkorlik",
+      "SubTitleParters": "Biz Bitrix24ning rasmiy hamkorlarimiz"
+    }
+  },
+  "footer": {
+    "companyInfo": {
+      "companyName": "Bold Brands International",
+      "companyDescription": "ваш внешний отдел маркетинга",
+      "websiteDesign": "Веб-дизайн — aidarsopubekov.framer.ai",
+      "copyright": "© 2024 Bold Brands International. Все права защищены"
+    },
+    "companyLinks": {
+      "aboutUs": "О нас",
+      "cases": "Кейсы",
+      "reviews": "Отзывы"
+    },
+    "servicesLinks": {
+      "branding": "Брендинг",
+      "digitalMarketing": "Digital продвижение",
+      "videoProduction": "Видеопродакшн",
+      "webDevelopment": "Веб-разработка и дизайн",
+      "marketingSupport": "Комплексное маркетинговое сопровождение",
+      "automationAnalytics": "Автоматизация и аналитика"
+    },
+    "contactInfo": {
+      "addresses": {
+        "Bishkek": "ул. Матросова, дом 102",
+        "Tashkent": "Янгибозорский район, Янгибозор 1"
+      },
+      "phones": {
+        "Bishkek": "+996 999 50 44 44",
+        "Tashkent": "+998 909 36 09 36"
+      },
+      "email": "info@boldbrands.kg",
+      "workingHours": "Пн — Пт 9:00 — 18:00"
+    },
+    "socialLinks": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "telegram": "Telegram"
+    },
+    "privacyPolicy": "Политика конфиденциальности"
+  },
+  "ServicePage4": {
+    "btn": "Получить консультацию",
+    "howWeWork": {}
+  },
+  "ServicePage5": {
+    "headerBtn": "Заказать видеоролик",
+    "Services": {
+      "title": "Video ishlab chiqarish bo‘yicha xizmatlarimiz",
+      "btn": "Buyurtma berish",
+      "items": [
+        {
+          "title": "Reklama videolari",
+          "description": "Puxta marketing tadqiqotiga asoslangan ssenariy videosini yaratish orqali biznes maqsadlaringizga aniq mos kelishimiz va maqsadli auditoriyada kerakli munosabatni uyg‘otishimiz mumkin. Bizning reklama roliklarimiz aynan sizning mijozlaringizga aylanishga tayyor bo‘lganlardan arizalar jalb qilishga qaratilgan.",
+          "tags": [
+            {
+              "tag": "Kerakli auditoriyaga aniq yo‘naltirilgan targeting  "
+            },
+            {
+              "tag": "Ijodiy va yodda qoladigan ssenariylar"
+            },
+            {
+              "tag": "ВYuqori konversiya va sarmoya qaytimi"
+            }
+          ]
+        },
+        {
+          "title": "Imidj va korporativ videolar",
+          "description": "Imij roligi brendingizga bo‘lgan ishonchni mustahkamlaydi, mijozlar sodiqligini oshiradi va kompaniyangiz ko‘lamini namoyish etadi. Jamoamiz sizning korporativ ruhingiz va qadriyatlaringizni aks ettiruvchi kompaniya haqidagi videolarni yaratish orqali har qanday vazifani uddalay oladi.",
+          "tags": [
+            {
+              "tag": "Brend tanilishini oshirishа"
+            },
+            {
+              "tag": "Korporativ qadriyatlar va madaniyatni namoyish etish"
+            },
+            {
+              "tag": "Mijozlarning ishonchi va sodiqligini kuchaytirish"
+            }
+          ]
+        },
+        {
+          "title": "SMM targ‘iboti uchun media kontent",
+          "description": "Ijtimoiy tarmoqlar uchun kontent videolar yaratish biz mukammal egallab olgan san’atdir. Media kontentimiz reklama kampaniyalaringiz jozibadorligini va samaradorligini oshiradi. Biz auditoriyani maksimal qamrab olish va jalb qilishni ta’minlash uchun SMM strategiyangizga uyg‘unlashgan foydali paket takliflarini taqdim etamiz.",
+          "tags": [
+            {
+              "tag": "Auditoriya ishtiroki va faolligini kuchaytirish"
+            },
+            {
+              "tag": "Ijodiy va xilma-xil kontent formatlari"
+            },
+            {
+              "tag": "Umumiy marketing strategiyasi bilan uyg‘unlik"
+            }
+          ]
+        },
+        {
+          "title": "Jonli tadbirlarni suratga olish",
+          "description": "Biz muhim voqealar va tadbirlarni tasvirga olamiz: konferensiyalar, kontsertlar, forumlar va boshqa ko‘plab tadbirlarni. Bizning hisobot videoroliklarimiz eng yorqin lahzalarni saqlab qoladi va tadbir muhitini yetkazadi, bu esa sizga yutuqlaringiz va muvaffaqiyatlaringizni auditoriyangiz bilan baham ko‘rishga yordam beradi.",
+          "tags": [
+            {
+              "tag": "Professional suratga olish va montaj"
+            },
+            {
+              "tag": "Tadbir muhiti va his-tuyg‘ularini yetkazish"
+            },
+            {
+              "tag": "Sifatli hisobot materiallarini yaratish"
+            }
+          ]
+        },
+        {
+          "title": "Fotosessiya",
+          "description": "Sayyor va studiyada suratga olishni tajribali fotograflarimiz amalga oshirib, ta’sirchan suratlar olishadi va mukammal ishlov berishadi. Biznesingizning har qanday ehtiyojlarini qondirish uchun bir nechta formatlarni taklif etamiz: mahsulot, moda, portret va boshqalar. Zarur bo‘lsa, fotomaterialni qisqa videorolik yoki ijtimoiy tarmoqlar uchun promo-video bilan to‘ldirishimiz mumkin.",
+          "tags": [
+            {
+              "tag": "Professional sahnalashtirish va suratga olish"
+            },
+            {
+              "tag": "Ijodiy ishlov berish va retush"
+            },
+            {
+              "tag": "Fotosessiya formatlari va uslublarining xilma-xilligi"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "ServicePage6": {
+    "headerBtn": "Veb-sayt buyurtma qilish",
+    "Approach": {
+      "title": "Veb-sayt yaratishdagi yondashuvimiz",
+      "description": "Brendingizning o‘ziga xos xususiyatlarini aniqlab, aniq joylashuvni shakllantiramiz. Ijodiy veb-dizaynimiz mijozlarni jalb qiladi va ularni ushlab turadi, bu esa veb-saytni esda qolarli qiladi. Veb-yechimingizning funksionalligi, moslashuvchanligi va samaradorligini ta’minlash uchun zamonaviy veb-sayt ishlab chiqish texnologiyalarini joriy etamiz.",
+      "items": [
+        {
+          "title": "Lendinglar",
+          "sub_title": "Tashrif buyuruvchilarni jalb qilib, konversiyani oshiramiz",
+          "description": "Lendinglarimiz yuqori konversiyaga e’tibor qaratgan holda ishlab chiqiladi. Yorqin dizayn va tushunarli tuzilishga ega bo‘lgan bir sahifali veb-saytlarni yaratamiz, ular foydalanuvchini xarid qilishga, ariza topshirishga yoki obuna bo‘lishga undaydi."
+        },
+        {
+          "title": "Korporativ veb-saytlar",
+          "sub_title": "Brendingizning professional taqdimoti",
+          "description": "Bold Brands kompaniyasining korporativ veb-saytlari biznesingizning o‘ziga xosligini aks ettiradi va mijozlar ishonchini mustahkamlaydi. Kompaniyaning qadriyatlari va takliflarini samarali yetkazadigan tushunarli, moslashuvchan va SEO-optimallashtirilgan veb-saytlar yaratamiz. Bunday veb-sayt qulay muloqot vositasi va qidiruv tizimlarida yanada rivojlanish uchun asos bo‘ladi."
+        },
+        {
+          "title": "Internet-do‘konlar",
+          "sub_title": "Onlayn savdoni ko‘paytirmoqdamiz",
+          "description": "Internet-do‘konlar yaratish bilan shug‘ullanamiz, qulay xarid jarayoni va savdo hajmining o‘sishini ta’minlaymiz. Zamonaviy elektron tijorat platformalari va ishonchli to‘lov usullaridan foydalanamiz, sodda interfeys va moslashuvchan dizayn ishlab chiqamiz. Shunday qilib, mijozlaringiz kerakli mahsulotlarni osonlik bilan topib, yana qaytib kelishadi."
+        },
+        {
+          "title": "UX/UI dizayn",
+          "sub_title": "Veb-saytingiz uchun intuitiv va noyob interfeys",
+          "description": "UX/UI dizayn bo‘yicha mutaxassislarimiz qulay va jozibador interfeyslar yaratib, foydalanuvchilarga veb-sayt bilan qulay muloqot qilishga yordam beradi. Oddiy navigatsiya va vizual estetikaga e’tibor qaratamiz, bu tashrif buyuruvchilarni ushlab turadi va konversiyani oshiradi."
+        }
+      ]
+    }
+  },
+  "ServicesPage8": {
+    "headerBtn": "Integratsiyaga buyurtma berish",
+    "MarketingSupport": {
+      "title": "Kompleks marketing hamrohligi",
+      "subtitle": "bu shunday strategik yondashuvki, biznesga nafaqat o‘zini namoyon qilishga, balki haqiqiy natijalarga erishishga yordam beradi: sotuvlarni ko‘paytirish, mijozlar bazasini kengaytirish va bozordagi o‘rnini mustahkamlash.",
+      "bottomTitle": "Bold Brands’da biz:",
+      "bottomText": "raqamli marketingning barcha asosiy vositalarini yagona ekotizimga birlashtiramiz, shunda siz har bir sarflagan mablag‘ingizdan maksimal foyda olasiz."
+    },
+    "WhatWeDo": {
+      "mainTitle": "Biz nimalar qilamiz",
+      "fTitle": "Strategiyani ishlab chiqish va amalga oshirish",
+      "fText": "Maqsadlarni tahlil qilamiz, bozor va raqobatchilarni batafsil o‘rganamiz, so‘ngra biznesga aniq ko‘rsatkichlarga erishish imkonini beradigan marketing strategiyasini yaratamiz.",
+      "sTitle": "Raqamli kanallarda targ‘ib qilish",
+      "sText": "SEO‘dan tortib ijtimoiy tarmoqlargacha - biznesingiz reklamasi sodiqlikni oshirishi va sotuvni rag‘batlantirishi uchun eng maqbul kanallardan foydalanamiz. Biz ma’lum KPI’larga erishish uchun eng samarali vositalar to‘plamini tanlaymiz.",
+      "thTitle": "Kontent va ijodkorlik",
+      "thText": "Auditoriyani jalb qiladigan materiallar yaratamiz. Marketing faqat raqamlardan iborat emas! Sifatli taqdimot ishonchni shakllantiradi va maqsadlarga tezroq erishishga yordam beradi.",
+      "fourTitle": "Integratsiya va avtomatlashtirish",
+      "fourText": "Har bir potensial mijozni bitimga olib kelish uchun to‘g‘ridan-to‘g‘ri tahlilni yo‘lga qo‘yish, CRM’ni integratsiya qilish va koll-markaz hamda savdo bo‘limida samarali jarayonlarni tashkil etishga yordam beramiz.",
+      "fiveTitle": "Tahlil va optimallashtirish",
+      "fiveText": "Ko‘rsatkichlarni kuzatib boramiz, tuzatishlar kiritamiz va reklama kampaniyalarini takomillashtiramiz. Bunday yondashuv biznesga shaffof marketing rejasini va sezilarli ROI o‘sishini ta’minlaydi."
+    },
+    "WhyChoose": {
+      "btn": "Получить консультацию",
+      "title": "Nima uchun Bold Brands tanlanadi?",
+      "fBlockTitle": "Natijaga yo‘naltirilganlik",
+      "fBlockText": "Biz sotuvlarni ko‘paytirish, mijozlarni jalb qilish xarajatlarini kamaytirish va investitsiyalar rentabelligini oshirishga e’tibor qaratamiz.",
+      "sBlockTitle": "Kompleks yondashuv",
+      "sBlockText": "Biz shunchaki reklamani ishga tushirmaymiz: savdo voronkasining barcha bosqichlarida auditoriyani qamrab olish uchun butun bir targ‘ibot tizimini yaratamiz.",
+      "tBlockTitle": "Moslashuvchanlik va moslashish",
+      "tBlockText": "Biz bozordagi o‘zgarishlarga tez munosabat bildiramiz va siz doimo raqobatchilaringizdan bir qadam oldinda bo‘lishingiz uchun strategiyalarni takomillashtiramiz.",
+      "fourBlockTitle": "Texnologik yechimlar",
+      "fourBlockText": "Zamonaviy avtomatlashtirish vositalaridan foydalanamiz, marketing samaradorligini baholash imkonini beruvchi shaffof hisobotlar va ko‘rsatkichlarni taqdim etamiz."
+    },
+    "ResultsBlock": {
+      "title": "Natija",
+      "number1": "01",
+      "text1": "Mahsulotni ilgari surish strategiyasidan samarali foydalanadigan yaxshi yo'lga qo'yilgan marketing bo'limi.",
+      "number2": "02",
+      "text2": "Xarajatlar va daromadlarni boshqarish imkonini beruvchi shaffof moliyaviy model.",
+      "number3": "03",
+      "text3": "Mahsulotingizni chuqur biladigan va uni turli kanallarda qanday targ'ib qilishni tushunadigan malakali marketolog.",
+      "number4": "04",
+      "text4": "Asosiy ko'rsatkichlarning doimiy o'sishi: so'rovlar, sotuvlar va mijozlar sodiqligining oshishi, marketing biznesingizning asosiy harakatlantiruvchi kuchi ekanligini tasdiqlaydi."
+    }
+  },
+  "FormLayout": {
+    "title": "Bepul maslahat oling",
+    "subTitle": "Aloqa uchun kontaktlarni qoldiring va biz sizga qayta qo‘ng‘iroq qilamiz",
+    "companyKGPhone": "Telefon raqami (Bishkek)",
+    "companyUZPhone": "Telefon raqami (Tashkent)",
+    "companyEmail": "Elektron pochta"
+  },
+  "Form": {
+    "title": "Shaklni to‘ldiring va taklifni oling",
+    "name": "Ism",
+    "namePlaceholder": "Ivanov Ivan Ivanovich",
+    "phone": "Telefon raqami",
+    "email": "Elektron pochta",
+    "emailPlaceholder": "Elektron pochtani kiriting",
+    "terms": "Men ma’lumotlarimning maxfiylik siyosatiga muvofiq qayta ishlanishiga roziman",
+    "termsLink": "maxfiylik",
+    "submitButton": "Jo‘natish",
+    "nextButton": "Keyingisi",
+    "tabs": {
+      "title1": "Sizning biznesingiz haqida",
+      "subTitle1": "Biznes va xizmatlar turi",
+      "title2": "Kontaktlar",
+      "subTitle2": "Sizning aloqa ma'lumotlaringiz"
+    },
+    "businessType": "Biznes turi",
+    "businessTypePlaceholder": "Biznes turini tanlang",
+    "businessTypeDescriptoin": "Bu bizga biznesingizni yaxshiroq tushunishga va eng yaxshi yechimni taklif qilishga yordam beradi",
+    "promotionTypePlaceholder": "Xizmatlarni tanlang",
+    "promotionTypeDescriptoin": "Biz strategiyani maqsadlaringiz va platformalaringizga moslashtiramiz",
+    "promotionType": "Sizga qanday xizmat kerak?",
+    "socialType": "Rag'batlantirish uchun platformalar",
+    "socialTypePlaceholder": "Rag'batlantirish uchun platformalarni tanlang",
+    "socialTypeDescriptoin": "Biz strategiyani maqsadlaringiz va platformalaringizga moslashtiramiz",
+    "publicationType": "Oylik nashrlar soni",
+    "publicationTypePlaceholder": "Oyiga qancha nashrlar va shoshilinch ravishda",
+    "publicationTypeDescription": "Biz sizning auditoriyangiz bilan muloqot qilish chastotasini va qamrov hajmini aniqlaymiz",
+    "videoType": "Video turini tanlang",
+    "videoTypePlaceholder": "Ro'yxatdan video turini tanlang",
+    "videoTypeDescription": "Biz strategiyani maqsadlaringiz va platformalaringizga moslashtiramiz",
+    "siteType": "Sayt turini tanlang",
+    "siteTypePlaceholder": "Ro'yxatdan sayt turini tanlang",
+    "siteTypeDescription": "Biz strategiyani maqsadlaringiz va platformalaringizga moslashtiramiz",
+    "marketingType": "Qaysi vazifalarni avtomatlashtirishni xohlaysiz?",
+    "marketingTypePlaceholder": "Roʻyxatdan avtomatlashtirish uchun vazifalarni tanlang",
+    "marketingTypeDescription": "Biz strategiyani maqsadlaringiz va platformalaringizga moslashtiramiz",
+    "siteStatus": "Saytning hozirgi holati",
+    "siteStatusPlaceholder": "Saytingizning joriy holatini kiriting",
+    "siteStatusDescription": "Biz strategiyani maqsadlaringiz va platformalaringizga moslashtiramiz",
+    "target": "Rag'batlantirish maqsadi",
+    "targetPlaceholder": "Reklama maqsadingizni kiriting"
+  },
+  "FormErrors": {
+    "required": "Maydonni to'ldiring!",
+    "phone_error": "Telefon raqami noto'g'ri!"
   }
 }

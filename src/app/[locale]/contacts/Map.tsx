@@ -8,7 +8,6 @@ import {
 } from "@react-google-maps/api";
 import MapButton from "./ui/MapButton";
 
-
 const mapContainerStyle: React.CSSProperties = {
     width: "95%",
     height: "70vh",
@@ -153,26 +152,40 @@ export const Map: React.FC = () => {
                     center={center}
                     options={mapOptions}
                 >
-                    <Marker
-                        position={center}
-                        icon={{
-                            url: "/map/mapMarker.svg",
-                            scaledSize: new window.google.maps.Size(50, 50), //место для кастомной иконки
-                        }}
-                    />
+        
                     <OverlayView
-                        position={centerInfoWindow}
+                        position={center}
                         mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+                        getPixelPositionOffset={(
+                            offsetWidth: number,
+                            offsetHeight: number
+                        ) => ({
+                            x: -offsetWidth / 2 + 100, // Смещение вправо
+                            y: -offsetHeight - 100 // Смещение выше маркера
+                        })}
                     >
+            
                         <div
                             style={{
                                 backgroundColor: "white",
-                                padding: "7px",
-                                borderRadius: "5px",
-                                width: "6rem",
-                                height: "3rem",
+                                padding: "8px 12px",
+                                borderRadius: "8px",
+                                boxShadow: "0 2px 6px rgba(0,0,0,0.3)",
+                                minWidth: "160px",
+                                textAlign: "center",
+                                fontSize: "14px",
+                                lineHeight: "1.4",
+                                fontWeight: 700,
+                                transform: "translateX(-50%)",
                             }}
                         >
+                            <Marker
+                                position={center}
+                                icon={{
+                                    url: "/map/mapMarker.svg",
+                                    scaledSize: new window.google.maps.Size(50, 50), //место для кастомной иконки
+                                }}
+                            />
                             {mapCondition ? (
                                 <p style={{ fontWeight: "700" }}>ул. Матросова, дом 102</p>
                             ) : (
@@ -187,4 +200,3 @@ export const Map: React.FC = () => {
         </div>
     );
 };
-

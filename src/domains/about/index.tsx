@@ -18,6 +18,7 @@ import { useAppData } from "@/context/app-context";
 import { useGetPromotionTypesQuery } from "@/api/Types";
 import { useRef } from "react";
 import { useTranslations } from "next-intl";
+import { Advantages } from "@/components/organisms/advantages/Advantages";
 
 const AboutPage = () => {
     const t = useTranslations("AboutPage");
@@ -58,7 +59,7 @@ const AboutPage = () => {
                     <OurPhilosophyIcon className="w-[80px] h-[80px] sm:w-[118px] sm:h-[118px]" />
                 }
             />
-            <CompanyInfo />
+            <Advantages />
             <CompanyTeam />
             <CompanyPostList />
             <CompanyPartners />
