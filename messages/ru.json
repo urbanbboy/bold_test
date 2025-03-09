@@ -109,36 +109,66 @@
       "content3": "Инвестиции в SEO окупаются в долгосрочной перспективе, в отличие от платной рекламы, эффект от которой краткосрочен."
     }
   },
-  
     "ServicesPage7": {
+      "headerBtn":"Заказать интеграция",
+"BenefitsSection":{
+  "title": "Почему вашему бизнесу нужна CRM?",
+  "button":"Получить консультацию",
+  "items": [
+    {
+      "image": "ServiceCrmIcon1",
+      "number": "01",
+      "title": "Увеличение продаж",
+      "description": "Автоматизация рутинных задач и структурирование клиентских данных помогают сосредоточиться на главном — привлечении и удержании клиентов, что значительно повышает конверсию и общий объем продаж."
+    },
+    {
+      "image": "ServiceCrmIcon2",
+      "number": "02",
+      "title": "Простота управления клиентами",
+      "description": "Все данные о клиентах собраны в одном месте, что упрощает доступ к информации и позволяет вашей команде выстраивать персонализированное взаимодействие."
+    },
+    {
+      "image": "ServiceCrmIcon3",
+      "number": "03",
+      "title": "Экономия времени и ресурсов",
+      "description": "Оптимизация рабочих процессов снижает нагрузку на сотрудников, ускоряет выполнение задач и минимизирует ошибки, помогая снизить издержки."
+    },
+    {
+      "image": "SeoHowWeWork5",
+      "number": "04",
+      "title": "Аналитика для роста",
+      "description": "Систематизированная CRM-платформа предоставляет глубокую аналитику и отчеты, которые помогают выявлять слабые места, принимать стратегические решения и улучшать бизнес-процессы."
+    }
+  ]
+},
       "VideoBanner": {
-        "titleBlog": "Управляйте клиентами эффективно",
-        "subtitle1": "Интеграция CRM-систем для оптимизации процессов и роста продаж",
-        "buttonOrderIntegration": "Заказать интеграцию"
+        "titleBlog": "Mijozlarni samarali boshqaring",
+        "subtitle1": "Jarayonlarni optimallashtirish va savdo hajmini oshirish uchun CRM tizimlarini integratsiyalash",
+        "buttonOrderIntegration": "Integratsiyani buyurtma qilish"
       },
       "sectionBenefits": {
-        "titleBenefits": "Почему вашему бизнесу нужна CRM?",
-        "buttonOrderConsultation": "Получить консультацию",
+        "titleBenefits": "Biznesingizga nima uchun CRM kerak?",
+        "buttonOrderConsultation": "Maslahat olish",
         "benefitsList": [
           {
             "benefitId": "01",
-            "benefitTitle": "Увеличение продаж",
-            "benefitDescription": "Автоматизация рутины и анализ структурированных сегментов данных помогает сосредоточиться на главном — привлечении и удержании клиентов, что значительно повышает конверсию и общий объем продаж."
+            "benefitTitle": "Sotuvlarni ko‘paytirish",
+            "benefitDescription": "Kundalik vazifalarni avtomatlashtirish va mijozlar ma’lumotlarini tizimlashtirish asosiy maqsadga - mijozlarni jalb qilish va ularni saqlab qolishga e’tibor qaratish imkonini beradi. Bu esa konversiya va umumiy savdo hajmini sezilarli darajada oshiradi."
           },
           {
             "benefitId": "02",
-            "benefitTitle": "Простота управления клиентами",
-            "benefitDescription": "Все данные о клиентах собраны в одном месте, что упрощает доступ к информации и позволяет вашей команде быстрее персонализировать взаимодействие."
+            "benefitTitle": "Mijozlarni boshqarishning qulayligi",
+            "benefitDescription": "Barcha mijozlar haqidagi ma’lumotlar bir joyda to‘planganligi sababli, axborotga kirish osonlashadi va jamoangiz shaxsiylashtirilgan munosabatlar o‘rnatishi mumkin bo‘ladi."
           },
           {
             "benefitId": "03",
-            "benefitTitle": "Экономия времени и ресурсов",
+            "benefitTitle": "Vaqt va resurslarni tejash",
             "benefitDescription": "Оптимизация рабочих процессов снижает нагрузку на сотрудников, упрощает выполнение задач и минимизирует ошибки, помогая сократить издержки."
           },
           {
             "benefitId": "04",
-            "benefitTitle": "Аналитика для роста",
-            "benefitDescription": "Систематизированная CRM-платформа предоставляет глубокую аналитику и отчеты, которые помогают выявить слабые места, принимать стратегические решения и улучшать бизнес-процессы."
+            "benefitTitle": "Rivojlanish uchun tahlil",
+            "benefitDescription": "Tizimli CRM platformasi chuqur tahlil va hisobotlar taqdim etadi. Bu esa zaif tomonlarni aniqlash, strategik qarorlar qabul qilish va biznes jarayonlarini takomillashtirish imkonini beradi."
           }
         ]
       },
@@ -146,7 +176,7 @@
         "titleIntegration": "Наш подход к интеграции CRM",
         "descriptionIntegration": "Мы анализируем потребности вашего бизнеса и подбираем подходящую CRM-систему, которая соответствует вашим целям. Наша команда выполняет плавную миграцию данных и настраивает систему так, чтобы она полностью поддерживала ваши бизнес-процессы.",
         "teamTraining": {
-          "titleTeamTraining": "Мы также обучаем вашу команду",
+          "titleTeamTraining": "Мы также обучаем вашу команду ",
           "descriptionTeamTraining": "и предоставляем регулярную техническую поддержку для удобного использования CRM."
         }
       },
@@ -180,203 +210,44 @@
         "SubTitleParters": "Мы официальные партнеры Битрикс24"
       }
     },
-    "costCalculator": {
-      "titleCalculator": "Рассчитайте стоимость услуги",
-      "descriptionCalculator": "Оставьте контакты для связи, и мы перезвоним вам",
-      "businessPhones": {
+  "footer": {
+    "companyInfo": {
+      "companyName": "Bold Brands International",
+      "companyDescription": "ваш внешний отдел маркетинга",
+      "websiteDesign": "Веб-дизайн — aidarsopubekov.framer.ai",
+      "copyright": "© 2024 Bold Brands International. Все права защищены"
+    },
+    "companyLinks": {
+      "aboutUs": "О нас",
+      "cases": "Кейсы",
+      "reviews": "Отзывы"
+    },
+    "servicesLinks": {
+      "branding": "Брендинг",
+      "digitalMarketing": "Digital продвижение",
+      "videoProduction": "Видеопродакшн",
+      "webDevelopment": "Веб-разработка и дизайн",
+      "marketingSupport": "Комплексное маркетинговое сопровождение",
+      "automationAnalytics": "Автоматизация и аналитика"
+    },
+    "contactInfo": {
+      "addresses": {
+        "Bishkek": "ул. Матросова, дом 102",
+        "Tashkent": "Янгибозорский район, Янгибозор 1"
+      },
+      "phones": {
         "Bishkek": "+996 999 50 44 44",
         "Tashkent": "+998 909 36 09 36"
       },
-      "emailContact": "info@boldbrands.kg",
-      "form": {
-        "titleForm": "Заполните форму и получите предложение",
-        "step1": {
-          "titleStep1": "О вашем бизнесе",
-          "descriptionStep1": "Тип бизнеса и услуги",
-          "businessTypeLabel": "Тип бизнеса",
-          
-          "tasksLabel": "Какие задачи вы хотите автоматизировать?"
-          
-        },
-        "step2": {
-          "titleStep2": "Контактные данные",
-          "descriptionStep2": "Ваши данные для связи"
-        },
-        "buttonNext": "Продолжить"
-      },
-      "footer": {
-        "companyInfo": {
-          "companyName": "Bold Brands International",
-          "companyDescription": "ваш внешний отдел маркетинга",
-          "websiteDesign": "Веб-дизайн — aidarsopubekov.framer.ai",
-          "copyright": "© 2024 Bold Brands International. Все права защищены"
-        },
-        "companyLinks": {
-          "aboutUs": "О нас",
-          "cases": "Кейсы",
-          "reviews": "Отзывы"
-        },
-        "servicesLinks": {
-          "branding": "Брендинг",
-          "digitalMarketing": "Digital продвижение",
-          "videoProduction": "Видеопродакшн",
-          "webDevelopment": "Веб-разработка и дизайн",
-          "marketingSupport": "Комплексное маркетинговое сопровождение",
-          "automationAnalytics": "Автоматизация и аналитика"
-        },
-        "contactInfo": {
-          "addresses": {
-            "Bishkek": "ул. Матросова, дом 102",
-            "Tashkent": "Янгибозорский район, Янгибозор 1"
-          },
-          "phones": {
-            "Bishkek": "+996 999 50 44 44",
-            "Tashkent": "+998 909 36 09 36"
-          },
-          "email": "info@boldbrands.kg",
-          "workingHours": "Пн — Пт 9:00 — 18:00"
-        },
-        "socialLinks": {
-          "instagram": "Instagram",
-          "facebook": "Facebook",
-          "telegram": "Telegram"
-        },
-        "privacyPolicy": "Политика конфиденциальности"
-      }
+      "email": "info@boldbrands.kg",
+      "workingHours": "Пн — Пт 9:00 — 18:00"
     },
-    "ServicesPage7": {
-      "VideoBanner": {
-        "titleBlog": "Mijozlarni samarali boshqaring",
-        "subtitle1": "Jarayonlarni optimallashtirish va savdo hajmini oshirish uchun CRM tizimlarini integratsiyalash",
-        "buttonOrderIntegration": "Integratsiyani buyurtma qilish"
-      },
-      "sectionBenefits": {
-        "titleBenefits": "Biznesingizga nima uchun CRM kerak?",
-        "buttonOrderConsultation": "Maslahat olish",
-        "benefitsList": [
-          {
-            "benefitId": "01",
-            "benefitTitle": "Sotuvlarni ko‘paytirish",
-            "benefitDescription": "Kundalik vazifalarni avtomatlashtirish va mijozlar ma’lumotlarini tizimlashtirish asosiy maqsadga - mijozlarni jalb qilish va ularni saqlab qolishga e’tibor qaratish imkonini beradi. Bu esa konversiya va umumiy savdo hajmini sezilarli darajada oshiradi."
-          },
-          {
-            "benefitId": "02",
-            "benefitTitle": "Mijozlarni boshqarishning qulayligi",
-            "benefitDescription": "Barcha mijozlar haqidagi ma’lumotlar bir joyda to‘planganligi sababli, axborotga kirish osonlashadi va jamoangiz shaxsiylashtirilgan munosabatlar o‘rnatishi mumkin bo‘ladi."
-          },
-          {
-            "benefitId": "03",
-            "benefitTitle": "Vaqt va resurslarni tejash",
-            "benefitDescription": "Оптимизация рабочих процессов снижает нагрузку на сотрудников, упрощает выполнение задач и минимизирует ошибки, помогая сократить издержки."
-          },
-          {
-            "benefitId": "04",
-            "benefitTitle": "Rivojlanish uchun tahlil",
-            "benefitDescription": "Tizimli CRM platformasi chuqur tahlil va hisobotlar taqdim etadi. Bu esa zaif tomonlarni aniqlash, strategik qarorlar qabul qilish va biznes jarayonlarini takomillashtirish imkonini beradi."
-          }
-        ]
-      },
-      "integrationApproach": {
-        "titleIntegration": "CRM integratsiyasiga bizning yondashuvimiz",
-        "descriptionIntegration": "Biznesingiz ehtiyojlarini o‘rganib chiqib, maqsadlaringizga mos keladigan CRM tizimini tanlaymiz. Jamoamiz ma’lumotlarni uzluksiz ko‘chiradi va tizimni biznes jarayonlaringizni to‘liq qo‘llab-quvvatlaydigan tarzda sozlaydi.",
-        "teamTraining": {
-          "titleTeamTraining": "Shuningdek, jamoangizni o‘qitamiz ",
-          "descriptionTeamTraining": "va CRMdan qulay foydalanish uchun muntazam texnik yordam ko‘rsatamiz."
-        }
-      },
-      "integrationServices": {
-        "titleIntegrationServices": "Наши услуги по интеграции CRM",
-        "servicesList": [
-          {
-            "serviceId": "01",
-            "serviceTitle": "Выбор и настройка CRM-системы",
-            "serviceDescription": "Подбор наиболее подходящей CRM-платформы для вашего бизнеса. Индивидуальная настройка системы под ваши требования."
-          },
-          {
-            "serviceId": "02",
-            "serviceTitle": "Миграция данных",
-            "serviceDescription": "Безопасный и точный перенос данных из существующей системы. Обеспечение целостности и сохранности информации."
-          },
-          {
-            "serviceId": "03",
-            "serviceTitle": "Автоматизация процессов",
-            "serviceDescription": "Настройка автоматизированных рабочих процессов для повышения эффективности. Интеграция CRM с другими инструментами и системами вашего бизнеса."
-          },
-          {
-            "serviceId": "04",
-            "serviceTitle": "Обучение и поддержка",
-            "serviceDescription": "Проведение обучающих сессий для вашей команды. Предоставление технической поддержки и сопровождения."
-          }
-        ]
-      },
-      "PartersBlog": {
-        "titleParters": "партнерство",
-        "SubTitleParters": "Мы официальные партнеры Битрикс24"
-      }
+    "socialLinks": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "telegram": "Telegram"
     },
-    "costCalculator": {
-      "titleCalculator": "Рассчитайте стоимость услуги",
-      "descriptionCalculator": "Оставьте контакты для связи, и мы перезвоним вам",
-      "businessPhones": {
-        "Bishkek": "+996 999 50 44 44",
-        "Tashkent": "+998 909 36 09 36"
-      },
-      "emailContact": "info@boldbrands.kg",
-      "form": {
-        "titleForm": "Заполните форму и получите предложение",
-        "step1": {
-          "titleStep1": "О вашем бизнесе",
-          "descriptionStep1": "Тип бизнеса и услуги",
-          "businessTypeLabel": "Тип бизнеса",
-          
-          "tasksLabel": "Какие задачи вы хотите автоматизировать?"
-          
-        },
-        "step2": {
-          "titleStep2": "Контактные данные",
-          "descriptionStep2": "Ваши данные для связи"
-        },
-        "buttonNext": "Продолжить"
-      },
-      "footer": {
-        "companyInfo": {
-          "companyName": "Bold Brands International",
-          "companyDescription": "ваш внешний отдел маркетинга",
-          "websiteDesign": "Веб-дизайн — aidarsopubekov.framer.ai",
-          "copyright": "© 2024 Bold Brands International. Все права защищены"
-        },
-        "companyLinks": {
-          "aboutUs": "О нас",
-          "cases": "Кейсы",
-          "reviews": "Отзывы"
-        },
-        "servicesLinks": {
-          "branding": "Брендинг",
-          "digitalMarketing": "Digital продвижение",
-          "videoProduction": "Видеопродакшн",
-          "webDevelopment": "Веб-разработка и дизайн",
-          "marketingSupport": "Комплексное маркетинговое сопровождение",
-          "automationAnalytics": "Автоматизация и аналитика"
-        },
-        "contactInfo": {
-          "addresses": {
-            "Bishkek": "ул. Матросова, дом 102",
-            "Tashkent": "Янгибозорский район, Янгибозор 1"
-          },
-          "phones": {
-            "Bishkek": "+996 999 50 44 44",
-            "Tashkent": "+998 909 36 09 36"
-          },
-          "email": "info@boldbrands.kg",
-          "workingHours": "Пн — Пт 9:00 — 18:00"
-        },
-        "socialLinks": {
-          "instagram": "Instagram",
-          "facebook": "Facebook",
-          "telegram": "Telegram"
-        },
-        "privacyPolicy": "Политика конфиденциальности"
-      }
+    "privacyPolicy": "Политика конфиденциальности"
   }
 }
 

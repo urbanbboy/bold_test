@@ -1,89 +1,60 @@
-'use client';
+"use client";
 
-import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
-import { useGetTaskTypesQuery } from "@/api/Types";
-import { CrmIcon } from "@/assets/info-card";
-import { RequestHandler } from "@/components/atoms/request-handler";
-import { CrmFeedbackForm } from "@/components/forms/crm-feedback-form";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 import { Award } from "@/components/organisms/award";
+import { Checkup } from "@/components/organisms/checkup";
+import { CompanyChallengeList } from "@/components/organisms/company-challenge-list";
+import { CompanyFeatures } from "@/components/organisms/company-features";
+import { CompanyPartners } from "@/components/organisms/company-partners";
 import { CompanyPostList } from "@/components/organisms/company-post-list";
-import { CompanyServiceCardList } from "@/components/organisms/company-service-card-list";
-import { InfoCard } from "@/components/organisms/info-card";
-import { ServicePostList } from "@/components/organisms/service-post-list";
+import { MarketingDepartment } from "@/components/organisms/marketing-department";
+import { SingleSliderList } from "@/components/organisms/single-slider-list";
+import { VideoAboutCompany } from "@/components/organisms/video-about-company";
+import { FeedbackForm } from "@/components/forms/feedback-form";
 import { FormLayout } from "@/components/templates/form-layout";
-import { PageTitleLayout } from "@/components/templates/page-title-layout";
-import { serviceCrmData, serviceData } from "@/consts/data";
-import { useAppData } from "@/context/app-context";
-import useScrollToFeedback from "@/hooks/useScrollToFeedback";
-import { useSlug } from "@/hooks/useSlug";
+import { PartnerReviewList } from "@/components/organisms/partner-review-list";
 import { useTranslations } from "next-intl";
+import { Advantages } from "@/components/organisms/advantages/Advantages";
+import NewsBanner from '@/components/atoms/NewsBanne/NewsBanne';
 
-
-const CrmPage = () => {
-    const slug = useSlug()
-    const t = useTranslations("ServicesPage7")
-    const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
-    const { data: task_types } = useGetTaskTypesQuery()
-    const { business_types } = useAppData()
-    const { ref, scrollToFeedback } = useScrollToFeedback()
+const HomePage = () => {
+    const t = useTranslations("HomePage");
 
     return (
-        <RequestHandler
-            isLoading={isLoading}
-            error={error}
-            data={data}
-        >
-            {data &&
-                <PageTitleLayout
-                    scrollToFeedback={scrollToFeedback}
-                    title={data.title}
-                    sub_title={data.content}
-                    bg_image={data.image}
-                    button_text={t("order_integration")}
-                    breadcrumb={[
-                        { text: t('home'), href: '/home' },
-                        { text: t('crm_integration'), href: '/services/crm' },
-                    ]}
-                    isGray
-                />
-            }
-            <CompanyServiceCardList
-                title={t(serviceCrmData.title)}
-                items={serviceCrmData.items.map(item => ({ ...item, title: t(item.title), description: t(item.description) }))}
+        <>
+            <NewsBanner/>
+            <SingleSliderList />
+            <FloatingWhatsApp
+                phoneNumber="+996999504444" // Номер телефона в международном формате
+                accountName="Bold Brands International"
+                notificationSound
+                chatMessage="Доброго времени суток, чем могу вам помочь?"
+                statusMessage="Онлайн"
+                darkMode
+                avatar="/images/main_page/diploma.jpg"
+                placeholder="Введите текст"
             />
-            <InfoCard
-                title={t("our_crm_approach")}
-                description={t("crm_approach_description")}
-                card_title={t("we_train_your_team")}
-                card_description={t("provide_support")}
-                card_icon={<CrmIcon />}
-                image={'/images/services/crm/info-crm.png'}
-            />
-            <Award
-                badgeTitle={t("partnership")}
-                title={t("bitrix24_partners")}
-                image={"/images/services/crm/sertificate.png"}
-            />
-            <ServicePostList
-                title={t(serviceData.title)}
-                items={serviceData.items.map(item => ({ ...item, title: t(item.title), description: t(item.description) }))}
-            />
+            <MarketingDepartment />
+            <VideoAboutCompany />
+            <Advantages />
+            <CompanyChallengeList />
+            <CompanyFeatures />
+            <Checkup />
             <CompanyPostList />
-            <FormLayout
-                ref={ref}
-                nestedForm={
-                    <CrmFeedbackForm
-                        business_types={business_types}
-                        task_types={task_types || []}
-                    />
-                }
+            <Award
+                badgeTitle={t("section2.btn")}
+                title={t("section2.title")}
+                sub_title={t("section2.description")}
+                image={"/images/main_page/diploma.jpg"}
             />
-        </RequestHandler>
+            <CompanyPartners />
+            <PartnerReviewList />
+            <FormLayout
+                title={"Получите бесплатную консультацию"}
+                nestedForm={<FeedbackForm />}
+            />
+        </>
     );
-}
+};
 
-export default CrmPage;
-
-function scrollToFeedback() {
-    throw new Error("Function not implemented.");
-}
+export default HomePage;

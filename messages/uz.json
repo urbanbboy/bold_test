@@ -107,116 +107,122 @@
       "content2": "Yuqori reytingdagi saytlar ishonchliroq deb hisoblanadi. Bu mijozlarning ishonchini mustahkamlab, takroriy savdolarni rag‘batlantiradi.",
       "title3": "Uzoq muddatli natijalar",
       "content3": "SEO ga sarmoya uzoq muddatda o‘z samarasini beradi, reklamadan farqli o‘laroq (uning ta’siri vaqtinchalik)."
-    },
-    "ServicesPage7": {
-      "VideoBanner": {
-        "titleBlog": "Mijozlarni samarali boshqaring",
-        "subtitle1": "Jarayonlarni optimallashtirish va savdo hajmini oshirish uchun CRM tizimlarini integratsiyalash",
-        "buttonOrderIntegration": "Integratsiyani buyurtma qilish"
-      },
-      "sectionBenefits": {
-        "titleBenefits": "Biznesingizga nima uchun CRM kerak?",
-        "buttonOrderConsultation": "Maslahat olish",
-        "benefitsList": [
-          {
-            "benefitId": "01",
-            "benefitTitle": "Sotuvlarni ko‘paytirish",
-            "benefitDescription": "Kundalik vazifalarni avtomatlashtirish va mijozlar ma’lumotlarini tizimlashtirish asosiy maqsadga - mijozlarni jalb qilish va ularni saqlab qolishga e’tibor qaratish imkonini beradi. Bu esa konversiya va umumiy savdo hajmini sezilarli darajada oshiradi."
-          },
-          {
-            "benefitId": "02",
-            "benefitTitle": "Mijozlarni boshqarishning qulayligi",
-            "benefitDescription": "Barcha mijozlar haqidagi ma’lumotlar bir joyda to‘planganligi sababli, axborotga kirish osonlashadi va jamoangiz shaxsiylashtirilgan munosabatlar o‘rnatishi mumkin bo‘ladi."
-          },
-          {
-            "benefitId": "03",
-            "benefitTitle": "Vaqt va resurslarni tejash",
-            "benefitDescription": "Оптимизация рабочих процессов снижает нагрузку на сотрудников, упрощает выполнение задач и минимизирует ошибки, помогая сократить издержки."
-          },
-          {
-            "benefitId": "04",
-            "benefitTitle": "Rivojlanish uchun tahlil",
-            "benefitDescription": "Tizimli CRM platformasi chuqur tahlil va hisobotlar taqdim etadi. Bu esa zaif tomonlarni aniqlash, strategik qarorlar qabul qilish va biznes jarayonlarini takomillashtirish imkonini beradi."
-          }
-        ]
-      },
-      "integrationApproach": {
-        "titleIntegration": "CRM integratsiyasiga bizning yondashuvimiz",
-        "descriptionIntegration": "Biznesingiz ehtiyojlarini o‘rganib chiqib, maqsadlaringizga mos keladigan CRM tizimini tanlaymiz. Jamoamiz ma’lumotlarni uzluksiz ko‘chiradi va tizimni biznes jarayonlaringizni to‘liq qo‘llab-quvvatlaydigan tarzda sozlaydi.",
-        "teamTraining": {
-          "titleTeamTraining": "Shuningdek, jamoangizni o‘qitamiz ",
-          "descriptionTeamTraining": "va CRMdan qulay foydalanish uchun muntazam texnik yordam ko‘rsatamiz."
+    }
+  },
+  "ServicesPage7": {
+    "headerBtn": "Integratsiyani buyurtma qilish",
+    "BenefitsSection": {
+      "button": "Maslahat olish",
+      "title": "Biznesingizga nima uchun CRM kerak?",
+      "items": [
+        {
+          "image": "ServiceCrmIcon1",
+          "number": "01",
+          "title": "Sotuvlarni ko‘paytirish",
+          "description": "Kundalik vazifalarni avtomatlashtirish va mijozlar ma’lumotlarini tizimlashtirish asosiy maqsadga - mijozlarni jalb qilish va ularni saqlab qolishga e’tibor qaratish imkonini beradi. Bu esa konversiya va umumiy savdo hajmini sezilarli darajada oshiradi."
+        },
+        {
+          "image": "ServiceCrmIcon2",
+          "number": "02",
+          "title": "Mijozlarni boshqarishning qulayligi",
+          "description": "Barcha mijozlar haqidagi ma’lumotlar bir joyda to‘planganligi sababli, axborotga kirish osonlashadi va jamoangiz shaxsiylashtirilgan munosabatlar o‘rnatishi mumkin bo‘ladi."
+        },
+        {
+          "image": "ServiceCrmIcon3",
+          "number": "03",
+          "title": "Vaqt va resurslarni tejash",
+          "description": "Ish jarayonlarini optimallashtirish xodimlarga bo‘lgan yukni kamaytiradi, vazifalarni tezroq bajarishga yordam beradi va xatolarni minimallashtiradi, bu esa xarajatlarni kamaytirishga yordam beradi."
+        },
+        {
+          "image": "SeoHowWeWork5",
+          "number": "04",
+          "title": "Rivojlanish uchun tahlil",
+          "description": "Tizimli CRM platformasi chuqur tahlil va hisobotlar taqdim etadi. Bu esa zaif tomonlarni aniqlash, strategik qarorlar qabul qilish va biznes jarayonlarini takomillashtirish imkonini beradi."
         }
-      },
-      
-      "PartersBlog": {
-        "titleParters": "hamkorlik",
-        "SubTitleParters": "Biz Bitrix24ning rasmiy hamkorlarimiz"
+      ]
+    },
+    "integrationServices": {
+      "titleIntegrationServices": "CRM integratsiyasi bo‘yicha xizmatlarimiz",
+      "servicesList": [
+        {
+          "serviceId": "01",
+          "serviceTitle": "CRM tizimini tanlash va sozlash",
+          "serviceDescription": "Biznesingiz uchun eng maqbul CRM platformasini tanlash. Tizimni talablaringizga moslash."
+        },
+        {
+          "serviceId": "02",
+          "serviceTitle": "Ma’lumotlarni ko‘chirish",
+          "serviceDescription": "Mavjud tizimlardan ma’lumotlarni xavfsiz va aniq o‘tkazish. Axborotning yaxlitligi va xavfsizligini ta’minlash."
+        },
+        {
+          "serviceId": "03",
+          "serviceTitle": "Jarayonlarni avtomatlashtirish",
+          "serviceDescription": "Samaradorlikni oshirish uchun avtomatlashtirilgan ish jarayonlarini sozlash. CRMni biznesingizning boshqa vositalari va tizimlari bilan integratsiyalash."
+        },
+        {
+          "serviceId": "04",
+          "serviceTitle": "O‘qitish va qo‘llab-quvvatlash",
+          "serviceDescription": "Jamoangiz uchun o‘quv mashg‘ulotlarini o‘tkazish. Joriy etilgandan so‘ng texnik yordam ko‘rsatish va kuzatib borish."
+        }
+      ]
+    },
+    "VideoBanner": {
+      "titleBlog": "Mijozlarni samarali boshqaring",
+      "subtitle1": "Jarayonlarni optimallashtirish va savdo hajmini oshirish uchun CRM tizimlarini integratsiyalash",
+      "buttonOrderIntegration": "Integratsiyani buyurtma qilish"
+    },
+
+    "integrationApproach": {
+      "titleIntegration": "CRM integratsiyasiga bizning yondashuvimiz",
+      "descriptionIntegration": "Biznesingiz ehtiyojlarini o‘rganib chiqib, maqsadlaringizga mos keladigan CRM tizimini tanlaymiz. Jamoamiz ma’lumotlarni uzluksiz ko‘chiradi va tizimni biznes jarayonlaringizni to‘liq qo‘llab-quvvatlaydigan tarzda sozlaydi.",
+      "teamTraining": {
+        "titleTeamTraining": "Shuningdek, jamoangizni o‘qitamiz ",
+        "descriptionTeamTraining": "va CRMdan qulay foydalanish uchun muntazam texnik yordam ko‘rsatamiz."
       }
     },
-    "costCalculator": {
-      "titleCalculator": "Рассчитайте стоимость услуги",
-      "descriptionCalculator": "Оставьте контакты для связи, и мы перезвоним вам",
-      "businessPhones": {
+
+    "PartersBlog": {
+      "titleParters": "hamkorlik",
+      "SubTitleParters": "Biz Bitrix24ning rasmiy hamkorlarimiz"
+    }
+  },
+  "footer": {
+    "companyInfo": {
+      "companyName": "Bold Brands International",
+      "companyDescription": "ваш внешний отдел маркетинга",
+      "websiteDesign": "Веб-дизайн — aidarsopubekov.framer.ai",
+      "copyright": "© 2024 Bold Brands International. Все права защищены"
+    },
+    "companyLinks": {
+      "aboutUs": "О нас",
+      "cases": "Кейсы",
+      "reviews": "Отзывы"
+    },
+    "servicesLinks": {
+      "branding": "Брендинг",
+      "digitalMarketing": "Digital продвижение",
+      "videoProduction": "Видеопродакшн",
+      "webDevelopment": "Веб-разработка и дизайн",
+      "marketingSupport": "Комплексное маркетинговое сопровождение",
+      "automationAnalytics": "Автоматизация и аналитика"
+    },
+    "contactInfo": {
+      "addresses": {
+        "Bishkek": "ул. Матросова, дом 102",
+        "Tashkent": "Янгибозорский район, Янгибозор 1"
+      },
+      "phones": {
         "Bishkek": "+996 999 50 44 44",
         "Tashkent": "+998 909 36 09 36"
       },
-      "emailContact": "info@boldbrands.kg",
-      "form": {
-        "titleForm": "Заполните форму и получите предложение",
-        "step1": {
-          "titleStep1": "О вашем бизнесе",
-          "descriptionStep1": "Тип бизнеса и услуги",
-          "businessTypeLabel": "Тип бизнеса",
-          
-          "tasksLabel": "Какие задачи вы хотите автоматизировать?"
-          
-        },
-        "step2": {
-          "titleStep2": "Контактные данные",
-          "descriptionStep2": "Ваши данные для связи"
-        },
-        "buttonNext": "Продолжить"
-      },
-      "footer": {
-        "companyInfo": {
-          "companyName": "Bold Brands International",
-          "companyDescription": "ваш внешний отдел маркетинга",
-          "websiteDesign": "Веб-дизайн — aidarsopubekov.framer.ai",
-          "copyright": "© 2024 Bold Brands International. Все права защищены"
-        },
-        "companyLinks": {
-          "aboutUs": "О нас",
-          "cases": "Кейсы",
-          "reviews": "Отзывы"
-        },
-        "servicesLinks": {
-          "branding": "Брендинг",
-          "digitalMarketing": "Digital продвижение",
-          "videoProduction": "Видеопродакшн",
-          "webDevelopment": "Веб-разработка и дизайн",
-          "marketingSupport": "Комплексное маркетинговое сопровождение",
-          "automationAnalytics": "Автоматизация и аналитика"
-        },
-        "contactInfo": {
-          "addresses": {
-            "Bishkek": "ул. Матросова, дом 102",
-            "Tashkent": "Янгибозорский район, Янгибозор 1"
-          },
-          "phones": {
-            "Bishkek": "+996 999 50 44 44",
-            "Tashkent": "+998 909 36 09 36"
-          },
-          "email": "info@boldbrands.kg",
-          "workingHours": "Пн — Пт 9:00 — 18:00"
-        },
-        "socialLinks": {
-          "instagram": "Instagram",
-          "facebook": "Facebook",
-          "telegram": "Telegram"
-        },
-        "privacyPolicy": "Политика конфиденциальности"
-      }
+      "email": "info@boldbrands.kg",
+      "workingHours": "Пн — Пт 9:00 — 18:00"
+    },
+    "socialLinks": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "telegram": "Telegram"
+    },
+    "privacyPolicy": "Политика конфиденциальности"
   }
-}
 }

@@ -15,6 +15,7 @@ export interface ISmmCreatingAdData {
 
 export interface ISmmTeamMembers {
     title: string;
+    button?:string;
     items: {
         image: React.ReactNode;
         number: string;

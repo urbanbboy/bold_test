@@ -8,7 +8,8 @@ import { ISmmTeamMembers } from "@/consts/types"
 
 export const CompanyServiceCardList = ({
     title,
-    items
+    items,
+    button
 }: ISmmTeamMembers) => {
     return (
         <section className="w-full max-w-[1920px] flex justify-center px-4 lg:px-10 py-10 md:py-20">
@@ -17,7 +18,7 @@ export const CompanyServiceCardList = ({
                     <Heading className="text-primary lg:w-2/3" as="h2">{title}</Heading>
                     <div className="flex items-end">
                         <ButtonWithIcon variant="secondary" className="">
-                            Получить консультацию
+                            {button}
                         </ButtonWithIcon>
                     </div>
                 </div>

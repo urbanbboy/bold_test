@@ -4,7 +4,7 @@ export interface BannerText {
     link: string;
   }
   
-  export interface Banner {
+export interface Banner {
     title: string;
     sub_title: string;
     button_text: string;

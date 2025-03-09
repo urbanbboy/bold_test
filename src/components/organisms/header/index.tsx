@@ -45,7 +45,7 @@ export const Header = () => {
 
             setLastScrollY(currentScrollY);
         };
-
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const handleBannerVisibility = (e: any) => {
             setHasBanner(e.detail);
         };
