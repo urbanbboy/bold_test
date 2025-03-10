@@ -26,7 +26,8 @@
     "section2": {
       "title": "Marketing Company of the Year",
       "description": "at The Great Award of the Year 2023!",
-      "btn": "Received the Award"
+      "btn": "Received the Award",
+      "readAll": "Read all"
     }
   },
   "AboutPage": {

@@ -2,14 +2,14 @@ import Image from "next/image";
 import { FC } from "react"
 
 interface CompanyBrandingItemProps {
-    image: string;
+    logo: string;
 }
 
-export const CompanyBrandingItem: FC<CompanyBrandingItemProps> = ({ image }) => {
+export const PrintedLogoItem: FC<CompanyBrandingItemProps> = ({ logo }) => {
     return (
         <Image
-            src={image}
-            alt={'Брендинг'}
+            src={logo}
+            alt={'printing'}
             width={400}
             height={302}
             className="rounded-2xl aspect-video mx-2"

@@ -28,7 +28,6 @@ import {
 } from "@/assets/services/branding";
 import { useTranslations } from "next-intl";
 import { useGetCompanyFeaturesQuery } from "@/api/Company";
-import { CompanyFeaturesResponse } from "@/api/Company/types";
 
 const BradingPage = () => {
     const slug = useSlug();
