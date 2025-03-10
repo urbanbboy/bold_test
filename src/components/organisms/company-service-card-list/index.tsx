@@ -7,9 +7,8 @@ import { ISmmTeamMembers } from "@/consts/types";
 export const CompanyServiceCardList = ({
     title,
     items,
-    button
+    button,
 }: ISmmTeamMembers) => {
-
     return (
         <section className="w-full max-w-[1920px] flex justify-center px-4 lg:px-10 py-10 md:py-20">
             <div className="max-w-[1328px] space-y-9 md:space-y-14">
@@ -24,15 +23,13 @@ export const CompanyServiceCardList = ({
                     </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-5 md:mt-10 grid-equal-height">
-                    {items.map((member, idx) => (
+                    {items?.map((member, idx) => (
                         <AnimatedItem key={idx} idx={idx}>
-                            <ServiceCardItem key={member.title} {...member} />
+                            <ServiceCardItem {...member} />
                         </AnimatedItem>
                     ))}
                 </div>
             </div>
         </section>
     );
-}
-
-
+};

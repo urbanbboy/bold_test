@@ -267,6 +267,7 @@ export const useContextAdData = () => {
     const t = useTranslations("ServicesPage2");
     return {
         title: t("whyContext.title"),
+        button:'',
         items: [
             {
                 image: "/images/services/context-ad/card_1.webp",

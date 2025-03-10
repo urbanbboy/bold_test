@@ -52,7 +52,7 @@ const ContextAdsPage = () => {
             <CompanyServiceCardList
                 title={contextAdCardData.title}
                 items={contextAdCardData.items}
-                btn={t2("btn1")}
+                button={t2("btn1")}
             />
             <CompanyPostList />
             <FormLayout ref={ref} nestedForm={<FeedbackForm />} />

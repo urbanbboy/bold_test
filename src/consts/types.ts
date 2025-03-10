@@ -1,3 +1,5 @@
+import { StringValidation } from "zod";
+
 //SMM
 export interface ISmmCreatingAdData {
   eyebrow?: string;
@@ -13,22 +15,14 @@ export interface ISmmCreatingAdData {
 
 export interface ISmmTeamMembers {
   title: string;
-  items: {
+  button?: string;
+  items?: {
     image: React.ReactNode;
     number: string;
     title: string;
-    button?:string;
-    items: {
-        image: React.ReactNode;
-        number: string;
-        title: string;
-        isContextAd?: boolean;
-        description?: string;
-    }[];
     isContextAd?: boolean;
     description?: string;
   }[];
-  button?: string;
 }
 
 export interface IDesignBrand {
@@ -49,7 +43,7 @@ export type IconProps = {
 } & React.SVGAttributes<SVGElement>;
 
 export type Banner = {
-    title: string;
-    sub_title: string;
-    button_text: string;
-  };
+  title: string;
+  sub_title: string;
+  button_text: string;
+};
