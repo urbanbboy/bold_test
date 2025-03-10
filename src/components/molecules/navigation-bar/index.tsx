@@ -128,9 +128,9 @@ export const NavigationBar = () => {
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="flex flex-col w-[350px] gap-2 p-3">
-                            {components.map((component) => (
+                            {components.map((component,idx) => (
                                 <ListItem
-                                    key={component.title}
+                                    key={idx}
                                     title={component.title}
                                     href={component.href}
                                     icon={component.icon}
