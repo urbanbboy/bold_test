@@ -58,6 +58,7 @@ const contacts: { label: string; title: string; href?: string; }[] = [
     {
         label: 'Адрес (Ташкент)',
         title: 'Яшнободский район, Янгибозор 1',
+        href: 'https://2gis.uz/tashkent/geo/70030076378532364?m=69.273172%2C41.220454%2F16'
     },
     {
         label: 'Телефон (Бишкек)',
