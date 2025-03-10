@@ -14,7 +14,8 @@
         "marketingSupport": "Integrated marketing promotion",
         "crm": "Implementation of CRM system",
         "seo": "SEO optimization",
-        "contextAd": "Contextual advertising"
+        "contextAd": "Contextual advertising",
+        "operativePrint": "Operative print"
       }
     },
     "section1": {
@@ -34,7 +35,27 @@
       "description": "We understand that entrepreneurs need not just ideas, but measurable results - increased leads, customer acquisition, and profit growth.",
       "subtitle": "Our Philosophy",
       "subdesk": "Working for your success by offering strategies that solve your specific business challenges and deliver tangible achievements."
+    },
+    "banner": {
+      "title": "We are changing the perception of marketing in Central Asia",
+      "btn": "Get a consultation",
+      "road": "About us"
     }
+  },
+  "Cases": {
+    "banner": {
+      "title": "Our mission is to bring ideas to life",
+      "btn": "Get a consultation",
+      "road": "Cases"
+    },
+    "text": {
+      "title": "Cases",
+      "tag1": "SMM",
+      "tag2": "Targeting",
+      "tag3": "Marketing",
+      "search": "Search..."
+    },
+    "video": "Video testimonials from our clients"
   },
   "ThreePost": {
     "btn": "All cases"
@@ -319,24 +340,30 @@
       "number4": "4",
       "text4": "A trained marketer who knows the ins and outs of promoting your product or service."
     }
-  },  
-    "ServicesPage9": {
-      "btn": "Get a consultation",
-      "howWeWork": {
-        "title1": "How we work",
-        "title11": "Receiving the order",
-        "description11": "Leave a request in any convenient way – through social networks, on the website, or by phone.",
-        "title12": "Approving the layout",
-        "description12": "We agree on the design, layout, and technical parameters, preparing a test sample.",
-        "title13": "Starting production",
-        "description13": "We prepare the file for printing, print, and carry out post-print processing.",
-        "title14": "Delivery",
-        "description14": "We send your order to a convenient address.",
-        "title15": "Support",
-        "description15": "We keep your files safe to always be ready for a new order."
-      }
-    }
-  ,  
+  },
+  "ServicesPage9": {
+    "btn": "Get a consultation",
+    "howWeWork": {
+      "title1": "How we work",
+      "title11": "Receiving the order",
+      "description11": "Leave a request in any convenient way – through social networks, on the website, or by phone.",
+      "title12": "Approving the layout",
+      "description12": "We agree on the design, layout, and technical parameters, preparing a test sample.",
+      "title13": "Starting production",
+      "description13": "We prepare the file for printing, print, and carry out post-print processing.",
+      "title14": "Delivery",
+      "description14": "We send your order to a convenient address.",
+      "title15": "Support",
+      "description15": "We keep your files safe to always be ready for a new order."
+    },
+    "banner": {
+      "title1": "Operative Printing",
+      "description1": "Fast and high-quality printing production",
+      "btn": "Order Printing",
+      "title2": "Printing That Works for You"
+    },
+    "design": "Business Cards"
+  },
   "FormLayout": {
     "title": "Get a free consultation",
     "subTitle": "Leave your contact details, and we will call you back",
@@ -391,5 +418,14 @@
   "FormErrors": {
     "required": "Please fill out this field",
     "phone_error": "Incorrect phone number!"
+  },
+  "Buttons": {
+    "btn1": "Get a Consultation"
+  },
+  "Map": {
+    "btn1": "Bishkek",
+    "btn2": "Tashkent",
+    "adress1": "Matrosova St., 102",
+    "adress2": "Yashnobod District, Yangibozor 1"
   }
 }
