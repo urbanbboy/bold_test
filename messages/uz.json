@@ -14,7 +14,8 @@
         "marketingSupport": "Integratsiyalashgan marketing targ'iboti",
         "crm": "CRM tizimini joriy qilish",
         "seo": "SEO optimallashtirish",
-        "contextAd": "Kontekstli reklama"
+        "contextAd": "Kontekstli reklama",
+        "operativePrint": "Onlayn bosib chiqarish"
       }
     },
     "section1": {
@@ -34,7 +35,27 @@
       "description": "Biz tadbirkorlar uchun g'oyalar emas, balki o'lchanadigan natijalar - mijozlar sonining o'sishi, daromadning ko'payishi muhim ekanligini tushunamiz.",
       "subtitle": "Bizning falsafamiz",
       "subdesk": "Sizning muvaffaqiyatingiz uchun ishlaymiz, biznes muammolaringizni hal qiladigan va aniq natijalar beradigan strategiyalarni taklif qilamiz."
+    },
+    "banner": {
+      "title": "Biz Markaziy Osiyoda marketing haqidagi tasavvurni o‘zgartiryapmiz",
+      "btn": "Konsultatsiya olish",
+      "road": "Biz haqimizda"
     }
+  },
+  "Cases": {
+    "banner": {
+      "title": "Bizning missiyamiz – g‘oyalarni hayotga tatbiq etish",
+      "btn": "Konsultatsiya olish",
+      "road": "Ishlar"
+    },
+    "text": {
+      "title": "Ishlar",
+      "tag1": "SMM",
+      "tag2": "Targeting",
+      "tag3": "Marketing",
+      "search": "Qidirish..."
+    },
+    "video": "Mijozlarimizdan videofikrlar"
   },
   "ThreePost": {
     "btn": "Barcha Keys"
@@ -523,7 +544,7 @@
       "text4": "Asosiy ko'rsatkichlarning doimiy o'sishi: so'rovlar, sotuvlar va mijozlar sodiqligining oshishi, marketing biznesingizning asosiy harakatlantiruvchi kuchi ekanligini tasdiqlaydi."
     }
   },
-"ServicesPage9": {
+  "ServicesPage9": {
     "btn": "Konsultatsiya olish",
     "howWeWork": {
       "title1": "Qanday ishlaymiz",
@@ -537,7 +558,14 @@
       "description14": "Buyurtmangizni qulay manzilga yuboramiz.",
       "title15": "Qo‘llab-quvvatlash",
       "description15": "Fayllaringizni saqlaymiz, shunda yangi buyurtma berishga doimo tayyor bo‘lamiz."
-    }
+    },
+    "banner": {
+      "title1": "Tezkor bosma",
+      "description1": "Tez va sifatli bosma mahsulotlari ishlab chiqarish",
+      "btn": "Bosma buyurtma qilish",
+      "title2": "Siz uchun ishlaydigan bosma"
+    },
+    "design": "Vizitkalar"
   },
   "FormLayout": {
     "title": "Bepul maslahat oling",
@@ -596,5 +624,11 @@
   },
   "Buttons": {
     "btn1": "Konsultatsiya olish"
+  },
+  "Map": {
+    "btn1": "Bishkek",
+    "btn2": "Toshkent",
+    "adress1": "Matrosov ko'chasi, 102-uy",
+    "adress2": "Yashnobod tumani, Yangibozor 1"
   }
 }

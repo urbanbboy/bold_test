@@ -70,7 +70,7 @@ export const NavigationBar = () => {
                 icon: <CRMIcon />,
             },
             {
-                title: t("navLinks.services.contextAd"),
+                title: t("navLinks.services.operativePrint"),
                 href: "/services/operative-print",
                 icon: <CRMIcon />,
             },
