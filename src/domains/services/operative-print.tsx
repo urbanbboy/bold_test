@@ -109,15 +109,15 @@ const PrintPage = () => {
       <RequestHandler isLoading={isLoading} error={error} data={data}>
           {data && (
               <PageTitleLayout
-                  bg_image={data.image}
-                  title={designs.title1}
-                  top_title={designs.title2}
-                  sub_title={designs.description1}
+                  bg_image={data?.image}
+                  title={data?.title}
+                  //   top_title={designs.title2}
+                  sub_title={data?.content}
                   button_text={designs.btn}
                   scrollToFeedback={scrollToFeedback}
                   breadcrumb={[
                       { text: "Главная", href: "/home" },
-                      { text: designs.title1, href: "/services/operative-print" },
+                      { text: "Оперативная печать", href: "/services/operative-print" },
                   ]}
               />
           )}
