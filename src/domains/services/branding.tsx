@@ -101,35 +101,34 @@ const BradingPage = () => {
                 number: "01",
                 title: t("howWeWork.title11"),
                 description: t("howWeWork.description11"),
-                items: []
             },
             {
                 image: <ServiceBrandingIcon2 />,
                 number: "02",
                 title: t("howWeWork.title12"),
                 description: t("howWeWork.description12"),
-                items: []
+       
             },
             {
                 image: <ServiceBrandingIcon3 />,
                 number: "03",
                 title: t("howWeWork.title13"),
                 description: t("howWeWork.description13"),
-                items: []
+      
             },
             {
                 image: <ServiceBrandingIcon4 />,
                 number: "04",
                 title: t("howWeWork.title14"),
                 description: t("howWeWork.description14"),
-                items: []
+       
             },
             {
                 image: <ServiceBrandingIcon5 />,
                 number: "05",
                 title: t("howWeWork.title15"),
                 description: t("howWeWork.description15"),
-                items: []
+           
             },
         ],
     };
