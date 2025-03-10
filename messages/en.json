@@ -319,7 +319,24 @@
       "number4": "4",
       "text4": "A trained marketer who knows the ins and outs of promoting your product or service."
     }
-  },
+  },  
+    "ServicesPage9": {
+      "btn": "Get a consultation",
+      "howWeWork": {
+        "title1": "How we work",
+        "title11": "Receiving the order",
+        "description11": "Leave a request in any convenient way – through social networks, on the website, or by phone.",
+        "title12": "Approving the layout",
+        "description12": "We agree on the design, layout, and technical parameters, preparing a test sample.",
+        "title13": "Starting production",
+        "description13": "We prepare the file for printing, print, and carry out post-print processing.",
+        "title14": "Delivery",
+        "description14": "We send your order to a convenient address.",
+        "title15": "Support",
+        "description15": "We keep your files safe to always be ready for a new order."
+      }
+    }
+  ,  
   "FormLayout": {
     "title": "Get a free consultation",
     "subTitle": "Leave your contact details, and we will call you back",

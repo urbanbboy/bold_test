@@ -523,6 +523,22 @@
       "text4": "Asosiy ko'rsatkichlarning doimiy o'sishi: so'rovlar, sotuvlar va mijozlar sodiqligining oshishi, marketing biznesingizning asosiy harakatlantiruvchi kuchi ekanligini tasdiqlaydi."
     }
   },
+"ServicesPage9": {
+    "btn": "Konsultatsiya olish",
+    "howWeWork": {
+      "title1": "Qanday ishlaymiz",
+      "title11": "Buyurtmani qabul qilish",
+      "description11": "Istalgan qulay usul bilan buyurtma bering – ijtimoiy tarmoqlar, veb-sayt yoki telefon orqali.",
+      "title12": "Maketni tasdiqlash",
+      "description12": "Dizayn, maket va texnik parametrlarni kelishib, sinov namunasi tayyorlaymiz.",
+      "title13": "Ishlab chiqarishni boshlash",
+      "description13": "Faylni bosmaga tayyorlaymiz, chop etamiz va bosmadan keyingi tayyorlov ishlarini bajaramiz.",
+      "title14": "Yetkazib berish",
+      "description14": "Buyurtmangizni qulay manzilga yuboramiz.",
+      "title15": "Qo‘llab-quvvatlash",
+      "description15": "Fayllaringizni saqlaymiz, shunda yangi buyurtma berishga doimo tayyor bo‘lamiz."
+    }
+  },
   "FormLayout": {
     "title": "Bepul maslahat oling",
     "subTitle": "Aloqa uchun kontaktlarni qoldiring va biz sizga qayta qo‘ng‘iroq qilamiz",
