@@ -10,7 +10,6 @@ import { useAppData } from "@/context/app-context";
 import { useGetPromotionTypesQuery } from "@/api/Types";
 import { useRef } from "react";
 import { useTranslations } from "next-intl";
-import { MarketingDepartment } from "@/components/organisms/marketing-department";
 import { ParallaxSection } from "@/components/organisms/parallax";
 import { useGetBusinessCardsQuery } from "@/api/BusinessType";
 import { CompanyServiceCardList } from "@/components/organisms/company-service-card-list";
@@ -23,6 +22,7 @@ import {
     ServicePrintingIcon5,
 } from "@/assets/services/printing";
 import { PrintedLogos } from "@/components/organisms/printed-logos";
+import { DesignDepartment } from "@/components/organisms/design-department";
 
 export interface ParallaxItem {
     src: string;
@@ -122,7 +122,7 @@ const PrintPage = () => {
                     ]}
                 />
             )}
-            <MarketingDepartment />
+            < DesignDepartment />
             {cards && (
                 <ParallaxSection
                     businesscards={cards?.businesscards}
