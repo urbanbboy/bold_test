@@ -3,7 +3,7 @@
 import { MarketingChapter } from "@/components/molecules/marketing-department-chapter";
 import MarketingDepartmentBg from "@/assets/backgrounds/marketing_department.svg";
 import { Heading } from "@/components/atoms/heading";
-import { useGetMarketingDepartmentQuery } from "@/api/Marketing";
+import { useGetDesignSupportQuery } from "@/api/Marketing";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { motion } from "framer-motion";
 import {
@@ -13,12 +13,9 @@ import {
     viewportConfig,
 } from "@/lib/motion";
 
-interface Props {
-  isPrint?: boolean;
-}
 
-export const DesignDepartment: React.FC<Props> = ({ isPrint }) => {
-    const { data, isLoading, error } = useGetMarketingDepartmentQuery();
+export const DesignDepartment: React.FC = () => {
+    const { data, isLoading, error } = useGetDesignSupportQuery();
 
     return (
         <section

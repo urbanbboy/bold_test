@@ -428,5 +428,45 @@
     "btn2": "Tashkent",
     "adress1": "Matrosova St., 102",
     "adress2": "Yashnobod District, Yangibozor 1"
+  },
+  "footer": {
+    "companyInfo": {
+      "companyName": "Bold Brands International",
+      "companyDescription": "ваш внешний отдел маркетинга",
+      "copyright": "© 2024 Bold Brands International. Все права защищены"
+    },
+    "title":"Servicces",
+    "companyLinks": {
+      "aboutUs": "О нас",
+      "cases": "Кейсы",
+      "reviews": "Отзывы"
+    },
+    "servicesLinks": {
+      "branding": "Branding",
+      "digitalMarketing": "Digital promotion",
+      "videoProduction": "Video production",
+      "webDevelopment": "Web development and design",
+      "marketingSupport": "Integrated marketing promotion",
+      "automationAnalytics": "Seo optimization",
+      "printing":"Operative Print"
+    },
+    "contactInfo": {
+      "addresses": {
+        "Bishkek": "ул. Матросова, дом 102",
+        "Tashkent": "Янгибозорский район, Янгибозор 1"
+      },
+      "phones": {
+        "Bishkek": "+996 999 50 44 44",
+        "Tashkent": "+998 909 36 09 36"
+      },
+      "email": "info@boldbrands.kg",
+      "workingHours": "Пн — Пт 9:00 — 18:00"
+    },
+    "socialLinks": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "telegram": "Telegram"
+    },
+    "privacyPolicy": "Политика конфиденциальности"
   }
 }

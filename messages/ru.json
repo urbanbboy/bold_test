@@ -343,9 +343,9 @@
     "companyInfo": {
       "companyName": "Bold Brands International",
       "companyDescription": "ваш внешний отдел маркетинга",
-      "websiteDesign": "Веб-дизайн — aidarsopubekov.framer.ai",
       "copyright": "© 2024 Bold Brands International. Все права защищены"
     },
+    "title":"Услуги",
     "companyLinks": {
       "aboutUs": "О нас",
       "cases": "Кейсы",
@@ -353,11 +353,12 @@
     },
     "servicesLinks": {
       "branding": "Брендинг",
-      "digitalMarketing": "Digital продвижение",
+      "digitalMarketing": "Диджитал продвижение",
       "videoProduction": "Видеопродакшн",
       "webDevelopment": "Веб-разработка и дизайн",
       "marketingSupport": "Комплексное маркетинговое сопровождение",
-      "automationAnalytics": "Автоматизация и аналитика"
+      "automationAnalytics": "Автоматизация и аналитика",
+      "printing":"Оперативная печать"
     },
     "contactInfo": {
       "addresses": {

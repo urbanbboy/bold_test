@@ -324,21 +324,22 @@
     "companyInfo": {
       "companyName": "Bold Brands International",
       "companyDescription": "ваш внешний отдел маркетинга",
-      "websiteDesign": "Веб-дизайн — aidarsopubekov.framer.ai",
       "copyright": "© 2024 Bold Brands International. Все права защищены"
     },
+    "title":"Xizmatlar",
     "companyLinks": {
-      "aboutUs": "О нас",
-      "cases": "Кейсы",
+      "aboutUs": "Biz haqimizda",
+      "cases": "Ishlar",
       "reviews": "Отзывы"
     },
     "servicesLinks": {
-      "branding": "Брендинг",
-      "digitalMarketing": "Digital продвижение",
-      "videoProduction": "Видеопродакшн",
-      "webDevelopment": "Веб-разработка и дизайн",
-      "marketingSupport": "Комплексное маркетинговое сопровождение",
-      "automationAnalytics": "Автоматизация и аналитика"
+      "branding": "Brandlash",
+      "digitalMarketing": "Rakamli reklama",
+      "videoProduction": "Video ishlab chiqarish",
+      "webDevelopment": "Veb Ishlab chiqish va dizayn",
+      "marketingSupport": "Integratsiyalashgan marketing targ'iboti",
+      "automationAnalytics": "SEO optimallashtirish",
+       "printing":"Onlayn bosib chiqarish"
     },
     "contactInfo": {
       "addresses": {

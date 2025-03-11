@@ -13,7 +13,6 @@ import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import useScrollToFeedback from "@/hooks/useScrollToFeedback";
 import { useSlug } from "@/hooks/useSlug";
 import { useTranslations } from "next-intl";
-import { text } from "stream/consumers";
 
 const CasesPage = () => {
     const slug = useSlug();
