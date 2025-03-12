@@ -24,9 +24,9 @@ export const CasesList = ({ posts }: CasesListProps) => {
     const t = useTranslations("Cases");
 
     const tags = [
-        { name: t("text.tag1"), tag: "SMM" },
-        { name: t("text.tag2"), tag: "Таргет" },
-        { name: t("text.tag3"), tag: "Маркетинг" },
+        { name: t("text.tag1"), tag: t("text.tag1") },
+        { name: t("text.tag2"), tag: t("text.tag2") },
+        { name: t("text.tag3"), tag: t("text.tag3") },
     ];
 
 
@@ -55,6 +55,8 @@ export const CasesList = ({ posts }: CasesListProps) => {
             prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
         );
     };
+
+    console.log(selectedTags)
 
     const filteredPosts = useMemo(() => {
         return posts.filter((post) => {

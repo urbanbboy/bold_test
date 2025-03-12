@@ -8,7 +8,6 @@ import { RequestHandler } from "@/components/atoms/request-handler";
 import { useSlug } from "@/hooks/useSlug";
 import { useAppData } from "@/context/app-context";
 import { useGetPromotionTypesQuery } from "@/api/Types";
-import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import { ParallaxSection } from "@/components/organisms/parallax";
 import { useGetBusinessCardsQuery } from "@/api/BusinessType";
@@ -84,12 +83,6 @@ const PrintPage = () => {
     } = useGetBusinessCardsQuery();
     const { business_types } = useAppData();
 
-    const feedbackRef = useRef<HTMLDivElement>(null);
-
-    const scrollToFeedback = () => {
-        feedbackRef.current?.scrollIntoView({ behavior: "smooth" });
-    };
-
     type Designs = {
         title1: string;
         description1: string;
@@ -115,7 +108,6 @@ const PrintPage = () => {
                     //   top_title={designs.title2}
                     sub_title={data?.content}
                     button_text={designs.btn}
-                    scrollToFeedback={scrollToFeedback}
                     breadcrumb={[
                         { text: "Главная", href: "/home" },
                         { text: "Оперативная печать", href: "/services/operative-print" },
@@ -136,7 +128,6 @@ const PrintPage = () => {
             />
             <PrintedLogos />
             <FormLayout
-                ref={feedbackRef}
                 title={"Рассчитайте стоимость услуги"}
                 nestedForm={
                     <CostCalculationForm
