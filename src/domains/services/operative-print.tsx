@@ -13,15 +13,11 @@ import { ParallaxSection } from "@/components/organisms/parallax";
 import { useGetBusinessCardsQuery } from "@/api/BusinessType";
 import { CompanyServiceCardList } from "@/components/organisms/company-service-card-list";
 import { ISmmTeamMembers } from "@/consts/types";
-import {
-    ServicePrintingIcon1,
-    ServicePrintingIcon2,
-    ServicePrintingIcon3,
-    ServicePrintingIcon4,
-    ServicePrintingIcon5,
-} from "@/assets/services/printing";
 import { PrintedLogos } from "@/components/organisms/printed-logos";
 import { DesignDepartment } from "@/components/organisms/design-department";
+import { ContextAd5Icon } from "@/assets/services/context-ad";
+import { ServiceBrandingIcon1, ServiceBrandingIcon3 } from "@/assets/services/branding";
+import { SeoHowWeWork4, SeoHowWeWork5 } from "@/assets/services/seo";
 
 export interface ParallaxItem {
     src: string;
@@ -41,31 +37,31 @@ const PrintPage = () => {
         title: t("howWeWork.title1"),
         items: [
             {
-                image: <ServicePrintingIcon1 />,
+                image: <ContextAd5Icon />,
                 number: "01",
                 title: t("howWeWork.title11"),
                 description: t("howWeWork.description11"),
             },
             {
-                image: <ServicePrintingIcon2 />,
+                image: <ServiceBrandingIcon1 />,
                 number: "02",
                 title: t("howWeWork.title12"),
                 description: t("howWeWork.description12"),
             },
             {
-                image: <ServicePrintingIcon3 />,
+                image: <SeoHowWeWork4 />,
                 number: "03",
                 title: t("howWeWork.title13"),
                 description: t("howWeWork.description13"),
             },
             {
-                image: <ServicePrintingIcon4 />,
+                image: <SeoHowWeWork5 />,
                 number: "04",
                 title: t("howWeWork.title14"),
                 description: t("howWeWork.description14"),
             },
             {
-                image: <ServicePrintingIcon5 />,
+                image: <ServiceBrandingIcon3 />,
                 number: "05",
                 title: t("howWeWork.title15"),
                 description: t("howWeWork.description15"),
