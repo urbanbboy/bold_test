@@ -92,8 +92,8 @@ export interface CompanyTeamResponse {
     items: { name: string; position: string; image: string; }[];
 }
 
-export interface CompanyVideoReviewsResponse {
-    title: string;
+export type CompanyVideoReviewsResponse = Array<{
+    items: Array<{ video: string }>;
     sub_title: string;
-    items: { video: string; }[];
-}
+    title: string;
+}>;

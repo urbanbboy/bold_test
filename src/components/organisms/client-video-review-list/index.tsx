@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import CompanyInfoSVG from "@/assets/backgrounds/company_info.svg";
 import { useTranslations } from "next-intl";
 
-export const ClientReviewList = ({
+export const ClientVideoReviewList = ({
     hasSubTitle,
     hasBg,
 }: {
@@ -20,13 +20,12 @@ export const ClientReviewList = ({
 }) => {
     const { data } = useGetCompanyVideoReviewsQuery();
     const [currentPage, setCurrentPage] = useState(0);
-    const totalPages = data && data.length > 0 ? data[1]?.items.length : 0;
+    const totalPages = data && data.length > 0 ? data[0].items.length : 0;
     const t = useTranslations("Cases");
 
     const handleNext = () => {
         setCurrentPage((prev) => (prev + 1) % totalPages);
     };
-
 
     const handlePrev = () => {
         setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
@@ -42,7 +41,7 @@ export const ClientReviewList = ({
                         <div className="space-y-4">
                             {hasSubTitle && (
                                 <SubTitle className="uppercase lg:text-xl">
-                                    {data && data.length > 0 ? data[1]?.sub_title : ""}
+                                    {data && data.length > 0 ? data[0].sub_title : ""}
                                 </SubTitle>
                             )}
                             <Heading
@@ -52,7 +51,7 @@ export const ClientReviewList = ({
                                     hasBg ? "text-graphic-light" : ""
                                 )}
                             >
-                                {data && data.length > 0 ? data[1]?.title : t("video")}
+                                {data && data.length > 0 ? data[0].title : t("video")}
                             </Heading>
                         </div>
                         <div className="flex items-end gap-2">
@@ -100,7 +99,7 @@ export const ClientReviewList = ({
                         <ReactPlayer
                             fallback={<>Загрузка...</>}
                             url={
-                                data && data.length > 0 ? data[1]?.items[currentPage].video : ""
+                                data && data.length > 0 ? data[0].items[currentPage].video : ""
                             }
                             width={"100%"}
                             height={"100%"}
