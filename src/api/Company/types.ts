@@ -52,6 +52,7 @@ export interface CompanyInfoResponse {
     whatsapp_text: string;
     work_time: string;
     video: string;
+    production_video?:string;
     addresses: { title: string; address: string }[];
     phones: { title: string; phone: string; }[];
     emails: { title: string; email: string; }[];
