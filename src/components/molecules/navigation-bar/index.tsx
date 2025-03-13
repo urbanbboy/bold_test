@@ -139,7 +139,7 @@ export const NavigationBar = () => {
                         </ul>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+                {/* <NavigationMenuItem>
                     <Link href="/blog" legacyBehavior passHref>
                         <NavigationMenuLink
                             className={cn(
@@ -150,7 +150,7 @@ export const NavigationBar = () => {
                             {t("navLinks.blog")}
                         </NavigationMenuLink>
                     </Link>
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
                 <NavigationMenuItem>
                     <Link href="/contacts" legacyBehavior passHref>
                         <NavigationMenuLink
