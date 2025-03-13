@@ -17,7 +17,7 @@ export const CaseImages = ({ images }: CaseImagesProps) => {
             <Heading as="h4" className="font-normal uppercase text-base md:text-lg text-gray2 min-w-[320px]">
                 {images[0]?.title}
             </Heading>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-5">
                 {images?.map((image) => (
                     image?.image?.map((img) => (
                         <CaseImageItem
