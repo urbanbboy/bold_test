@@ -24,6 +24,11 @@ export const routing = defineRouting({
             ru: "/contacts",
             uz: "/contacts",
         },
+        "/blog": {
+            en: "/blog",
+            ru: "/blog",
+            uz: "/blog",
+        },
         "/services/branding": {
             en: "/services/branding",
             ru: "/services/branding",
@@ -72,6 +77,7 @@ export type Locale = (typeof routing.locales)[number];
 export type AppPathnames =
   | "/home"
   | "/about"
+  | "/blog"
   | "/cases"
   | "/contacts"
   | "/services/branding"

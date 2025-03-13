@@ -100,6 +100,11 @@ export const MobileNavigationBar = ({
             </Accordion>
             <LinkItem
                 closeSheet={closeSheet}
+                linkHref="/blog"
+                linkTitle={t("navLinks.blog")}
+            />
+            <LinkItem
+                closeSheet={closeSheet}
                 linkHref="/contacts"
                 linkTitle={t("navLinks.contacts")}
             />
