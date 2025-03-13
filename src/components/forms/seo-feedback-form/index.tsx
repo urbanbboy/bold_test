@@ -101,6 +101,7 @@ export const SeoFeedbackForm = ({
             PHONE: [{ VALUE: data.sender_phone, VALUE_TYPE: "WORK" }],
             LAST_NAME: selectedBusinessTypes.join(', '),
             SECOND_NAME: selectedPromotionTypes.join(', '),
+            COMMENTS:data.purpose_of_promotion
         })
 
         await sendForm(queryString)
