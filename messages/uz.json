@@ -586,6 +586,7 @@
     "terms": "Men ma’lumotlarimning maxfiylik siyosatiga muvofiq qayta ishlanishiga roziman",
     "termsLink": "maxfiylik",
     "submitButton": "Jo‘natish",
+    "submitButtonLoading": "Yuborish",
     "nextButton": "Keyingisi",
     "tabs": {
       "title1": "Sizning biznesingiz haqida",

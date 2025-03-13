@@ -19,14 +19,13 @@ import { useTranslations } from "next-intl";
 import { useAppData } from "@/context/app-context";
 import { objectToQueryString } from "@/lib/utils";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
+import { Spinner } from "@/components/atoms/spinner";
 
 
 export const FeedbackForm = () => {
     const { data } = useAppData()
     const [sendForm, {
         isLoading,
-        isSuccess,
-        isError,
         reset: resetApi
     }] = useSendFormMutation()
     const [openTerms, setOpenTerms] = useState(false)
@@ -58,6 +57,8 @@ export const FeedbackForm = () => {
             .unwrap()
             .then(() => {
                 toast.success('Форма успешно отправлена!');
+                setTimeout(resetApi, 3000);
+                form.reset();
             })
             .catch(() => {
                 toast.error("Ошибка при отправке формы")
@@ -397,17 +398,18 @@ export const FeedbackForm = () => {
                                                         </div>
                                                     </DialogContent>
                                                 </Dialog>
-
-
-
                                             </div>
                                         </FormItem>
                                     )}
                                 />
                                 <ButtonWithIcon
                                     type="submit"
+                                    disabled={isLoading}
                                 >
-                                    {t("submitButton")}
+                                    {isLoading
+                                        ? <span className="flex gap-x-1 text-gray2">{t("submitButtonLoading")}<Spinner /></span>
+                                        : (t("submitButton"))
+                                    }
                                 </ButtonWithIcon>
                             </div>
 
