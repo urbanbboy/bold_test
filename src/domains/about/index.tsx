@@ -38,7 +38,7 @@ const AboutPage = () => {
             {data && (
                 <PageTitleLayout
                     bg_image={data.image}
-                    title={names.title}
+                    title={data.title}
                     button_text={names.btn}
                     breadcrumb={[
                         { text: "Главная", href: "/home" },

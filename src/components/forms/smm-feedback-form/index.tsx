@@ -96,6 +96,7 @@ export const SmmFeedbackForm = ({
             PHONE: [{ VALUE: data.sender_phone, VALUE_TYPE: "WORK" }],
             LAST_NAME: selectedBusinessTypes.join(', '),
             SECOND_NAME: selectedPromotionTypes.join(', '),
+            COMMENTS:data.quantity_of_publications
         })
 
         await sendForm(queryString)
