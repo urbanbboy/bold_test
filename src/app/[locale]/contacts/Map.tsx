@@ -184,13 +184,15 @@ export const Map: React.FC = () => {
                                 transform: "translateX(-50%)",
                             }}
                         >
-                            <Marker
-                                position={center}
-                                icon={{
-                                    url: "/map/mapMarker.svg",
-                                    scaledSize: new window.google.maps.Size(50, 50), //место для кастомной иконки
-                                }}
-                            />
+                            <div>
+                                <Marker
+                                    position={center}
+                                    icon={{
+                                        url: "/map/mapMarker.svg",
+                                        scaledSize: new window.google.maps.Size(50, 50), //место для кастомной иконки
+                                    }}
+                                />
+                            </div>
                             {mapCondition ? (
                                 <p style={{ fontWeight: "700", textAlign: "start" }}>
                                     {t("adress1")}
