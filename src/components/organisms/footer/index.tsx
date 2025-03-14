@@ -23,7 +23,7 @@ export const Footer = () => {
                         transition={staggerTransition(0)}
                         className="flex flex-col gap-4"
                     >
-                        <Logo className="w-[300px] h-[40px]" />
+                        <Logo />
                         <p className="text-gray2 text-base max-w-sm">{data?.description}</p>
                     </motion.div>
                 </div>
