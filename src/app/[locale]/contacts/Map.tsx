@@ -159,13 +159,13 @@ export const Map: React.FC = () => {
                     center={center}
                     options={mapOptions}
                 >
-                        <Marker
-                           position={center}
-                                    icon={{
-                                        url: "/map/mapMarker.svg",
-                                        scaledSize: new window.google.maps.Size(50, 50), //место для кастомной иконки
-                                    }}
-                                />
+                    <Marker
+                        position={center}
+                        icon={{
+                            url: "/map/mapMarker.svg",
+                            scaledSize: new window.google.maps.Size(50, 50), //место для кастомной иконки
+                        }}
+                    />
                             
                     <OverlayView
                         position={center}
