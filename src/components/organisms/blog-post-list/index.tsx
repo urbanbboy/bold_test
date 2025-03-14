@@ -111,12 +111,12 @@ export const BlogPostList = () => {
     const handlePrev = () => setCurrentPage((prev) => Math.max(prev - 1, 1));
 
     return (
-        <div className="max-w-[1328px] m-auto px-5 mb-10">
+        <div className="max-w-[1328px] flex flex-col m-auto px-5 mb-10 min-h-[944px]">
             <div>
                 <Heading as="h2">{t("title")}</Heading>
                 <p className="text-gray2 text-sm md:text-base mt-3">{t("sub_title")}</p>
             </div>
-            <article className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-5 mt-10">
+            <article className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-5 mt-10 mb-10">
                 {paginatedPosts.map((card) => (
                     <BlogPostItem
                         key={card.id}
@@ -125,7 +125,7 @@ export const BlogPostList = () => {
                 ))}
             </article>
             {paginatedPosts.length < 1 && <div className="flex justify-center items-center min-h-[250px]">По вашему запросу ничего не найдено</div>}
-            <div className="flex justify-between items-center mt-7">
+            <div className="flex justify-between items-center mt-auto">
                 <span className="text-gray2">{t("totalPosts")} {data.length}</span>
                 <div className="flex justify-end items-center gap-2">
                     <Button
