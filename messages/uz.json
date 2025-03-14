@@ -59,6 +59,11 @@
     },
     "video": "Mijozlarimizdan videofikrlar"
   },
+  "BlogPage": {
+    "title": "Maqolalar",
+    "sub_title": "Yangiliklar va ishimizni kuzatishingizga yordam beradigan maqolalar.",
+    "totalPosts": "Jami maqolalar: "
+  },
   "ThreePost": {
     "btn": "Barcha Keys"
   },
