@@ -529,7 +529,8 @@
     "phone_error": "Incorrect phone number!"
   },
   "Buttons": {
-    "btn1": "Get a Consultation"
+    "btn1": "Get a Consultation",
+    "details": "Details"
   },
   "Map": {
     "btn1": "Bishkek",
