@@ -1,3 +1,4 @@
+import { Link } from '@/i18n/navigation'
 import localFont from 'next/font/local'
 
 const akrobatFontBlack = localFont({
@@ -10,7 +11,7 @@ const akrobatFontSemibold = localFont({
 
 export const Logo = () => {
     return (
-        <div className={`flex items-center text-[#FF2B44] ${akrobatFontBlack.className} text-2xl md:text-3xl font-extrabold`}>
+        <Link href={'/home'} className={`flex items-center text-[#FF2B44] ${akrobatFontBlack.className} text-2xl md:text-3xl font-extrabold`}>
             <div className="flex flex-col gap-1 mr-2">
                 <div className="w-[26px] h-[8px] bg-[#FF2B44] rounded-bl-[4px] rounded-tr-[4px]"></div>
                 <div
@@ -23,6 +24,6 @@ export const Logo = () => {
                 <span className="leading-none tracking-tight">Bold Brands</span>
                 <span className={`absolute top-0 -right-4 text-xs md:text-sm ${akrobatFontSemibold.className}`}>int</span>
             </div>
-        </div>
+        </Link>
     )
 }
