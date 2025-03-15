@@ -10,6 +10,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
 import { routing } from "../../i18n/routing";
+import { ReactScan } from "@/components/atoms/react-scan";
 
 const cannonade = localFont({
     src: [
@@ -52,7 +53,9 @@ export default async function LocaleLayout({ children, params }: Props) {
         <html lang={locale}>
             <head>
                 <meta name="viewport" content="initial-scale=1, width=device-width" />
+                <script async crossOrigin="anonymous" src="https://unpkg.com/react-scan/dist/auto.global.js" />
             </head>
+            <ReactScan />
             <body className={`${cannonade.className} antialiased `}>
                 <NextIntlClientProvider messages={messages}>
                     <Providers>
