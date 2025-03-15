@@ -20,7 +20,9 @@ export const ClientReviewList = ({
 }) => {
     const { data } = useGetCompanyVideoReviewsQuery();
     const [currentPage, setCurrentPage] = useState(0);
-    const totalPages = data && data.length > 0 ? data[1]?.items.length : 0;
+    const videoItems = [...(data?.[0]?.items || []), ...(data?.[1]?.items || [])];
+    const totalPages = videoItems.length;
+
     const t = useTranslations("Cases");
 
     const handleNext = () => {
@@ -102,9 +104,7 @@ export const ClientReviewList = ({
                     <div className="player-wrapper rounded-md mt-5 md:mt-10">
                         <ReactPlayer
                             fallback={<>Загрузка...</>}
-                            url={
-                                data && data.length > 0 ? data[1]?.items[currentPage].video : ""
-                            }
+                            url={videoItems[currentPage]?.video || ""}
                             width={"100%"}
                             height={"100%"}
                             controls={true}
