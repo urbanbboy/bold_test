@@ -33,7 +33,6 @@ export const ClientReviewList = ({
         setCurrentPage((prev) => (prev + 1) % totalPages);
     };
 
-
     const handlePrev = () => {
         setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
     };
@@ -76,15 +75,15 @@ export const ClientReviewList = ({
                                     <ChevronLeft size={18} />
                                 </Button>
 
-                                <div className={cn(
-                                    "text-sm whitespace-nowrap",
-                                    hasBg ? "text-graphic-light" : ""
-                                )}>
+                                <div
+                                    className={cn(
+                                        "text-sm whitespace-nowrap",
+                                        hasBg ? "text-graphic-light" : ""
+                                    )}
+                                >
                                     {currentPage + 1}{" "}
                                     <span
-                                        className={cn(
-                                            hasBg ? "text-gray2" : "text-graphic-gray"
-                                        )}
+                                        className={cn(hasBg ? "text-gray2" : "text-graphic-gray")}
                                     >
                     / {totalPages}
                                     </span>
