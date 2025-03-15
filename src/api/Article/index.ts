@@ -5,7 +5,7 @@ import { ArticlesResponse } from "./types";
 const articleApi = baseApi.injectEndpoints({
     endpoints(build) {
         return {
-            getArticles: build.query<ArticlesResponse[], void>({
+            getArticles: build.query<ArticlesResponse, void>({
                 query: () => ({
                     url: "/articles/",
                     method: "GET",
