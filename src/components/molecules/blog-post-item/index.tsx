@@ -27,7 +27,7 @@ export const BlogPostItem = ({
                         alt={title}
                         width={390}
                         height={250}
-                        className="rounded-t-lg w-full h-[200px] object-cover transition-transform duration-500 scale-100 group-hover:scale-125 will-change-transform"
+                        className="rounded-t-lg w-full h-[200px] object-cover transition-transform duration-500 scale-100 group-hover:scale-110 will-change-transform"
                     />
                 </CardHeader>
                 <CardContent className="space-y-2 p-3">
