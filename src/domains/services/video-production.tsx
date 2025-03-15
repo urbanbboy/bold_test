@@ -2,7 +2,6 @@
 
 import { InfoCard } from "@/components/organisms/info-card";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
-import { VideoAboutCompany } from "@/components/organisms/video-about-company";
 import { ServicePostList } from "@/components/organisms/service-post-list";
 import { FormLayout } from "@/components/templates/form-layout";
 import { VideoProductionForm } from "@/components/forms/video-production-form";
@@ -14,17 +13,18 @@ import { useAppData } from "@/context/app-context";
 import { useGetVideoTypesQuery } from "@/api/Types";
 import { useTranslations } from "next-intl";
 import { useGetVideoProductionQuery } from "@/api/VideoProduction";
-import { ClientVideoReviewList } from "@/components/organisms/client-video-review-list";
 import { VideoCompany } from "@/components/organisms/video-about-videoproduction";
+import { ClientReviewList } from "@/components/organisms/client-review-list";
+import { useGetCompanyVideoReviewsQuery } from "@/api/Company";
 
 const VideoProductionPage = () => {
     const slug = useSlug()
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
     const { data: video_types } = useGetVideoTypesQuery()
     const { business_types } = useAppData()
-    const {data:videoData } = useGetVideoProductionQuery()
+    const { data: videoData } = useGetVideoProductionQuery()
     const t = useTranslations("ServicePage5");
-
+    const { data: reviews } = useGetCompanyVideoReviewsQuery();
 
     const serviceData = {
         title: t('Services.title'),
@@ -97,7 +97,7 @@ const VideoProductionPage = () => {
             }
         ]
     };
-    
+
 
     return (
         <RequestHandler
@@ -129,7 +129,13 @@ const VideoProductionPage = () => {
                 title={serviceData.title}
                 items={serviceData.items}
             />
-            <ClientVideoReviewList />
+            {reviews &&
+                <ClientReviewList
+                    title={reviews[1].title}
+                    sub_title={reviews[1].sub_title}
+                    reviews={reviews[1].items}
+                />
+            }
             <FormLayout
                 title={"Рассчитайте стоимость вашего Видеопроекта"}
                 nestedForm={

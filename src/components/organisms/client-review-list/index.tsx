@@ -6,7 +6,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Heading } from "@/components/atoms/heading";
 import { SubTitle } from "@/components/atoms/sub-title";
 import { Button } from "@/components/ui/button";
-import { useGetCompanyVideoReviewsQuery } from "@/api/Company";
 import { cn } from "@/lib/utils";
 import CompanyInfoSVG from "@/assets/backgrounds/company_info.svg";
 import { useTranslations } from "next-intl";
@@ -14,14 +13,19 @@ import { useTranslations } from "next-intl";
 export const ClientReviewList = ({
     hasSubTitle,
     hasBg,
+    title,
+    sub_title,
+    reviews,
 }: {
   hasSubTitle?: boolean;
   hasBg?: boolean;
+  title: string;
+  sub_title: string;
+  reviews: Array<{ video: string }>;
 }) => {
-    const { data } = useGetCompanyVideoReviewsQuery();
+    // const { data } = useGetCompanyVideoReviewsQuery();
     const [currentPage, setCurrentPage] = useState(0);
-    const videoItems = [...(data?.[0]?.items || []), ...(data?.[1]?.items || [])];
-    const totalPages = videoItems.length;
+    const totalPages = reviews.length;
 
     const t = useTranslations("Cases");
 
@@ -44,7 +48,7 @@ export const ClientReviewList = ({
                         <div className="space-y-4">
                             {hasSubTitle && (
                                 <SubTitle className="uppercase lg:text-xl">
-                                    {data && data.length > 0 ? data[1]?.sub_title : ""}
+                                    {sub_title || ""}
                                 </SubTitle>
                             )}
                             <Heading
@@ -54,7 +58,7 @@ export const ClientReviewList = ({
                                     hasBg ? "text-graphic-light" : ""
                                 )}
                             >
-                                {data && data.length > 0 ? data[1]?.title : t("video")}
+                                {title || t("video")}
                             </Heading>
                         </div>
                         <div className="flex items-end gap-2">
@@ -104,7 +108,7 @@ export const ClientReviewList = ({
                     <div className="player-wrapper rounded-md mt-5 md:mt-10">
                         <ReactPlayer
                             fallback={<>Загрузка...</>}
-                            url={videoItems[currentPage]?.video || ""}
+                            url={reviews[currentPage]?.video || ""}
                             width={"100%"}
                             height={"100%"}
                             controls={true}

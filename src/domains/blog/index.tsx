@@ -13,6 +13,7 @@ import { useTranslations } from "next-intl";
 import { ClientReviewList } from "@/components/organisms/client-review-list";
 import { BlogPostList } from "@/components/organisms/blog-post-list";
 import { useGetArticlesQuery } from "@/api/Article";
+import { useGetCompanyVideoReviewsQuery } from "@/api/Company";
 
 const BlogPage = () => {
     const t = useTranslations("AboutPage");
@@ -22,6 +23,7 @@ const BlogPage = () => {
     const { data: promotion_types } = useGetPromotionTypesQuery();
     const { data: articles } = useGetArticlesQuery()
     const { business_types } = useAppData();
+    const { data: reviews } = useGetCompanyVideoReviewsQuery();
 
     console.log(data)
     const names = {
@@ -44,7 +46,14 @@ const BlogPage = () => {
                     ]}
                 />
             )}
-            <ClientReviewList hasBg />
+            {reviews &&
+                <ClientReviewList
+                    hasBg
+                    title={reviews[2].title}
+                    sub_title={reviews[2].sub_title}
+                    reviews={reviews[2].items}
+                />
+            }
             {articles && <BlogPostList articles={articles} />}
             <FormLayout
                 title={"Рассчитайте стоимость услуги"}
