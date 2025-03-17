@@ -48,7 +48,7 @@ export const Award = ({
                     <DiplomaBgSVG />
                     <Image
                         className={cn(
-                            "absolute top-10 left-[148px] md:top-32 md:left-[50px] rounded-2xl md:w-[475px] md:h-[303px] w-[303px] h-[215px]",
+                            "absolute top-6 left-[148px] md:top-32 md:left-[50px] rounded-2xl md:w-[475px] md:h-[303px] w-[303px] h-[215px]",
                         )}
                         src={image}
                         sizes='(max-width: 768px) 303px, 475px'
