@@ -30,7 +30,7 @@ export const CompanyPostItem = (props: CompanyPostItemProps) => {
     } = props
 
     return (
-        <Link href={`/cases/${id}`} className="p-4">
+        <Link href={`/cases/${id}`}>
             <div className="relative overflow-hidden rounded-3xl group">
                 <Image
                     src={image}
