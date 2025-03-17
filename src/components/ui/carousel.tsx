@@ -149,15 +149,6 @@ const Carousel = React.forwardRef<
                 <div className="relative">
                     <div
                         ref={ref}
-                        onKeyDownCapture={(e) => {
-                            if (e.key === "ArrowLeft") {
-                                e.preventDefault()
-                                scrollPrev()
-                            } else if (e.key === "ArrowRight") {
-                                e.preventDefault()
-                                scrollNext()
-                            }
-                        }}
                         className={cn("relative", className)}
                         role="region"
                         aria-roledescription="carousel"

@@ -2,15 +2,26 @@
 
 import { SingleSliderItem } from '@/components/molecules/single-slider-item'
 import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { CustomCarouselControls } from '@/components/molecules/custom-controls';
 import { useGetBannersQuery } from '@/api/Banners';
 import { Spinner } from '@/components/atoms/spinner';
 import Fade from 'embla-carousel-fade';
 
+const MemoizedCarouselPrevious = memo(({ className }: { className?: string }) => (
+    <CarouselPrevious iconColor="text-white" variant="carousel" className={className} />
+));
+
+MemoizedCarouselPrevious.displayName = "MemoizedCarouselPrevious";
+
+const MemoizedCarouselNext = memo(({ className }: { className?: string }) => (
+    <CarouselNext iconColor="text-white" variant="carousel" className={className} />
+));
+
+MemoizedCarouselNext.displayName = "MemoizedCarouselNext";
+
 export const SingleSliderList = () => {
     const { data, error, isLoading } = useGetBannersQuery()
-
 
     if (isLoading) {
         return (
@@ -50,8 +61,8 @@ export const SingleSliderList = () => {
                 ))}
             </CarouselContent>
             <CustomCarouselControls />
-            <CarouselPrevious iconColor='text-white' variant={'carousel'} className='hidden md:flex md:left-14 top-[600px] md:top-1/2 mt-5 md:mt-0' />
-            <CarouselNext iconColor='text-white' variant={'carousel'} className='hidden md:flex md:right-14 top-[600px] md:top-1/2 mt-5 md:mt-0' />
+            <MemoizedCarouselPrevious className="hidden md:flex md:left-14 top-[600px] md:top-1/2 mt-5 md:mt-0" />
+            <MemoizedCarouselNext className="hidden md:flex md:right-14 top-[600px] md:top-1/2 mt-5 md:mt-0" />
         </Carousel>
     )
 }

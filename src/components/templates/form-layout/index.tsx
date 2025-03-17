@@ -14,20 +14,36 @@ import { motion } from "framer-motion";
 import { Mail, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { forwardRef, useMemo } from "react";
+import { forwardRef, memo, useMemo } from "react";
 
 interface ContactItem {
-  icon?: React.ReactNode;
-  title: string;
-  contact: string;
-  href?: string;
+    icon?: React.ReactNode;
+    title: string;
+    contact: string;
+    href?: string;
 }
 
 interface FormProps {
-  title?: string;
-  nestedForm: React.ReactNode;
-  isContactPage?: boolean;
+    title?: string;
+    nestedForm: React.ReactNode;
+    isContactPage?: boolean;
 }
+
+const BgImage = memo(() => {
+    return (
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-[800px]">
+            <Image
+                src={"/images/form_bg.png"}
+                alt="form_bg"
+                // fill
+                width={800}
+                height={600}
+            />
+        </div>
+    )
+})
+
+BgImage.displayName = "FormBgImage"
 
 export const FormLayout = forwardRef<HTMLDivElement, FormProps>(
     (
@@ -35,29 +51,29 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(
         ref
     ) => {
         const t = useTranslations("FormLayout");
-        const { feedbackRef, data:info } = useAppData();
+        const { feedbackRef, data: info } = useAppData();
         const refs = mergeRefs(ref, feedbackRef);
         const data: ContactItem[] = useMemo(
             () => [
                 {
                     icon: <Phone />,
                     title: t("companyKGPhone"),
-                    contact:`${info?.phones[0]?.phone}`,
-                    href:`tel:${info?.phones[0]?.phone}`,
+                    contact: `${info?.phones[0]?.phone}`,
+                    href: `tel:${info?.phones[0]?.phone}`,
                 },
                 {
                     title: t("companyUZPhone"),
-                    contact:`${info?.phones[1]?.phone}`,
-                    href:`tel:${info?.phones[1]?.phone}`,
+                    contact: `${info?.phones[1]?.phone}`,
+                    href: `tel:${info?.phones[1]?.phone}`,
                 },
                 {
                     icon: <Mail />,
                     title: t("companyEmail"),
-                    contact:`${info?.emails[0]?.email}`,
-                    href:`tel:${info?.emails[0]?.email}`,
+                    contact: `${info?.emails[0]?.email}`,
+                    href: `tel:${info?.emails[0]?.email}`,
                 },
             ],
-            [t,info]
+            [t, info]
         );
 
         return (
@@ -66,16 +82,7 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(
                 className="relative w-full max-w-[1920px] min-h-screen bg-background-dark flex justify-center items-center"
             >
                 {/* Фоновое изображение */}
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-[800px]">
-                    <Image
-                        src={"/images/form_bg.png"}
-                        alt="form_bg"
-                        // fill
-                        width={800}
-                        height={600}
-                    />
-                </div>
-
+                <BgImage/>
                 {/* Контент */}
                 <motion.div
                     variants={fadeIn("up", "spring", 0.2)}

@@ -33,7 +33,14 @@ export const CompanyPostList = ({ title }: { title?: string }) => {
                         <ButtonWithIcon variant="feature">{t('btn')}</ButtonWithIcon>
                     </Link>
                 </div>
-                <div className="px-0">
+                <motion.div
+                    variants={fadeIn('up', 'spring', 0.2)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={viewportConfig}
+                    transition={staggerTransition(0)}
+                    className="px-0"
+                >
                     <Carousel
                         opts={{
                             align: "start",
@@ -47,19 +54,9 @@ export const CompanyPostList = ({ title }: { title?: string }) => {
                     >
                         <CarouselContent className="w-full gap-4">
                             {data?.items.map((post, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    variants={fadeIn('up', 'spring', idx * 0.2)}
-                                    initial="hidden"
-                                    whileInView="show"
-                                    viewport={viewportConfig}
-                                    transition={staggerTransition(idx)}
-                                >
-                                    <CarouselItem className="md:basis-1/2 xl:basis-1/3">
-                                        <CompanyPostItem {...post} />
-                                    </CarouselItem>
-                                </motion.div>
-
+                                <CarouselItem key={idx} className="md:basis-1/2 xl:basis-1/3">
+                                    <CompanyPostItem {...post} />
+                                </CarouselItem>
                             ))}
                         </CarouselContent>
                     </Carousel>
@@ -77,7 +74,7 @@ export const CompanyPostList = ({ title }: { title?: string }) => {
                             </motion.div>
                         ))}
                     </div>
-                </div>
+                </motion.div>
             </RequestHandler>
         </div>
     )
