@@ -114,9 +114,9 @@ const SmmPage = () => {
             <Advantages isSmm />
             {reviews &&
                 <ClientReviewList
-                    title={reviews[0].title}
-                    sub_title={reviews[0].sub_title}
-                    reviews={reviews[0].items}
+                    title={reviews[1].title}
+                    sub_title={reviews[1].sub_title}
+                    reviews={reviews[1].items}
                 />
             }
             <FormLayout

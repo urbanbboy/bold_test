@@ -16,9 +16,12 @@ import { useTranslations } from "next-intl";
 import { Advantages } from "@/components/organisms/advantages/Advantages";
 import NewsBanner from '@/components/atoms/NewsBanne/NewsBanne';
 import { VideoAboutCompany } from "@/components/organisms/video-about-company";
+import { useGetCompanyVideoReviewsQuery } from "@/api/Company";
+import { ClientReviewList } from "@/components/organisms/client-review-list";
 
 const HomePage = () => {
     const t = useTranslations("HomePage");
+    const { data: reviews } = useGetCompanyVideoReviewsQuery();
 
     return (
         <>
@@ -49,6 +52,13 @@ const HomePage = () => {
             />
             <CompanyPartners />
             <PartnerReviewList />
+            {reviews &&
+                            <ClientReviewList
+                                title={reviews[1].title}
+                                sub_title={reviews[1].sub_title}
+                                reviews={reviews[1].items}
+                            />
+            }
             <FormLayout
                 title={"Получите бесплатную консультацию"}
                 nestedForm={<FeedbackForm />}
