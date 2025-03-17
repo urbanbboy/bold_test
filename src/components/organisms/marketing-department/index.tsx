@@ -31,19 +31,12 @@ export const MarketingDepartment: React.FC<Props> = ({ isPrint }) => {
             />
             <div className="flex flex-col gap-y-16 w-full max-w-[1280px] py-14 md:py-36">
                 <RequestHandler isLoading={isLoading} error={error} data={data}>
-                    <motion.div
-                        variants={fadeIn("left")}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={viewportConfig}
-                        transition={defaultTransition}
-                        className="flex flex-col md:flex-row gap-y-5 gap-x-10"
-                    >
+                    <div className="flex flex-col md:flex-row gap-y-5 gap-x-10">
                         <Heading as="h2">{data?.title}</Heading>
                         <p className="flex items-end text-gray2 text-lg lg:text-2xl">
                             {data?.sub_title}
                         </p>
-                    </motion.div>
+                    </div>
                     {/* Главы */}
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         {data?.chapters.map((chapter, idx) => (

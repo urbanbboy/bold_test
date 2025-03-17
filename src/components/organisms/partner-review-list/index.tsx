@@ -30,16 +30,9 @@ export const PartnerReviewList = () => {
                 <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-10">
                     <div className="flex flex-col justify-center gap-y-5 text-center">
                         <Heading as="h2">{data?.title}</Heading>
-                        <motion.p
-                            variants={textVariant(0.3)}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={viewportConfig}
-                            transition={staggerTransition(0)}
-                            className="text-xl text-gray2"
-                        >
+                        <p className="text-xl text-gray2">
                             {data?.description}
-                        </motion.p>
+                        </p>
                     </div>
                     <motion.div
                         variants={fadeIn("up", "spring", 0.3)}

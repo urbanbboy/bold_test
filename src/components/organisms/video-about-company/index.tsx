@@ -17,7 +17,6 @@ export const VideoAboutCompany = () => {
 
     const onClickVideo = () => {
         setShowVideo(true);
-    
     };
 
     return (

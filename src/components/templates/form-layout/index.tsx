@@ -35,9 +35,9 @@ const BgImage = memo(() => {
             <Image
                 src={"/images/form_bg.png"}
                 alt="form_bg"
-                // fill
                 width={800}
                 height={600}
+                className="w-auto h-auto"
             />
         </div>
     )
@@ -81,15 +81,8 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(
                 ref={refs}
                 className="relative w-full max-w-[1920px] min-h-screen bg-background-dark flex justify-center items-center"
             >
-                {/* Фоновое изображение */}
-                <BgImage/>
-                {/* Контент */}
-                <motion.div
-                    variants={fadeIn("up", "spring", 0.2)}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={viewportConfig}
-                    transition={staggerTransition(0)}
+                <BgImage />
+                <div
                     className={cn(
                         "relative z-10 m-auto max-w-[1328px] flex flex-col lg:flex-row items-center gap-y-3 py-10 lg:py-0 justify-center px-4 text-white",
                         isContactPage ? "pt-24" : ""
@@ -102,35 +95,26 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(
                         >
                             {t("title")}
                         </Heading>
-                        <motion.h3
-                            transition={staggerTransition(0)}
+                        <h3
                             className="text-base md:text-lg text-gray2"
                         >
                             {t("subTitle")}
-                        </motion.h3>
+                        </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
                             {data.map((contact, idx) => (
-                                <motion.div
+                                <FeedbackContactItem
                                     key={idx}
-                                    variants={fadeIn("up", "spring", idx * 0.2)}
-                                    initial="hidden"
-                                    whileInView="show"
-                                    viewport={viewportConfig}
-                                    transition={staggerTransition(idx)}
-                                >
-                                    <FeedbackContactItem
-                                        {...contact}
-                                        idx={idx}
-                                        lastIdx={data.length - 1}
-                                    />
-                                </motion.div>
+                                    {...contact}
+                                    idx={idx}
+                                    lastIdx={data.length - 1}
+                                />
                             ))}
                         </div>
                     </div>
                     <div className="flex-1 w-full lg:w-1/2 max-w-[600px]">
                         {nestedForm}
                     </div>
-                </motion.div>
+                </div>
             </div>
         );
     }

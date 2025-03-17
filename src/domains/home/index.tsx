@@ -1,8 +1,4 @@
-"use client";
-
-import { FloatingWhatsApp } from "react-floating-whatsapp";
 import { Award } from "@/components/organisms/award";
-import { Checkup } from "@/components/organisms/checkup";
 import { CompanyChallengeList } from "@/components/organisms/company-challenge-list";
 import { CompanyFeatures } from "@/components/organisms/company-features";
 import { CompanyPartners } from "@/components/organisms/company-partners";
@@ -12,34 +8,25 @@ import { SingleSliderList } from "@/components/organisms/single-slider-list";
 import { FeedbackForm } from "@/components/forms/feedback-form";
 import { FormLayout } from "@/components/templates/form-layout";
 import { PartnerReviewList } from "@/components/organisms/partner-review-list";
-import { useTranslations } from "next-intl";
 import { Advantages } from "@/components/organisms/advantages/Advantages";
 import NewsBanner from '@/components/atoms/NewsBanne/NewsBanne';
 import { VideoAboutCompany } from "@/components/organisms/video-about-company";
+import { getTranslations } from "next-intl/server";
+// import dynamic from "next/dynamic";
 
-const HomePage = () => {
-    const t = useTranslations("HomePage");
-
+const HomePage = async () => {
+    const t = await getTranslations("HomePage");
+    // const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
     return (
         <>
             <NewsBanner/>
             <SingleSliderList />
-            <FloatingWhatsApp
-                phoneNumber="+996999504444" // Номер телефона в международном формате
-                accountName="Bold Brands International"
-                notificationSound
-                chatMessage="Доброго времени суток, чем могу вам помочь?"
-                statusMessage="Онлайн"
-                darkMode
-                avatar="/bold_logo.svg"
-                placeholder="Введите текст"
-            />
+            {/* <FloatingWhatsapp /> */}
             <MarketingDepartment />
             <VideoAboutCompany />
             <Advantages />
             <CompanyChallengeList />
             <CompanyFeatures />
-            {/* <Checkup /> */}
             <CompanyPostList />
             <Award
                 badgeTitle={t("section2.btn")}

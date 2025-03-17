@@ -6,7 +6,7 @@ import "./globals.css";
 import { Providers } from "@/providers";
 
 import { notFound } from "next/navigation";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
 import { routing } from "../../i18n/routing";
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
 };
 
 type Props = {
-  children: ReactNode;
-  params: Promise<{ locale: string }>;
+    children: ReactNode;
+    params: Promise<{ locale: string }>;
 };
 
 export function generateStaticParams() {
@@ -44,7 +44,6 @@ export default async function LocaleLayout({ children, params }: Props) {
     const { locale } = await params;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     if (!routing.locales.includes(locale as any)) {
-     
         notFound();
     }
 
@@ -59,7 +58,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                     <Providers>
                         <div className="max-w-[1920px] m-auto relative">
                             <Header />
-                            <div className="">{children}</div>
+                            <main>{children}</main>
                             <Footer />
                         </div>
                     </Providers>

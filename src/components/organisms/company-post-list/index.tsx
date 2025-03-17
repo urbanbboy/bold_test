@@ -1,18 +1,15 @@
 'use client';
 
+import Link from 'next/link'
 import { useGetCompanyPostsQuery } from '@/api/Company';
-import TikTok from '@/assets/posts/tiktok.svg'
 import { ButtonWithIcon } from '@/components/atoms/button-with-icon'
 import { Heading } from '@/components/atoms/heading'
 import { RequestHandler } from '@/components/atoms/request-handler';
 import { CompanyPostItem } from '@/components/molecules/company-post-item'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
-import { fadeIn, staggerTransition, viewportConfig } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 import Autoplay from 'embla-carousel-autoplay'
-import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import Link from 'next/link'
 
 
 export const CompanyPostList = ({ title }: { title?: string }) => {
@@ -33,14 +30,7 @@ export const CompanyPostList = ({ title }: { title?: string }) => {
                         <ButtonWithIcon variant="feature">{t('btn')}</ButtonWithIcon>
                     </Link>
                 </div>
-                <motion.div
-                    variants={fadeIn('up', 'spring', 0.2)}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={viewportConfig}
-                    transition={staggerTransition(0)}
-                    className="px-0"
-                >
+                <div className="px-0">
                     <Carousel
                         opts={{
                             align: "end",
@@ -62,24 +52,11 @@ export const CompanyPostList = ({ title }: { title?: string }) => {
                     </Carousel>
                     <div className="flex flex-col md:hidden px-5">
                         {mobilePosts?.map((post, idx) => (
-                            <motion.div
-                                key={idx}
-                                variants={fadeIn('up', 'spring', idx * 0.2)}
-                                initial="hidden"
-                                whileInView="show"
-                                viewport={viewportConfig}
-                                transition={staggerTransition(idx)}
-                            >
-                                <CompanyPostItem {...post} />
-                            </motion.div>
+                            <CompanyPostItem key={idx} {...post} />
                         ))}
                     </div>
-                </motion.div>
+                </div>
             </RequestHandler>
         </div>
     )
 }
-
-
-
-

@@ -1,5 +1,6 @@
 
 import { baseApi } from "../Base";
+import { baseUrl } from "../Base/baseApi";
 import { Banner } from "./types";
 
 const bannersApi = baseApi.injectEndpoints({
@@ -16,3 +17,10 @@ const bannersApi = baseApi.injectEndpoints({
 });
 
 export const { useGetBannersQuery } = bannersApi;
+
+
+export async function getBanners() {
+    const res = await fetch(`${baseUrl}/banners/`, { cache: "force-cache" });
+    if (!res.ok) throw new Error("Failed to fetch home page data");
+    return res.json();
+}

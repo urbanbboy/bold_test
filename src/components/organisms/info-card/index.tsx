@@ -2,8 +2,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import { Heading } from "@/components/atoms/heading"
 import { VideoPlayer } from "@/components/atoms/video-player";
-import { motion } from "framer-motion";
-import { deafultTextAnimation } from "@/lib/motion";
 
 interface InfoCardProps {
     title: string;
@@ -36,12 +34,11 @@ export const InfoCard = ({
                         </Heading>
                         {sub_title && <div className="text-accent uppercase text-base md:text-xl">{sub_title}</div>}
                     </div>
-                    <motion.p
+                    <p
                         className="md:col-span-3 text-gray2 flex items-end text-sm md:text-base"
-                        {...deafultTextAnimation}
                     >
                         {description}
-                    </motion.p>
+                    </p>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 place-items-center">
                     <Card className="w-full rounded-2xl lg:h-[336px] xl:h-[344px]">

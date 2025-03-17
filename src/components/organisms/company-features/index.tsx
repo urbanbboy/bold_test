@@ -11,16 +11,6 @@ import { fadeIn, staggerTransition, viewportConfig } from "@/lib/motion"
 export const CompanyFeatures = () => {
     const { data, isLoading, error } = useGetCompanyServicesQuery()
 
-    const normalizeTitle = (title: string) => title.toLowerCase().trim().replace(/\s+/g, '-');
-
-    const updatedFeatures = data?.items.map((feature) => {
-        return {
-            ...feature,
-            title:normalizeTitle(feature.title),
-            href:feature?.link
-        };
-    });
-
     return (
         <section className="w-full max-w-[1920px] m-auto px-4 sm:px-20 md:px-40 pb-20">
             <RequestHandler
@@ -35,7 +25,7 @@ export const CompanyFeatures = () => {
                     </Heading>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-                    {updatedFeatures?.map((feature, idx) => (
+                    {data?.items.map((feature, idx) => (
                         <motion.div
                             key={idx}
                             variants={fadeIn('up', 'spring', idx * 0.2)}

@@ -53,8 +53,8 @@ export const Award = ({
                         src={image}
                         sizes='(max-width: 768px) 303px, 475px'
                         alt="award"
-                        width={475}
-                        height={338}
+                        width={0}
+                        height={0}
                     />
                 </motion.div>
                 <AwardBg className="absolute z-0" />
