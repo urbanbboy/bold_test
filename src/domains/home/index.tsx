@@ -16,10 +16,12 @@ import { getTranslations } from "next-intl/server";
 
 const HomePage = async () => {
     const t = await getTranslations("HomePage");
+    // const t = useTranslations("HomePage");
+    // const { data: reviews } = useGetCompanyVideoReviewsQuery();
     // const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
     return (
         <>
-            <NewsBanner/>
+            <NewsBanner />
             <SingleSliderList />
             {/* <FloatingWhatsapp /> */}
             <MarketingDepartment />
@@ -36,6 +38,13 @@ const HomePage = async () => {
             />
             <CompanyPartners />
             <PartnerReviewList />
+            {/* {reviews &&
+                <ClientReviewList
+                    title={reviews[1].title}
+                    sub_title={reviews[1].sub_title}
+                    reviews={reviews[1].items}
+                />
+            } */}
             <FormLayout
                 title={"Получите бесплатную консультацию"}
                 nestedForm={<FeedbackForm />}
