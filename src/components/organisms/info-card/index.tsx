@@ -41,7 +41,7 @@ export const InfoCard = ({
                     </p>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 place-items-center">
-                    <Card className="w-full rounded-2xl lg:h-[336px] xl:h-[344px]">
+                    <Card className="w-full rounded-2xl xl:h-full">
                         <CardContent className="h-full flex flex-col justify-center space-y-5 py-10 lg:py-14 px-10">
                             <span className="w-[80px] h-[80px] md:w-[119px] md:h-[118px]">{card_icon}</span>
                             <Heading as="h4">{card_title}</Heading>
@@ -63,7 +63,7 @@ export const InfoCard = ({
                             alt={"Our philosophy"}
                             width={648}
                             height={404}
-                            className="rounded-2xl w-full max-h-[344px]"
+                            className="rounded-2xl w-full h-full"
                         />
                     }
                 </div>
