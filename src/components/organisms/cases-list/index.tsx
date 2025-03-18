@@ -54,8 +54,6 @@ export const CasesList = ({ posts }: CasesListProps) => {
         );
     };
 
-    console.log(selectedTags)
-
     const filteredPosts = useMemo(() => {
         return posts.filter((post) => {
             const matchesSearch = post.title.toLowerCase().includes(debouncedSearchTerm.toLowerCase());
