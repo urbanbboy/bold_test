@@ -4,9 +4,10 @@ import { SingleSliderItem } from '@/components/molecules/single-slider-item'
 import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import { FC, memo } from 'react';
 import { CustomCarouselControls } from '@/components/molecules/custom-controls';
-import { useGetBannersQuery } from '@/api/Banners';
-import { Spinner } from '@/components/atoms/spinner';
+// import { useGetBannersQuery } from '@/api/Banners';
+// import { Spinner } from '@/components/atoms/spinner';
 import Fade from 'embla-carousel-fade';
+import { Banner } from '@/api/Banners/types';
 
 const MemoizedCarouselPrevious = memo(({ className }: { className?: string }) => (
     <CarouselPrevious iconColor="text-white" variant="carousel" className={className} />
@@ -20,24 +21,24 @@ const MemoizedCarouselNext = memo(({ className }: { className?: string }) => (
 
 MemoizedCarouselNext.displayName = "MemoizedCarouselNext";
 
-export const SingleSliderList = () => {
-    const { data, error, isLoading } = useGetBannersQuery()
+const SingleSliderList = ({ banners }: { banners: Banner[] }) => {
+    // const { data, error, isLoading } = useGetBannersQuery()
 
-    if (isLoading) {
-        return (
-            <div className="flex justify-center items-center h-screen">
-                <Spinner />
-            </div>
-        );
-    }
+    // if (isLoading) {
+    //     return (
+    //         <div className="flex justify-center items-center h-screen">
+    //             <Spinner />
+    //         </div>
+    //     );
+    // }
 
-    if (error) {
-        return (
-            <div className="flex justify-center items-center h-screen text-accent">
-                <p>Не удалось загрузить слайдеры. Попробуйте</p>
-            </div>
-        );
-    }
+    // if (error) {
+    //     return (
+    //         <div className="flex justify-center items-center h-screen text-accent">
+    //             <p>Не удалось загрузить слайдеры. Попробуйте</p>
+    //         </div>
+    //     );
+    // }
 
     return (
         <Carousel
@@ -49,7 +50,7 @@ export const SingleSliderList = () => {
             className="w-full h-screen max-w-[1920px]"
         >
             <CarouselContent>
-                {data?.map((slide, index) => (
+                {banners.map((slide, index) => (
                     <SingleSliderItem
                         key={index}
                         title={slide.title}
@@ -66,3 +67,5 @@ export const SingleSliderList = () => {
         </Carousel>
     )
 }
+
+export default SingleSliderList;

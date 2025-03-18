@@ -4,7 +4,6 @@ import { CompanyFeatures } from "@/components/organisms/company-features";
 import { CompanyPartners } from "@/components/organisms/company-partners";
 import { CompanyPostList } from "@/components/organisms/company-post-list";
 import { MarketingDepartment } from "@/components/organisms/marketing-department";
-import { SingleSliderList } from "@/components/organisms/single-slider-list";
 import { FeedbackForm } from "@/components/forms/feedback-form";
 import { FormLayout } from "@/components/templates/form-layout";
 import { PartnerReviewList } from "@/components/organisms/partner-review-list";
@@ -13,15 +12,23 @@ import NewsBanner from '@/components/atoms/NewsBanne/NewsBanne';
 import { VideoAboutCompany } from "@/components/organisms/video-about-company";
 import { getTranslations } from "next-intl/server";
 import dynamic from "next/dynamic";
+import { getBanners } from "@/api/Banners";
+import { getVideoReviews, useGetCompanyVideoReviewsQuery } from "@/api/Company";
+import { ClientReviewList } from "@/components/organisms/client-review-list";
+
+
+const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
+const SingleSliderList = dynamic(() => import("@/components/organisms/single-slider-list"));
 
 const HomePage = async () => {
     const t = await getTranslations("HomePage");
+    const banners = await getBanners();
     // const { data: reviews } = useGetCompanyVideoReviewsQuery();
-    const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
+
     return (
         <>
             <NewsBanner />
-            <SingleSliderList />
+            <SingleSliderList banners={banners} />
             <FloatingWhatsapp />
             <MarketingDepartment />
             <VideoAboutCompany />
