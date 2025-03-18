@@ -45,7 +45,7 @@ const BlogPage = () => {
             )}
             <ClientReviewList
                 hasBg/>
-             <BlogPostList />
+            <BlogPostList />
             <FormLayout
                 title={"Рассчитайте стоимость услуги"}
                 nestedForm={
