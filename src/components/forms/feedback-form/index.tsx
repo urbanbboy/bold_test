@@ -68,7 +68,7 @@ export const FeedbackForm = () => {
 
     return (
         <Card className="bg-[#18181A] border-none md:p-8 rounded-3xl">
-            <CardHeader className="font-bold text-white text-xl md:text-2xl md:mb-8">
+            <CardHeader className="font-bold text-white text-xl md:text-2xl p-5 md:p-0 md:pb-8">
                 {t("title")}
             </CardHeader>
             <CardContent>

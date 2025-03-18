@@ -12,18 +12,17 @@ import { Advantages } from "@/components/organisms/advantages/Advantages";
 import NewsBanner from '@/components/atoms/NewsBanne/NewsBanne';
 import { VideoAboutCompany } from "@/components/organisms/video-about-company";
 import { getTranslations } from "next-intl/server";
-// import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 
 const HomePage = async () => {
     const t = await getTranslations("HomePage");
-    // const t = useTranslations("HomePage");
     // const { data: reviews } = useGetCompanyVideoReviewsQuery();
-    // const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
+    const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
     return (
         <>
             <NewsBanner />
             <SingleSliderList />
-            {/* <FloatingWhatsapp /> */}
+            <FloatingWhatsapp />
             <MarketingDepartment />
             <VideoAboutCompany />
             <Advantages />

@@ -111,7 +111,12 @@ export const FormLayout = forwardRef<HTMLDivElement, FormProps>(
                             ))}
                         </div>
                     </div>
-                    <div className="flex-1 w-full lg:w-1/2 max-w-[600px]">
+                    <div
+                        className={cn(
+                            "flex-1 w-full lg:w-1/2 max-w-[600px]",
+                            isContactPage ? "md:pt-14" : ""
+                        )}
+                    >
                         {nestedForm}
                     </div>
                 </div>
