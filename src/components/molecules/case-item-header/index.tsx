@@ -55,7 +55,7 @@ export const CaseItemHeader = memo(({
                             height={400}
                             className="rounded-2xl object-cover md:min-w-[400px]"
                         />
-                        <div className="absolute top-7 left-6 flex gap-2 flex-wrap">
+                        <div className="absolute top-7 max-w-[500px] left-6 flex gap-2 flex-wrap">
                             {post.tags.map((tag) => (
                                 <Badge variant={'post'} className="text-sm" key={tag.tags}>
                                     {tag.tags}
