@@ -8,10 +8,10 @@ type Props = {
 // is required, even if it's just passing children through.
 export default function RootLayout({ children }: Props) {
     return (
-      <html>
-        <body>
-          {children}
-        </body>
-      </html>
+        <html>
+            <body>
+                {children}
+            </body>
+        </html>
     )
 }
