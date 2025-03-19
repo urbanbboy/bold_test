@@ -66,7 +66,7 @@ export const FooterLinks = () => {
         {
             label: data?.addresses[1].title || "",
             title: data?.addresses[1].address || "",
-            href: 'https://go.2gis.com/YmlbC'
+            href: 'https://go.2gis.com/0MCXh'
         },
         { 
             label: data?.phones[0].title || "",
