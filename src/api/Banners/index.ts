@@ -24,10 +24,10 @@ export async function getBanners(cache: RequestCache = "force-cache") {
         let acceptLanguage = "ru";
 
         if (typeof window !== "undefined") {
-            acceptLanguage = localStorage.getItem("i18nextLng") || "ru";
+            acceptLanguage = localStorage.getItem("locale") || "ru";
         } else {
             const { cookies } = await import("next/headers");
-            const cookieStore = await cookies(); // Нужно дождаться промиса
+            const cookieStore = await cookies();
             acceptLanguage = cookieStore.get("NEXT_LOCALE")?.value || "ru";
         }
 
