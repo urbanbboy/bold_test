@@ -14,12 +14,11 @@ import { getTranslations } from "next-intl/server";
 import { getBanners } from "@/api/Banners";
 import { ClientReviewList } from "@/components/organisms/client-review-list";
 import { BlogPostList } from "@/components/organisms/blog-post-list";
-import FloatingWhatsapp from "@/components/atoms/floating-whatsapp";
-import SingleSliderList from "@/components/organisms/single-slider-list";
+import dynamic from "next/dynamic";
 
 
-// const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
-// const SingleSliderList = dynamic(() => import("@/components/organisms/single-slider-list"));
+const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
+const SingleSliderList = dynamic(() => import("@/components/organisms/single-slider-list"));
 
 const HomePage = async () => {
     const t = await getTranslations("HomePage");
