@@ -126,13 +126,7 @@ const VideoProductionPage = () => {
             />
             <VideoCompany />
             <ServicePostList title={serviceData.title} items={serviceData.items} />
-            {/* {reviews && ( */}
-            <ClientReviewList
-            // title={reviews[0].title}
-            // sub_title={reviews[0].sub_title}
-            // reviews={reviews[0].items}
-            />
-            {/* )} */}
+            <ClientReviewList/>
             <FormLayout
                 title={"Рассчитайте стоимость вашего Видеопроекта"}
                 nestedForm={

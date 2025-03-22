@@ -11,14 +11,15 @@ import { Advantages } from "@/components/organisms/advantages/Advantages";
 import NewsBanner from '@/components/atoms/NewsBanne/NewsBanne';
 import { VideoAboutCompany } from "@/components/organisms/video-about-company";
 import { getTranslations } from "next-intl/server";
-import dynamic from "next/dynamic";
 import { getBanners } from "@/api/Banners";
 import { ClientReviewList } from "@/components/organisms/client-review-list";
 import { BlogPostList } from "@/components/organisms/blog-post-list";
+import FloatingWhatsapp from "@/components/atoms/floating-whatsapp";
+import SingleSliderList from "@/components/organisms/single-slider-list";
 
 
-const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
-const SingleSliderList = dynamic(() => import("@/components/organisms/single-slider-list"));
+// const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
+// const SingleSliderList = dynamic(() => import("@/components/organisms/single-slider-list"));
 
 const HomePage = async () => {
     const t = await getTranslations("HomePage");
@@ -44,7 +45,7 @@ const HomePage = async () => {
             />
             <CompanyPartners />
             <PartnerReviewList />
-            {/* <ClientReviewList/> */}
+            <ClientReviewList />
             <FormLayout
                 title={"Получите бесплатную консультацию"}
                 nestedForm={<FeedbackForm />}
