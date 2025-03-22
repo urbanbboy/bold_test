@@ -68,5 +68,3 @@ export const VideoAboutCompany = () => {
         </div>
     );
 };
-
-export default VideoAboutCompany;

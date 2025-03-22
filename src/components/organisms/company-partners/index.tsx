@@ -8,7 +8,7 @@ import { CompanyPartnerItem } from "@/components/molecules/company-partner-item"
 import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 
-const CompanyPartners = () => {
+export const CompanyPartners = () => {
     const { data, isLoading, error } = useGetCompanyPartnersQuery();
     const [isHydrated, setIsHydrated] = useState(false);
 
@@ -43,5 +43,3 @@ const CompanyPartners = () => {
         </RequestHandler>
     );
 };
-
-export default CompanyPartners;

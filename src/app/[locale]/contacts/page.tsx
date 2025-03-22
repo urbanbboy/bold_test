@@ -1,3 +1,4 @@
+'use client';
 import { FeedbackForm } from "@/components/forms/feedback-form";
 import { FormLayout } from "@/components/templates/form-layout";
 import { Map } from "./Map";

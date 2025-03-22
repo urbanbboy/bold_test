@@ -6,7 +6,6 @@ import styles from "./Advantages.module.scss";
 import Image from "next/image";
 import bgCircle from "../../../../public/advantageCircle.png";
 import { useGetCompanyAchievementsQuery } from "@/api/Company";
-import { CompanyAchievementsResponse } from "@/api/Company/types";
 
 // 🔹 Анимация контейнера (плавное появление всех элементов)
 const containerVariants = {
@@ -33,7 +32,6 @@ const circleVariants = {
 
 interface Smm {
     isSmm?:boolean;
-    data: CompanyAchievementsResponse;
 }
 
 const advantagesStatic = [
@@ -58,9 +56,9 @@ const advantagesStatic = [
     },
 ];
 
-const Advantages: React.FC<Smm> = ({isSmm = false, data}) => {
+export const Advantages: React.FC<Smm> = ({isSmm = false}) => {
 
-    // const {data, isLoading, isError} = useGetCompanyAchievementsQuery()
+    const {data, isLoading, isError} = useGetCompanyAchievementsQuery()
  
     const advantages = isSmm ? advantagesStatic : data?.items; 
 
@@ -150,5 +148,3 @@ const Advantages: React.FC<Smm> = ({isSmm = false, data}) => {
         </motion.div>
     );
 };
-
-export default Advantages;

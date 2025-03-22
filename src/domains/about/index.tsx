@@ -1,32 +1,30 @@
 "use client";
 
 import { CostCalculationForm } from "@/components/forms/cost-calculation-form";
+import { CompanyInfo } from "@/components/organisms/company-info";
+import { CompanyPartners } from "@/components/organisms/company-partners";
+import { CompanyPostList } from "@/components/organisms/company-post-list";
 import { CompanyTeam } from "@/components/organisms/company-team";
 import { InfoCard } from "@/components/organisms/info-card";
+import { PartnerReviewList } from "@/components/organisms/partner-review-list";
 import { FormLayout } from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { OurPhilosophyIcon } from "@/assets/info-card";
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
+import { RequestHandler } from "@/components/atoms/request-handler";
 import { useSlug } from "@/hooks/useSlug";
 
 import { useAppData } from "@/context/app-context";
 import { useGetPromotionTypesQuery } from "@/api/Types";
 import { useTranslations } from "next-intl";
-import { useGetCompanyAchievementsQuery } from "@/api/Company";
-import dynamic from "next/dynamic";
-
-const CompanyPartners = dynamic(() => import("@/components/organisms/company-partners"));
-const PartnerReviewList = dynamic(() => import("@/components/organisms/partner-review-list"));
-const Advantages = dynamic(() => import("@/components/organisms/advantages/Advantages"));
-const CompanyPostList = dynamic(() => import("@/components/organisms/company-post-list"));
+import { Advantages } from "@/components/organisms/advantages/Advantages";
 
 const AboutPage = () => {
     const t = useTranslations("AboutPage");
 
     const slug = useSlug();
-    const { data } = useGetStaticPageBySlugQuery(slug);
+    const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug);
     const { data: promotion_types } = useGetPromotionTypesQuery();
-    const { data: companyAchievements } = useGetCompanyAchievementsQuery()
     const { business_types } = useAppData();
 
     const names = {
@@ -36,7 +34,7 @@ const AboutPage = () => {
     };
 
     return (
-        <>
+        <RequestHandler isLoading={isLoading} error={error} data={data}>
             {data && (
                 <PageTitleLayout
                     bg_image={data.image}
@@ -59,7 +57,7 @@ const AboutPage = () => {
                     <OurPhilosophyIcon className="w-[80px] h-[80px] sm:w-[118px] sm:h-[118px]" />
                 }
             />
-            {companyAchievements && <Advantages data={companyAchievements} />}
+            <Advantages />
             <CompanyTeam />
             <CompanyPostList />
             <CompanyPartners />
@@ -73,7 +71,7 @@ const AboutPage = () => {
                     />
                 }
             />
-        </>
+        </RequestHandler>
     );
 };
 

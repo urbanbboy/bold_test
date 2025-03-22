@@ -1,103 +1,54 @@
 import { Award } from "@/components/organisms/award";
+import { CompanyChallengeList } from "@/components/organisms/company-challenge-list";
+import { CompanyFeatures } from "@/components/organisms/company-features";
+import { CompanyPartners } from "@/components/organisms/company-partners";
+import { CompanyPostList } from "@/components/organisms/company-post-list";
+import { MarketingDepartment } from "@/components/organisms/marketing-department";
 import { FeedbackForm } from "@/components/forms/feedback-form";
 import { FormLayout } from "@/components/templates/form-layout";
+import { PartnerReviewList } from "@/components/organisms/partner-review-list";
+import { Advantages } from "@/components/organisms/advantages/Advantages";
 import NewsBanner from '@/components/atoms/NewsBanne/NewsBanne';
+import { VideoAboutCompany } from "@/components/organisms/video-about-company";
 import { getTranslations } from "next-intl/server";
 import dynamic from "next/dynamic";
 import { getBanners } from "@/api/Banners";
-import { getMarketingDepartment } from "@/api/Marketing";
-import SingleSliderList from "@/components/organisms/single-slider-list";
-import {
-    getCompanyAchievements,
-    getCompanyChallenges,
-    getCompanyServices
-} from "@/api/Company";
-import { Suspense } from "react";
-import { PageLoader } from "@/components/atoms/page-loader";
+import { ClientReviewList } from "@/components/organisms/client-review-list";
+import { BlogPostList } from "@/components/organisms/blog-post-list";
 
 
 const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
-const MarketingDepartment = dynamic(() => import("@/components/organisms/marketing-department"));
-const VideoAboutCompany = dynamic(() => import("@/components/organisms/video-about-company"));
-const Advantages = dynamic(() => import("@/components/organisms/advantages/Advantages"));
-const CompanyChallengeList = dynamic(() => import("@/components/organisms/company-challenge-list"));
-const CompanyFeatures = dynamic(() => import("@/components/organisms/company-features"));
-const CompanyPostList = dynamic(() => import("@/components/organisms/company-post-list"));
-const BlogPostList = dynamic(() => import("@/components/organisms/blog-post-list"));
-const CompanyPartners = dynamic(() => import("@/components/organisms/company-partners"));
-const PartnerReviewList = dynamic(() => import("@/components/organisms/partner-review-list"));
-const ClientReviewList = dynamic(() => import("@/components/organisms/client-review-list"));
+const SingleSliderList = dynamic(() => import("@/components/organisms/single-slider-list"));
 
 const HomePage = async () => {
-    const tPromise = getTranslations("HomePage");
+    const t = await getTranslations("HomePage");
     const banners = await getBanners();
-    const marketingDepartmentDataPromise = getMarketingDepartment();
-    const companyAchievementsPromise = getCompanyAchievements();
-    const companyChallengesPromise = getCompanyChallenges();
-    const companyServicesPromise = getCompanyServices();
 
-    const [
-        t,
-        marketingDepartmentData,
-        companyAchievements,
-        companyChallenges,
-        companyServices
-    ] = await Promise.all([
-        tPromise,
-        marketingDepartmentDataPromise,
-        companyAchievementsPromise,
-        companyChallengesPromise,
-        companyServicesPromise
-    ]);
     return (
         <>
-            <SingleSliderList banners={banners} />
             <FloatingWhatsapp />
             <NewsBanner />
-            <Suspense fallback={<PageLoader />}>
-                <MarketingDepartment data={marketingDepartmentData} />
-            </Suspense>
-            <Suspense fallback={<PageLoader />}>
-                <VideoAboutCompany />
-            </Suspense>
-            <Suspense fallback={<PageLoader />}>
-                <Advantages data={companyAchievements} />
-            </Suspense>
-            <Suspense fallback={<PageLoader />}>
-                <CompanyChallengeList data={companyChallenges} />
-            </Suspense>
-            <Suspense fallback={<PageLoader />}>
-                <CompanyFeatures data={companyServices} />
-            </Suspense>
-            <Suspense fallback={<PageLoader />}>
-                <CompanyPostList />
-            </Suspense>
-            <Suspense fallback={<PageLoader />}>
-                <BlogPostList />
-            </Suspense>
-            <Suspense fallback={<PageLoader />}>
-                <Award
-                    badgeTitle={t("section2.btn")}
-                    title={t("section2.title")}
-                    sub_title={t("section2.description")}
-                    image={"/images/main_page/diploma.jpg"}
-                />
-            </Suspense>
-            <Suspense fallback={<PageLoader />}>
-                <CompanyPartners />
-            </Suspense>
-            <Suspense fallback={<PageLoader />}>
-                <PartnerReviewList />
-            </Suspense>
-            <Suspense fallback={<PageLoader />}>
-                <ClientReviewList />
-            </Suspense>
-            <Suspense fallback={<PageLoader />}>
-                <FormLayout
-                    title={"Получите бесплатную консультацию"}
-                    nestedForm={<FeedbackForm />}
-                />
-            </Suspense>
+            <SingleSliderList banners={banners} />
+            <MarketingDepartment />
+            <VideoAboutCompany />
+            <Advantages />
+            <CompanyChallengeList />
+            <CompanyFeatures />
+            <CompanyPostList />
+            <BlogPostList />
+            <Award
+                badgeTitle={t("section2.btn")}
+                title={t("section2.title")}
+                sub_title={t("section2.description")}
+                image={"/images/main_page/diploma.jpg"}
+            />
+            <CompanyPartners />
+            <PartnerReviewList />
+            {/* <ClientReviewList/> */}
+            <FormLayout
+                title={"Получите бесплатную консультацию"}
+                nestedForm={<FeedbackForm />}
+            />
         </>
     );
 };

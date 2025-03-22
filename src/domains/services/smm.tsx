@@ -1,12 +1,12 @@
 "use client";
 
-import { useGetCompanyAchievementsQuery, useGetCompanyAdvertisingQuery } from "@/api/Company";
+import { useGetCompanyAdvertisingQuery } from "@/api/Company";
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
 import { useGetSocialTypesQuery } from "@/api/Types";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { SmmFeedbackForm } from "@/components/forms/smm-feedback-form";
-import Advantages from "@/components/organisms/advantages/Advantages";
-import ClientReviewList from "@/components/organisms/client-review-list";
+import { Advantages } from "@/components/organisms/advantages/Advantages";
+import { ClientReviewList } from "@/components/organisms/client-review-list";
 import { CompanyServiceCardList } from "@/components/organisms/company-service-card-list";
 import { ServicePostList } from "@/components/organisms/service-post-list";
 import { ServiceStaticCardList } from "@/components/organisms/service-static-card-list";
@@ -74,7 +74,6 @@ const SmmPage = () => {
     const { data: social_types } = useGetSocialTypesQuery();
     // const { data: reviews } = useGetCompanyVideoReviewsQuery();
     const { business_types } = useAppData();
-    const { data: companyAchievements } = useGetCompanyAchievementsQuery()
 
     const smmCreatingAdData = useSmmCreatingAdData();
     const smmTeamMembers = useSmmTeamMembers();
@@ -112,7 +111,7 @@ const SmmPage = () => {
                 items={smmTeamMembers.items}
                 button={t("smm.btn")}
             />
-            {companyAchievements && <Advantages data={companyAchievements} isSmm />}
+            <Advantages isSmm />
             {/* {reviews && */}
             <ClientReviewList
             // title={reviews[1].title}

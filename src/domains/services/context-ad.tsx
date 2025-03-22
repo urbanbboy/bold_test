@@ -3,7 +3,7 @@
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { FeedbackForm } from "@/components/forms/feedback-form";
-import CompanyPostList from "@/components/organisms/company-post-list";
+import { CompanyPostList } from "@/components/organisms/company-post-list";
 import { CompanyServiceCardList } from "@/components/organisms/company-service-card-list";
 import { ServiceStaticCardList } from "@/components/organisms/service-static-card-list";
 import { FormLayout } from "@/components/templates/form-layout";

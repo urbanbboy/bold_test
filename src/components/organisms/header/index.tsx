@@ -91,7 +91,7 @@ export const Header = () => {
                 <MemoizedNavBar />
                 <div className="flex gap-x-0.5 items-center">
                     <LanguageSelect />
-                    <div className="flex lg:hidden">
+                    <div className="flex xl:hidden">
                         <MemoizedMobileMenu />
                     </div>
                 </div>

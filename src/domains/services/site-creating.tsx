@@ -4,7 +4,7 @@ import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
 import { useGetSiteTypesQuery } from "@/api/Types";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { SiteCreatingFeedbackForm } from "@/components/forms/site-creating-form";
-import CompanyPostList from "@/components/organisms/company-post-list";
+import { CompanyPostList } from "@/components/organisms/company-post-list";
 import { ServicePostList } from "@/components/organisms/service-post-list";
 import { FormLayout } from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";

@@ -10,8 +10,8 @@ import { useSlug } from "@/hooks/useSlug";
 import { useAppData } from "@/context/app-context";
 import { useGetPromotionTypesQuery } from "@/api/Types";
 import { useTranslations } from "next-intl";
-import ClientReviewList from "@/components/organisms/client-review-list";
-import BlogPostList from "@/components/organisms/blog-post-list";
+import { ClientReviewList } from "@/components/organisms/client-review-list";
+import { BlogPostList } from "@/components/organisms/blog-post-list";
 import { useGetArticlesQuery } from "@/api/Article";
 
 const BlogPage = () => {
