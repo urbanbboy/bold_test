@@ -5,8 +5,6 @@ import NewsBanner from '@/components/atoms/NewsBanne/NewsBanne';
 import { getTranslations } from "next-intl/server";
 import dynamic from "next/dynamic";
 import { getBanners } from "@/api/Banners";
-import { Suspense } from "react";
-import { Spinner } from "@/components/atoms/spinner";
 import { getMarketingDepartment } from "@/api/Marketing";
 import SingleSliderList from "@/components/organisms/single-slider-list";
 import {
@@ -14,6 +12,8 @@ import {
     getCompanyChallenges,
     getCompanyServices
 } from "@/api/Company";
+import { Suspense } from "react";
+import { PageLoader } from "@/components/atoms/page-loader";
 
 
 const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
@@ -52,25 +52,47 @@ const HomePage = async () => {
     return (
         <>
             <SingleSliderList banners={banners} />
-            <Suspense fallback={<div className="w-full h-screen"><Spinner /></div>}>
-                <FloatingWhatsapp />
-                <NewsBanner />
+            <FloatingWhatsapp />
+            <NewsBanner />
+            <Suspense fallback={<PageLoader />}>
                 <MarketingDepartment data={marketingDepartmentData} />
+            </Suspense>
+            <Suspense fallback={<PageLoader />}>
                 <VideoAboutCompany />
+            </Suspense>
+            <Suspense fallback={<PageLoader />}>
                 <Advantages data={companyAchievements} />
+            </Suspense>
+            <Suspense fallback={<PageLoader />}>
                 <CompanyChallengeList data={companyChallenges} />
+            </Suspense>
+            <Suspense fallback={<PageLoader />}>
                 <CompanyFeatures data={companyServices} />
+            </Suspense>
+            <Suspense fallback={<PageLoader />}>
                 <CompanyPostList />
+            </Suspense>
+            <Suspense fallback={<PageLoader />}>
                 <BlogPostList />
+            </Suspense>
+            <Suspense fallback={<PageLoader />}>
                 <Award
                     badgeTitle={t("section2.btn")}
                     title={t("section2.title")}
                     sub_title={t("section2.description")}
                     image={"/images/main_page/diploma.jpg"}
                 />
+            </Suspense>
+            <Suspense fallback={<PageLoader />}>
                 <CompanyPartners />
+            </Suspense>
+            <Suspense fallback={<PageLoader />}>
                 <PartnerReviewList />
+            </Suspense>
+            <Suspense fallback={<PageLoader />}>
                 <ClientReviewList />
+            </Suspense>
+            <Suspense fallback={<PageLoader />}>
                 <FormLayout
                     title={"Получите бесплатную консультацию"}
                     nestedForm={<FeedbackForm />}

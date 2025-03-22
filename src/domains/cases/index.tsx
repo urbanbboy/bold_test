@@ -2,7 +2,6 @@
 
 import { useGetPostsQuery } from "@/api/Post";
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
-import { PageLoader } from "@/components/atoms/page-loader";
 import { FeedbackForm } from "@/components/forms/feedback-form";
 import { CasesList } from "@/components/organisms/cases-list";
 import { FormLayout } from "@/components/templates/form-layout";
@@ -10,7 +9,6 @@ import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { useSlug } from "@/hooks/useSlug";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
 
 const CompanyPartners = dynamic(() => import("@/components/organisms/company-partners"));
 const PartnerReviewList = dynamic(() => import("@/components/organisms/partner-review-list"));
@@ -48,13 +46,11 @@ const CasesPage = () => {
                     ]}
                 />
             )}
-            <Suspense fallback={<PageLoader />}>
-                <CasesList posts={post_data?.results || []} />
-                <ClientReviewList hasBg />
-                <CompanyPartners />
-                <PartnerReviewList />
-                <FormLayout nestedForm={<FeedbackForm />} />
-            </Suspense>
+            <CasesList posts={post_data?.results || []} />
+            <ClientReviewList hasBg />
+            <CompanyPartners />
+            <PartnerReviewList />
+            <FormLayout nestedForm={<FeedbackForm />} />
         </>
     );
 };

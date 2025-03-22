@@ -14,9 +14,6 @@ import { useGetPromotionTypesQuery } from "@/api/Types";
 import { useTranslations } from "next-intl";
 import { useGetCompanyAchievementsQuery } from "@/api/Company";
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
-import { PageLoader } from "@/components/atoms/page-loader";
-
 
 const CompanyPartners = dynamic(() => import("@/components/organisms/company-partners"));
 const PartnerReviewList = dynamic(() => import("@/components/organisms/partner-review-list"));
@@ -51,34 +48,31 @@ const AboutPage = () => {
                     ]}
                 />
             )}
-            <Suspense fallback={<PageLoader />}>
-                <InfoCard
-                    title={t("BusinessResults.title")}
-                    sub_title={""}
-                    description={t("BusinessResults.description")}
-                    image={"/images/about_page/our_philosophy.webp"}
-                    card_title={t("BusinessResults.subtitle")}
-                    card_description={t("BusinessResults.subdesk")}
-                    card_icon={
-                        <OurPhilosophyIcon className="w-[80px] h-[80px] sm:w-[118px] sm:h-[118px]" />
-                    }
-                />
-                {companyAchievements && <Advantages data={companyAchievements} />}
-                <CompanyTeam />
-                <CompanyPostList />
-                <CompanyPartners />
-                <PartnerReviewList />
-                <FormLayout
-                    title={"Рассчитайте стоимость услуги"}
-                    nestedForm={
-                        <CostCalculationForm
-                            business_types={business_types}
-                            promotion_types={promotion_types || []}
-                        />
-                    }
-                />
-            </Suspense>
-
+            <InfoCard
+                title={t("BusinessResults.title")}
+                sub_title={""}
+                description={t("BusinessResults.description")}
+                image={"/images/about_page/our_philosophy.webp"}
+                card_title={t("BusinessResults.subtitle")}
+                card_description={t("BusinessResults.subdesk")}
+                card_icon={
+                    <OurPhilosophyIcon className="w-[80px] h-[80px] sm:w-[118px] sm:h-[118px]" />
+                }
+            />
+            {companyAchievements && <Advantages data={companyAchievements} />}
+            <CompanyTeam />
+            <CompanyPostList />
+            <CompanyPartners />
+            <PartnerReviewList />
+            <FormLayout
+                title={"Рассчитайте стоимость услуги"}
+                nestedForm={
+                    <CostCalculationForm
+                        business_types={business_types}
+                        promotion_types={promotion_types || []}
+                    />
+                }
+            />
         </>
     );
 };
