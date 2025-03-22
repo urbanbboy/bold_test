@@ -8,7 +8,7 @@ import { SeoHowWeWork5 } from "@/assets/services/seo";
 import { RequestHandler } from "@/components/atoms/request-handler";
 import { CrmFeedbackForm } from "@/components/forms/crm-feedback-form";
 import { Award } from "@/components/organisms/award";
-import { CompanyPostList } from "@/components/organisms/company-post-list";
+import CompanyPostList from "@/components/organisms/company-post-list";
 import { CompanyServiceCardList } from "@/components/organisms/company-service-card-list";
 import { InfoCard } from "@/components/organisms/info-card";
 import { ServicePostList } from "@/components/organisms/service-post-list";

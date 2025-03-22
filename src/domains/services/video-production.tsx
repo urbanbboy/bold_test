@@ -14,7 +14,7 @@ import { useGetVideoTypesQuery } from "@/api/Types";
 import { useTranslations } from "next-intl";
 import { useGetVideoProductionQuery } from "@/api/VideoProduction";
 import { VideoCompany } from "@/components/organisms/video-about-videoproduction";
-import { ClientReviewList } from "@/components/organisms/client-review-list";
+import ClientReviewList from "@/components/organisms/client-review-list";
 // import { useGetCompanyVideoReviewsQuery } from "@/api/Company";
 
 const VideoProductionPage = () => {

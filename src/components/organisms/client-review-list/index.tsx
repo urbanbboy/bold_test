@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReactPlayer from "react-player/lazy";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Heading } from "@/components/atoms/heading";
@@ -12,7 +12,7 @@ import { useTranslations } from "next-intl";
 import { useSlug } from "@/hooks/useSlug";
 import { useGetCompanyVideoReviewsQuery } from "@/api/Company";
 
-export const ClientReviewList = ({
+const ClientReviewList = ({
     hasSubTitle,
     hasBg,
 }: {
@@ -21,6 +21,11 @@ export const ClientReviewList = ({
 }) => {
     const { data: reviews = [] } = useGetCompanyVideoReviewsQuery();
     const [currentPage, setCurrentPage] = useState(0);
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true)
+    }, [])
 
     const pathname = useSlug() as 
     "blog" |
@@ -74,6 +79,8 @@ export const ClientReviewList = ({
     const handlePrev = () => {
         setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
     };
+
+    if(!isMounted) return null;
 
     return (
         <section
@@ -163,3 +170,5 @@ export const ClientReviewList = ({
         </section>
     );
 };
+
+export default ClientReviewList;

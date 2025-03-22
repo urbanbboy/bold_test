@@ -5,12 +5,12 @@ export const viewportConfig = {
 };
 
 export const defaultTransition = {
-    duration: 0.5,
+    duration: 0.2,
     ease: "easeOut",
 };
 
 export const staggerTransition = (index: number, delayStep = 0.2) => ({
-    duration: 0.5,
+    duration: 0.2,
     delay: index * delayStep,
     ease: "easeOut",
 });
@@ -65,7 +65,7 @@ export const fadeIn = (direction = "up", type = "spring", delay = 0, duration = 
 
 
 export const deafultTextAnimation = {
-    variants: textVariant(0.3),
+    variants: textVariant(0.2),
     initial: "hidden",
     whileInView: "show",
     viewport: viewportConfig,

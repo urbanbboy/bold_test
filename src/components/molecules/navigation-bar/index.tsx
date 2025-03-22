@@ -80,7 +80,7 @@ export const NavigationBar = React.memo(() => {
 
     return (
         <NavigationMenu>
-            <NavigationMenuList className={cn("hidden xl:flex")}>
+            <NavigationMenuList className={cn("hidden lg:flex")}>
                 <NavigationMenuItem>
                     <Link
                         href="/home"

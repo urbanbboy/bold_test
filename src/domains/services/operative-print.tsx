@@ -1,6 +1,5 @@
 "use client";
 
-import { CostCalculationForm } from "@/components/forms/cost-calculation-form";
 import { FormLayout } from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
@@ -72,13 +71,7 @@ const PrintPage = () => {
 
     const slug = useSlug();
     const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug);
-    const { data: promotion_types } = useGetPromotionTypesQuery();
-    const {
-        data: cards,
-        isError,
-        isLoading: loading,
-    } = useGetBusinessCardsQuery();
-    const { business_types } = useAppData();
+    const { data: cards } = useGetBusinessCardsQuery();
 
     type Designs = {
         title1: string;
@@ -102,7 +95,6 @@ const PrintPage = () => {
                 <PageTitleLayout
                     bg_image={data?.image}
                     title={data?.title}
-                    //   top_title={designs.title2}
                     sub_title={data?.content}
                     button_text={designs.btn}
                     breadcrumb={[

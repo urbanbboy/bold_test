@@ -1,54 +1,81 @@
 import { Award } from "@/components/organisms/award";
-import { CompanyChallengeList } from "@/components/organisms/company-challenge-list";
-import { CompanyFeatures } from "@/components/organisms/company-features";
-import { CompanyPartners } from "@/components/organisms/company-partners";
-import { CompanyPostList } from "@/components/organisms/company-post-list";
-import { MarketingDepartment } from "@/components/organisms/marketing-department";
 import { FeedbackForm } from "@/components/forms/feedback-form";
 import { FormLayout } from "@/components/templates/form-layout";
-import { PartnerReviewList } from "@/components/organisms/partner-review-list";
-import { Advantages } from "@/components/organisms/advantages/Advantages";
 import NewsBanner from '@/components/atoms/NewsBanne/NewsBanne';
-import { VideoAboutCompany } from "@/components/organisms/video-about-company";
 import { getTranslations } from "next-intl/server";
 import dynamic from "next/dynamic";
 import { getBanners } from "@/api/Banners";
-import { ClientReviewList } from "@/components/organisms/client-review-list";
-import { BlogPostList } from "@/components/organisms/blog-post-list";
+import { Suspense } from "react";
+import { Spinner } from "@/components/atoms/spinner";
+import { getMarketingDepartment } from "@/api/Marketing";
+import SingleSliderList from "@/components/organisms/single-slider-list";
+import {
+    getCompanyAchievements,
+    getCompanyChallenges,
+    getCompanyServices
+} from "@/api/Company";
 
 
 const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
-const SingleSliderList = dynamic(() => import("@/components/organisms/single-slider-list"));
+const MarketingDepartment = dynamic(() => import("@/components/organisms/marketing-department"));
+const VideoAboutCompany = dynamic(() => import("@/components/organisms/video-about-company"));
+const Advantages = dynamic(() => import("@/components/organisms/advantages/Advantages"));
+const CompanyChallengeList = dynamic(() => import("@/components/organisms/company-challenge-list"));
+const CompanyFeatures = dynamic(() => import("@/components/organisms/company-features"));
+const CompanyPostList = dynamic(() => import("@/components/organisms/company-post-list"));
+const BlogPostList = dynamic(() => import("@/components/organisms/blog-post-list"));
+const CompanyPartners = dynamic(() => import("@/components/organisms/company-partners"));
+const PartnerReviewList = dynamic(() => import("@/components/organisms/partner-review-list"));
+const ClientReviewList = dynamic(() => import("@/components/organisms/client-review-list"));
 
 const HomePage = async () => {
-    const t = await getTranslations("HomePage");
+    const tPromise = getTranslations("HomePage");
     const banners = await getBanners();
+    const marketingDepartmentDataPromise = getMarketingDepartment();
+    const companyAchievementsPromise = getCompanyAchievements();
+    const companyChallengesPromise = getCompanyChallenges();
+    const companyServicesPromise = getCompanyServices();
 
+    const [
+        t,
+        marketingDepartmentData,
+        companyAchievements,
+        companyChallenges,
+        companyServices
+    ] = await Promise.all([
+        tPromise,
+        marketingDepartmentDataPromise,
+        companyAchievementsPromise,
+        companyChallengesPromise,
+        companyServicesPromise
+    ]);
     return (
         <>
-            <FloatingWhatsapp />
-            <NewsBanner />
             <SingleSliderList banners={banners} />
-            <MarketingDepartment />
-            <VideoAboutCompany />
-            <Advantages />
-            <CompanyChallengeList />
-            <CompanyFeatures />
-            <CompanyPostList />
-            <BlogPostList />
-            <Award
-                badgeTitle={t("section2.btn")}
-                title={t("section2.title")}
-                sub_title={t("section2.description")}
-                image={"/images/main_page/diploma.jpg"}
-            />
-            <CompanyPartners />
-            <PartnerReviewList />
-            {/* <ClientReviewList/> */}
-            <FormLayout
-                title={"Получите бесплатную консультацию"}
-                nestedForm={<FeedbackForm />}
-            />
+            <Suspense fallback={<div className="w-full h-screen"><Spinner /></div>}>
+                <FloatingWhatsapp />
+                <NewsBanner />
+                <MarketingDepartment data={marketingDepartmentData} />
+                <VideoAboutCompany />
+                <Advantages data={companyAchievements} />
+                <CompanyChallengeList data={companyChallenges} />
+                <CompanyFeatures data={companyServices} />
+                <CompanyPostList />
+                <BlogPostList />
+                <Award
+                    badgeTitle={t("section2.btn")}
+                    title={t("section2.title")}
+                    sub_title={t("section2.description")}
+                    image={"/images/main_page/diploma.jpg"}
+                />
+                <CompanyPartners />
+                <PartnerReviewList />
+                <ClientReviewList />
+                <FormLayout
+                    title={"Получите бесплатную консультацию"}
+                    nestedForm={<FeedbackForm />}
+                />
+            </Suspense>
         </>
     );
 };
