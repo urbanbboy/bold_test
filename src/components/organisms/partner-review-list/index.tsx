@@ -25,7 +25,7 @@ export const PartnerReviewList = () => {
     const { reviewRef } = useAppData();
 
     return (
-        <div ref={reviewRef} className="w-full max-w-[1920px] px-4 md:px-10 mb-24">
+        <div ref={reviewRef} className="w-full max-w-[1920px] px-4 md:px-10 mb-24 lg:px-44">
             <RequestHandler isLoading={isLoading} error={error} data={data}>
                 <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-10">
                     <div className="flex flex-col justify-center gap-y-5 text-center">
