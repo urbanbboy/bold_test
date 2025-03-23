@@ -110,7 +110,7 @@ export const FooterLinks = () => {
                 </div>
             ))}
             {contacts.map((contact, idx) => (
-                <div
+                <ul
                     key={idx}
                     className="flex flex-col gap-y-3"
                 >
@@ -119,7 +119,7 @@ export const FooterLinks = () => {
                         title={contact.title}
                         href={contact.href}
                     />
-                </div>
+                </ul>
 
             ))}
         </div>
