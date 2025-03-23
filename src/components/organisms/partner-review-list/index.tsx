@@ -12,13 +12,6 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import { useAppData } from "@/context/app-context";
-import {
-    fadeIn,
-    viewportConfig,
-    staggerTransition,
-    textVariant,
-} from "@/lib/motion";
-import { motion } from "framer-motion";
 
 export const PartnerReviewList = () => {
     const { data, isLoading, error } = useGetPartnersReviewsQuery();
@@ -34,14 +27,7 @@ export const PartnerReviewList = () => {
                             {data?.description}
                         </p>
                     </div>
-                    <motion.div
-                        variants={fadeIn("up", "spring", 0.3)}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={viewportConfig}
-                        transition={staggerTransition(0)}
-                        className="flex items-center justify-center"
-                    >
+                    <div className="flex items-center justify-center">
                         <Carousel className="w-[350px] md:w-[480px] max-w-md">
                             <CarouselContent className="">
                                 {data?.items.map((review, idx) => (
@@ -66,7 +52,7 @@ export const PartnerReviewList = () => {
                                 />
                             </div>
                         </Carousel>
-                    </motion.div>
+                    </div>
                 </div>
             </RequestHandler>
         </div>
