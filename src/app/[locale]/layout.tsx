@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
@@ -74,6 +75,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                         </div>
                     </Providers>
                 </NextIntlClientProvider>
+                <SpeedInsights />
             </body>
         </html>
     );
