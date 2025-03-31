@@ -9,8 +9,6 @@ import {
 } from "@/components/ui/breadcrumb";
 import { BreadcrumbProps } from "./type";
 import { Heading } from "@/components/atoms/heading";
-import { motion } from "framer-motion";
-import { fadeIn, viewportConfig, staggerTransition } from "@/lib/motion";
 import { useAppData } from "@/context/app-context";
 import Image from "next/image";
 
@@ -41,13 +39,12 @@ export const PageTitleLayout = ({
                 <Image
                     src={bg_image}
                     alt={"BG_IMAGE"}
-                    priority                    
                     fill
                     sizes="100vw"
-                    style={{
-                        objectFit: 'cover'
-                    }}
-                    quality={100}
+                    className="object-cover"
+                    quality={70}
+                    blurDataURL={'/image.webp'}
+                    placeholder="blur"
                 />
             }
             <div
@@ -58,13 +55,8 @@ export const PageTitleLayout = ({
                 <Breadcrumb>
                     <BreadcrumbList>
                         {breadcrumb?.map((item, idx) => (
-                            <motion.div
+                            <div
                                 key={idx}
-                                variants={fadeIn("up", "spring", idx * 0.2)}
-                                initial="hidden"
-                                whileInView="show"
-                                viewport={viewportConfig}
-                                transition={staggerTransition(idx)}
                                 className="flex items-center gap-3"
                             >
                                 <BreadcrumbItem>
@@ -77,7 +69,7 @@ export const PageTitleLayout = ({
                                     )}
                                 </BreadcrumbItem>
                                 {idx !== breadcrumb.length - 1 && <BreadcrumbSeparator />}
-                            </motion.div>
+                            </div>
                         ))}
                     </BreadcrumbList>
                 </Breadcrumb>

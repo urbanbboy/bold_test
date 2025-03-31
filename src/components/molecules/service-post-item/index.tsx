@@ -50,9 +50,9 @@ export const ServicePostItem = memo(
                             height={340}
                             className="rounded-3xl border object-cover w-screen h-[190px] md:h-[339px]"
                             quality={100}
+                            loading="lazy"
                         />
                     )}
-
                     {video_link && (
                         <div className="w-full h-full relative">
                             <VideoPlayer video={video_link} />
