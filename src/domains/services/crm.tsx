@@ -61,7 +61,7 @@ const CrmPage = () => {
         title: t("integrationServices.titleIntegrationServices"),
         items: [
             {
-                image: "/images/services/crm/crm1.webp",
+                image: "/images/services/crm/crmone.webp",
                 image_right: false,
                 title: t("integrationServices.servicesList.0.serviceTitle"),
                 description: t("integrationServices.servicesList.0.serviceDescription"),
@@ -71,7 +71,7 @@ const CrmPage = () => {
                 ],
             },
             {
-                image: "/images/services/crm/crm2.webp",
+                image: "/images/services/crm/crmtwo.webp",
                 image_right: true,
                 title: t("integrationServices.servicesList.1.serviceTitle"),
                 description: t("integrationServices.servicesList.1.serviceDescription"),
@@ -81,7 +81,7 @@ const CrmPage = () => {
                 ],
             },
             {
-                image: "/images/services/crm/crm3.webp",
+                image: "/images/services/crm/crmthree.webp",
                 image_right: false,
                 title: t("integrationServices.servicesList.2.serviceTitle"),
                 description: t("integrationServices.servicesList.2.serviceDescription"),
@@ -91,7 +91,7 @@ const CrmPage = () => {
                 ],
             },
             {
-                image: "/images/services/crm/crm4.webp",
+                image: "/images/services/crm/crmfourth.webp",
                 image_right: true,
                 title: t("integrationServices.servicesList.3.serviceTitle"),
                 description: t("integrationServices.servicesList.3.serviceDescription"),
@@ -133,7 +133,7 @@ const CrmPage = () => {
                 card_title={t("integrationApproach.teamTraining.titleTeamTraining")}
                 card_description={t("integrationApproach.teamTraining.descriptionTeamTraining")}
                 card_icon={<CrmIcon />}
-                image={'/images/services/marketing-support/marketing_infocard.webp'}
+                image={'/images/services/marketing-support/marketing.webp'}
             />
             <Award
                 badgeTitle={t("PartersBlog.titleParters")}
