@@ -13,13 +13,13 @@ const CompanyChallengeList: FC<Props> = ({ data }) => {
 
     return (
         <section className="bg-background-gray">
-            <div className="max-w-[1328px] m-auto relative py-4 md:py-16 lg:py-28 z-10 overflow-hidden">
+            <div className="max-w-[1280px] m-auto relative py-4 md:py-16 lg:py-28 z-10 overflow-hidden">
                 <RequestHandler
                     data={data}
                 >
                     <Heading as="h2" className="text-center">{data.title}</Heading>
                     <div className="relative">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-y-12 mt-5 lg:mt-14">
+                        <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-y-12 mt-5 lg:mt-14">
                             {data.items.map((challenge, idx) => (
                                 <ChallengeCard
                                     key={challenge.title}

@@ -8,7 +8,7 @@ import { CompanyServiceCardList } from "@/components/organisms/company-service-c
 import { Faq } from "@/components/organisms/faq";
 import { ServicePostList } from "@/components/organisms/service-post-list";
 import { ServiceStaticCardList } from "@/components/organisms/service-static-card-list";
-import { FormLayout } from "@/components/templates/form-layout";
+import FormLayout from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { useSeoData, useSeoPostsData, useSeoCardsData } from "@/consts/data";
 import { Banner } from "@/consts/types";

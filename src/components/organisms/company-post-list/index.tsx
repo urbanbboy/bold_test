@@ -12,7 +12,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import { useTranslations } from 'next-intl';
 
 
-export const CompanyPostList = ({ title }: { title?: string }) => {
+const CompanyPostList = ({ title }: { title?: string }) => {
     const { data, isLoading, error } = useGetCompanyPostsQuery()
     const mobilePosts = data?.items.slice(0, 3)
     const t = useTranslations("ThreePost");
@@ -60,3 +60,5 @@ export const CompanyPostList = ({ title }: { title?: string }) => {
         </div>
     )
 }
+
+export default CompanyPostList;

@@ -3,7 +3,7 @@
 import { InfoCard } from "@/components/organisms/info-card";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { ServicePostList } from "@/components/organisms/service-post-list";
-import { FormLayout } from "@/components/templates/form-layout";
+import FormLayout from "@/components/templates/form-layout";
 import { VideoProductionForm } from "@/components/forms/video-production-form";
 import { VideoProductionIcon } from "@/assets/info-card";
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
@@ -14,7 +14,7 @@ import { useGetVideoTypesQuery } from "@/api/Types";
 import { useTranslations } from "next-intl";
 import { useGetVideoProductionQuery } from "@/api/VideoProduction";
 import { VideoCompany } from "@/components/organisms/video-about-videoproduction";
-import { ClientReviewList } from "@/components/organisms/client-review-list";
+import ClientReviewList from "@/components/organisms/client-review-list";
 // import { useGetCompanyVideoReviewsQuery } from "@/api/Company";
 
 const VideoProductionPage = () => {

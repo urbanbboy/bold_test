@@ -1,13 +1,12 @@
 "use client";
 
 import { CostCalculationForm } from "@/components/forms/cost-calculation-form";
-import { CompanyInfo } from "@/components/organisms/company-info";
-import { CompanyPartners } from "@/components/organisms/company-partners";
-import { CompanyPostList } from "@/components/organisms/company-post-list";
+import CompanyPartners from "@/components/organisms/company-partners";
+import CompanyPostList from "@/components/organisms/company-post-list";
 import { CompanyTeam } from "@/components/organisms/company-team";
 import { InfoCard } from "@/components/organisms/info-card";
-import { PartnerReviewList } from "@/components/organisms/partner-review-list";
-import { FormLayout } from "@/components/templates/form-layout";
+import PartnerReviewList from "@/components/organisms/partner-review-list";
+import FormLayout from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { OurPhilosophyIcon } from "@/assets/info-card";
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
@@ -17,7 +16,7 @@ import { useSlug } from "@/hooks/useSlug";
 import { useAppData } from "@/context/app-context";
 import { useGetPromotionTypesQuery } from "@/api/Types";
 import { useTranslations } from "next-intl";
-import { Advantages } from "@/components/organisms/advantages/Advantages";
+import Advantages from "@/components/organisms/advantages/Advantages";
 
 const AboutPage = () => {
     const t = useTranslations("AboutPage");

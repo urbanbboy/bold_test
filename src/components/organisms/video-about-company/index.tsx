@@ -9,7 +9,7 @@ import { useAppData } from "@/context/app-context";
 import ReactPlayer from "react-player";
 import { VideoLoader } from "@/components/atoms/video-loader";
 
-export const VideoAboutCompany = () => {
+const VideoAboutCompany = () => {
     const { data } = useAppData();
     const [showVideo, setShowVideo] = useState(false);
     const [play, setPlay] = useState(false);
@@ -58,3 +58,5 @@ export const VideoAboutCompany = () => {
         </div>
     );
 };
+
+export default VideoAboutCompany;

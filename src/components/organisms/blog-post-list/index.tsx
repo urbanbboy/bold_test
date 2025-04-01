@@ -8,7 +8,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
 
-export const BlogPostList = () => {
+const BlogPostList = () => {
     const t = useTranslations("BlogPage")
     const { data: articles } = useGetArticlesQuery()
     const pageSize = 12;
@@ -67,3 +67,5 @@ export const BlogPostList = () => {
         </div>
     )
 }
+
+export default BlogPostList;

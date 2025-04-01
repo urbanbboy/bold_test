@@ -14,7 +14,7 @@ interface AwardProps {
     image: string;
 }
 
-export const Award = ({
+const Award = ({
     badgeTitle,
     title,
     sub_title,
@@ -49,3 +49,5 @@ export const Award = ({
         </div>
     )
 }
+
+export default Award;

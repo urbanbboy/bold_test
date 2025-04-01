@@ -13,17 +13,17 @@ import {
 } from "@/components/ui/carousel";
 import { useAppData } from "@/context/app-context";
 
-export const PartnerReviewList = () => {
+const PartnerReviewList = () => {
     const { data, isLoading, error } = useGetPartnersReviewsQuery();
     const { reviewRef } = useAppData();
 
     return (
-        <div ref={reviewRef} className="w-full max-w-[1920px] mb-24">
+        <div ref={reviewRef} className="w-full max-w-[1920px] mb-24 px-5">
             <RequestHandler isLoading={isLoading} error={error} data={data}>
-                <div className="grid grid-cols-1 max-sm:px-2 min-md:p-0 lg:px-0 xl:pl-4 xl:grid-cols-2 place-items-center gap-10 max-w-[1328px] place-self-center">
-                    <div className="flex flex-col justify-center gap-y-5 text-center">
-                        <Heading as="h2">{data?.title}</Heading>
-                        <p className="text-xl text-gray2 max-w-[600px] m-auto">
+                <div className="grid grid-cols-1 max-sm:px-2 min-md:p-0 lg:px-0 xl:pl-4 xl:grid-cols-2 place-items-center gap-8 max-w-[1328px] place-self-center">
+                    <div className="flex flex-col justify-center gap-y-5 text-center max-w-[600px]">
+                        <Heading as="h2" className="lg:text-4xl">{data?.title}</Heading>
+                        <p className="text-xl text-gray2 m-auto">
                             {data?.description}
                         </p>
                     </div>
@@ -58,3 +58,5 @@ export const PartnerReviewList = () => {
         </div>
     );
 };
+
+export default PartnerReviewList;

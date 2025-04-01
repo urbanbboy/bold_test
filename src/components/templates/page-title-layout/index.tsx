@@ -38,13 +38,17 @@ export const PageTitleLayout = ({
             {bg_image &&
                 <Image
                     src={bg_image}
-                    alt={"BG_IMAGE"}
+                    alt="BG_IMAGE"
+                    priority
+                    fetchPriority="high"
                     fill
                     sizes="100vw"
                     className="object-cover"
-                    quality={70}
-                    blurDataURL={'/image.webp'}
+                    quality={75}
+                    loading="eager"
+                    decoding="async"
                     placeholder="blur"
+                    blurDataURL="../../../../public/image.webp"
                 />
             }
             <div

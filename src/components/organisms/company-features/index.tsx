@@ -8,7 +8,7 @@ import { RequestHandler } from "@/components/atoms/request-handler"
 import { useEffect, useState } from "react";
 import { Spinner } from "@/components/atoms/spinner";
 
-export const CompanyFeatures = () => {
+const CompanyFeatures = () => {
     const { data, isLoading, error } = useGetCompanyServicesQuery()
     const [isHydrated, setIsHydrated] = useState(false);
 
@@ -19,7 +19,7 @@ export const CompanyFeatures = () => {
     if (!isHydrated) return <div className="flex justify-center items-center h-screen"><Spinner /></div>;
 
     return (
-        <section className="w-full max-w-[1920px] m-auto px-4 sm:px-20 md:px-40 pb-20">
+        <section className="w-full max-w-[1320px] m-auto px-5 pb-20">
             <RequestHandler
                 isLoading={isLoading}
                 error={error}
@@ -31,7 +31,7 @@ export const CompanyFeatures = () => {
                         {data?.title}
                     </Heading>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                     {data?.items.map((feature) => (
                         <CompanyFeatureItem
                             key={feature.title}
@@ -43,3 +43,5 @@ export const CompanyFeatures = () => {
         </section>
     )
 }
+
+export default CompanyFeatures;

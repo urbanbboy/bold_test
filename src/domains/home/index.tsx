@@ -1,26 +1,25 @@
 import dynamic from "next/dynamic";
 import { getTranslations } from "next-intl/server";
-import { Award } from "@/components/organisms/award";
-import { CompanyFeatures } from "@/components/organisms/company-features";
-import { CompanyPartners } from "@/components/organisms/company-partners";
-import { CompanyPostList } from "@/components/organisms/company-post-list";
-import { FeedbackForm } from "@/components/forms/feedback-form";
-import { FormLayout } from "@/components/templates/form-layout";
-import { PartnerReviewList } from "@/components/organisms/partner-review-list";
-import { Advantages } from "@/components/organisms/advantages/Advantages";
-import NewsBanner from '@/components/atoms/NewsBanne/NewsBanne';
-import { VideoAboutCompany } from "@/components/organisms/video-about-company";
 import { getBanners } from "@/api/Banners";
-import { ClientReviewList } from "@/components/organisms/client-review-list";
-import { BlogPostList } from "@/components/organisms/blog-post-list";
 import SingleSliderList from "@/components/organisms/single-slider-list";
 import { getMarketingDepartment } from "@/api/Marketing";
 import { getCompanyChallenges } from "@/api/Company";
-import { useAppData } from "@/context/app-context";
 
 const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
+const NewsBanner = dynamic(() => import("@/components/atoms/NewsBanne/NewsBanne"));
 const MarketingDepartment = dynamic(() => import("@/components/organisms/marketing-department"));
+const VideoAboutCompany = dynamic(() => import("@/components/organisms/video-about-company"));
+const Advantages = dynamic(() => import("@/components/organisms/advantages/Advantages"));
 const CompanyChallengeList = dynamic(() => import("@/components/organisms/company-challenge-list"));
+const CompanyFeatures = dynamic(() => import("@/components/organisms/company-features"));
+const CompanyPostList = dynamic(() => import("@/components/organisms/company-post-list"));
+const BlogPostList = dynamic(() => import("@/components/organisms/blog-post-list"));
+const Award = dynamic(() => import("@/components/organisms/award"));
+const CompanyPartners = dynamic(() => import("@/components/organisms/company-partners"));
+const PartnerReviewList = dynamic(() => import("@/components/organisms/partner-review-list"));
+const ClientReviewList = dynamic(() => import("@/components/organisms/client-review-list"));
+const FormLayout = dynamic(() => import("@/components/templates/form-layout"));
+const FeedbackForm = dynamic(() => import("@/components/forms/feedback-form"));
 
 const HomePage = async () => {
     const t = await getTranslations("HomePage");
@@ -31,7 +30,7 @@ const HomePage = async () => {
     return (
         <>
             <FloatingWhatsapp />
-            <NewsBanner />
+            <NewsBanner banners={banners} />
             <SingleSliderList banners={banners} />
             <MarketingDepartment data={MarketingDepartmentData} />
             <VideoAboutCompany/>

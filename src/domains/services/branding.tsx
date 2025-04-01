@@ -1,13 +1,13 @@
 "use client";
 
-import { CompanyPostList } from "@/components/organisms/company-post-list";
+import CompanyPostList from "@/components/organisms/company-post-list";
 import { CompanyServiceCardList } from "@/components/organisms/company-service-card-list";
 import { InfoCard } from "@/components/organisms/info-card";
 import {
     ServicePostList,
 } from "@/components/organisms/service-post-list";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
-import { FormLayout } from "@/components/templates/form-layout";
+import FormLayout from "@/components/templates/form-layout";
 import { BrandingFeedbackForm } from "@/components/forms/branding-feedback-form";
 import { BrandingIcon } from "@/assets/info-card";
 import { useSlug } from "@/hooks/useSlug";

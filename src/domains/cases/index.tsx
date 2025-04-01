@@ -3,12 +3,12 @@
 import { useGetPostsQuery } from "@/api/Post";
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
 import { RequestHandler } from "@/components/atoms/request-handler";
-import { FeedbackForm } from "@/components/forms/feedback-form";
+import FeedbackForm from "@/components/forms/feedback-form";
 import { CasesList } from "@/components/organisms/cases-list";
-import { ClientReviewList } from "@/components/organisms/client-review-list";
-import { CompanyPartners } from "@/components/organisms/company-partners";
-import { PartnerReviewList } from "@/components/organisms/partner-review-list";
-import { FormLayout } from "@/components/templates/form-layout";
+import ClientReviewList from "@/components/organisms/client-review-list";
+import CompanyPartners from "@/components/organisms/company-partners";
+import PartnerReviewList from "@/components/organisms/partner-review-list";
+import FormLayout from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { useSlug } from "@/hooks/useSlug";
 import { useTranslations } from "next-intl";

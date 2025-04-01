@@ -2,13 +2,13 @@
 
 import { useGetPostByIdQuery } from "@/api/Post";
 import { RequestHandler } from "@/components/atoms/request-handler";
-import { FeedbackForm } from "@/components/forms/feedback-form";
+import FeedbackForm from "@/components/forms/feedback-form";
 import { CaseItemHeader } from "@/components/molecules/case-item-header";
 import { CaseImages } from "@/components/organisms/case-images";
 import { CaseStats } from "@/components/organisms/case-stats";
 import { CaseTaskList } from "@/components/organisms/case-task-list";
-import { CompanyPostList } from "@/components/organisms/company-post-list";
-import { FormLayout } from "@/components/templates/form-layout";
+import CompanyPostList from "@/components/organisms/company-post-list";
+import FormLayout from "@/components/templates/form-layout";
 import { Separator } from "@/components/ui/separator";
 import { useParams } from "next/navigation";
 

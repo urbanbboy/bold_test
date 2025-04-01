@@ -1,7 +1,7 @@
 "use client";
 
 import { CostCalculationForm } from "@/components/forms/cost-calculation-form";
-import { FormLayout } from "@/components/templates/form-layout";
+import FormLayout from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
 import { RequestHandler } from "@/components/atoms/request-handler";
@@ -18,7 +18,7 @@ import { DesignDepartment } from "@/components/organisms/design-department";
 import { ContextAd5Icon } from "@/assets/services/context-ad";
 import { ServiceBrandingIcon1, ServiceBrandingIcon3 } from "@/assets/services/branding";
 import { SeoHowWeWork4, SeoHowWeWork5 } from "@/assets/services/seo";
-import { FeedbackForm } from "@/components/forms/feedback-form";
+import FeedbackForm from "@/components/forms/feedback-form";
 
 export interface ParallaxItem {
     src: string;
