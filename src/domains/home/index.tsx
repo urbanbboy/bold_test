@@ -5,7 +5,6 @@ import SingleSliderList from "@/components/organisms/single-slider-list";
 import { getMarketingDepartment } from "@/api/Marketing";
 import { getCompanyChallenges } from "@/api/Company";
 
-const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
 const NewsBanner = dynamic(() => import("@/components/atoms/NewsBanne/NewsBanne"));
 const MarketingDepartment = dynamic(() => import("@/components/organisms/marketing-department"));
 const VideoAboutCompany = dynamic(() => import("@/components/organisms/video-about-company"));
@@ -29,7 +28,6 @@ const HomePage = async () => {
 
     return (
         <>
-            <FloatingWhatsapp />
             <NewsBanner banners={banners} />
             <SingleSliderList banners={banners} />
             <MarketingDepartment data={MarketingDepartmentData} />

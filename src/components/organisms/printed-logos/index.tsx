@@ -3,8 +3,7 @@
 import { useGetPrintingServicesQuery } from "@/api/ServiceOffering";
 import { Heading } from "@/components/atoms/heading";
 import { RequestHandler } from "@/components/atoms/request-handler";
-import { CompanyPartnerItem } from "@/components/molecules/company-partner-item";
-import { PrintedLogoItem } from "@/components/molecules/printed-logo-item";
+import { InfiniteCarouselItem } from "@/components/molecules/infinite-carousel-item";
 import Marquee from "react-fast-marquee";
 
 export const PrintedLogos = () => {
@@ -22,9 +21,9 @@ export const PrintedLogos = () => {
                 <Marquee>
                     {[...(data?.items || []), ...(data?.items || [])].map(
                         (logo, idx) => (
-                            <PrintedLogoItem
+                            <InfiniteCarouselItem
                                 key={idx}
-                                logo={logo.logo}
+                                image={logo.logo}
                             />
                         )
                     )}

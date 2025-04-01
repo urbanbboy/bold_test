@@ -12,6 +12,8 @@ import { Providers } from "@/providers";
 import Script from "next/script";
 
 import { routing } from "../../i18n/routing";
+import dynamic from "next/dynamic";
+const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
 
 const cannonade = localFont({
     src: [
@@ -52,6 +54,8 @@ type Props = {
 export function generateStaticParams() {
     return routing.locales.map((locale) => ({ locale }));
 }
+
+
 
 export default async function LocaleLayout({ children, params }: Props) {
     const { locale } = await params;
@@ -184,6 +188,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                     <Providers>
                         <div className="max-w-[1920px] m-auto relative">
                             <Header />
+                            <FloatingWhatsapp />
                             <main>{children}</main>
                             <Footer />
                         </div>
