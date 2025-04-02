@@ -141,3 +141,7 @@ export async function getVideoReviews(cache: RequestCache = "force-cache") {
 export async function getCompanyChallenges() {
     return fetchData<CompanyChallengesResponse>("/company-challenges/")
 }
+
+export async function getCompanyAdvantages() {
+    return fetchData<CompanyAchievementsResponse>("/company-achievements/")
+}

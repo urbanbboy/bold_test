@@ -1,10 +1,8 @@
-"use client";
-
 import React from "react";
 import styles from "./Advantages.module.scss";
 import Image from "next/image";
 import bgCircle from "../../../../public/advantageCircle.png";
-import { useGetCompanyAchievementsQuery } from "@/api/Company";
+import { getCompanyAdvantages, useGetCompanyAchievementsQuery } from "@/api/Company";
 
 interface Smm {
     isSmm?: boolean;
@@ -32,9 +30,9 @@ const advantagesStatic = [
     },
 ];
 
-const Advantages: React.FC<Smm> = ({ isSmm = false }) => {
+export default async function Advantages({ isSmm = false }: Smm) {
 
-    const { data } = useGetCompanyAchievementsQuery()
+    const data = await getCompanyAdvantages()
     const advantages = isSmm ? advantagesStatic : data?.items;
 
     return (
@@ -107,5 +105,3 @@ const Advantages: React.FC<Smm> = ({ isSmm = false }) => {
         </div>
     );
 };
-
-export default Advantages;

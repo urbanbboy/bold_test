@@ -68,7 +68,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     return (
         <html lang={locale}>
             <head>
-                <Script id="yandex-metrika-script" strategy="afterInteractive">
+                <Script id="yandex-metrika-script" strategy="lazyOnload">
                     {`
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
@@ -86,7 +86,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     });
   `}
                 </Script>
-                <Script id="fb-pixel-script" strategy="afterInteractive">
+                <Script id="fb-pixel-script" strategy="lazyOnload">
                     {`
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -102,10 +102,10 @@ export default async function LocaleLayout({ children, params }: Props) {
                 </Script>
                 <Script
                     src="https://www.googletagmanager.com/gtag/js?id=G-JFDR5HL958"
-                    strategy="afterInteractive"
+                    strategy="lazyOnload"
                     async
                 />
-                <Script id="gtag-inline-script" strategy="afterInteractive">
+                <Script id="gtag-inline-script" strategy="lazyOnload">
                     {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -117,7 +117,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
                 <Script
                     id="yandex-metrika"
-                    strategy="afterInteractive"
+                    strategy="lazyOnload"
                     dangerouslySetInnerHTML={{
                         __html: `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
             m[i].l=1*new Date();
@@ -140,7 +140,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                 {/* Метрика Facebook Pixel */}
                 <Script
                     id="facebook-pixel"
-                    strategy="afterInteractive"
+                    strategy="lazyOnload"
                     dangerouslySetInnerHTML={{
                         __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod ?
             n.callMethod.apply(n, arguments) : n.queue.push(arguments)};
