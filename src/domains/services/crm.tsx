@@ -1,11 +1,8 @@
-'use client';
-
-import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
-import { useGetTaskTypesQuery } from "@/api/Types";
+import { getStaticPageBySlug, useGetStaticPageBySlugQuery } from "@/api/StaticPages";
+import { getTaskTypes, useGetTaskTypesQuery } from "@/api/Types";
 import { CrmIcon } from "@/assets/info-card";
 import { ServiceCrmIcon1, ServiceCrmIcon2, ServiceCrmIcon3 } from "@/assets/services/crm";
 import { SeoHowWeWork5 } from "@/assets/services/seo";
-import { RequestHandler } from "@/components/atoms/request-handler";
 import { CrmFeedbackForm } from "@/components/forms/crm-feedback-form";
 import Award from "@/components/organisms/award";
 import CompanyPostList from "@/components/organisms/company-post-list";
@@ -15,16 +12,12 @@ import { ServicePostList } from "@/components/organisms/service-post-list";
 import FormLayout from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { ISmmTeamMembers } from "@/consts/types";
-import { useAppData } from "@/context/app-context";
-import { useSlug } from "@/hooks/useSlug";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
-const CrmPage = () => {
-    const slug = useSlug()
-    const t = useTranslations("ServicesPage7")
-    const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
-    const { data: task_types } = useGetTaskTypesQuery()
-    const { business_types } = useAppData()
+const CrmPage = async () => {
+    const t = await getTranslations("ServicesPage7")
+    const data = await getStaticPageBySlug('crm')
+    const task_types = await getTaskTypes()
    
     const serviceCrmData: ISmmTeamMembers = {
         title: t("BenefitsSection.title"),
@@ -104,11 +97,7 @@ const CrmPage = () => {
     };
 
     return (
-        <RequestHandler
-            isLoading={isLoading}
-            error={error}
-            data={data}
-        >
+        <>
             {data &&
                 <PageTitleLayout
                     title={data.title}
@@ -148,12 +137,11 @@ const CrmPage = () => {
             <FormLayout
                 nestedForm={
                     <CrmFeedbackForm
-                        business_types={business_types}
                         task_types={task_types || []}
                     />
                 }
             />
-        </RequestHandler>
+        </>
     );
 }
 

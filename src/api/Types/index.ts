@@ -1,61 +1,30 @@
-import { baseApi } from "../Base";
+import { fetchData } from "../Base/baseApi";
 import { Type } from "./types";
 
+export async function getPromotionTypes() {
+    return fetchData<Type[]>("/promotion-types/")
+}
 
-export const typesApi = baseApi.injectEndpoints({
-    endpoints(build) {
-        return {
-            getPromotionTypes: build.query<Type[], void>({
-                query: () => ({
-                    url: '/promotion-types/'
-                })
-            }),
-            getPurposeTypes: build.query<Type[], void>({
-                query: () => ({
-                    url: '/purpose-types/'
-                })
-            }),
-            getServiceTypes: build.query<Type[], void>({
-                query: () => ({
-                    url: '/service-types/'
-                })
-            }),
-            getSiteTypes: build.query<Type[], void>({
-                query: () => ({
-                    url: '/site-types/'
-                })
-            }),
-            getSiteStatus: build.query<Type[], void>({
-                query: () => ({
-                    url: '/site-status/'
-                })
-            }),
-            getTaskTypes: build.query<Type[], void>({
-                query: () => ({
-                    url: '/task-types/'
-                })
-            }),
-            getVideoTypes: build.query<Type[], void>({
-                query: () => ({
-                    url: '/video-types/'
-                })
-            }),
-            getSocialTypes: build.query<Type[], void>({
-                query: () => ({
-                    url: '/social-types/'
-                })
-            }),
-        }
-    }
-})
+export async function getServiceTypes() {
+    return fetchData<Type[]>("/service-types/")
+}
 
-export const {
-    useGetPromotionTypesQuery,
-    useGetPurposeTypesQuery,
-    useGetServiceTypesQuery,
-    useGetSiteTypesQuery,
-    useGetSiteStatusQuery,
-    useGetTaskTypesQuery,
-    useGetVideoTypesQuery,
-    useGetSocialTypesQuery,
-} = typesApi
+export async function getTaskTypes() {
+    return fetchData<Type[]>("/task-types/")
+}
+
+export async function getSiteStatus() {
+    return fetchData<Type[]>("/site-status/")
+}
+
+export async function getSiteTypes() {
+    return fetchData<Type[]>("/site-types/")
+}
+
+export async function getSocialTypes() {
+    return fetchData<Type[]>("/social-types/")
+}
+
+export async function getVideoTypes() {
+    return fetchData<Type[]>("/video-types/")
+}

@@ -1,7 +1,4 @@
-'use client';
-
-import { useGetPostByIdQuery } from "@/api/Post";
-import { RequestHandler } from "@/components/atoms/request-handler";
+import { getPostById } from "@/api/Post";
 import FeedbackForm from "@/components/forms/feedback-form";
 import { CaseItemHeader } from "@/components/molecules/case-item-header";
 import { CaseImages } from "@/components/organisms/case-images";
@@ -10,20 +7,19 @@ import { CaseTaskList } from "@/components/organisms/case-task-list";
 import CompanyPostList from "@/components/organisms/company-post-list";
 import FormLayout from "@/components/templates/form-layout";
 import { Separator } from "@/components/ui/separator";
-import { useParams } from "next/navigation";
+import { Metadata } from "next";
 
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+    const data = await getPostById(params.id);
+    return {
+        title: data?.title || "Кейс",
+    };
+}
 
-const CasePage = () => {
-    const { id } = useParams<{ id: string }>();
-    const { data, error, isLoading } = useGetPostByIdQuery(id, {
-        skip: !id,
-    });
+const CasePage = async ({ params }: { params: { id: string } }) => {
+    const data = await getPostById(params.id);
     return (
-        <RequestHandler
-            isLoading={isLoading}
-            error={error}
-            data={data}
-        >
+        <>
             {data &&
                 <CaseItemHeader
                     post={data}
@@ -55,10 +51,10 @@ const CasePage = () => {
                     <Separator className="bg-graphic-gray h-[1px] mb-8 md:mb-14" />
                 </>
             }
-            
+
             <CompanyPostList title="Другие кейсы" />
             <FormLayout nestedForm={<FeedbackForm />} />
-        </RequestHandler>
+        </>
     )
 }
 

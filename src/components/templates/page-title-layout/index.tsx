@@ -1,4 +1,3 @@
-import { ButtonWithIcon } from "@/components/atoms/button-with-icon";
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -9,8 +8,8 @@ import {
 } from "@/components/ui/breadcrumb";
 import { BreadcrumbProps } from "./type";
 import { Heading } from "@/components/atoms/heading";
-import { useAppData } from "@/context/app-context";
 import Image from "next/image";
+import { FeedbackButton } from "@/components/atoms/feedback-button";
 
 interface PageTitleLayoutProps {
     title: string;
@@ -31,7 +30,6 @@ export const PageTitleLayout = ({
     bg_image,
     isGray,
 }: PageTitleLayoutProps) => {
-    const { scrollToFeedback } = useAppData()
 
     return (
         <div className="relative h-screen max-w-[1920px] flex justify-center items-center bg-cover bg-center bg-no-repeat">
@@ -91,9 +89,7 @@ export const PageTitleLayout = ({
                         {sub_title}
                     </h3>
                 )}
-                <ButtonWithIcon onClick={scrollToFeedback} className="mt-3">
-                    {button_text}
-                </ButtonWithIcon>
+                <FeedbackButton button_text={button_text} />
             </div>
         </div>
     );

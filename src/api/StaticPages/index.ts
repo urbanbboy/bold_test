@@ -1,28 +1,9 @@
 
 
-import { baseApi } from "../Base";
+import { fetchData } from "../Base/baseApi";
 import { StaticPage } from "./types";
 
 
-export const staticPagesApi = baseApi.injectEndpoints({
-    endpoints(build) {
-        return {
-            getStaticPages: build.query<StaticPage[], void>({
-                query: () => ({
-                    url: '/static-pages/',
-                })
-            }),
-            getStaticPageBySlug: build.query<StaticPage, string>({
-                query: (slug) => ({
-                    url: `/static-pages/${slug}/`
-                })
-            })
-        }
-    }
-})
-
-export const {
-    useGetStaticPagesQuery,
-    useGetStaticPageBySlugQuery,
-    usePrefetch,
-} = staticPagesApi
+export async function getStaticPageBySlug(slug: string) {
+    return fetchData<StaticPage>(`/static-pages/${slug}/`)
+}

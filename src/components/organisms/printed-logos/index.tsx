@@ -1,16 +1,13 @@
-"use client";
-
-import { useGetPrintingServicesQuery } from "@/api/ServiceOffering";
+import { getPrintingServices } from "@/api/ServiceOffering";
 import { Heading } from "@/components/atoms/heading";
-import { RequestHandler } from "@/components/atoms/request-handler";
 import { InfiniteCarouselItem } from "@/components/molecules/infinite-carousel-item";
 import Marquee from "react-fast-marquee";
 
-export const PrintedLogos = () => {
-    const { data, isLoading, error } = useGetPrintingServicesQuery();
+export const PrintedLogos = async () => {
+    const data = await getPrintingServices();
 
     return (
-        <RequestHandler isLoading={isLoading} error={error} data={data}>
+        <>
             <Heading
                 as="h3"
                 className="text-center text-primary text-2xl mb-8 md:mb-12"
@@ -29,6 +26,6 @@ export const PrintedLogos = () => {
                     )}
                 </Marquee>
             </div>
-        </RequestHandler>
+        </>
     );
 };

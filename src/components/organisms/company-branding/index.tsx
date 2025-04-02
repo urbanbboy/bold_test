@@ -1,10 +1,10 @@
-import { useGetCompanyBrandingQuery } from "@/api/Company"
+import { getCompanyBranding } from "@/api/Company"
 import { Heading } from "@/components/atoms/heading"
 import { InfiniteCarouselItem } from "@/components/molecules/infinite-carousel-item"
 import Marquee from "react-fast-marquee"
 
-export const CompanyBranding = () => {
-    const { data } = useGetCompanyBrandingQuery()
+export const CompanyBranding = async  () => {
+    const data = await getCompanyBranding();
 
     return (
         <>

@@ -1,4 +1,5 @@
 import { baseApi } from "../Base";
+import { fetchData } from "../Base/baseApi";
 import { PrintingServicesResponse, ServiceOfferingResponse } from "./types";
 
 
@@ -23,3 +24,8 @@ export const {
     useGetServiceOfferingQuery,
     useGetPrintingServicesQuery,
 } = serviceOfferingApi
+
+
+export async function getPrintingServices() {
+    return fetchData<PrintingServicesResponse>("/printing-service/")
+}

@@ -1,5 +1,3 @@
-"use client";
-
 import { CostCalculationForm } from "@/components/forms/cost-calculation-form";
 import CompanyPartners from "@/components/organisms/company-partners";
 import CompanyPostList from "@/components/organisms/company-post-list";
@@ -9,22 +7,22 @@ import PartnerReviewList from "@/components/organisms/partner-review-list";
 import FormLayout from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { OurPhilosophyIcon } from "@/assets/info-card";
-import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
-import { RequestHandler } from "@/components/atoms/request-handler";
-import { useSlug } from "@/hooks/useSlug";
-
-import { useAppData } from "@/context/app-context";
-import { useGetPromotionTypesQuery } from "@/api/Types";
-import { useTranslations } from "next-intl";
+import { getStaticPageBySlug } from "@/api/StaticPages";
+import { getPromotionTypes, useGetPromotionTypesQuery } from "@/api/Types";
 import Advantages from "@/components/organisms/advantages/Advantages";
+import { getTranslations } from "next-intl/server";
+import { getCompanyPartners, getCompanyPosts } from "@/api/Company";
+import { getPartnersReviews } from "@/api/PartnerReviews";
 
-const AboutPage = () => {
-    const t = useTranslations("AboutPage");
-
-    const slug = useSlug();
-    const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug);
-    const { data: promotion_types } = useGetPromotionTypesQuery();
-    const { business_types } = useAppData();
+const AboutPage = async () => {
+    const t = await getTranslations("AboutPage");
+    const data = await getStaticPageBySlug('about');
+    const [partners, reviews, promotion_types] =
+        await Promise.all([
+            getCompanyPartners(),
+            getPartnersReviews(),
+            getPromotionTypes()
+        ]);
 
     const names = {
         title: t("banner.title"),
@@ -33,7 +31,7 @@ const AboutPage = () => {
     };
 
     return (
-        <RequestHandler isLoading={isLoading} error={error} data={data}>
+        <>
             {data && (
                 <PageTitleLayout
                     bg_image={data.image}
@@ -59,18 +57,17 @@ const AboutPage = () => {
             <Advantages />
             <CompanyTeam />
             <CompanyPostList />
-            <CompanyPartners />
-            <PartnerReviewList />
+            <CompanyPartners data={partners} />
+            <PartnerReviewList data={reviews} />
             <FormLayout
                 title={"Рассчитайте стоимость услуги"}
                 nestedForm={
                     <CostCalculationForm
-                        business_types={business_types}
                         promotion_types={promotion_types || []}
                     />
                 }
             />
-        </RequestHandler>
+        </>
     );
 };
 

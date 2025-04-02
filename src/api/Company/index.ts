@@ -25,11 +25,6 @@ export const companyApi = baseApi.injectEndpoints({
                     url: '/company-achievements/',
                 })
             }),
-            getCompanyAdvertising: build.query<CompanyAdvertisingResponse, void>({
-                query: () => ({
-                    url: '/company-advertising/',
-                })
-            }),
             getCompanyApplications: build.query<CompanyApplicationsResponse, void>({
                 query: () => ({
                     url: '/company-applications/',
@@ -41,39 +36,9 @@ export const companyApi = baseApi.injectEndpoints({
                     url: `/company-applications/${id}/`,
                 })
             }),
-            getCompanyBranding: build.query<CompanyBrandingResponse, void>({
-                query: () => ({
-                    url: '/company-brending/'
-                })
-            }),
-            getCompanyChallenges: build.query<CompanyChallengesResponse, void>({
-                query: () => ({
-                    url: '/company-challenges/'
-                })
-            }),
-            getCompanyFeatures: build.query<CompanyFeaturesResponse, void>({
-                query: () => ({
-                    url: '/company-features/'
-                })
-            }),
             getCompanyInfo: build.query<CompanyInfoResponse, void>({
                 query: () => ({
                     url: '/company-info/'
-                })
-            }),
-            getCompanyPartners: build.query<CompanyPartnersResponse, void>({
-                query: () => ({
-                    url: '/company-partners/'
-                })
-            }),
-            getCompanyPosts: build.query<CompanyPostsResponse, void>({
-                query: () => ({
-                    url: '/company-posts/'
-                })
-            }),
-            getCompanyServices: build.query<CompanyServicesResponse, void>({
-                query: () => ({
-                    url: '/company-services/'
                 })
             }),
             getCompanyTeam: build.query<CompanyTeamResponse, void>({
@@ -92,16 +57,9 @@ export const companyApi = baseApi.injectEndpoints({
 
 export const {
     useGetCompanyAchievementsQuery,
-    useGetCompanyAdvertisingQuery,
     useGetCompanyApplicationQuery,
     useGetCompanyApplicationsQuery,
-    useGetCompanyBrandingQuery,
-    useGetCompanyChallengesQuery,
-    useGetCompanyFeaturesQuery,
     useGetCompanyInfoQuery,
-    useGetCompanyPartnersQuery,
-    useGetCompanyPostsQuery,
-    useGetCompanyServicesQuery,
     useGetCompanyTeamQuery,
     useGetCompanyVideoReviewsQuery,
 } = companyApi
@@ -144,4 +102,28 @@ export async function getCompanyChallenges() {
 
 export async function getCompanyAdvantages() {
     return fetchData<CompanyAchievementsResponse>("/company-achievements/")
+}
+
+export async function getCompanyAds() {
+    return fetchData<CompanyAdvertisingResponse>("/company-advertising/")
+}
+
+export async function getCompanyServices() {
+    return fetchData<CompanyServicesResponse>("/company-services/")
+}
+
+export async function getCompanyPosts() {
+    return fetchData<CompanyPostsResponse>("/company-posts/")
+}
+
+export async function getCompanyPartners() {
+    return fetchData<CompanyPartnersResponse>("/company-partners/")
+}
+
+export async function getCompanyFeatures(){
+    return fetchData<CompanyFeaturesResponse>("/company-features/")
+}
+
+export async function getCompanyBranding(){
+    return fetchData<CompanyBrandingResponse>("/company-brending/")
 }

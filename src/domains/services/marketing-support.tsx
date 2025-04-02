@@ -1,12 +1,9 @@
-'use client';
-
-import { useGetStaticPageBySlugQuery } from "@/api/StaticPages";
+import { getStaticPageBySlug, useGetStaticPageBySlugQuery } from "@/api/StaticPages";
 import { MarketingSupportIcon } from "@/assets/info-card";
 import { ContextAd5Icon } from "@/assets/services/context-ad";
 import { ServiceCrmIcon2} from "@/assets/services/crm";
 import { MarketingIcon } from "@/assets/services/marketing";
 import { SeoHowWeWork5 } from "@/assets/services/seo";
-import { RequestHandler } from "@/components/atoms/request-handler";
 import FeedbackForm from "@/components/forms/feedback-form";
 import CompanyPostList from "@/components/organisms/company-post-list";
 import { CompanyServiceCardList } from "@/components/organisms/company-service-card-list";
@@ -15,18 +12,12 @@ import { MarketingResults } from "@/components/organisms/marketing-results";
 import { ServicePostList } from "@/components/organisms/service-post-list";
 import FormLayout from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
-import { useSlug } from "@/hooks/useSlug";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
-
-
-
-
-const MarketingSupportPage = () => {
-    const t = useTranslations("ServicesPage8")
-    const t2 = useTranslations("Buttons")
-    const slug = useSlug()
-    const { data, isLoading, error } = useGetStaticPageBySlugQuery(slug)
+const MarketingSupportPage = async () => {
+    const data = await getStaticPageBySlug('marketing-support')
+    const t = await getTranslations(" asyncServicesPage8")
+    const t2 = await getTranslations("Buttons")
 
     const serviceData = {
         title: t('WhatWeDo.mainTitle'),
@@ -143,11 +134,7 @@ const MarketingSupportPage = () => {
     ];
 
     return (
-        <RequestHandler
-            isLoading={isLoading}
-            error={error}
-            data={data}
-        >
+        <>
             {data &&
                 <PageTitleLayout
                     title={data.title}
@@ -183,7 +170,7 @@ const MarketingSupportPage = () => {
             <FormLayout
                 nestedForm={<FeedbackForm/>}
             />
-        </RequestHandler>
+        </>
     );
 }
 

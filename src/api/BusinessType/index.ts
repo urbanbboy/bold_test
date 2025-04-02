@@ -1,7 +1,7 @@
-import { url } from "inspector";
 import { baseApi } from "../Base";
 import { Type } from "../Types/types";
 import { ParallaxData } from "./types";
+import { fetchData } from "../Base/baseApi";
 
 export const businessTypes = baseApi.injectEndpoints({
     endpoints(build) {
@@ -11,14 +11,12 @@ export const businessTypes = baseApi.injectEndpoints({
                     url: "/business-types/",
                 }),
             }),
-            getBusinessCards: build.query<ParallaxData, void>({
-                query: () => ({
-                    url: "/business-cards/",
-                }),
-            }),
         };
     },
 });
 
-export const { useGetBusinessTypesQuery, useGetBusinessCardsQuery } =
-  businessTypes;
+export const { useGetBusinessTypesQuery } = businessTypes;
+
+export async function getBusinessCards() {
+    return fetchData<ParallaxData>("/business-cards/")
+}
