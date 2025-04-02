@@ -83,8 +83,6 @@ const ClientReviewList = ({
 
     const videoId = useYouTubeId(items[currentPage]?.video)
     const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-    console.log(thumbnailUrl)
-
 
     if (!isMounted) return null;
     return (

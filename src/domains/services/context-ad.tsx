@@ -1,4 +1,3 @@
-import { getCompanyPosts } from "@/api/Company";
 import { getStaticPageBySlug } from "@/api/StaticPages";
 import FeedbackForm from "@/components/forms/feedback-form";
 import CompanyPostList from "@/components/organisms/company-post-list";

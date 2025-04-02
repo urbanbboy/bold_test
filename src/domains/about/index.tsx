@@ -8,7 +8,7 @@ import FormLayout from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { OurPhilosophyIcon } from "@/assets/info-card";
 import { getStaticPageBySlug } from "@/api/StaticPages";
-import { getPromotionTypes, useGetPromotionTypesQuery } from "@/api/Types";
+import { getPromotionTypes } from "@/api/Types";
 import Advantages from "@/components/organisms/advantages/Advantages";
 import { getTranslations } from "next-intl/server";
 import { getCompanyPartners, getCompanyPosts } from "@/api/Company";

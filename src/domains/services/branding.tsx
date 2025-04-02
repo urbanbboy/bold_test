@@ -8,7 +8,7 @@ import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import FormLayout from "@/components/templates/form-layout";
 import { BrandingFeedbackForm } from "@/components/forms/branding-feedback-form";
 import { BrandingIcon } from "@/assets/info-card";
-import { getStaticPageBySlug, useGetStaticPageBySlugQuery } from "@/api/StaticPages";
+import { getStaticPageBySlug } from "@/api/StaticPages";
 import { CompanyBranding } from "@/components/organisms/company-branding";
 import { getServiceTypes } from "@/api/Types";
 import { IDesignBrand, ISmmTeamMembers } from "@/consts/types";

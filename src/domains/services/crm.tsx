@@ -1,5 +1,5 @@
-import { getStaticPageBySlug, useGetStaticPageBySlugQuery } from "@/api/StaticPages";
-import { getTaskTypes, useGetTaskTypesQuery } from "@/api/Types";
+import { getStaticPageBySlug } from "@/api/StaticPages";
+import { getTaskTypes } from "@/api/Types";
 import { CrmIcon } from "@/assets/info-card";
 import { ServiceCrmIcon1, ServiceCrmIcon2, ServiceCrmIcon3 } from "@/assets/services/crm";
 import { SeoHowWeWork5 } from "@/assets/services/seo";

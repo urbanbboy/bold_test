@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useGetBannersQuery } from "@/api/Banners";
 import { Banner } from "@/api/Banners/types";
 
 export interface BannerText {

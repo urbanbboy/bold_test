@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { getBanners } from "@/api/Banners";
 import SingleSliderList from "@/components/organisms/single-slider-list";
 import { getMarketingDepartment } from "@/api/Marketing";
-import { getCompanyChallenges, getCompanyPartners, getCompanyPosts } from "@/api/Company";
+import { getCompanyChallenges, getCompanyPartners } from "@/api/Company";
 import MarketingDepartment from "@/components/organisms/marketing-department";
 import Advantages from "@/components/organisms/advantages/Advantages";
 import CompanyChallengeList from "@/components/organisms/company-challenge-list";

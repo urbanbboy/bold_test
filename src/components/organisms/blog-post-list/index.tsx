@@ -1,6 +1,5 @@
 "use client";
 
-import { useGetArticlesQuery } from "@/api/Article"
 import { ArticlesResponse } from "@/api/Article/types";
 import { Heading } from "@/components/atoms/heading"
 import { BlogPostItem } from "@/components/molecules/blog-post-item"

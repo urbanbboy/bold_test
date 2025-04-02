@@ -1,7 +1,7 @@
 import { CostCalculationForm } from "@/components/forms/cost-calculation-form";
 import FormLayout from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
-import { getStaticPageBySlug, useGetStaticPageBySlugQuery } from "@/api/StaticPages";
+import { getStaticPageBySlug } from "@/api/StaticPages";
 
 import ClientReviewList from "@/components/organisms/client-review-list";
 import BlogPostList from "@/components/organisms/blog-post-list";

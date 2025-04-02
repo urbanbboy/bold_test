@@ -1,4 +1,4 @@
-import { getStaticPageBySlug, useGetStaticPageBySlugQuery } from "@/api/StaticPages";
+import { getStaticPageBySlug } from "@/api/StaticPages";
 import { MarketingSupportIcon } from "@/assets/info-card";
 import { ContextAd5Icon } from "@/assets/services/context-ad";
 import { ServiceCrmIcon2} from "@/assets/services/crm";

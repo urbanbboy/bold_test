@@ -7,16 +7,19 @@ import { CaseTaskList } from "@/components/organisms/case-task-list";
 import CompanyPostList from "@/components/organisms/company-post-list";
 import FormLayout from "@/components/templates/form-layout";
 import { Separator } from "@/components/ui/separator";
-import { Metadata } from "next";
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+type Params = Promise<{ id: string }>;
+
+export async function generateMetadata(props: { params: Params }) {
+    const params = await props.params
     const data = await getPostById(params.id);
     return {
         title: data?.title || "Кейс",
     };
 }
 
-const CasePage = async ({ params }: { params: { id: string } }) => {
+const CasePage = async (props: { params: Params }) => {
+    const params = await props.params
     const data = await getPostById(params.id);
     return (
         <>
