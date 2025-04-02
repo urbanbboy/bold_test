@@ -6,7 +6,7 @@ import { MenuSheet } from "@/components/molecules/menu-sheet";
 import { NavigationBar } from "@/components/molecules/navigation-bar";
 import { memo, useEffect, useState } from "react";
 
-export const Header = () => {
+const Header = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [scrollUpDistance, setScrollUpDistance] = useState(0);
@@ -99,3 +99,5 @@ export const Header = () => {
         </header>
     );
 };
+
+export default Header;

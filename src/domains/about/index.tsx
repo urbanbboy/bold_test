@@ -11,18 +11,17 @@ import { getStaticPageBySlug } from "@/api/StaticPages";
 import { getPromotionTypes } from "@/api/Types";
 import Advantages from "@/components/organisms/advantages/Advantages";
 import { getTranslations } from "next-intl/server";
-import { getCompanyPartners, getCompanyPosts } from "@/api/Company";
+import { getCompanyPartners } from "@/api/Company";
 import { getPartnersReviews } from "@/api/PartnerReviews";
+import { RequestHandler } from "@/components/atoms/request-handler";
 
 const AboutPage = async () => {
     const t = await getTranslations("AboutPage");
     const data = await getStaticPageBySlug('about');
-    const [partners, reviews, promotion_types] =
-        await Promise.all([
-            getCompanyPartners(),
-            getPartnersReviews(),
-            getPromotionTypes()
-        ]);
+    const partners = await getCompanyPartners();
+    const reviews = await getPartnersReviews();
+    const promotion_types = await getPromotionTypes();
+
 
     const names = {
         title: t("banner.title"),
@@ -31,7 +30,7 @@ const AboutPage = async () => {
     };
 
     return (
-        <>
+        <RequestHandler data={data}>
             {data && (
                 <PageTitleLayout
                     bg_image={data.image}
@@ -67,7 +66,7 @@ const AboutPage = async () => {
                     />
                 }
             />
-        </>
+        </RequestHandler>
     );
 };
 

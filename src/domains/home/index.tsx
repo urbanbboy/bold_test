@@ -15,45 +15,66 @@ import CompanyPartners from "@/components/organisms/company-partners";
 import { getPartnersReviews } from "@/api/PartnerReviews";
 import PartnerReviewList from "@/components/organisms/partner-review-list";
 import ClientReviewList from "@/components/organisms/client-review-list";
+import VideoAboutCompany from "@/components/organisms/video-about-company";
+import Award from "@/components/organisms/award";
+import FormLayout from "@/components/templates/form-layout";
+import FeedbackForm from "@/components/forms/feedback-form";
+import { Suspense } from "react";
+import { PageLoader } from "@/components/atoms/page-loader";
 
 const NewsBanner = dynamic(() => import("@/components/atoms/NewsBanner/NewsBanner"));
-const VideoAboutCompany = dynamic(() => import("@/components/organisms/video-about-company"));
-const Award = dynamic(() => import("@/components/organisms/award"));
-const FormLayout = dynamic(() => import("@/components/templates/form-layout"));
-const FeedbackForm = dynamic(() => import("@/components/forms/feedback-form"));
 
 const HomePage = async () => {
     const t = await getTranslations("HomePage.section2");
     const banners = await getBanners();
-    const [marketingDepartmentData, companyChallenges, articles, partners, reviews] = 
-    await Promise.all([
-        getMarketingDepartment(),
-        getCompanyChallenges(),
-        getArticles(),
-        getCompanyPartners(),
-        getPartnersReviews()
-    ]);
+    const marketingDepartmentData = await getMarketingDepartment()
+    const companyChallenges = await getCompanyChallenges()
+    const articles = await getArticles()
+    const partners = await getCompanyPartners()
+    const reviews = await getPartnersReviews()
+    // const [marketingDepartmentData, companyChallenges, articles, partners, reviews] = 
+    // await Promise.all([
+    //     getMarketingDepartment(),
+    //     getCompanyChallenges(),
+    //     getArticles(),
+    //     getCompanyPartners(),
+    //     getPartnersReviews()
+    // ]);
 
     return (
         <>
             <NewsBanner banners={banners} />
-            <SingleSliderList banners={banners} />
-            <MarketingDepartment data={marketingDepartmentData} />
-            <VideoAboutCompany/>
-            <Advantages />
-            <CompanyChallengeList data={companyChallenges} />
-            <CompanyFeatures />
-            <CompanyPostList />
-            <BlogPostList data={articles} />
+            <Suspense fallback={<PageLoader />}>
+                <SingleSliderList banners={banners} />
+                <MarketingDepartment data={marketingDepartmentData} />
+            </Suspense>
+            <Suspense fallback={<PageLoader />}>
+                <VideoAboutCompany />
+            </Suspense>
+            <Suspense fallback={<PageLoader />}>
+                <Advantages />
+                <CompanyChallengeList data={companyChallenges} />
+            </Suspense>
+            <Suspense fallback={<PageLoader />}>
+                <CompanyFeatures />
+                <CompanyPostList />
+            </Suspense>
+            <Suspense fallback={<PageLoader />}>
+                <BlogPostList data={articles} />
+            </Suspense>
             <Award
                 badgeTitle={t("btn")}
                 title={t("title")}
                 sub_title={t("description")}
                 image={"/images/main_page/diploma.jpg"}
             />
-            <CompanyPartners data={partners} />
-            <PartnerReviewList data={reviews} />
-            <ClientReviewList />
+            <Suspense fallback={<PageLoader />}>
+                <CompanyPartners data={partners} />
+                <PartnerReviewList data={reviews} />
+            </Suspense>
+            <Suspense fallback={<PageLoader />}>
+                <ClientReviewList />
+            </Suspense>
             <FormLayout
                 title={"Получите бесплатную консультацию"}
                 nestedForm={<FeedbackForm />}

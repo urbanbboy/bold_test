@@ -43,10 +43,7 @@ export const PageTitleLayout = ({
                     sizes="100vw"
                     className="object-cover"
                     quality={75}
-                    loading="eager"
-                    decoding="async"
-                    placeholder="blur"
-                    blurDataURL="../../../../public/image.webp"
+                    blurDataURL="/image.webp"
                 />
             }
             <div

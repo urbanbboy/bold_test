@@ -4,8 +4,6 @@ import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 import { getMessages } from "next-intl/server";
 import localFont from "next/font/local";
-import { Footer } from "@/components/organisms/footer";
-import { Header } from "@/components/organisms/header";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "@/providers";
@@ -14,16 +12,18 @@ import Script from "next/script";
 import { routing } from "../../i18n/routing";
 import dynamic from "next/dynamic";
 const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
+const Header = dynamic(() => import("@/components/organisms/header"), { ssr: false });
+const Footer = dynamic(() => import("@/components/organisms/footer"), { ssr: false });
 
 const cannonade = localFont({
     src: [
         {
-            path: "../../../public/fonts/Cannonade Bold.ttf",
+            path: "../../../public/fonts/Cannonade Bold.woff2",
             weight: "700",
             style: "normal",
         },
         {
-            path: "../../../public/fonts/Cannonade.ttf",
+            path: "../../../public/fonts/Cannonade.woff2",
             weight: "500",
             style: "normal",
         },
