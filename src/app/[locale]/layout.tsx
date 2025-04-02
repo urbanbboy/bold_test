@@ -11,9 +11,9 @@ import Script from "next/script";
 
 import { routing } from "../../i18n/routing";
 import dynamic from "next/dynamic";
+import Footer from "@/components/organisms/footer";
+import Header from "@/components/organisms/header";
 const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
-const Header = dynamic(() => import("@/components/organisms/header"), { ssr: false });
-const Footer = dynamic(() => import("@/components/organisms/footer"), { ssr: false });
 
 const cannonade = localFont({
     src: [
