@@ -1,6 +1,8 @@
 import { fetchData } from "../Base/baseApi";
 import { PartnersReviewsResponse } from "./types";
+import { getLocale } from "next-intl/server";
 
 export async function getPartnersReviews() {
-    return fetchData<PartnersReviewsResponse>("/partners-reviews/")
+    const locale = await getLocale();
+    return fetchData<PartnersReviewsResponse>("/partners-reviews/", locale);
 }

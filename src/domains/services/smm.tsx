@@ -13,6 +13,8 @@ import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { fetchSmmCreatingAdData, fetchSmmTeamMembers } from "@/consts/data";
 import { getTranslations } from "next-intl/server";
 
+export const revalidate = 60;
+
 const SmmPage = async () => {
     const data = await getStaticPageBySlug('smm');
     const ads = await getCompanyAds();

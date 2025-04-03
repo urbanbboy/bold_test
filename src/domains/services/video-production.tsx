@@ -11,6 +11,8 @@ import { VideoCompany } from "@/components/organisms/video-about-videoproduction
 import ClientReviewList from "@/components/organisms/client-review-list";
 import { getTranslations } from "next-intl/server";
 
+export const revalidate = 60;
+
 const VideoProductionPage = async () => {
     const data = await getStaticPageBySlug('video-production');
     const videoData = await getVideoProduction();

@@ -7,6 +7,8 @@ import FormLayout from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { getTranslations } from "next-intl/server";
 
+export const revalidate = 60;
+
 const SiteCreatingPage = async () => {
     const data = await getStaticPageBySlug('site-creating')
     const site_types = await getSiteTypes()

@@ -1,9 +1,8 @@
-
-
 import { fetchData } from "../Base/baseApi";
 import { StaticPage } from "./types";
-
+import { getLocale } from "next-intl/server";
 
 export async function getStaticPageBySlug(slug: string) {
-    return fetchData<StaticPage>(`/static-pages/${slug}/`)
+    const locale = await getLocale();
+    return fetchData<StaticPage>(`/static-pages/${slug}/`, locale);
 }

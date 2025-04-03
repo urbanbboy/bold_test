@@ -10,6 +10,8 @@ import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { fetchSeoData, fetchSeoPostsData, fetchSeoCardsData } from "@/consts/data";
 import { getTranslations } from "next-intl/server";
 
+export const revalidate = 60;
+
 const SeoPage = async () => {
     const data = await getStaticPageBySlug('seo');
     const [t, t2, site_statuses, seoData, seoPostsData, seoCardsData] = await Promise.all([

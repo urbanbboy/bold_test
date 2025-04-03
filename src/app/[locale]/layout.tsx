@@ -13,7 +13,9 @@ import { routing } from "../../i18n/routing";
 import dynamic from "next/dynamic";
 import Footer from "@/components/organisms/footer";
 import Header from "@/components/organisms/header";
-const FloatingWhatsapp = dynamic(() => import("@/components/atoms/floating-whatsapp"));
+const FloatingWhatsapp = dynamic(
+    () => import("@/components/atoms/floating-whatsapp")
+);
 
 const cannonade = localFont({
     src: [
@@ -55,7 +57,7 @@ export function generateStaticParams() {
     return routing.locales.map((locale) => ({ locale }));
 }
 
-
+export const revalidate = 60;
 
 export default async function LocaleLayout({ children, params }: Props) {
     const { locale } = await params;
@@ -157,7 +159,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                     <img
                         height="1"
                         width="1"
-                        style={{ display: 'none' }}
+                        style={{ display: "none" }}
                         src="https://www.facebook.com/tr?id=681332601016811&ev=PageView&noscript=1"
                         alt=""
                     />
@@ -166,7 +168,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <body className={`${cannonade.className} antialiased `}>
                 <noscript>
                     <div>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        {}
                         <img
                             src="https://mc.yandex.ru/watch/100644188"
                             style={{ position: "absolute", left: "-9999px" }}
@@ -175,7 +177,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                     </div>
                 </noscript>
                 <noscript>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    {}
                     <img
                         height="1"
                         width="1"

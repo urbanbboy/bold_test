@@ -15,7 +15,7 @@ import {
     CompanyTeamResponse,
     CompanyVideoReviewsResponse
 } from "./types";
-
+import { getLocale } from "next-intl/server";
 
 export const companyApi = baseApi.injectEndpoints({
     endpoints(build) {
@@ -29,7 +29,6 @@ export const companyApi = baseApi.injectEndpoints({
                 query: () => ({
                     url: '/company-applications/',
                 })
-
             }),
             getCompanyApplication: build.query<CompanyApplicationResponse, string>({
                 query: (id) => ({
@@ -64,66 +63,60 @@ export const {
     useGetCompanyVideoReviewsQuery,
 } = companyApi
 
-
 export async function getVideoReviews(cache: RequestCache = "force-cache") {
-    try {
-        let acceptLanguage = "ru";
+    const locale = await getLocale();
 
-        if (typeof window !== "undefined") {
-            acceptLanguage = localStorage.getItem("locale") || "ru";
-        } else {
-            const { cookies } = await import("next/headers");
-            const cookieStore = await cookies();
-            acceptLanguage = cookieStore.get("NEXT_LOCALE")?.value || "ru";
-        }
+    const res = await fetch(`${baseUrl}/company-video-reviews/`, {
+        cache,
+        headers: {
+            "Accept-Language": locale,
+        },
+    });
 
-        const res = await fetch(`${baseUrl}/company-video-reviews/`, {
-            cache,
-            headers: {
-                "Accept-Language": acceptLanguage,
-            },
-        });
-
-        if (!res.ok) {
-            console.error(`Ошибка загрузки баннеров: ${res.status} ${res.statusText}`);
-            throw new Error("Failed to fetch home page data");
-        }
-
-        return res.json();
-    } catch (error) {
-        console.error("Ошибка в getVideoReviews:", error);
-        throw error;
+    if (!res.ok) {
+        console.error(`Ошибка загрузки баннеров: ${res.status} ${res.statusText}`);
+        throw new Error("Failed to fetch home page data");
     }
+
+    return res.json();
 }
 
 export async function getCompanyChallenges() {
-    return fetchData<CompanyChallengesResponse>("/company-challenges/")
+    const locale = await getLocale();
+    return fetchData<CompanyChallengesResponse>("/company-challenges/", locale);
 }
 
 export async function getCompanyAdvantages() {
-    return fetchData<CompanyAchievementsResponse>("/company-achievements/")
+    const locale = await getLocale();
+    return fetchData<CompanyAchievementsResponse>("/company-achievements/", locale);
 }
 
 export async function getCompanyAds() {
-    return fetchData<CompanyAdvertisingResponse>("/company-advertising/")
+    const locale = await getLocale();
+    return fetchData<CompanyAdvertisingResponse>("/company-advertising/", locale);
 }
 
 export async function getCompanyServices() {
-    return fetchData<CompanyServicesResponse>("/company-services/")
+    const locale = await getLocale();
+    return fetchData<CompanyServicesResponse>("/company-services/", locale);
 }
 
 export async function getCompanyPosts() {
-    return fetchData<CompanyPostsResponse>("/company-posts/")
+    const locale = await getLocale();
+    return fetchData<CompanyPostsResponse>("/company-posts/", locale);
 }
 
 export async function getCompanyPartners() {
-    return fetchData<CompanyPartnersResponse>("/company-partners/")
+    const locale = await getLocale();
+    return fetchData<CompanyPartnersResponse>("/company-partners/", locale);
 }
 
-export async function getCompanyFeatures(){
-    return fetchData<CompanyFeaturesResponse>("/company-features/")
+export async function getCompanyFeatures() {
+    const locale = await getLocale();
+    return fetchData<CompanyFeaturesResponse>("/company-features/", locale);
 }
 
-export async function getCompanyBranding(){
-    return fetchData<CompanyBrandingResponse>("/company-brending/")
+export async function getCompanyBranding() {
+    const locale = await getLocale();
+    return fetchData<CompanyBrandingResponse>("/company-brending/", locale);
 }

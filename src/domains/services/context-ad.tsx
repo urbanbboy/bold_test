@@ -9,6 +9,8 @@ import { fetchContextAdCardData , fetchContextAdData } from "@/consts/data";
 import { Banner } from "@/consts/types";
 import { getTranslations } from "next-intl/server";
 
+export const revalidate = 60;
+
 const ContextAdsPage = async () => {
     const data = await getStaticPageBySlug('context-ads');
     const [t, t2, contextAdData, contextAdCardData] = await Promise.all([

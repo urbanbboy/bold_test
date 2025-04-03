@@ -1,30 +1,38 @@
 import { fetchData } from "../Base/baseApi";
 import { Type } from "./types";
+import { getLocale } from "next-intl/server";
 
 export async function getPromotionTypes() {
-    return fetchData<Type[]>("/promotion-types/")
+    const locale = await getLocale();
+    return fetchData<Type[]>("/promotion-types/", locale);
 }
 
 export async function getServiceTypes() {
-    return fetchData<Type[]>("/service-types/")
+    const locale = await getLocale();
+    return fetchData<Type[]>("/service-types/", locale);
 }
 
 export async function getTaskTypes() {
-    return fetchData<Type[]>("/task-types/")
+    const locale = await getLocale();
+    return fetchData<Type[]>("/task-types/", locale);
 }
 
 export async function getSiteStatus() {
-    return fetchData<Type[]>("/site-status/")
+    const locale = await getLocale();
+    return fetchData<Type[]>("/site-status/", locale);
 }
 
 export async function getSiteTypes() {
-    return fetchData<Type[]>("/site-types/")
+    const locale = await getLocale();
+    return fetchData<Type[]>("/site-types/", locale);
 }
 
 export async function getSocialTypes() {
-    return fetchData<Type[]>("/social-types/")
+    const locale = await getLocale();
+    return fetchData<Type[]>("/social-types/", locale);
 }
 
 export async function getVideoTypes() {
-    return fetchData<Type[]>("/video-types/")
+    const locale = await getLocale();
+    return fetchData<Type[]>("/video-types/", locale);
 }

@@ -14,6 +14,8 @@ import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { ISmmTeamMembers } from "@/consts/types";
 import { getTranslations } from "next-intl/server";
 
+export const revalidate = 60;
+
 const CrmPage = async () => {
     const t = await getTranslations("ServicesPage7")
     const data = await getStaticPageBySlug('crm')

@@ -1,7 +1,7 @@
 import { baseApi } from "../Base";
 import { fetchData } from "../Base/baseApi";
 import { PrintingServicesResponse, ServiceOfferingResponse } from "./types";
-
+import { getLocale } from "next-intl/server";
 
 export const serviceOfferingApi = baseApi.injectEndpoints({
     endpoints(build) {
@@ -25,7 +25,7 @@ export const {
     useGetPrintingServicesQuery,
 } = serviceOfferingApi
 
-
 export async function getPrintingServices() {
-    return fetchData<PrintingServicesResponse>("/printing-service/")
+    const locale = await getLocale();
+    return fetchData<PrintingServicesResponse>("/printing-service/", locale);
 }

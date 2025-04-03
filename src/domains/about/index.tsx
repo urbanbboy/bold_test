@@ -15,6 +15,8 @@ import { getCompanyPartners } from "@/api/Company";
 import { getPartnersReviews } from "@/api/PartnerReviews";
 import { RequestHandler } from "@/components/atoms/request-handler";
 
+export const revalidate = 60;
+
 const AboutPage = async () => {
     const t = await getTranslations("AboutPage");
     const data = await getStaticPageBySlug('about');

@@ -9,6 +9,8 @@ import { getTranslations } from "next-intl/server";
 import { getArticles } from "@/api/Article";
 import { getPromotionTypes } from "@/api/Types";
 
+export const revalidate = 60;
+
 const BlogPage = async () => {
     const data = await getStaticPageBySlug('blog');
     const t = await getTranslations("AboutPage");

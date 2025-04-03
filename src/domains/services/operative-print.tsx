@@ -13,6 +13,8 @@ import { SeoHowWeWork4, SeoHowWeWork5 } from "@/assets/services/seo";
 import FeedbackForm from "@/components/forms/feedback-form";
 import { getTranslations } from "next-intl/server";
 
+export const revalidate = 60;
+
 export interface ParallaxItem {
     src: string;
     speed: number;

@@ -22,6 +22,8 @@ import {
 import { getCompanyFeatures } from "@/api/Company";
 import { getTranslations } from "next-intl/server";
 
+export const revalidate = 60;
+
 const BradingPage = async () => {
     const data = await getStaticPageBySlug('branding');
     const t = await getTranslations("ServicePage4");

@@ -11,6 +11,8 @@ import FormLayout from "@/components/templates/form-layout";
 import { PageTitleLayout } from "@/components/templates/page-title-layout";
 import { getTranslations } from "next-intl/server";
 
+export const revalidate = 60;
+
 const CasesPage = async () => {
     const data = await getStaticPageBySlug('cases');
     const post_data = await getPosts();

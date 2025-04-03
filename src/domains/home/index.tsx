@@ -24,6 +24,8 @@ import { PageLoader } from "@/components/atoms/page-loader";
 
 const NewsBanner = dynamic(() => import("@/components/atoms/NewsBanner/NewsBanner"));
 
+export const revalidate = 60;
+
 const HomePage = async () => {
     const t = await getTranslations("HomePage.section2");
     const banners = await getBanners();
@@ -40,6 +42,8 @@ const HomePage = async () => {
     //     getCompanyPartners(),
     //     getPartnersReviews()
     // ]);
+
+
 
     return (
         <>
