@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import { getTranslations } from "next-intl/server";
 import { getBanners } from "@/api/Banners";
-import SingleSliderList from "@/components/organisms/single-slider-list";
+// import SingleSliderList from "@/components/organisms/single-slider-list";
 import { getMarketingDepartment } from "@/api/Marketing";
 import { getCompanyChallenges, getCompanyPartners } from "@/api/Company";
 import MarketingDepartment from "@/components/organisms/marketing-department";
@@ -45,7 +45,7 @@ const HomePage = async () => {
         <>
             <NewsBanner banners={banners} />
             <Suspense fallback={<PageLoader />}>
-                <SingleSliderList banners={banners} />
+                {/* <SingleSliderList banners={banners} /> */}
                 <MarketingDepartment data={marketingDepartmentData} />
             </Suspense>
             <Suspense fallback={<PageLoader />}>
