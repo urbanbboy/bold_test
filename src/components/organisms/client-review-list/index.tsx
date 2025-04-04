@@ -154,12 +154,10 @@ const ClientReviewList = ({
                     </div>
                     <div className="player-wrapper rounded-md mt-5 md:mt-10">
                         <ReactPlayer
-                            fallback={<>Загрузка...</>}
                             url={items[currentPage]?.video || ""}
                             width={"100%"}
                             height={"100%"}
                             controls={true}
-                            light={true}
                             playsinline
                             className="react-player"
                         />
