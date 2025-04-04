@@ -1,5 +1,5 @@
 'use client';
-
+import logo from '../../../../public/images/bold-logo.webp'
 import { useAppData } from '@/context/app-context';
 import React, { useEffect, useState } from 'react'
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
@@ -26,7 +26,7 @@ const FloatingWhatsapp = () => {
             chatMessage="Доброго времени суток, чем могу вам помочь?"
             statusMessage="Онлайн"
             darkMode
-            avatar="https://bishkek.headhunter.kg/employer-logo/6266415.png"
+            avatar={logo.src}
             placeholder="Введите текст"
         />
     );
